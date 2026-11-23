@@ -21,7 +21,7 @@
 <link rel="canonical" href="https://priko2000.github.io/appsandsoul-site/ru.html"><link rel="alternate" hreflang="ru" href="https://priko2000.github.io/appsandsoul-site/ru.html"><link rel="alternate" hreflang="he" href="https://priko2000.github.io/appsandsoul-site/"><link rel="alternate" hreflang="en" href="https://priko2000.github.io/appsandsoul-site/en.html"><link rel="alternate" hreflang="x-default" href="https://priko2000.github.io/appsandsoul-site/">
 <title>Apps & Soul — сайты, магазины и приложения для бизнеса</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&family=Playpen+Sans:wght@600;800&family=Playpen+Sans+Hebrew:wght@600;800&display=swap">
 <style>
 :root{--bg:#F6F3EC;--ink:#111;--mut:#6A655C;--line:rgba(17,17,17,.12);--y:#FFC700;--vi:#5B3DF5;--mi:#26C281;--max:1320px;--pad:clamp(18px,4vw,64px);--disp:'Unbounded',system-ui,sans-serif;--body:'Manrope',system-ui,sans-serif}
 *{box-sizing:border-box}
@@ -906,6 +906,13 @@ html[lang=he] .filt{letter-spacing:-.01em}
 .stst.ok{background:#E2F7EC;color:#138a52}.stst.go{background:#FFF3C8;color:#8a6500}.stst.wip{background:#FFE6E0;color:#b34a2e}
 .wlead{margin:-14px 0 26px;font:700 clamp(16px,1.3vw,20px)/1.45 var(--body);background:var(--ink);color:#fff;border-radius:18px;padding:14px 20px;max-width:none}
 .wlead b{color:var(--y)}
+
+/* почерк Playpen: только заголовки, табло, фраза и подпись */
+:root{--hand:'Playpen Sans','Unbounded',system-ui,sans-serif}
+html[lang=he]{--hand:'Playpen Sans Hebrew','Playpen Sans','Heebo',system-ui,sans-serif}
+.hero h1,h2.scr,.end h2.big,.doing,.filt,.sig,.revx .rcap{font-family:var(--hand)!important;font-weight:800!important;letter-spacing:-.005em!important}
+.sig span{font-family:var(--body)!important;font-weight:500!important}
+.hero h1{line-height:1.02}
 
 .langs{display:flex;gap:4px;background:rgba(22,17,58,.06);border-radius:999px;padding:4px;position:relative}
 .langs a{display:flex;align-items:center;gap:7px;padding:4px 11px 4px 4px;border-radius:999px;font-family:var(--disp);font-size:12px;font-weight:800;color:var(--mut);line-height:1;transition:background .3s,color .3s,box-shadow .3s}
