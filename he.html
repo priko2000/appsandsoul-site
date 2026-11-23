@@ -172,6 +172,9 @@ dialog.story[open]{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
 .steps::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
 .steps::after{content:"";position:absolute;left:0;top:9px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
 .st{position:relative}
+.sss{margin:22px 0 4px}.ssh{font-family:var(--disp);font-weight:700;font-size:14px;margin-bottom:10px}.ssh small{font-family:inherit;font-weight:500;color:var(--mut);font-size:12px;margin-inline-start:6px}
+.ssr{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x mandatory}.ssr button{flex:none;border:2px solid var(--line,#ddd);border-radius:14px;padding:0;overflow:hidden;background:#fff;cursor:zoom-in;scroll-snap-align:start;transition:transform .2s,border-color .2s}.ssr button:hover{transform:translateY(-3px)}.ssr button.on{border-color:var(--ink)}.ssr img{display:block;height:150px;width:auto}
+@media (max-width:600px){.ssr img{height:120px}}
 .st::before{content:"";position:absolute;top:-34px;left:0;width:20px;height:20px;border-radius:50%;background:var(--bg);border:2px solid var(--ink);z-index:1;transition:background .3s}
 .steps.on .st::before{background:var(--y)}
 .st i{font-style:normal;font-family:var(--disp);font-size:12px;font-weight:700;color:var(--mut);display:block;margin-bottom:6px}
@@ -1087,6 +1090,7 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
     <div class="ph"><img id="stI" alt=""><span class="brand" id="stBr"><img src="img/mark.svg" alt="">Apps &amp; Soul</span></div>
     <div><span class="tag" id="stG"></span><h3 id="stT"></h3>
       <dl><div><dt>משימה</dt><dd id="stA"></dd></div><div><dt>פתרון</dt><dd id="stB"></dd></div><div id="stDw"><dt>מה בפנים</dt><dd id="stD"></dd></div><div><dt>מה זה נותן</dt><dd class="res" id="stC"></dd></div></dl>
+      <div class="sss" id="stSw"><div class="ssh">מסכים אמיתיים <small>לחצו להגדלה</small></div><div class="ssr" id="stS"></div></div>
       <div class="acts"><a class="btn" id="stW" target="_blank" rel="noopener">רוצה משהו דומה</a><button class="btn ghost" id="stN">העבודה הבאה ←</button></div></div>
   </div>
 </dialog>
@@ -1154,6 +1158,7 @@ var W=[
 ['img/he/w_tape.jpg','Apps & Soul Tape','מחשבון עם סרט לטלפון.','אפליקציה','מחשבון רגיל שוכח את החישוב, ואי אפשר לבדוק חשבון ארוך.','מחשבון עם סרט, כמו על נייר: כל שורה נראית ומתויגת. ובנוסף שכר בישראל, מע״מ, מטבעות וייצוא לכל מקום.','חישוב שאפשר לבדוק, לשמור ולשלוח.',2,['סרט עם תוויות לשורות, הקלדה קולית','מע״מ, הנחות, שערי מטבע','שכר ומסמכים של אזרח ישראלי','עיצובים מתחלפים','בהכנה ל-App Store']],
 ['img/w_cc.jpg','Control Center','תוכנה לסטודיו ולבעלי מקצוע.','תוכנה','סטודיו ובעלי מקצוע מנהלים לקוחות, פרויקטים וכסף בטבלאות ובצ׳אטים שונים.','תוכנה אחת: לקוחות, יומן, משימות, חוזים, מנויים, כסף, אזור לקוח ואתר לסטודיו.','כל העסק בחלון אחד, עם תזכורות ודוחות.',2,['לקוחות, משפך מכירות, פניות','משימות, פרויקטים, יומן תורים','הצעות מחיר וחוזים עם חתימת לקוח','מנויים, תשלומים, תזכורות, דוחות','אזור לקוח ואתר תדמית עם קביעת תור','רישום קולי מהיר · סימון ״בפיתוח״']],
 ['img/w_atlas.jpg','אטלס האלכוהול הישראלי','מפה, יצרנים, אנציקלופדיה.','אפליקציה','להראות שאפשר לבנות מדריך גדול עם מפה ועיצוב יפה.','אפליקציה בעברית: מפת יצרנים, קטלוג, אנציקלופדיה, סורק תוויות, התאמת יין.','דוגמה לפרויקט גדול עם מאגר נתונים משלו.',2,['מפת יצרנים אינטראקטיבית','אנציקלופדיה בסגנון כרוניקה','סורק תוויות','התאמת יין למנה ולערב']],
+['img/w_radar.jpg','Discovery Radar','מעבדת רעיונות.','אפליקציה','רעיונות טובים לעסק הולכים לאיבוד בין אלפי כתבות וסרטונים.','האפליקציה מציגה תגלית מפתיעה, מסבירה אותה במילים פשוטות ומציעה איך ליישם. מצב „עזרו לי לפתור משימה”: למשל לנסוע פחות או פחות טעויות בהזמנות.','רעיון עם תועלת מיידית: בדוגמה הלימודית אותו מסלול של 10 נקודות מתקצר ב-54.4%.',2,['„הפתיעו אותי”: תגלית ורעיון ליישום','„עזרו לי לפתור משימה” עם חישוב מוכן','מפת הרעיונות שלי ושמורים']],
 ['img/w_kawar.jpg','קטלוג קעואר','קטלוג מסחרי, 83 עמודים.','קטלוג','הספק צריך קטלוג שלא מתביישים לשלוח ללקוח.','קטלוג בעברית: ערק, יינות, בירה, ליקרים, עם תמונות ותיאורים.','הלקוחות רואים את כל המבחר בקובץ אחד.',3,['83 עמודים','תמונות ותיאורים','PDF להדפסה ולהפצה']],
 ['img/w_oldvines.jpg','קטלוג גפנים בוגרות','יינות ומשקאות חריפים.','קטלוג','החנות צריכה קטלוג יינות יפה לטלפון.','קטלוג ״גפנים בוגרות״ בטלפון: יינות ומשקאות חריפים לפי מדורים.','נוח לשלוח ללקוח בקישור אחד.',3,['גרסה לטלפון','מדורים לפי סוגי משקאות']],
 ['img/w_book1.jpg','״יהודי ההרים. דרך לאורך הדורות״','רומן-כרוניקה, 509 עמודים.','ספר','לספר את תולדות העם כך שיקראו, ולא רק ידפדפו.','ספר-כרוניקה עם איורים לפרקים, שירים ומפות.','מהדורה סופית, מוכנה להוצאה לאור.',4,['509 עמודים','איורים לפרקים','רוסית, עברית, אנגלית']],
@@ -1168,11 +1173,13 @@ var W=[
 ['img/w_tales.jpg','״אגדות לפני השינה״','אוסף לילדים.','ספר','הורים צריכים אגדות טובות וקצרות לפני השינה.','אוסף אגדות מאוירות, עם שם לגיבורה בכל שפה.','קריאה חמה לפני השינה.',4,['איורים לכל אגדה','רוסית, עברית, אנגלית']],
 ['img/w_guide.jpg','מדריך תרבות','הים התיכון.','ספר','מטייל רוצה להבין את התרבות, ולא רק כתובות.','מדריך מאויר לתרבות הים התיכון.','טיול עם היסטוריה.',4,['מהדורה מאוירת','תרבות והיסטוריה']]
 ];
+var SG={"img/w_admin.jpg": ["img/s_rosa1.jpg", "img/s_rosa2.jpg", "img/s_rosa3.jpg", "img/s_rosa4.jpg"], "img/w_aadmin.jpg": ["img/s_azart1.jpg", "img/s_azart2.jpg", "img/s_azart3.jpg"], "img/he/w_tape.jpg": ["img/s_tape1.jpg", "img/s_tape2.jpg", "img/s_tape3.jpg", "img/s_tape4.jpg"], "img/w_polka.jpg": ["img/s_polka1.jpg", "img/s_polka2.jpg", "img/s_polka3.jpg"], "img/w_cc.jpg": ["img/s_cc1.jpg", "img/s_cc2.jpg", "img/s_cc3.jpg", "img/s_cc4.jpg"], "img/w_atlas.jpg": ["img/s_atlas1.jpg", "img/s_atlas2.jpg", "img/s_atlas3.jpg", "img/s_atlas4.jpg"], "img/w_radar.jpg": ["img/s_radar1.jpg", "img/s_radar2.jpg"]};
 var plane=document.getElementById('plane'),cv=document.getElementById('canvas'),chips=document.getElementById('chips');
 var dlg=document.getElementById('story'),cur=0;
 function openStory(i){cur=i;var w=W[i];document.getElementById('stI').src=w[0];document.getElementById('stI').alt=w[1];document.getElementById('stBr').hidden=(w[7]===4);document.getElementById('stG').textContent=w[3];document.getElementById('stT').textContent=w[1];
   document.getElementById('stA').textContent=w[4];document.getElementById('stB').textContent=w[5];document.getElementById('stC').textContent=w[6];
   var ins=document.getElementById('stD');ins.innerHTML='';var ul=el('ul');(w[8]||[]).forEach(function(t){ul.appendChild(el('li','',t));});ins.appendChild(ul);document.getElementById('stDw').hidden=!(w[8]&&w[8].length);
+  var sg=SG[w[0]]||[],sr=document.getElementById('stS');sr.innerHTML='';document.getElementById('stSw').hidden=!sg.length;sg.forEach(function(src){var b=el('button');b.type='button';var im=el('img');im.src=src;im.alt='';im.loading='lazy';b.appendChild(im);b.addEventListener('click',function(){var on=b.classList.contains('on');sr.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});var I=document.getElementById('stI');if(on){I.src=w[0];}else{b.classList.add('on');I.src=src;if(innerWidth<900)I.scrollIntoView({behavior:'smooth',block:'start'});}});sr.appendChild(b);});
   document.getElementById('stW').href=WA+'?text='+encodeURIComponent('שלום! אני רוצה משהו דומה ל״'+w[1]+'״');
   if(!dlg.open){if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');document.body.classList.add('modal');}}
 function closeStory(){if(dlg.close)dlg.close();else dlg.removeAttribute('open');}
