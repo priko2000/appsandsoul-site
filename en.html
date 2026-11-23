@@ -172,6 +172,7 @@ dialog.story[open]{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
 .steps::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
 .steps::after{content:"";position:absolute;left:0;top:9px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
 .st{position:relative}
+.scrb{position:absolute;left:10px;top:10px;background:var(--y,#FFD84D);color:#111;box-shadow:0 4px 10px rgba(0,0,0,.18);font-family:var(--disp);font-weight:700;font-size:11px;padding:5px 9px;border-radius:999px;letter-spacing:.02em;z-index:2}
 .sss{margin:22px 0 4px}.ssh{font-family:var(--disp);font-weight:700;font-size:14px;margin-bottom:10px}.ssh small{font-family:inherit;font-weight:500;color:var(--mut);font-size:12px;margin-inline-start:6px}
 .ssr{display:flex;gap:10px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x mandatory}.ssr button{flex:none;border:2px solid var(--line,#ddd);border-radius:14px;padding:0;overflow:hidden;background:#fff;cursor:zoom-in;scroll-snap-align:start;transition:transform .2s,border-color .2s}.ssr button:hover{transform:translateY(-3px)}.ssr button.on{border-color:var(--ink)}.ssr img{display:block;height:150px;width:auto}
 @media (max-width:600px){.ssr img{height:120px}}
@@ -1174,6 +1175,9 @@ var W=[
 ['img/w_guide.jpg','Culture guide','The Mediterranean.','Book','A traveller wants to understand the culture, not just addresses.','An illustrated guide to Mediterranean culture.','A journey with history.',4,['Illustrated edition','Culture and history']]
 ];
 var SG={"img/w_admin.jpg": ["img/s_rosa1.jpg", "img/s_rosa2.jpg", "img/s_rosa3.jpg", "img/s_rosa4.jpg"], "img/w_aadmin.jpg": ["img/s_azart1.jpg", "img/s_azart2.jpg", "img/s_azart3.jpg"], "img/he/w_tape.jpg": ["img/s_tape1.jpg", "img/s_tape2.jpg", "img/s_tape3.jpg", "img/s_tape4.jpg"], "img/w_polka.jpg": ["img/s_polka1.jpg", "img/s_polka2.jpg", "img/s_polka3.jpg"], "img/w_cc.jpg": ["img/s_cc1.jpg", "img/s_cc2.jpg", "img/s_cc3.jpg", "img/s_cc4.jpg"], "img/w_atlas.jpg": ["img/s_atlas1.jpg", "img/s_atlas2.jpg", "img/s_atlas3.jpg", "img/s_atlas4.jpg"], "img/w_radar.jpg": ["img/s_radar1.jpg", "img/s_radar2.jpg"]};
+var SCRB='▣ Screens';var SK={rosa:'img/w_admin.jpg',azart:'img/w_aadmin.jpg',tape:'img/he/w_tape.jpg',polka:'img/w_polka.jpg',cc:'img/w_cc.jpg',atlas:'img/w_atlas.jpg',radar:'img/w_radar.jpg'};
+function openHash(){var m=location.hash.match(/^#w=(\w+)/);if(!m||!SK[m[1]])return;var i=W.findIndex(function(x){return x[0]===SK[m[1]];});if(i<0)return;var sec=document.getElementById('works');if(sec)sec.scrollIntoView();setTimeout(function(){openStory(i);},300);}
+window.addEventListener('hashchange',openHash);setTimeout(openHash,600);
 var plane=document.getElementById('plane'),cv=document.getElementById('canvas'),chips=document.getElementById('chips');
 var dlg=document.getElementById('story'),cur=0;
 function openStory(i){cur=i;var w=W[i];document.getElementById('stI').src=w[0];document.getElementById('stI').alt=w[1];document.getElementById('stBr').hidden=(w[7]===4);document.getElementById('stG').textContent=w[3];document.getElementById('stT').textContent=w[1];
@@ -1195,7 +1199,7 @@ var PWc=0;
 W.forEach(function(w,i){var g=w[7],k=count[g]++,cols=colW[g],cx=COLX[g]+(k%cols)*290,cy=130+Math.floor(k/cols)*600+((k%cols)%2?50:0);PWc=Math.max(PWc,cx+330);PHc=Math.max(PHc,cy+560);
   var d=el('div','it');d.tabIndex=0;d.setAttribute('role','button');d.setAttribute('aria-label','Project story: '+w[1]);d.dataset.cur='Story';d.dataset.i=i;
   d.style.left=cx+'px';d.style.top=cy+'px';
-  d.dataset.rot=ROT[i%6];d.innerHTML='<div class="sc" style="transform:rotate('+ROT[i%6]+'deg)"><img alt="" loading="lazy">'+(w[7]!==4?'<span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span>':'')+'</div><b></b><span></span><em class="more">Project story</em>';
+  d.dataset.rot=ROT[i%6];d.innerHTML='<div class="sc" style="transform:rotate('+ROT[i%6]+'deg)"><img alt="" loading="lazy">'+(w[7]!==4?'<span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span>':'')+(SG[w[0]]?'<span class="scrb">'+SCRB+'</span>':'')+'</div><b></b><span></span><em class="more">Project story</em>';
   d.querySelector('img').src=w[0];d.querySelector('b').textContent=w[1];d.querySelector('span').textContent=w[2];
   d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openStory(i);}});plane.appendChild(d);
   var c=el('button','',w[1]);c.addEventListener('click',function(){openStory(i);});chips.appendChild(c);});
