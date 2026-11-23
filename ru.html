@@ -21,7 +21,7 @@
 <link rel="canonical" href="https://priko2000.github.io/appsandsoul-site/ru.html"><link rel="alternate" hreflang="ru" href="https://priko2000.github.io/appsandsoul-site/ru.html"><link rel="alternate" hreflang="he" href="https://priko2000.github.io/appsandsoul-site/"><link rel="alternate" hreflang="en" href="https://priko2000.github.io/appsandsoul-site/en.html"><link rel="alternate" hreflang="x-default" href="https://priko2000.github.io/appsandsoul-site/">
 <title>Apps & Soul — сайты, магазины и приложения для бизнеса</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&family=Playpen+Sans:wght@600;800&family=Playpen+Sans+Hebrew:wght@600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&family=Jost:wght@200;300;400;500;600;700&family=Assistant:wght@200;300;400;500;600;700;800&family=Playpen+Sans:wght@600;800&family=Playpen+Sans+Hebrew:wght@600;800&display=swap">
 <style>
 :root{--bg:#F6F3EC;--ink:#111;--mut:#6A655C;--line:rgba(17,17,17,.12);--y:#FFC700;--vi:#5B3DF5;--mi:#26C281;--max:1320px;--pad:clamp(18px,4vw,64px);--disp:'Unbounded',system-ui,sans-serif;--body:'Manrope',system-ui,sans-serif}
 *{box-sizing:border-box}
@@ -907,6 +907,17 @@ html[lang=he] .filt{letter-spacing:-.01em}
 .wlead{margin:-14px 0 26px;font:700 clamp(16px,1.3vw,20px)/1.45 var(--body);background:var(--ink);color:#fff;border-radius:18px;padding:14px 20px;max-width:none}
 .wlead b{color:var(--y)}
 
+
+/* элегантные шрифты (вариант 07): Jost для русского и английского, Assistant для иврита */
+:root{--disp:'Jost','Manrope',system-ui,sans-serif;--body:'Jost','Manrope',system-ui,sans-serif}
+html[lang=he]{--disp:'Assistant','Heebo',system-ui,sans-serif!important;--body:'Assistant','Heebo',system-ui,sans-serif!important}
+body{font-family:var(--body)}
+h1,h2.scr,.end h2.big,.filt{font-weight:300!important;letter-spacing:-.012em!important}
+.hero h1{line-height:1.04}
+h2.scr b,h2.scr strong,.hero h1 b{font-weight:500}
+html[lang=he] h1,html[lang=he] h2.scr,html[lang=he] .end h2.big,html[lang=he] .filt{font-weight:300!important;letter-spacing:0!important}
+.doing{font-weight:400!important;letter-spacing:0}
+.filt em .fw.on{font-weight:400}
 /* почерк Playpen: только раздел «Обо мне» */
 :root{--hand:'Playpen Sans','Unbounded',system-ui,sans-serif}
 html[lang=he]{--hand:'Playpen Sans Hebrew','Playpen Sans','Heebo',system-ui,sans-serif}
