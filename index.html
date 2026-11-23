@@ -13,6 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#16113A">
 <link rel="apple-touch-icon" sizes="180x180" href="img/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
 <meta name="apple-mobile-web-app-title" content="Apps &amp; Soul">
 <link rel="icon" href="img/mark.svg" type="image/svg+xml">
@@ -172,6 +173,19 @@ dialog.story[open]{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
 .steps::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
 .steps::after{content:"";position:absolute;left:0;top:9px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
 .st{position:relative}
+.appw{margin:10px 0 60px}.appl{color:var(--mut);max-width:760px;margin:-6px 0 22px;line-height:1.55}
+.appg{display:grid;grid-template-columns:1fr 1fr;gap:18px}.appc{position:relative;background:#fff;border-radius:26px;padding:28px 28px 26px;box-shadow:0 0 0 1px var(--line),0 20px 50px rgba(30,25,15,.08)}
+.appc.a2{background:#16113A;color:#fff}.appc.a2 .apps,.appc.a2 .appt{color:#FFD86B}.appc.a2 li{color:#E9E6F5}
+.appn{position:absolute;top:22px;inset-inline-end:24px;font:800 46px var(--disp);opacity:.12}
+.appc h4{font:800 clamp(20px,1.6vw,26px)/1.15 var(--disp);letter-spacing:-.02em;margin:0 0 6px;max-width:85%}
+.appt{display:inline-block;font:700 12px var(--disp);color:#6C4BFF;margin-bottom:16px}
+.apps{display:block;font:700 13px var(--disp);margin:16px 0 8px;color:var(--ink)}
+.appc ol,.appc ul{margin:0;padding-inline-start:20px;line-height:1.55;font-size:15px}.appc li{margin:3px 0}
+.appy li::marker{content:"✓  ";color:#26C281}.appm li::marker{content:"•  ";color:#E0A800}
+.apptry{margin-top:20px}.apphow{margin:12px 0 0;font-size:14px;line-height:1.5;background:#FFF4D6;border-radius:14px;padding:12px 14px}
+.appdiff{background:#FFF4D6;border-inline-start:4px solid #FFC700;border-radius:12px;padding:14px 16px;margin:0 0 22px;line-height:1.55;max-width:900px}.appadv{margin:18px 0 0;font:700 16px var(--body)}
+@media (max-width:900px){.appg{grid-template-columns:1fr}.appc{padding:24px 20px}}
+
 html[lang=he]{--disp:'Heebo','Unbounded',system-ui,sans-serif;--body:'Heebo','Manrope',system-ui,sans-serif}html[lang=he] h1,html[lang=he] h2{letter-spacing:-.02em;font-weight:900}
 .trypane .head .num{display:none}.trypane{padding-top:24px!important}
 @media (max-width:700px){
@@ -915,6 +929,16 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
   <div class="head"><div><span class="num">03 — Услуги</span><h2 class="scr">Что я делаю</h2></div><p>Три пакета под размер бизнеса и дополнения к ним. Цены указаны «от», точную стоимость и сроки назову после короткого разговора.</p></div>
   <div class="swh">← листайте пакеты →</div><div class="pkgs" id="pkgs"><div class="pkg" id="pk1"><div class="pkim"><img src="img/pk1.jpg" alt="" loading="lazy"></div><span class="pn">01</span><h3>Визитка</h3><div class="psz">до 10 страниц</div><div class="pprice">от 3 500 ₪</div><p>Сайт компании или мастера</p><ul><li>Дизайн под ваш стиль, без шаблонов</li><li>Удобен на телефоне и большом экране</li><li>Кнопки WhatsApp, звонка и карты</li><li>До трёх языков</li><li>Публикация на вашем адресе</li></ul><a class="btn pbtn" data-pk="Визитка" target="_blank" rel="noopener" href="https://wa.me/972587800228">Хочу визитку <span class="ar">→</span></a></div><div class="pkg mid" id="pk2"><div class="pkim"><img src="img/pk2.jpg" alt="" loading="lazy"></div><span class="pn">02</span><h3>Магазин</h3><div class="psz">до 3 000 товаров</div><div class="pprice">от 8 900 ₪</div><p>Интернет-магазин с каталогом и корзиной</p><ul><li>Каталог с фото, ценами и поиском</li><li>Корзина и заказ готовым списком в WhatsApp</li><li>Акции, скидки, новинки</li><li>Добавление товаров по штрихкоду</li><li>Панель управления для владельца</li></ul><a class="btn pbtn" data-pk="Магазин" target="_blank" rel="noopener" href="https://wa.me/972587800228">Хочу магазин <span class="ar">→</span></a></div><div class="pkg" id="pk3"><div class="pkim"><img src="img/pk3.jpg" alt="" loading="lazy"></div><span class="pn">03</span><h3>Большой проект</h3><div class="psz">от 3 000 товаров</div><div class="pprice">от 20 000 ₪</div><p>Несколько магазинов, приложение, своя система</p><ul><li>Несколько магазинов в одной корзине</li><li>Перенос ассортимента из кассы</li><li>Полная панель: склад, отчёты, поставщики</li><li>Приложение для телефона</li><li>AI-ассистент для покупателей</li></ul><a class="btn pbtn" data-pk="Большой проект" target="_blank" rel="noopener" href="https://wa.me/972587800228">Обсудить проект <span class="ar">→</span></a></div></div>
 <p class="pnote"><b>Первым трём клиентам — скидка 30%</b> в обмен на отзыв и разрешение показать проект. Цены «от» — для ориентира, точную стоимость назову после короткого разговора.</p>
+<div class="appw" id="app2">
+  <h3 class="addh">Приложение для вашего бизнеса — два пути</h3>
+  <p class="appl">Выберите, что подходит именно вам. Можно начать с первого и позже перейти на второй: сайт, товары и заказы останутся.</p>
+  <p class="appdiff"><b>Важно: это не одно и то же.</b> Первый путь — ваш сайт, который ставится на экран телефона как приложение. Второй — отдельное приложение, которое проходит проверку Apple и Google и живёт в их магазинах. Отличаются возможности, сроки и расходы.</p>
+  <div class="appg">
+<div class="appc a1"><span class="appn">1</span><h4>Приложение на экране телефона</h4><span class="appt">Быстро · без магазинов приложений</span><b class="apps">Как это работает</b><ol><li>Покупатель открывает ваш сайт в телефоне.</li><li>iPhone: кнопка «Поделиться» → «На экран Домой». Android: «Установить приложение».</li><li>На экране появляется значок вашего магазина. Открывается одним касанием, как обычное приложение.</li></ol><b class="apps">Преимущества</b><ul class="appy"><li>Значок с вашим логотипом рядом с другими приложениями</li><li>Открывается на весь экран, без адресной строки</li><li>Не нужно ждать проверки Apple и Google</li><li>Обновления сразу у всех, без скачивания</li><li>Почти не занимает память телефона</li><li>Без ежегодной платы магазинам приложений</li></ul><b class="apps">Что важно знать</b><ul class="appm"><li>Его не найти поиском в App Store и Google Play: покупатель ставит его с вашего сайта</li><li>На iPhone уведомления работают только после установки на экран</li></ul><button type="button" class="btn apptry" id="apptry">Попробуйте: установите этот сайт</button><p class="apphow" id="apphow" hidden></p></div>
+<div class="appc a2"><span class="appn">2</span><h4>Полноценное приложение в App Store и Google Play</h4><span class="appt">Максимум возможностей</span><b class="apps">Как это работает</b><ol><li>Собираю приложение для iPhone и Android на основе вашего сайта и базы товаров.</li><li>Открываем аккаунты разработчика на имя вашего бизнеса.</li><li>Подаю приложение в магазины и прохожу проверку Apple и Google.</li><li>Приложение появляется в поиске App Store и Google Play.</li></ol><b class="apps">Преимущества</b><ul class="appy"><li>Клиенты находят вас поиском в магазинах приложений</li><li>Больше доверия: «у них есть своё приложение»</li><li>Уведомления об акциях на всех телефонах</li><li>Полный доступ к камере, сканеру и геолокации</li></ul><b class="apps">Что важно знать</b><ul class="appm"><li>Аккаунты разработчика: Apple — 99 $ в год, Google — 25 $ один раз. Оплачивает владелец бизнеса</li><li>Проверка Apple занимает время, обновления тоже проходят проверку</li><li>Стоимость разработки назову после короткого разговора</li></ul></div>
+  </div>
+  <p class="appadv">Мой совет: начните с первого пути. Когда покупателей станет больше, перейдём на второй.</p>
+</div>
   <h3 class="addh">Можно добавить к любому пакету</h3>
   <div class="list" id="list"></div>
 </div></section>
@@ -1200,6 +1224,7 @@ var W=[
 ['img/w_guide.jpg','Культурный путеводитель','Средиземноморье.','Книга','Путешественнику хочется понимать культуру, а не только адреса.','Иллюстрированный путеводитель по культуре Средиземноморья.','Путешествие с историей.',4,['Иллюстрированное издание','Культура и история']]
 ];
 var SG={"img/w_admin.jpg": ["img/s_rosa1.jpg", "img/s_rosa2.jpg", "img/s_rosa3.jpg", "img/s_rosa4.jpg"], "img/w_aadmin.jpg": ["img/s_azart1.jpg", "img/s_azart2.jpg", "img/s_azart3.jpg"], "img/w_tape.jpg": ["img/s_tape1.jpg", "img/s_tape2.jpg", "img/s_tape3.jpg", "img/s_tape4.jpg"], "img/w_polka.jpg": ["img/s_polka1.jpg", "img/s_polka2.jpg", "img/s_polka3.jpg"], "img/w_cc.jpg": ["img/s_cc1.jpg", "img/s_cc2.jpg", "img/s_cc3.jpg", "img/s_cc4.jpg"], "img/w_atlas.jpg": ["img/sd_atlas1.jpg", "img/sd_atlas2.jpg", "img/sd_atlas3.jpg", "img/sd_atlas4.jpg", "img/sd_atlas5.jpg", "img/s_atlas1.jpg", "img/s_atlas2.jpg", "img/s_atlas3.jpg", "img/s_atlas4.jpg"], "img/w_radar.jpg": ["img/s_radar1.jpg", "img/s_radar2.jpg"], "img/w_rosa.jpg": ["img/sd_rosa1.jpg", "img/sd_rosa2.jpg"], "img/w_azart.jpg": ["img/sd_azart1.jpg", "img/sd_azart2.jpg"]};
+var AIOS='На iPhone: нажмите внизу кнопку «Поделиться» (квадрат со стрелкой), затем «На экран Домой» и «Добавить».',AAND='На Android: нажмите меню ⋮ в браузере и выберите «Установить приложение» или «Добавить на главный экран».',AOK='Сайт уже установлен и открыт как приложение.',ADESK='На компьютере: в Chrome или Edge нажмите значок установки справа в адресной строке. На телефоне откройте этот сайт и следуйте шагам выше.';
 var SCRB='▣ Экраны';var DKL='Компьютер';var SK={shop:'img/w_rosa.jpg',shop3:'img/w_azart.jpg',rosa:'img/w_admin.jpg',azart:'img/w_aadmin.jpg',tape:'img/w_tape.jpg',polka:'img/w_polka.jpg',cc:'img/w_cc.jpg',atlas:'img/w_atlas.jpg',radar:'img/w_radar.jpg'};
 function openHash(){var m=location.hash.match(/^#w=(\w+)/);if(!m||!SK[m[1]])return;var i=W.findIndex(function(x){return x[0]===SK[m[1]];});if(i<0)return;var sec=document.getElementById('works');if(sec)sec.scrollIntoView();setTimeout(function(){openStory(i);},300);}
 window.addEventListener('hashchange',openHash);setTimeout(openHash,600);
@@ -1460,6 +1485,8 @@ window.updCTA=updCTA;
   addEventListener('scroll',f,{passive:true});f();})();
 (function(){var tb=document.querySelectorAll('.trytabs button');tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.classList.toggle('on',x===b);});document.querySelectorAll('.trypane').forEach(function(p){p.hidden=p.id!==b.dataset.t;});window.dispatchEvent(new Event('resize'));});});
 ['build','loss','game'].forEach(function(id){document.querySelectorAll('a[href="#'+id+'"]').forEach(function(a){a.addEventListener('click',function(){var b=document.querySelector('.trytabs button[data-t="'+id+'"]');if(b)b.click();});});});})();
+(function(){var b=document.getElementById('apptry'),h=document.getElementById('apphow');if(!b)return;var ev=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;});
+b.addEventListener('click',function(){if(ev){ev.prompt();ev=null;return;}var ua=navigator.userAgent,t;if(/iPhone|iPad|iPod/.test(ua))t=AIOS;else if(/Android/.test(ua))t=AAND;else if(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)t=AOK;else t=ADESK;h.textContent=t;h.hidden=false;});})();
 /* 3. цвет перетекает между разделами */
 (function(){if(!window.getComputedStyle)return;var list=[].slice.call(document.querySelectorAll('.hero,.sec')).map(function(x){var c=getComputedStyle(x).backgroundColor;if(!c||c==='rgba(0, 0, 0, 0)'||c==='transparent')c='rgb(255, 255, 255)';return [x,c];});
   var bg=el('div','bgm');document.body.insertBefore(bg,document.body.firstChild);document.documentElement.classList.add('morph');

@@ -13,6 +13,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#16113A">
 <link rel="apple-touch-icon" sizes="180x180" href="img/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
 <meta name="apple-mobile-web-app-title" content="Apps &amp; Soul">
 <link rel="icon" href="img/mark.svg" type="image/svg+xml">
@@ -172,6 +173,19 @@ dialog.story[open]{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
 .steps::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
 .steps::after{content:"";position:absolute;left:0;top:9px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
 .st{position:relative}
+.appw{margin:10px 0 60px}.appl{color:var(--mut);max-width:760px;margin:-6px 0 22px;line-height:1.55}
+.appg{display:grid;grid-template-columns:1fr 1fr;gap:18px}.appc{position:relative;background:#fff;border-radius:26px;padding:28px 28px 26px;box-shadow:0 0 0 1px var(--line),0 20px 50px rgba(30,25,15,.08)}
+.appc.a2{background:#16113A;color:#fff}.appc.a2 .apps,.appc.a2 .appt{color:#FFD86B}.appc.a2 li{color:#E9E6F5}
+.appn{position:absolute;top:22px;inset-inline-end:24px;font:800 46px var(--disp);opacity:.12}
+.appc h4{font:800 clamp(20px,1.6vw,26px)/1.15 var(--disp);letter-spacing:-.02em;margin:0 0 6px;max-width:85%}
+.appt{display:inline-block;font:700 12px var(--disp);color:#6C4BFF;margin-bottom:16px}
+.apps{display:block;font:700 13px var(--disp);margin:16px 0 8px;color:var(--ink)}
+.appc ol,.appc ul{margin:0;padding-inline-start:20px;line-height:1.55;font-size:15px}.appc li{margin:3px 0}
+.appy li::marker{content:"✓  ";color:#26C281}.appm li::marker{content:"•  ";color:#E0A800}
+.apptry{margin-top:20px}.apphow{margin:12px 0 0;font-size:14px;line-height:1.5;background:#FFF4D6;border-radius:14px;padding:12px 14px}
+.appdiff{background:#FFF4D6;border-inline-start:4px solid #FFC700;border-radius:12px;padding:14px 16px;margin:0 0 22px;line-height:1.55;max-width:900px}.appadv{margin:18px 0 0;font:700 16px var(--body)}
+@media (max-width:900px){.appg{grid-template-columns:1fr}.appc{padding:24px 20px}}
+
 html[lang=he]{--disp:'Heebo','Unbounded',system-ui,sans-serif;--body:'Heebo','Manrope',system-ui,sans-serif}html[lang=he] h1,html[lang=he] h2{letter-spacing:-.02em;font-weight:900}
 .trypane .head .num{display:none}.trypane{padding-top:24px!important}
 @media (max-width:700px){
@@ -915,6 +929,16 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
   <div class="head"><div><span class="num">03 — שירותים</span><h2 class="scr">מה אני עושה</h2></div><p>שלוש חבילות לפי גודל העסק ותוספות להן. המחירים הם ״החל מ־״, ואת המחיר המדויק ולוח הזמנים אמסור אחרי שיחה קצרה.</p></div>
   <div class="swh">← החליקו בין החבילות →</div><div class="pkgs" id="pkgs"><div class="pkg" id="pk1"><div class="pkim"><img src="img/pk1.jpg" alt="" loading="lazy"></div><span class="pn">01</span><h3>אתר תדמית</h3><div class="psz">עד 10 עמודים</div><div class="pprice">החל מ-3,500 ₪</div><p>אתר לחברה או לבעל מקצוע</p><ul><li>עיצוב בסגנון שלכם, בלי תבניות</li><li>נוח בטלפון ובמסך גדול</li><li>כפתורי וואטסאפ, חיוג ומפה</li><li>עד שלוש שפות</li><li>פרסום בכתובת שלכם</li></ul><a class="btn pbtn" data-pk="אתר תדמית" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה אתר תדמית <span class="ar">→</span></a></div><div class="pkg mid" id="pk2"><div class="pkim"><img src="img/pk2.jpg" alt="" loading="lazy"></div><span class="pn">02</span><h3>חנות</h3><div class="psz">עד 3,000 מוצרים</div><div class="pprice">החל מ-8,900 ₪</div><p>חנות אונליין עם קטלוג וסל</p><ul><li>קטלוג עם תמונות, מחירים וחיפוש</li><li>סל קניות, וההזמנה מגיעה לוואטסאפ כרשימה מוכנה</li><li>מבצעים, הנחות, מוצרים חדשים</li><li>הוספת מוצרים לפי ברקוד</li><li>פאנל ניהול לבעלים</li></ul><a class="btn pbtn" data-pk="חנות" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה חנות <span class="ar">→</span></a></div><div class="pkg" id="pk3"><div class="pkim"><img src="img/pk3.jpg" alt="" loading="lazy"></div><span class="pn">03</span><h3>פרויקט גדול</h3><div class="psz">החל מ-3,000 מוצרים</div><div class="pprice">החל מ-20,000 ₪</div><p>כמה חנויות, אפליקציה, מערכת משלכם</p><ul><li>כמה חנויות בסל אחד</li><li>העברת המבחר מהקופה</li><li>פאנל מלא: מלאי, דוחות, ספקים</li><li>אפליקציה לטלפון</li><li>עוזר AI ללקוחות</li></ul><a class="btn pbtn" data-pk="פרויקט גדול" target="_blank" rel="noopener" href="https://wa.me/972587800228">לדבר על פרויקט <span class="ar">→</span></a></div></div>
 <p class="pnote"><b>לשלושת הלקוחות הראשונים — 30% הנחה</b> תמורת המלצה ואישור להציג את הפרויקט. המחירים ״החל מ־״ הם לכיוון בלבד, את המחיר המדויק אמסור אחרי שיחה קצרה.</p>
+<div class="appw" id="app2">
+  <h3 class="addh">אפליקציה לעסק שלכם — שתי דרכים</h3>
+  <p class="appl">בחרו מה שמתאים לכם. אפשר להתחיל בראשונה ולעבור אחר כך לשנייה: האתר, המוצרים וההזמנות נשארים.</p>
+  <p class="appdiff"><b>חשוב: זה לא אותו דבר.</b> הדרך הראשונה — האתר שלכם, שמותקן על מסך הטלפון כמו אפליקציה. השנייה — אפליקציה נפרדת שעוברת בדיקה של Apple ו-Google ונמצאת בחנויות שלהן. האפשרויות, הזמנים והעלויות שונים.</p>
+  <div class="appg">
+<div class="appc a1"><span class="appn">1</span><h4>אפליקציה על מסך הטלפון</h4><span class="appt">מהיר · בלי חנויות אפליקציות</span><b class="apps">איך זה עובד</b><ol><li>הלקוח פותח את האתר שלכם בטלפון.</li><li>iPhone: כפתור „שיתוף” ← „הוספה למסך הבית”. Android: „התקנת אפליקציה”.</li><li>על המסך מופיע הסמל של החנות שלכם. נפתח בנגיעה אחת, כמו אפליקציה רגילה.</li></ol><b class="apps">יתרונות</b><ul class="appy"><li>סמל עם הלוגו שלכם ליד האפליקציות האחרות</li><li>נפתח במסך מלא, בלי שורת כתובת</li><li>לא צריך לחכות לבדיקה של Apple ו-Google</li><li>עדכונים מגיעים לכולם מיד, בלי הורדה</li><li>כמעט לא תופס זיכרון בטלפון</li><li>בלי תשלום שנתי לחנויות האפליקציות</li></ul><b class="apps">מה חשוב לדעת</b><ul class="appm"><li>לא מוצאים אותה בחיפוש ב-App Store וב-Google Play: הלקוח מתקין אותה מהאתר שלכם</li><li>ב-iPhone התראות עובדות רק אחרי התקנה למסך</li></ul><button type="button" class="btn apptry" id="apptry">נסו: התקינו את האתר הזה</button><p class="apphow" id="apphow" hidden></p></div>
+<div class="appc a2"><span class="appn">2</span><h4>אפליקציה מלאה ב-App Store וב-Google Play</h4><span class="appt">מקסימום אפשרויות</span><b class="apps">איך זה עובד</b><ol><li>אני בונה אפליקציה ל-iPhone ול-Android על בסיס האתר ומאגר המוצרים שלכם.</li><li>פותחים חשבונות מפתח על שם העסק שלכם.</li><li>אני מגיש את האפליקציה לחנויות ועובר את הבדיקה של Apple ו-Google.</li><li>האפליקציה מופיעה בחיפוש ב-App Store וב-Google Play.</li></ol><b class="apps">יתרונות</b><ul class="appy"><li>לקוחות מוצאים אתכם בחיפוש בחנויות האפליקציות</li><li>יותר אמון: „יש להם אפליקציה משלהם”</li><li>התראות על מבצעים בכל הטלפונים</li><li>גישה מלאה למצלמה, לסורק ולמיקום</li></ul><b class="apps">מה חשוב לדעת</b><ul class="appm"><li>חשבונות מפתח: Apple — ‏99$ בשנה, Google — ‏25$ פעם אחת. משלם בעל העסק</li><li>הבדיקה של Apple לוקחת זמן, וגם עדכונים עוברים בדיקה</li><li>את עלות הפיתוח אמסור אחרי שיחה קצרה</li></ul></div>
+  </div>
+  <p class="appadv">העצה שלי: התחילו בדרך הראשונה. כשיהיו יותר לקוחות, נעבור לשנייה.</p>
+</div>
   <h3 class="addh">אפשר להוסיף לכל חבילה</h3>
   <div class="list" id="list"></div>
 </div></section>
@@ -1200,6 +1224,7 @@ var W=[
 ['img/w_guide.jpg','מדריך תרבות','הים התיכון.','ספר','מטייל רוצה להבין את התרבות, ולא רק כתובות.','מדריך מאויר לתרבות הים התיכון.','טיול עם היסטוריה.',4,['מהדורה מאוירת','תרבות והיסטוריה']]
 ];
 var SG={"img/w_admin.jpg": ["img/s_rosa1.jpg", "img/s_rosa2.jpg", "img/s_rosa3.jpg", "img/s_rosa4.jpg"], "img/w_aadmin.jpg": ["img/s_azart1.jpg", "img/s_azart2.jpg", "img/s_azart3.jpg"], "img/he/w_tape.jpg": ["img/s_tape1.jpg", "img/s_tape2.jpg", "img/s_tape3.jpg", "img/s_tape4.jpg"], "img/w_polka.jpg": ["img/s_polka1.jpg", "img/s_polka2.jpg", "img/s_polka3.jpg"], "img/w_cc.jpg": ["img/s_cc1.jpg", "img/s_cc2.jpg", "img/s_cc3.jpg", "img/s_cc4.jpg"], "img/w_atlas.jpg": ["img/sd_atlas1.jpg", "img/sd_atlas2.jpg", "img/sd_atlas3.jpg", "img/sd_atlas4.jpg", "img/sd_atlas5.jpg", "img/s_atlas1.jpg", "img/s_atlas2.jpg", "img/s_atlas3.jpg", "img/s_atlas4.jpg"], "img/w_radar.jpg": ["img/s_radar1.jpg", "img/s_radar2.jpg"], "img/he/w_rosa.jpg": ["img/sd_rosa1.jpg", "img/sd_rosa2.jpg"], "img/he/w_azart.jpg": ["img/sd_azart1.jpg", "img/sd_azart2.jpg"]};
+var AIOS='ב-iPhone: לחצו למטה על „שיתוף” (ריבוע עם חץ), אחר כך „הוספה למסך הבית” ו„הוספה”.',AAND='ב-Android: לחצו על התפריט ⋮ בדפדפן ובחרו „התקנת אפליקציה” או „הוספה למסך הבית”.',AOK='האתר כבר מותקן ופתוח כאפליקציה.',ADESK='במחשב: ב-Chrome או ב-Edge לחצו על סמל ההתקנה בצד שורת הכתובת. בטלפון פתחו את האתר הזה ופעלו לפי השלבים למעלה.';
 var SCRB='▣ מסכים';var DKL='מחשב';var SK={shop:'img/he/w_rosa.jpg',shop3:'img/he/w_azart.jpg',rosa:'img/w_admin.jpg',azart:'img/w_aadmin.jpg',tape:'img/he/w_tape.jpg',polka:'img/w_polka.jpg',cc:'img/w_cc.jpg',atlas:'img/w_atlas.jpg',radar:'img/w_radar.jpg'};
 function openHash(){var m=location.hash.match(/^#w=(\w+)/);if(!m||!SK[m[1]])return;var i=W.findIndex(function(x){return x[0]===SK[m[1]];});if(i<0)return;var sec=document.getElementById('works');if(sec)sec.scrollIntoView();setTimeout(function(){openStory(i);},300);}
 window.addEventListener('hashchange',openHash);setTimeout(openHash,600);
@@ -1460,6 +1485,8 @@ window.updCTA=updCTA;
   addEventListener('scroll',f,{passive:true});f();})();
 (function(){var tb=document.querySelectorAll('.trytabs button');tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.classList.toggle('on',x===b);});document.querySelectorAll('.trypane').forEach(function(p){p.hidden=p.id!==b.dataset.t;});window.dispatchEvent(new Event('resize'));});});
 ['build','loss','game'].forEach(function(id){document.querySelectorAll('a[href="#'+id+'"]').forEach(function(a){a.addEventListener('click',function(){var b=document.querySelector('.trytabs button[data-t="'+id+'"]');if(b)b.click();});});});})();
+(function(){var b=document.getElementById('apptry'),h=document.getElementById('apphow');if(!b)return;var ev=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;});
+b.addEventListener('click',function(){if(ev){ev.prompt();ev=null;return;}var ua=navigator.userAgent,t;if(/iPhone|iPad|iPod/.test(ua))t=AIOS;else if(/Android/.test(ua))t=AAND;else if(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)t=AOK;else t=ADESK;h.textContent=t;h.hidden=false;});})();
 /* 3. цвет перетекает между разделами */
 (function(){if(!window.getComputedStyle)return;var list=[].slice.call(document.querySelectorAll('.hero,.sec')).map(function(x){var c=getComputedStyle(x).backgroundColor;if(!c||c==='rgba(0, 0, 0, 0)'||c==='transparent')c='rgb(255, 255, 255)';return [x,c];});
   var bg=el('div','bgm');document.body.insertBefore(bg,document.body.firstChild);document.documentElement.classList.add('morph');
