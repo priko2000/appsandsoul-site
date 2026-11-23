@@ -172,6 +172,20 @@ dialog.story[open]{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
 .steps::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
 .steps::after{content:"";position:absolute;left:0;top:9px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
 .st{position:relative}
+html[lang=he]{--disp:'Heebo','Unbounded',system-ui,sans-serif;--body:'Heebo','Manrope',system-ui,sans-serif}html[lang=he] h1,html[lang=he] h2{letter-spacing:-.02em;font-weight:900}
+.trypane .head .num{display:none}.trypane{padding-top:24px!important}
+@media (max-width:700px){
+#scale{display:none}
+.pkgs{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(var(--pad)*-1);padding:6px var(--pad) 14px;scrollbar-width:none}
+.pkgs::-webkit-scrollbar,.aig::-webkit-scrollbar{display:none}
+.pkgs .pkg{flex:0 0 84%;scroll-snap-align:center}
+.aig{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-16px;padding:4px 16px 12px;scrollbar-width:none}
+.aig>*{flex:0 0 86%;scroll-snap-align:center}
+.swh{display:block!important}
+}
+.swh{display:none;font:600 13px var(--body);color:var(--mut);margin:-4px 0 10px}
+
+#try{padding-bottom:0}.trytabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}.trytabs button{font:700 15px var(--disp);padding:12px 22px;border-radius:999px;border:2px solid var(--ink);background:transparent;cursor:pointer}.trytabs button.on{background:var(--ink);color:#fff}.trypane{padding-top:40px!important}.trypane[hidden]{display:none!important}
 .ssr button.dk img{height:150px}.ssr button.dk{position:relative}.ssr button.dk::after{content:attr(data-l);position:absolute;left:6px;bottom:6px;background:var(--ink);color:#fff;font:700 10px var(--disp);padding:3px 7px;border-radius:99px}
 .lbx{position:fixed;inset:0;background:rgba(10,8,20,.88);display:flex;align-items:center;justify-content:center;z-index:50;padding:3vw;cursor:zoom-out}.lbx[hidden]{display:none}.lbx img{max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)}.lbx button{position:absolute;top:16px;right:20px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:26px;cursor:pointer}
 @media (max-width:600px){.ssr button.dk img{height:110px}}
@@ -527,7 +541,7 @@ section,footer,header{max-width:100vw}
 
 
 .nav nav a{white-space:nowrap}
-@media (max-width:1560px){.nav nav{gap:18px;font-size:14.5px}.nav nav a[href="#scale"],.nav nav a[href="#admin"]{display:none}}
+@media (max-width:1560px){.nav nav{gap:18px;font-size:14.5px}.nav nav a[href="#try"],.nav nav a[href="#admin"]{display:none}}
 @media (max-width:1320px){.nav nav a[href="#process"]{display:none}}
 @media (max-width:560px){.langs a.on .fl{box-shadow:0 0 0 2px var(--ink),0 2px 6px rgba(22,17,58,.2)}}
 
@@ -852,13 +866,14 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 .lr::before{background:#6C4BFF}
 
 </style>
+<script>try{if(location.pathname.indexOf('he.html')<0&&location.pathname.indexOf('en.html')<0&&!localStorage.getItem('aslang')&&/^he|^iw/i.test(navigator.language||'')&&!location.hash){localStorage.setItem('aslang','auto');location.replace('he.html');}}catch(e){}</script>
 </head>
 <body>
 <div class="cur" id="cur"><span id="curT"></span></div>
 
 <header class="nav"><div class="wrap in">
   <a class="logo" href="#top"><img class="mk" src="img/mark.svg" alt="" width="34" height="28"><span class="lt"><b>Apps <em>&amp; Soul</em></b><small>Technology with heart</small></span></a>
-  <nav><a href="#services">שירותים</a><a href="#scale">גודל</a><a href="#admin">פאנל</a><a href="#ai">AI</a><a href="#works">עבודות</a><a href="#process">איך עובדים</a><a href="#about">עליי</a><a href="#faq">שאלות</a></nav>
+  <nav><a href="#services">שירותים</a><a href="#works">עבודות</a><a href="#admin">פאנל</a><a href="#ai">AI</a><a href="#try">לנסות</a><a href="#process">איך עובדים</a><a href="#about">עליי</a><a href="#faq">שאלות</a></nav>
   <button type="button" class="sbtn" id="sbtn" aria-label="חיפוש (Ctrl+K)" title="חיפוש (Ctrl+K)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><kbd>Ctrl K</kbd></button>
   <div class="langs"><a href="index.html" lang="ru" title="Русский"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="he.html" lang="he" title="עברית" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="en.html" lang="en" title="English"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></div>
   <div class="cnt" id="cnt"><b>01</b> / 12</div>
@@ -898,35 +913,16 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 <!-- 03 услуги -->
 <section class="sec t0" id="services" data-sec="03"><div class="wrap">
   <div class="head"><div><span class="num">03 — שירותים</span><h2 class="scr">מה אני עושה</h2></div><p>שלוש חבילות לפי גודל העסק ותוספות להן. המחירים הם ״החל מ־״, ואת המחיר המדויק ולוח הזמנים אמסור אחרי שיחה קצרה.</p></div>
-  <div class="pkgs" id="pkgs"><div class="pkg" id="pk1"><div class="pkim"><img src="img/pk1.jpg" alt="" loading="lazy"></div><span class="pn">01</span><h3>אתר תדמית</h3><div class="psz">עד 10 עמודים</div><div class="pprice">החל מ-3,500 ₪</div><p>אתר לחברה או לבעל מקצוע</p><ul><li>עיצוב בסגנון שלכם, בלי תבניות</li><li>נוח בטלפון ובמסך גדול</li><li>כפתורי וואטסאפ, חיוג ומפה</li><li>עד שלוש שפות</li><li>פרסום בכתובת שלכם</li></ul><a class="btn pbtn" data-pk="אתר תדמית" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה אתר תדמית <span class="ar">→</span></a></div><div class="pkg mid" id="pk2"><div class="pkim"><img src="img/pk2.jpg" alt="" loading="lazy"></div><span class="pn">02</span><h3>חנות</h3><div class="psz">עד 3,000 מוצרים</div><div class="pprice">החל מ-8,900 ₪</div><p>חנות אונליין עם קטלוג וסל</p><ul><li>קטלוג עם תמונות, מחירים וחיפוש</li><li>סל קניות, וההזמנה מגיעה לוואטסאפ כרשימה מוכנה</li><li>מבצעים, הנחות, מוצרים חדשים</li><li>הוספת מוצרים לפי ברקוד</li><li>פאנל ניהול לבעלים</li></ul><a class="btn pbtn" data-pk="חנות" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה חנות <span class="ar">→</span></a></div><div class="pkg" id="pk3"><div class="pkim"><img src="img/pk3.jpg" alt="" loading="lazy"></div><span class="pn">03</span><h3>פרויקט גדול</h3><div class="psz">החל מ-3,000 מוצרים</div><div class="pprice">החל מ-20,000 ₪</div><p>כמה חנויות, אפליקציה, מערכת משלכם</p><ul><li>כמה חנויות בסל אחד</li><li>העברת המבחר מהקופה</li><li>פאנל מלא: מלאי, דוחות, ספקים</li><li>אפליקציה לטלפון</li><li>עוזר AI ללקוחות</li></ul><a class="btn pbtn" data-pk="פרויקט גדול" target="_blank" rel="noopener" href="https://wa.me/972587800228">לדבר על פרויקט <span class="ar">→</span></a></div></div>
+  <div class="swh">← החליקו בין החבילות →</div><div class="pkgs" id="pkgs"><div class="pkg" id="pk1"><div class="pkim"><img src="img/pk1.jpg" alt="" loading="lazy"></div><span class="pn">01</span><h3>אתר תדמית</h3><div class="psz">עד 10 עמודים</div><div class="pprice">החל מ-3,500 ₪</div><p>אתר לחברה או לבעל מקצוע</p><ul><li>עיצוב בסגנון שלכם, בלי תבניות</li><li>נוח בטלפון ובמסך גדול</li><li>כפתורי וואטסאפ, חיוג ומפה</li><li>עד שלוש שפות</li><li>פרסום בכתובת שלכם</li></ul><a class="btn pbtn" data-pk="אתר תדמית" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה אתר תדמית <span class="ar">→</span></a></div><div class="pkg mid" id="pk2"><div class="pkim"><img src="img/pk2.jpg" alt="" loading="lazy"></div><span class="pn">02</span><h3>חנות</h3><div class="psz">עד 3,000 מוצרים</div><div class="pprice">החל מ-8,900 ₪</div><p>חנות אונליין עם קטלוג וסל</p><ul><li>קטלוג עם תמונות, מחירים וחיפוש</li><li>סל קניות, וההזמנה מגיעה לוואטסאפ כרשימה מוכנה</li><li>מבצעים, הנחות, מוצרים חדשים</li><li>הוספת מוצרים לפי ברקוד</li><li>פאנל ניהול לבעלים</li></ul><a class="btn pbtn" data-pk="חנות" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה חנות <span class="ar">→</span></a></div><div class="pkg" id="pk3"><div class="pkim"><img src="img/pk3.jpg" alt="" loading="lazy"></div><span class="pn">03</span><h3>פרויקט גדול</h3><div class="psz">החל מ-3,000 מוצרים</div><div class="pprice">החל מ-20,000 ₪</div><p>כמה חנויות, אפליקציה, מערכת משלכם</p><ul><li>כמה חנויות בסל אחד</li><li>העברת המבחר מהקופה</li><li>פאנל מלא: מלאי, דוחות, ספקים</li><li>אפליקציה לטלפון</li><li>עוזר AI ללקוחות</li></ul><a class="btn pbtn" data-pk="פרויקט גדול" target="_blank" rel="noopener" href="https://wa.me/972587800228">לדבר על פרויקט <span class="ar">→</span></a></div></div>
 <p class="pnote"><b>לשלושת הלקוחות הראשונים — 30% הנחה</b> תמורת המלצה ואישור להציג את הפרויקט. המחירים ״החל מ־״ הם לכיוון בלבד, את המחיר המדויק אמסור אחרי שיחה קצרה.</p>
   <h3 class="addh">אפשר להוסיף לכל חבילה</h3>
   <div class="list" id="list"></div>
 </div></section>
 
 
-<!-- конструктор -->
-<section class="sec t0" id="build" data-sec="03"><div class="wrap">
-  <div class="head"><div><span class="num">בונה האתר</span><h2 class="scr">בנו את האתר שלכם</h2></div><p>לחצו על מה שהעסק שלכם צריך. הסקיצה נבנית בזמן אמת, והכפתור ישלח לי רשימה מוכנה בוואטסאפ.</p></div>
-  <div class="bld"><div><div class="bchips" id="bchips"></div><div class="bsum"><b>הסט שלכם</b><ul id="bsum"></ul></div><a class="btn" id="bsend" target="_blank" rel="noopener">לשלוח בוואטסאפ ←</a></div>
-    <div class="phone"><div class="notch"></div><div class="pscr"><div class="site" id="bsite"></div></div></div></div>
-</div></section>
-
-<!-- калькулятор -->
-<section class="sec t0" id="loss" data-sec="03"><div class="wrap">
-  <div class="head"><div><span class="num">מחשבון</span><h2 class="scr">כמה מכירות ערוץ אונליין יכול להוסיף</h2></div><p>הזיזו את המחוונים לפי העסק שלכם. זה חישוב משוער לפי המספרים שלכם, בלי הבטחות.</p></div>
-  <div class="loss"><div class="lcard">
-      <div class="lrow"><label>קונים ביום<b id="lv1">40</b></label><input type="range" id="l1" min="5" max="300" value="40"></div>
-      <div class="lrow"><label>קנייה ממוצעת, ₪<b id="lv2">120</b></label><input type="range" id="l2" min="20" max="1000" step="10" value="120"></div>
-      <div class="lrow" style="margin:0"><label>כמה עוד היו מגיעים אילו יכלו להזמין מהטלפון, %<b id="lv3">10</b></label><input type="range" id="l3" min="2" max="40" value="10"></div>
-    </div>
-    <div class="lres"><small>ערוץ אונליין יכול להוסיף בערך</small><div class="big4" id="lm">12,480 ₪</div><small>בחודש</small><div class="yr" id="ly">149,760 ₪ בשנה</div><p>החישוב: קונים ביום × אחוז × קנייה ממוצעת × 26 ימי עבודה. זה תרחיש הכנסות, לא הבטחה לרווח.</p><a class="btn" id="lbtn" target="_blank" rel="noopener">רוצה ערוץ מכירות כזה ←</a></div>
-  </div>
-</div></section>
-
 <!-- масштаб -->
-<section class="sec" id="scale" data-sec="04"><div class="wrap">
-  <div class="head"><div><span class="num">04 — גודל</span><h2 class="scr">החבילות בפעולה</h2></div><p>איך כל חבילה נראית בפרויקטים אמיתיים. לכל גודל ההיגיון שלו, כדי שהלקוח לא ילך לאיבוד ואתם תנהלו בקלות.</p></div>
+<section class="sec" id="scale" data-sec="03"><div class="wrap">
+  <div class="head"><div><span class="num">חבילות בפעולה</span><h2 class="scr">חבילות בפעולה</h2></div><p>איך כל חבילה נראית בפרויקטים אמיתיים. לכל גודל ההיגיון שלו, כדי שהלקוח לא ילך לאיבוד ואתם תנהלו בקלות.</p></div>
   <div class="scale">
     <div class="sc3"><div class="top"><span class="lvl">חבילה 01 · אתר תדמית</span><div class="big3">עד&nbsp;10<small>עמודים</small></div><h3>אתר לחברה או לבעל מקצוע</h3><p>מי אתם, מה אתם מציעים, כמה זה עולה ואיך יוצרים קשר. עולה לאוויר הכי מהר.</p>
       <ul><li>שירותים ומחירים, תמונות עבודות, המלצות</li><li>כפתורי וואטסאפ, חיוג ומפה</li><li>קביעת תור או פנייה מהאתר</li><li>שלוש שפות, נוח בטלפון ובמסך גדול</li></ul></div>
@@ -938,6 +934,25 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
       <ul><li>הזמנה אחת לכל שלוש החנויות</li><li>תשע מחלקות גדולות במקום עשרים ושתיים</li><li>כל המבחר הועבר מהקופה, לא ידנית</li><li>כניסה נפרדת 18+ לאלכוהול</li><li>משלוח בעיר עם סכום הזמנה מינימלי</li></ul></div>
       <div class="shot"><span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span><img src="img/he/w_azart.jpg" alt="שלוש חנויות בטלפון" loading="lazy"><img src="img/he/w_azart2.jpg" alt="מחלקות החנות הגדולה" loading="lazy"></div></div>
   </div>
+</div></section>
+
+<!-- 04 работы -->
+<section class="sec t0" id="works" data-sec="04"><div class="wrap">
+  <div class="head"><div><span class="num">04 — עבודות</span><h2 class="scr">עבודות על השולחן</h2></div><p>חנויות, תוכנות, אפליקציות, קטלוגים וספרים. גררו את השולחן בעכבר או באצבע, לחצו על מסך — ייפתח הסיפור: משימה, פתרון ומה בפנים.</p></div>
+  <div class="wf" id="wf"></div>
+  <div class="canvas" id="canvas" data-cur="לגרור">
+    <div class="plane" id="plane"></div>
+    <div class="chint"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1v14M1 8h14M8 1 6 3M8 1l2 2M8 15l-2-2M8 15l2-2M1 8l2-2M1 8l2 2M15 8l-2-2M15 8l-2 2"/></svg>גררו · לחצו על מסך</div>
+    <div class="mini" aria-hidden="true"><i id="miniV"></i></div>
+  </div>
+  <div class="chips" id="chips"><small>סיפורי פרויקטים:</small></div>
+</div></section>
+
+
+<!-- свои инструменты -->
+<section class="sec" id="tools" data-sec="04" hidden><div class="wrap">
+  <div class="head"><div><span class="num">08 — פיתוחים שלי</span><h2 class="scr">הכלים של הסטודיו</h2></div><p>תוכנות שבניתי ללקוחות שלי ולעבודת הסטודיו. משתמשים בהן יחד עם האתרים או בנפרד.</p></div>
+  <div class="tools" id="toolList"></div>
 </div></section>
 
 <!-- панель управления -->
@@ -956,41 +971,47 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
   <span class="num">06 — עוזרי AI</span>
   <h2 class="scr">עוזרים חכמים לעסק שלכם</h2>
   <p class="lead2">אני משלב עוזרי AI באתרים ובתוכנות. הם לוקחים על עצמם את השגרה: עונים ללקוחות, כותבים תיאורים, מפענחים קול ותמונות. ההחלטות תמיד שלכם, העוזר רק עוזר.</p>
-  <div class="aig" id="aiList"></div>
+  <div class="swh">← החליקו →</div><div class="aig" id="aiList"></div>
   <div class="aichat"><div><h3>נסו בעצמכם</h3><span class="demo-t">הדגמה</span><p>כך העוזר עונה ללקוחות החנות בוואטסאפ. כתבו שאלה או לחצו על שאלה מוכנה.</p></div>
     <div class="chatbox"><div class="bar"><i class="av"><img src="img/mark.svg" alt=""></i><div>העוזר של החנות<small id="cst">מחובר</small></div></div><div class="chatlog" id="clog"></div><div class="quick" id="cquick"></div><form class="inp" id="cfrm"><button type="button" class="mic" id="cmic" aria-label="🎤">🎤</button><input id="cq" autocomplete="off"><button aria-label="➤">➤</button></form></div></div>
   <p class="aiend">רוצים עוזר למשימה שלכם? <a href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20AI-%D0%B0%D1%81%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%82" target="_blank" rel="noopener" style="color:#fff;font-weight:700;border-bottom:2px solid var(--y)">תארו אותה בוואטסאפ ←</a></p>
 </div></div></section>
 
+<!-- попробуйте сами -->
+<section class="sec t0" id="try" data-sec="07"><div class="wrap">
+  <div class="head"><div><span class="num">07 — נסו בעצמכם</span><h2 class="scr">נסו בעצמכם</h2></div><p>בנו את האתר שלכם, חשבו מכירות או שחקו 15 שניות. בחרו לשונית.</p></div>
+  <div class="trytabs" role="tablist"><button type="button" class="on" data-t="build">בונה האתר</button><button type="button" data-t="loss">מחשבון</button><button type="button" data-t="game">משחק</button></div>
+</div></section>
+
+<!-- конструктор -->
+<section class="sec t0 trypane" id="build" data-sec="07"><div class="wrap">
+  <div class="head"><div><span class="num">בונה האתר</span><h2 class="scr">בנו את האתר שלכם</h2></div><p>לחצו על מה שהעסק שלכם צריך. הסקיצה נבנית בזמן אמת, והכפתור ישלח לי רשימה מוכנה בוואטסאפ.</p></div>
+  <div class="bld"><div><div class="bchips" id="bchips"></div><div class="bsum"><b>הסט שלכם</b><ul id="bsum"></ul></div><a class="btn" id="bsend" target="_blank" rel="noopener">לשלוח בוואטסאפ ←</a></div>
+    <div class="phone"><div class="notch"></div><div class="pscr"><div class="site" id="bsite"></div></div></div></div>
+</div></section>
+
+<!-- калькулятор -->
+<section class="sec t0 trypane" id="loss" data-sec="07" hidden><div class="wrap">
+  <div class="head"><div><span class="num">מחשבון</span><h2 class="scr">כמה מכירות ערוץ אונליין יכול להוסיף</h2></div><p>הזיזו את המחוונים לפי העסק שלכם. זה חישוב משוער לפי המספרים שלכם, בלי הבטחות.</p></div>
+  <div class="loss"><div class="lcard">
+      <div class="lrow"><label>קונים ביום<b id="lv1">40</b></label><input type="range" id="l1" min="5" max="300" value="40"></div>
+      <div class="lrow"><label>קנייה ממוצעת, ₪<b id="lv2">120</b></label><input type="range" id="l2" min="20" max="1000" step="10" value="120"></div>
+      <div class="lrow" style="margin:0"><label>כמה עוד היו מגיעים אילו יכלו להזמין מהטלפון, %<b id="lv3">10</b></label><input type="range" id="l3" min="2" max="40" value="10"></div>
+    </div>
+    <div class="lres"><small>ערוץ אונליין יכול להוסיף בערך</small><div class="big4" id="lm">12,480 ₪</div><small>בחודש</small><div class="yr" id="ly">149,760 ₪ בשנה</div><p>החישוב: קונים ביום × אחוז × קנייה ממוצעת × 26 ימי עבודה. זה תרחיש הכנסות, לא הבטחה לרווח.</p><a class="btn" id="lbtn" target="_blank" rel="noopener">רוצה ערוץ מכירות כזה ←</a></div>
+  </div>
+</div></section>
+
 <!-- игра -->
-<section class="sec t0" id="game" data-sec="06"><div class="wrap">
+<section class="sec t0 trypane" id="game" data-sec="07" hidden><div class="wrap">
   <div class="head"><div><span class="num">משחק</span><h2 class="scr">תפסו את ההזמנה</h2></div><p>15 שניות. הזיזו את הסל עם העכבר או האצבע ותפסו הזמנות. כך עובדת חנות שמקבלת הזמנות אונליין.</p></div>
   <div class="game" id="gm"><div class="hud"><span id="gsc">0</span><span id="gt">15</span></div><div class="bask" id="gb">🛒</div>
     <div class="ov" id="gov"><h3 id="gtt">מוכנים?</h3><p id="gtx">תפסו מוצרים והזמנות. את האיקסים ❌ לא תופסים.</p><button class="btn" id="gst" type="button">להתחיל לשחק</button></div></div>
 </div></section>
 
-<!-- 04 работы -->
-<section class="sec t0" id="works" data-sec="07"><div class="wrap">
-  <div class="head"><div><span class="num">07 — עבודות</span><h2 class="scr">עבודות על השולחן</h2></div><p>חנויות, תוכנות, אפליקציות, קטלוגים וספרים. גררו את השולחן בעכבר או באצבע, לחצו על מסך — ייפתח הסיפור: משימה, פתרון ומה בפנים.</p></div>
-  <div class="wf" id="wf"></div>
-  <div class="canvas" id="canvas" data-cur="לגרור">
-    <div class="plane" id="plane"></div>
-    <div class="chint"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1v14M1 8h14M8 1 6 3M8 1l2 2M8 15l-2-2M8 15l2-2M1 8l2-2M1 8l2 2M15 8l-2-2M15 8l-2 2"/></svg>גררו · לחצו על מסך</div>
-    <div class="mini" aria-hidden="true"><i id="miniV"></i></div>
-  </div>
-  <div class="chips" id="chips"><small>סיפורי פרויקטים:</small></div>
-</div></section>
-
-
-<!-- свои инструменты -->
-<section class="sec" id="tools" data-sec="08"><div class="wrap">
-  <div class="head"><div><span class="num">08 — פיתוחים שלי</span><h2 class="scr">הכלים של הסטודיו</h2></div><p>תוכנות שבניתי ללקוחות שלי ולעבודת הסטודיו. משתמשים בהן יחד עם האתרים או בנפרד.</p></div>
-  <div class="tools" id="toolList"></div>
-</div></section>
-
 <!-- 05 как работаем -->
-<section class="sec" id="process" data-sec="09"><div class="wrap">
-  <div class="head"><div><span class="num">09 — תהליך</span><h2 class="scr">איך אנחנו עובדים</h2></div><p>שישה שלבים מההודעה הראשונה ועד ההשקה. תמיד תדעו באיזה שלב הפרויקט.</p></div>
+<section class="sec" id="process" data-sec="08"><div class="wrap">
+  <div class="head"><div><span class="num">08 — תהליך</span><h2 class="scr">איך אנחנו עובדים</h2></div><p>שישה שלבים מההודעה הראשונה ועד ההשקה. תמיד תדעו באיזה שלב הפרויקט.</p></div>
   <div class="steps" id="steps">
     <div class="st"><div class="sti"><img src="img/st1.jpg" alt="" loading="lazy"></div><i>01</i><b>היכרות</b><span>מדברים בטלפון או מתכתבים בוואטסאפ. אני מברר במה אתם עוסקים, מי הלקוחות שלכם ומה צריך לצאת.</span></div>
     <div class="st"><div class="sti"><img src="img/st2.jpg" alt="" loading="lazy"></div><i>02</i><b>הצעה</b><span>אני שולח תוכנית: מה ייכלל, באיזה סדר ובאיזה לוח זמנים.</span></div>
@@ -1006,8 +1027,8 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 </div></section>
 
 <!-- 06 гарантии + почему напрямую -->
-<section class="sec t0" id="trust" data-sec="10"><div class="wrap">
-  <div class="head"><div><span class="num">10 — אחריות</span><h2 class="scr">מה אתם מקבלים</h2></div><p>אתם לא תלויים בי. כל מה שאני עושה שייך לכם ושמור בגיבויים.</p></div>
+<section class="sec t0" id="trust" data-sec="09"><div class="wrap">
+  <div class="head"><div><span class="num">09 — אחריות</span><h2 class="scr">מה אתם מקבלים</h2></div><p>אתם לא תלויים בי. כל מה שאני עושה שייך לכם ושמור בגיבויים.</p></div>
   <div class="gar" id="gar"></div>
   <div class="direct">
     <div><h3>למה ישירות, ולא דרך סוכנות</h3><p>אתם תמיד מדברים עם מי שאחראי על הפרויקט שלכם.</p></div>
@@ -1021,9 +1042,9 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 </div></section>
 
 <!-- 07 обо мне -->
-<section class="sec t0" id="about" data-sec="11"><div class="wrap about">
+<section class="sec t0" id="about" data-sec="10"><div class="wrap about">
   <div class="card"><div class="g2"></div><small>Apps &amp; Soul</small><div class="aph"><img src="img/about1.jpg" alt="" loading="lazy"><img class="a2" src="img/about2.jpg" alt="" loading="lazy"></div><div class="mono amono">Technology<br>with heart</div><small>דוד מושאילוב · מפתח ומייסד</small></div>
-  <div><span class="num">11 — עליי</span><h2 class="scr">שלום, אני דוד.</h2>
+  <div><span class="num">10 — עליי</span><h2 class="scr">שלום, אני דוד.</h2>
     <p class="big1">אני המייסד של Apps &amp; Soul.</p>
     <p>בשם הסטודיו יש שתי מילים, ושתיהן חשובות. Apps זה מה שאנחנו עושים: אתרים, חנויות, אפליקציות. Soul זה איך שאנחנו עושים את זה.</p>
     <p>אני אדם עם נשמה של אמן, ואוהב כשדבר לא רק עובד אלא גם משמח את העין. כותב ספרים, יוצר כריכות, בונה קטלוגים. וכל פרויקט של לקוח אני מוביל כאילו הוא שלי.</p>
@@ -1031,15 +1052,15 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 </div></section>
 
 <!-- 08 вопросы -->
-<section class="sec" id="faq" data-sec="12"><div class="wrap">
-  <div class="head"><div><span class="num">12 — שאלות</span><h2 class="scr">שאלות ותשובות</h2></div><p>השאלות שנשאלות הכי הרבה. לא מצאתם את שלכם — שאלו בוואטסאפ.</p></div>
+<section class="sec" id="faq" data-sec="11"><div class="wrap">
+  <div class="head"><div><span class="num">11 — שאלות</span><h2 class="scr">שאלות ותשובות</h2></div><p>השאלות שנשאלות הכי הרבה. לא מצאתם את שלכם — שאלו בוואטסאפ.</p></div>
   <div class="faq"><div class="tabs" id="tabs" role="tablist"></div><div id="qa"></div></div>
 </div></section>
 </main>
 
 <section class="marq" aria-label="כל העבודות"><div class="mrow" id="mr1"></div><div class="mrow rev" id="mr2"></div></section>
 
-<footer class="end" data-sec="12"><div class="wrap">
+<footer class="end" data-sec="11"><div class="wrap">
   <h2 class="big">נבנה לכם<br><span class="flip" id="flip2"></span></h2>
   <div class="promise"><span class="dot"></span>כתבו — אענה תוך שעתיים בשעות העבודה.</div>
   <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">ספרו לי על העסק שלכם</a>
@@ -1433,10 +1454,12 @@ function updCTA(){var msg='';
 window.updCTA=updCTA;
 /* 1. боковое меню */
 (function(){var side=document.getElementById('side'),ss=[].slice.call(document.querySelectorAll('section[id]')).filter(function(x){return x.id!=='game'||true;}),links=[];
-  ss.forEach(function(sec){var num=sec.querySelector('.num'),t=sec.id==='top'?'01 — התחלה':(num?num.textContent:'');if(!t)return;var m=t.match(/^(\d+)\s*—\s*(.+)$/),a=el('a');a.href='#'+sec.id;
+  ss.forEach(function(sec){if(sec.hidden||sec.classList.contains('trypane')||sec.id==='scale')return;var num=sec.querySelector('.num'),t=sec.id==='top'?'01 — התחלה':(num?num.textContent:'');if(!t)return;var m=t.match(/^(\d+)\s*—\s*(.+)$/),a=el('a');a.href='#'+sec.id;
     a.appendChild(el('i','',m?m[1]:'•'));a.appendChild(document.createTextNode(m?m[2]:t));side.appendChild(a);links.push([sec,a]);});
   var mq=document.querySelector('.marq');function f(){var cur=null;links.forEach(function(l){if(l[0].getBoundingClientRect().top<innerHeight*.45)cur=l;});links.forEach(function(l){l[1].classList.toggle('on',l===cur);});side.classList.toggle('off',!!mq&&mq.getBoundingClientRect().top<innerHeight*.75);}
   addEventListener('scroll',f,{passive:true});f();})();
+(function(){var tb=document.querySelectorAll('.trytabs button');tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.classList.toggle('on',x===b);});document.querySelectorAll('.trypane').forEach(function(p){p.hidden=p.id!==b.dataset.t;});window.dispatchEvent(new Event('resize'));});});
+['build','loss','game'].forEach(function(id){document.querySelectorAll('a[href="#'+id+'"]').forEach(function(a){a.addEventListener('click',function(){var b=document.querySelector('.trytabs button[data-t="'+id+'"]');if(b)b.click();});});});})();
 /* 3. цвет перетекает между разделами */
 (function(){if(!window.getComputedStyle)return;var list=[].slice.call(document.querySelectorAll('.hero,.sec')).map(function(x){var c=getComputedStyle(x).backgroundColor;if(!c||c==='rgba(0, 0, 0, 0)'||c==='transparent')c='rgb(255, 255, 255)';return [x,c];});
   var bg=el('div','bgm');document.body.insertBefore(bg,document.body.firstChild);document.documentElement.classList.add('morph');
@@ -1468,7 +1491,7 @@ window.updCTA=updCTA;
   bas.forEach(function(b){io.observe(b);});})();
 /* 13. поиск по сайту */
 (function(){var ck=document.getElementById('cmdk'),q=document.getElementById('ckq'),res=document.getElementById('ckres'),items=[],act=0,shown=[];
-  document.querySelectorAll('section[id]').forEach(function(sec){var num=sec.querySelector('.num'),h=sec.querySelector('h1,h2');if(!h)return;items.push({g:0,t:h.textContent,s:num?num.textContent:'',ic:'§',f:function(){sec.scrollIntoView({behavior:'smooth'});}});});
+  document.querySelectorAll('section[id]').forEach(function(sec){if(sec.id==='tools'||sec.id==='try')return;var num=sec.querySelector('.num'),h=sec.querySelector('h1,h2');if(!h)return;items.push({g:0,t:h.textContent,s:num?num.textContent:'',ic:'§',f:function(){var tb=sec.classList.contains('trypane')&&document.querySelector('.trytabs button[data-t="'+sec.id+'"]');if(tb)tb.click();sec.scrollIntoView({behavior:'smooth'});}});});
   var rows=document.querySelectorAll('#list .li');S.forEach(function(sv,i){items.push({g:1,t:sv[0],s:sv[1],k:sv[3].join(' '),ic:'✦',f:function(){if(i<2){document.getElementById(i?'pk2':'pk1').scrollIntoView({behavior:'smooth',block:'center'});return;}var r=rows[i];if(!r.classList.contains('open'))r.querySelector('.lr').click();r.scrollIntoView({behavior:'smooth',block:'center'});}});});
   W.forEach(function(w,i){items.push({g:2,t:w[1],s:w[2],k:w[3]+' '+w[4]+' '+w[5],img:w[0],f:function(){openStory(i);}});});
   Q.forEach(function(g,gi){g[1].forEach(function(qq,qi){items.push({g:3,t:qq[0],s:qq[1],ic:'?',f:function(){tbs[gi].click();var it=grps[gi].querySelectorAll('.qi')[qi];if(!it.classList.contains('open'))it.querySelector('.qh').click();it.scrollIntoView({behavior:'smooth',block:'center'});}});});});
@@ -1539,7 +1562,7 @@ document.querySelectorAll('.pbtn').forEach(function(a){a.href=WA+'?text='+encode
 (function(){var c=document.querySelector('.about .card');if(!c||reduce)return;setInterval(function(){if(!document.documentElement.classList.contains('a-na'))c.classList.toggle('sw');},5000);})();
 
 /* прогресс и счётчик */
-var prog=document.getElementById('prog'),cnt=document.getElementById('cnt'),secs=document.querySelectorAll('[data-sec]'),TOT='12';
+var prog=document.getElementById('prog'),cnt=document.getElementById('cnt'),secs=document.querySelectorAll('[data-sec]'),TOT='11';
 function onS(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-innerHeight||1);prog.style.transform='scaleX('+p.toFixed(4)+')';
   var c='01';secs.forEach(function(s){if(s.getBoundingClientRect().top<innerHeight*.45)c=s.dataset.sec;});cnt.innerHTML='<b>'+c+'</b> / '+TOT;}
 addEventListener('scroll',onS,{passive:true});onS();

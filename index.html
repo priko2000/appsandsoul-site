@@ -172,6 +172,20 @@ dialog.story[open]{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
 .steps::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
 .steps::after{content:"";position:absolute;left:0;top:9px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
 .st{position:relative}
+html[lang=he]{--disp:'Heebo','Unbounded',system-ui,sans-serif;--body:'Heebo','Manrope',system-ui,sans-serif}html[lang=he] h1,html[lang=he] h2{letter-spacing:-.02em;font-weight:900}
+.trypane .head .num{display:none}.trypane{padding-top:24px!important}
+@media (max-width:700px){
+#scale{display:none}
+.pkgs{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(var(--pad)*-1);padding:6px var(--pad) 14px;scrollbar-width:none}
+.pkgs::-webkit-scrollbar,.aig::-webkit-scrollbar{display:none}
+.pkgs .pkg{flex:0 0 84%;scroll-snap-align:center}
+.aig{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-16px;padding:4px 16px 12px;scrollbar-width:none}
+.aig>*{flex:0 0 86%;scroll-snap-align:center}
+.swh{display:block!important}
+}
+.swh{display:none;font:600 13px var(--body);color:var(--mut);margin:-4px 0 10px}
+
+#try{padding-bottom:0}.trytabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}.trytabs button{font:700 15px var(--disp);padding:12px 22px;border-radius:999px;border:2px solid var(--ink);background:transparent;cursor:pointer}.trytabs button.on{background:var(--ink);color:#fff}.trypane{padding-top:40px!important}.trypane[hidden]{display:none!important}
 .ssr button.dk img{height:150px}.ssr button.dk{position:relative}.ssr button.dk::after{content:attr(data-l);position:absolute;left:6px;bottom:6px;background:var(--ink);color:#fff;font:700 10px var(--disp);padding:3px 7px;border-radius:99px}
 .lbx{position:fixed;inset:0;background:rgba(10,8,20,.88);display:flex;align-items:center;justify-content:center;z-index:50;padding:3vw;cursor:zoom-out}.lbx[hidden]{display:none}.lbx img{max-width:100%;max-height:100%;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)}.lbx button{position:absolute;top:16px;right:20px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;font-size:26px;cursor:pointer}
 @media (max-width:600px){.ssr button.dk img{height:110px}}
@@ -527,7 +541,7 @@ section,footer,header{max-width:100vw}
 
 
 .nav nav a{white-space:nowrap}
-@media (max-width:1560px){.nav nav{gap:18px;font-size:14.5px}.nav nav a[href="#scale"],.nav nav a[href="#admin"]{display:none}}
+@media (max-width:1560px){.nav nav{gap:18px;font-size:14.5px}.nav nav a[href="#try"],.nav nav a[href="#admin"]{display:none}}
 @media (max-width:1320px){.nav nav a[href="#process"]{display:none}}
 @media (max-width:560px){.langs a.on .fl{box-shadow:0 0 0 2px var(--ink),0 2px 6px rgba(22,17,58,.2)}}
 
@@ -852,13 +866,14 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 .lr::before{background:#6C4BFF}
 
 </style>
+<script>try{if(location.pathname.indexOf('he.html')<0&&location.pathname.indexOf('en.html')<0&&!localStorage.getItem('aslang')&&/^he|^iw/i.test(navigator.language||'')&&!location.hash){localStorage.setItem('aslang','auto');location.replace('he.html');}}catch(e){}</script>
 </head>
 <body>
 <div class="cur" id="cur"><span id="curT"></span></div>
 
 <header class="nav"><div class="wrap in">
   <a class="logo" href="#top"><img class="mk" src="img/mark.svg" alt="" width="34" height="28"><span class="lt"><b>Apps <em>&amp; Soul</em></b><small>Technology with heart</small></span></a>
-  <nav><a href="#services">Услуги</a><a href="#scale">Масштаб</a><a href="#admin">Панель</a><a href="#ai">AI</a><a href="#works">Работы</a><a href="#process">Как работаем</a><a href="#about">Обо мне</a><a href="#faq">Вопросы</a></nav>
+  <nav><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#admin">Панель</a><a href="#ai">AI</a><a href="#try">Попробовать</a><a href="#process">Как работаем</a><a href="#about">Обо мне</a><a href="#faq">Вопросы</a></nav>
   <button type="button" class="sbtn" id="sbtn" aria-label="Поиск (Ctrl+K)" title="Поиск (Ctrl+K)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><kbd>Ctrl K</kbd></button>
   <div class="langs"><a href="index.html" lang="ru" title="Русский" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="he.html" lang="he" title="עברית"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="en.html" lang="en" title="English"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></div>
   <div class="cnt" id="cnt"><b>01</b> / 12</div>
@@ -898,35 +913,16 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 <!-- 03 услуги -->
 <section class="sec t0" id="services" data-sec="03"><div class="wrap">
   <div class="head"><div><span class="num">03 — Услуги</span><h2 class="scr">Что я делаю</h2></div><p>Три пакета под размер бизнеса и дополнения к ним. Цены указаны «от», точную стоимость и сроки назову после короткого разговора.</p></div>
-  <div class="pkgs" id="pkgs"><div class="pkg" id="pk1"><div class="pkim"><img src="img/pk1.jpg" alt="" loading="lazy"></div><span class="pn">01</span><h3>Визитка</h3><div class="psz">до 10 страниц</div><div class="pprice">от 3 500 ₪</div><p>Сайт компании или мастера</p><ul><li>Дизайн под ваш стиль, без шаблонов</li><li>Удобен на телефоне и большом экране</li><li>Кнопки WhatsApp, звонка и карты</li><li>До трёх языков</li><li>Публикация на вашем адресе</li></ul><a class="btn pbtn" data-pk="Визитка" target="_blank" rel="noopener" href="https://wa.me/972587800228">Хочу визитку <span class="ar">→</span></a></div><div class="pkg mid" id="pk2"><div class="pkim"><img src="img/pk2.jpg" alt="" loading="lazy"></div><span class="pn">02</span><h3>Магазин</h3><div class="psz">до 3 000 товаров</div><div class="pprice">от 8 900 ₪</div><p>Интернет-магазин с каталогом и корзиной</p><ul><li>Каталог с фото, ценами и поиском</li><li>Корзина и заказ готовым списком в WhatsApp</li><li>Акции, скидки, новинки</li><li>Добавление товаров по штрихкоду</li><li>Панель управления для владельца</li></ul><a class="btn pbtn" data-pk="Магазин" target="_blank" rel="noopener" href="https://wa.me/972587800228">Хочу магазин <span class="ar">→</span></a></div><div class="pkg" id="pk3"><div class="pkim"><img src="img/pk3.jpg" alt="" loading="lazy"></div><span class="pn">03</span><h3>Большой проект</h3><div class="psz">от 3 000 товаров</div><div class="pprice">от 20 000 ₪</div><p>Несколько магазинов, приложение, своя система</p><ul><li>Несколько магазинов в одной корзине</li><li>Перенос ассортимента из кассы</li><li>Полная панель: склад, отчёты, поставщики</li><li>Приложение для телефона</li><li>AI-ассистент для покупателей</li></ul><a class="btn pbtn" data-pk="Большой проект" target="_blank" rel="noopener" href="https://wa.me/972587800228">Обсудить проект <span class="ar">→</span></a></div></div>
+  <div class="swh">← листайте пакеты →</div><div class="pkgs" id="pkgs"><div class="pkg" id="pk1"><div class="pkim"><img src="img/pk1.jpg" alt="" loading="lazy"></div><span class="pn">01</span><h3>Визитка</h3><div class="psz">до 10 страниц</div><div class="pprice">от 3 500 ₪</div><p>Сайт компании или мастера</p><ul><li>Дизайн под ваш стиль, без шаблонов</li><li>Удобен на телефоне и большом экране</li><li>Кнопки WhatsApp, звонка и карты</li><li>До трёх языков</li><li>Публикация на вашем адресе</li></ul><a class="btn pbtn" data-pk="Визитка" target="_blank" rel="noopener" href="https://wa.me/972587800228">Хочу визитку <span class="ar">→</span></a></div><div class="pkg mid" id="pk2"><div class="pkim"><img src="img/pk2.jpg" alt="" loading="lazy"></div><span class="pn">02</span><h3>Магазин</h3><div class="psz">до 3 000 товаров</div><div class="pprice">от 8 900 ₪</div><p>Интернет-магазин с каталогом и корзиной</p><ul><li>Каталог с фото, ценами и поиском</li><li>Корзина и заказ готовым списком в WhatsApp</li><li>Акции, скидки, новинки</li><li>Добавление товаров по штрихкоду</li><li>Панель управления для владельца</li></ul><a class="btn pbtn" data-pk="Магазин" target="_blank" rel="noopener" href="https://wa.me/972587800228">Хочу магазин <span class="ar">→</span></a></div><div class="pkg" id="pk3"><div class="pkim"><img src="img/pk3.jpg" alt="" loading="lazy"></div><span class="pn">03</span><h3>Большой проект</h3><div class="psz">от 3 000 товаров</div><div class="pprice">от 20 000 ₪</div><p>Несколько магазинов, приложение, своя система</p><ul><li>Несколько магазинов в одной корзине</li><li>Перенос ассортимента из кассы</li><li>Полная панель: склад, отчёты, поставщики</li><li>Приложение для телефона</li><li>AI-ассистент для покупателей</li></ul><a class="btn pbtn" data-pk="Большой проект" target="_blank" rel="noopener" href="https://wa.me/972587800228">Обсудить проект <span class="ar">→</span></a></div></div>
 <p class="pnote"><b>Первым трём клиентам — скидка 30%</b> в обмен на отзыв и разрешение показать проект. Цены «от» — для ориентира, точную стоимость назову после короткого разговора.</p>
   <h3 class="addh">Можно добавить к любому пакету</h3>
   <div class="list" id="list"></div>
 </div></section>
 
 
-<!-- конструктор -->
-<section class="sec t0" id="build" data-sec="03"><div class="wrap">
-  <div class="head"><div><span class="num">Конструктор</span><h2 class="scr">Соберите свой сайт</h2></div><p>Нажимайте, что нужно вашему бизнесу. Макет собирается вживую, а кнопка отправит готовый список мне в WhatsApp.</p></div>
-  <div class="bld"><div><div class="bchips" id="bchips"></div><div class="bsum"><b>Ваш набор</b><ul id="bsum"></ul></div><a class="btn" id="bsend" target="_blank" rel="noopener">Отправить в WhatsApp →</a></div>
-    <div class="phone"><div class="notch"></div><div class="pscr"><div class="site" id="bsite"></div></div></div></div>
-</div></section>
-
-<!-- калькулятор -->
-<section class="sec t0" id="loss" data-sec="03"><div class="wrap">
-  <div class="head"><div><span class="num">Калькулятор</span><h2 class="scr">Сколько продаж может добавить онлайн-канал</h2></div><p>Подвиньте ползунки под ваш бизнес. Это примерный расчёт по вашим же цифрам, без обещаний.</p></div>
-  <div class="loss"><div class="lcard">
-      <div class="lrow"><label>Покупателей в день<b id="lv1">40</b></label><input type="range" id="l1" min="5" max="300" value="40"></div>
-      <div class="lrow"><label>Средний чек, ₪<b id="lv2">120</b></label><input type="range" id="l2" min="20" max="1000" step="10" value="120"></div>
-      <div class="lrow" style="margin:0"><label>Сколько ещё пришли бы, если бы могли заказать с телефона, %<b id="lv3">10</b></label><input type="range" id="l3" min="2" max="40" value="10"></div>
-    </div>
-    <div class="lres"><small>Онлайн-канал может добавить примерно</small><div class="big4" id="lm">12 480 ₪</div><small>в месяц</small><div class="yr" id="ly">149 760 ₪ в год</div><p>Расчёт: покупатели в день × процент × средний чек × 26 рабочих дней. Это сценарий выручки, а не обещание прибыли.</p><a class="btn" id="lbtn" target="_blank" rel="noopener">Хочу такой канал продаж →</a></div>
-  </div>
-</div></section>
-
 <!-- масштаб -->
-<section class="sec" id="scale" data-sec="04"><div class="wrap">
-  <div class="head"><div><span class="num">04 — Масштаб</span><h2 class="scr">Пакеты в деле</h2></div><p>Как каждый пакет выглядит на настоящих проектах. Под каждый размер своя логика, чтобы покупатель не терялся, а вы легко управляли.</p></div>
+<section class="sec" id="scale" data-sec="03"><div class="wrap">
+  <div class="head"><div><span class="num">Пакеты в деле</span><h2 class="scr">Пакеты в деле</h2></div><p>Как каждый пакет выглядит на настоящих проектах. Под каждый размер своя логика, чтобы покупатель не терялся, а вы легко управляли.</p></div>
   <div class="scale">
     <div class="sc3"><div class="top"><span class="lvl">ПАКЕТ 01 · ВИЗИТКА</span><div class="big3">до&nbsp;10<small>страниц</small></div><h3>Сайт компании или мастера</h3><p>Кто вы, что предлагаете, сколько стоит и как связаться. Запускается быстрее всего.</p>
       <ul><li>Услуги и цены, фото работ, отзывы</li><li>Кнопки WhatsApp, звонка и карты</li><li>Запись или заявка с сайта</li><li>Три языка, удобно на телефоне и большом экране</li></ul></div>
@@ -938,6 +934,25 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
       <ul><li>Один заказ на все три магазина</li><li>Девять крупных разделов вместо двадцати двух отделов</li><li>Весь ассортимент перенесён из кассы, не вручную</li><li>Отдельный вход 18+ для алкоголя</li><li>Доставка по городу с минимальной суммой заказа</li></ul></div>
       <div class="shot"><span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span><img src="img/w_azart.jpg" alt="Три магазина на телефоне" loading="lazy"><img src="img/w_azart2.jpg" alt="Отделы большого магазина" loading="lazy"></div></div>
   </div>
+</div></section>
+
+<!-- 04 работы -->
+<section class="sec t0" id="works" data-sec="04"><div class="wrap">
+  <div class="head"><div><span class="num">04 — Работы</span><h2 class="scr">Работы на столе</h2></div><p>Магазины, программы, приложения, каталоги и книги. Потяните стол мышкой или пальцем, нажмите на экран — откроется история: задача, решение и что внутри.</p></div>
+  <div class="wf" id="wf"></div>
+  <div class="canvas" id="canvas" data-cur="Тянуть">
+    <div class="plane" id="plane"></div>
+    <div class="chint"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1v14M1 8h14M8 1 6 3M8 1l2 2M8 15l-2-2M8 15l2-2M1 8l2-2M1 8l2 2M15 8l-2-2M15 8l-2 2"/></svg>Тяните · нажмите на экран</div>
+    <div class="mini" aria-hidden="true"><i id="miniV"></i></div>
+  </div>
+  <div class="chips" id="chips"><small>Истории проектов:</small></div>
+</div></section>
+
+
+<!-- свои инструменты -->
+<section class="sec" id="tools" data-sec="04" hidden><div class="wrap">
+  <div class="head"><div><span class="num">08 — Свои разработки</span><h2 class="scr">Свои инструменты студии</h2></div><p>Программы, которые я сделал для своих клиентов и для работы студии. Ими пользуются вместе с сайтами или отдельно.</p></div>
+  <div class="tools" id="toolList"></div>
 </div></section>
 
 <!-- панель управления -->
@@ -956,41 +971,47 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
   <span class="num">06 — AI-ассистенты</span>
   <h2 class="scr">Умные помощники для вашего бизнеса</h2>
   <p class="lead2">Встраиваю в сайты и программы AI-ассистентов. Они берут на себя рутину: отвечают покупателям, пишут описания, разбирают голос и фото. Решения всегда за вами, ассистент только помогает.</p>
-  <div class="aig" id="aiList"></div>
+  <div class="swh">← листайте →</div><div class="aig" id="aiList"></div>
   <div class="aichat"><div><h3>Попробуйте сами</h3><span class="demo-t">Демонстрация</span><p>Так ассистент отвечает покупателям магазина в WhatsApp. Напишите вопрос или нажмите готовый.</p></div>
     <div class="chatbox"><div class="bar"><i class="av"><img src="img/mark.svg" alt=""></i><div>Ассистент магазина<small id="cst">онлайн</small></div></div><div class="chatlog" id="clog"></div><div class="quick" id="cquick"></div><form class="inp" id="cfrm"><button type="button" class="mic" id="cmic" aria-label="🎤">🎤</button><input id="cq" autocomplete="off"><button aria-label="➤">➤</button></form></div></div>
   <p class="aiend">Хотите ассистента под свою задачу? <a href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20AI-%D0%B0%D1%81%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%82" target="_blank" rel="noopener" style="color:#fff;font-weight:700;border-bottom:2px solid var(--y)">Опишите её в WhatsApp →</a></p>
 </div></div></section>
 
+<!-- попробуйте сами -->
+<section class="sec t0" id="try" data-sec="07"><div class="wrap">
+  <div class="head"><div><span class="num">07 — Попробуйте сами</span><h2 class="scr">Попробуйте сами</h2></div><p>Соберите свой сайт, посчитайте продажи или сыграйте 15 секунд. Выберите вкладку.</p></div>
+  <div class="trytabs" role="tablist"><button type="button" class="on" data-t="build">Конструктор</button><button type="button" data-t="loss">Калькулятор</button><button type="button" data-t="game">Игра</button></div>
+</div></section>
+
+<!-- конструктор -->
+<section class="sec t0 trypane" id="build" data-sec="07"><div class="wrap">
+  <div class="head"><div><span class="num">Конструктор</span><h2 class="scr">Соберите свой сайт</h2></div><p>Нажимайте, что нужно вашему бизнесу. Макет собирается вживую, а кнопка отправит готовый список мне в WhatsApp.</p></div>
+  <div class="bld"><div><div class="bchips" id="bchips"></div><div class="bsum"><b>Ваш набор</b><ul id="bsum"></ul></div><a class="btn" id="bsend" target="_blank" rel="noopener">Отправить в WhatsApp →</a></div>
+    <div class="phone"><div class="notch"></div><div class="pscr"><div class="site" id="bsite"></div></div></div></div>
+</div></section>
+
+<!-- калькулятор -->
+<section class="sec t0 trypane" id="loss" data-sec="07" hidden><div class="wrap">
+  <div class="head"><div><span class="num">Калькулятор</span><h2 class="scr">Сколько продаж может добавить онлайн-канал</h2></div><p>Подвиньте ползунки под ваш бизнес. Это примерный расчёт по вашим же цифрам, без обещаний.</p></div>
+  <div class="loss"><div class="lcard">
+      <div class="lrow"><label>Покупателей в день<b id="lv1">40</b></label><input type="range" id="l1" min="5" max="300" value="40"></div>
+      <div class="lrow"><label>Средний чек, ₪<b id="lv2">120</b></label><input type="range" id="l2" min="20" max="1000" step="10" value="120"></div>
+      <div class="lrow" style="margin:0"><label>Сколько ещё пришли бы, если бы могли заказать с телефона, %<b id="lv3">10</b></label><input type="range" id="l3" min="2" max="40" value="10"></div>
+    </div>
+    <div class="lres"><small>Онлайн-канал может добавить примерно</small><div class="big4" id="lm">12 480 ₪</div><small>в месяц</small><div class="yr" id="ly">149 760 ₪ в год</div><p>Расчёт: покупатели в день × процент × средний чек × 26 рабочих дней. Это сценарий выручки, а не обещание прибыли.</p><a class="btn" id="lbtn" target="_blank" rel="noopener">Хочу такой канал продаж →</a></div>
+  </div>
+</div></section>
+
 <!-- игра -->
-<section class="sec t0" id="game" data-sec="06"><div class="wrap">
+<section class="sec t0 trypane" id="game" data-sec="07" hidden><div class="wrap">
   <div class="head"><div><span class="num">Игра</span><h2 class="scr">Поймайте заказ</h2></div><p>15 секунд. Двигайте корзину мышкой или пальцем и ловите заказы. Так работает магазин, который принимает заказы онлайн.</p></div>
   <div class="game" id="gm"><div class="hud"><span id="gsc">0</span><span id="gt">15</span></div><div class="bask" id="gb">🛒</div>
     <div class="ov" id="gov"><h3 id="gtt">Готовы?</h3><p id="gtx">Ловите товары и заказы. Крестики ❌ ловить не надо.</p><button class="btn" id="gst" type="button">Начать игру</button></div></div>
 </div></section>
 
-<!-- 04 работы -->
-<section class="sec t0" id="works" data-sec="07"><div class="wrap">
-  <div class="head"><div><span class="num">07 — Работы</span><h2 class="scr">Работы на столе</h2></div><p>Магазины, программы, приложения, каталоги и книги. Потяните стол мышкой или пальцем, нажмите на экран — откроется история: задача, решение и что внутри.</p></div>
-  <div class="wf" id="wf"></div>
-  <div class="canvas" id="canvas" data-cur="Тянуть">
-    <div class="plane" id="plane"></div>
-    <div class="chint"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1v14M1 8h14M8 1 6 3M8 1l2 2M8 15l-2-2M8 15l2-2M1 8l2-2M1 8l2 2M15 8l-2-2M15 8l-2 2"/></svg>Тяните · нажмите на экран</div>
-    <div class="mini" aria-hidden="true"><i id="miniV"></i></div>
-  </div>
-  <div class="chips" id="chips"><small>Истории проектов:</small></div>
-</div></section>
-
-
-<!-- свои инструменты -->
-<section class="sec" id="tools" data-sec="08"><div class="wrap">
-  <div class="head"><div><span class="num">08 — Свои разработки</span><h2 class="scr">Свои инструменты студии</h2></div><p>Программы, которые я сделал для своих клиентов и для работы студии. Ими пользуются вместе с сайтами или отдельно.</p></div>
-  <div class="tools" id="toolList"></div>
-</div></section>
-
 <!-- 05 как работаем -->
-<section class="sec" id="process" data-sec="09"><div class="wrap">
-  <div class="head"><div><span class="num">09 — Процесс</span><h2 class="scr">Как мы работаем</h2></div><p>Шесть шагов от первого сообщения до запуска. Вы всегда знаете, на каком этапе проект.</p></div>
+<section class="sec" id="process" data-sec="08"><div class="wrap">
+  <div class="head"><div><span class="num">08 — Процесс</span><h2 class="scr">Как мы работаем</h2></div><p>Шесть шагов от первого сообщения до запуска. Вы всегда знаете, на каком этапе проект.</p></div>
   <div class="steps" id="steps">
     <div class="st"><div class="sti"><img src="img/st1.jpg" alt="" loading="lazy"></div><i>01</i><b>Знакомство</b><span>Созваниваемся или переписываемся в WhatsApp. Выясняю, чем вы занимаетесь, кто ваши клиенты и что должно получиться.</span></div>
     <div class="st"><div class="sti"><img src="img/st2.jpg" alt="" loading="lazy"></div><i>02</i><b>Предложение</b><span>Присылаю план: что войдёт, в каком порядке и в какие сроки.</span></div>
@@ -1006,8 +1027,8 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 </div></section>
 
 <!-- 06 гарантии + почему напрямую -->
-<section class="sec t0" id="trust" data-sec="10"><div class="wrap">
-  <div class="head"><div><span class="num">10 — Гарантии</span><h2 class="scr">Что вы получаете</h2></div><p>Вы не зависите от меня. Всё, что я делаю, принадлежит вам и хранится в копиях.</p></div>
+<section class="sec t0" id="trust" data-sec="09"><div class="wrap">
+  <div class="head"><div><span class="num">09 — Гарантии</span><h2 class="scr">Что вы получаете</h2></div><p>Вы не зависите от меня. Всё, что я делаю, принадлежит вам и хранится в копиях.</p></div>
   <div class="gar" id="gar"></div>
   <div class="direct">
     <div><h3>Почему напрямую, а&nbsp;не&nbsp;через агентство</h3><p>Вы всегда говорите с тем, кто отвечает за ваш проект.</p></div>
@@ -1021,9 +1042,9 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 </div></section>
 
 <!-- 07 обо мне -->
-<section class="sec t0" id="about" data-sec="11"><div class="wrap about">
+<section class="sec t0" id="about" data-sec="10"><div class="wrap about">
   <div class="card"><div class="g2"></div><small>Apps &amp; Soul</small><div class="aph"><img src="img/about1.jpg" alt="" loading="lazy"><img class="a2" src="img/about2.jpg" alt="" loading="lazy"></div><div class="mono amono">Technology<br>with heart</div><small>Мушаилов Давид · разработчик и основатель</small></div>
-  <div><span class="num">11 — Обо мне</span><h2 class="scr">Привет, я Давид.</h2>
+  <div><span class="num">10 — Обо мне</span><h2 class="scr">Привет, я Давид.</h2>
     <p class="big1">Я основатель студии Apps &amp; Soul.</p>
     <p>В названии студии два слова, и оба важны. Apps — это то, что мы делаем: сайты, магазины, приложения. Soul — это то, как мы это делаем.</p>
     <p>Я человек художественный и люблю, когда вещь не только работает, но и радует глаз. Пишу книги, создаю обложки, собираю каталоги. И каждый проект клиента веду так, будто он мой собственный.</p>
@@ -1031,15 +1052,15 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 </div></section>
 
 <!-- 08 вопросы -->
-<section class="sec" id="faq" data-sec="12"><div class="wrap">
-  <div class="head"><div><span class="num">12 — Вопросы</span><h2 class="scr">Вопросы и ответы</h2></div><p>Вопросы, которые задают чаще всего. Не нашли свой — спросите в WhatsApp.</p></div>
+<section class="sec" id="faq" data-sec="11"><div class="wrap">
+  <div class="head"><div><span class="num">11 — Вопросы</span><h2 class="scr">Вопросы и ответы</h2></div><p>Вопросы, которые задают чаще всего. Не нашли свой — спросите в WhatsApp.</p></div>
   <div class="faq"><div class="tabs" id="tabs" role="tablist"></div><div id="qa"></div></div>
 </div></section>
 </main>
 
 <section class="marq" aria-label="Все работы"><div class="mrow" id="mr1"></div><div class="mrow rev" id="mr2"></div></section>
 
-<footer class="end" data-sec="12"><div class="wrap">
+<footer class="end" data-sec="11"><div class="wrap">
   <h2 class="big">Сделаем ваш<br><span class="flip" id="flip2"></span></h2>
   <div class="promise"><span class="dot"></span>Напишите — отвечу в течение 2 часов в рабочее время.</div>
   <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">Расскажите о вашем деле</a>
@@ -1433,10 +1454,12 @@ function updCTA(){var msg='';
 window.updCTA=updCTA;
 /* 1. боковое меню */
 (function(){var side=document.getElementById('side'),ss=[].slice.call(document.querySelectorAll('section[id]')).filter(function(x){return x.id!=='game'||true;}),links=[];
-  ss.forEach(function(sec){var num=sec.querySelector('.num'),t=sec.id==='top'?'01 — Начало':(num?num.textContent:'');if(!t)return;var m=t.match(/^(\d+)\s*—\s*(.+)$/),a=el('a');a.href='#'+sec.id;
+  ss.forEach(function(sec){if(sec.hidden||sec.classList.contains('trypane')||sec.id==='scale')return;var num=sec.querySelector('.num'),t=sec.id==='top'?'01 — Начало':(num?num.textContent:'');if(!t)return;var m=t.match(/^(\d+)\s*—\s*(.+)$/),a=el('a');a.href='#'+sec.id;
     a.appendChild(el('i','',m?m[1]:'•'));a.appendChild(document.createTextNode(m?m[2]:t));side.appendChild(a);links.push([sec,a]);});
   var mq=document.querySelector('.marq');function f(){var cur=null;links.forEach(function(l){if(l[0].getBoundingClientRect().top<innerHeight*.45)cur=l;});links.forEach(function(l){l[1].classList.toggle('on',l===cur);});side.classList.toggle('off',!!mq&&mq.getBoundingClientRect().top<innerHeight*.75);}
   addEventListener('scroll',f,{passive:true});f();})();
+(function(){var tb=document.querySelectorAll('.trytabs button');tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.classList.toggle('on',x===b);});document.querySelectorAll('.trypane').forEach(function(p){p.hidden=p.id!==b.dataset.t;});window.dispatchEvent(new Event('resize'));});});
+['build','loss','game'].forEach(function(id){document.querySelectorAll('a[href="#'+id+'"]').forEach(function(a){a.addEventListener('click',function(){var b=document.querySelector('.trytabs button[data-t="'+id+'"]');if(b)b.click();});});});})();
 /* 3. цвет перетекает между разделами */
 (function(){if(!window.getComputedStyle)return;var list=[].slice.call(document.querySelectorAll('.hero,.sec')).map(function(x){var c=getComputedStyle(x).backgroundColor;if(!c||c==='rgba(0, 0, 0, 0)'||c==='transparent')c='rgb(255, 255, 255)';return [x,c];});
   var bg=el('div','bgm');document.body.insertBefore(bg,document.body.firstChild);document.documentElement.classList.add('morph');
@@ -1468,7 +1491,7 @@ window.updCTA=updCTA;
   bas.forEach(function(b){io.observe(b);});})();
 /* 13. поиск по сайту */
 (function(){var ck=document.getElementById('cmdk'),q=document.getElementById('ckq'),res=document.getElementById('ckres'),items=[],act=0,shown=[];
-  document.querySelectorAll('section[id]').forEach(function(sec){var num=sec.querySelector('.num'),h=sec.querySelector('h1,h2');if(!h)return;items.push({g:0,t:h.textContent,s:num?num.textContent:'',ic:'§',f:function(){sec.scrollIntoView({behavior:'smooth'});}});});
+  document.querySelectorAll('section[id]').forEach(function(sec){if(sec.id==='tools'||sec.id==='try')return;var num=sec.querySelector('.num'),h=sec.querySelector('h1,h2');if(!h)return;items.push({g:0,t:h.textContent,s:num?num.textContent:'',ic:'§',f:function(){var tb=sec.classList.contains('trypane')&&document.querySelector('.trytabs button[data-t="'+sec.id+'"]');if(tb)tb.click();sec.scrollIntoView({behavior:'smooth'});}});});
   var rows=document.querySelectorAll('#list .li');S.forEach(function(sv,i){items.push({g:1,t:sv[0],s:sv[1],k:sv[3].join(' '),ic:'✦',f:function(){if(i<2){document.getElementById(i?'pk2':'pk1').scrollIntoView({behavior:'smooth',block:'center'});return;}var r=rows[i];if(!r.classList.contains('open'))r.querySelector('.lr').click();r.scrollIntoView({behavior:'smooth',block:'center'});}});});
   W.forEach(function(w,i){items.push({g:2,t:w[1],s:w[2],k:w[3]+' '+w[4]+' '+w[5],img:w[0],f:function(){openStory(i);}});});
   Q.forEach(function(g,gi){g[1].forEach(function(qq,qi){items.push({g:3,t:qq[0],s:qq[1],ic:'?',f:function(){tbs[gi].click();var it=grps[gi].querySelectorAll('.qi')[qi];if(!it.classList.contains('open'))it.querySelector('.qh').click();it.scrollIntoView({behavior:'smooth',block:'center'});}});});});
@@ -1539,7 +1562,7 @@ document.querySelectorAll('.pbtn').forEach(function(a){a.href=WA+'?text='+encode
 (function(){var c=document.querySelector('.about .card');if(!c||reduce)return;setInterval(function(){if(!document.documentElement.classList.contains('a-na'))c.classList.toggle('sw');},5000);})();
 
 /* прогресс и счётчик */
-var prog=document.getElementById('prog'),cnt=document.getElementById('cnt'),secs=document.querySelectorAll('[data-sec]'),TOT='12';
+var prog=document.getElementById('prog'),cnt=document.getElementById('cnt'),secs=document.querySelectorAll('[data-sec]'),TOT='11';
 function onS(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-innerHeight||1);prog.style.transform='scaleX('+p.toFixed(4)+')';
   var c='01';secs.forEach(function(s){if(s.getBoundingClientRect().top<innerHeight*.45)c=s.dataset.sec;});cnt.innerHTML='<b>'+c+'</b> / '+TOT;}
 addEventListener('scroll',onS,{passive:true});onS();
