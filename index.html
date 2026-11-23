@@ -868,13 +868,13 @@ html.hin .hero>.acts{animation-delay:.75s}html.hin .hero>.reply{animation-delay:
 
 
 /* ===== выбранные эффекты: 2 заливка, 3 плиты процесса, 4 раскрытие, 9 цифры ===== */
-.fillx{height:230vh;position:relative}
+.fillx{height:150vh;position:relative}
 .fillx .fst{position:sticky;top:0;height:100vh;display:flex;align-items:center}
 .filt{font:800 clamp(30px,4.6vw,84px)/1.12 var(--disp);letter-spacing:-.025em;margin:0;max-width:20em}
 html[lang=he] .filt{letter-spacing:-.01em}
 .filt .fw{color:rgba(17,17,17,.12);transition:color .3s}
 .filt .fw.on{color:var(--ink)}.filt em{font-style:normal}.filt em .fw.on{color:var(--vi)}
-.revx{height:230vh;position:relative}
+.revx{height:150vh;position:relative}
 .revx .rst{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .revx .rfr{position:relative;width:min(94vw,1560px);aspect-ratio:1400/921;max-height:88vh;border-radius:22px;overflow:hidden;will-change:clip-path;box-shadow:0 60px 120px -50px rgba(22,17,58,.55)}
 .revx .rfr img{width:100%;height:100%;object-fit:cover;object-position:top}
@@ -896,7 +896,7 @@ html[lang=he] .filt{letter-spacing:-.01em}
 #steps.plx .sti{grid-row:auto;grid-column:1;aspect-ratio:16/10;min-height:0;margin-bottom:16px}
 #steps.plx .st i,#steps.plx .st b,#steps.plx .st span,#steps.plx .st em{grid-column:1}
 #steps.plx .st i{font-size:54px;margin-bottom:8px}
-.fillx{height:190vh}.revx{height:170vh}.revx .rfr{border-radius:16px}.revx .rcap{font-size:16px;padding:40px 14px 14px}}
+.fillx{height:135vh}.revx{height:130vh}.revx .rfr{border-radius:16px}.revx .rcap{font-size:16px;padding:40px 14px 14px}}
 
 .langs{display:flex;gap:4px;background:rgba(22,17,58,.06);border-radius:999px;padding:4px;position:relative}
 .langs a{display:flex;align-items:center;gap:7px;padding:4px 11px 4px 4px;border-radius:999px;font-family:var(--disp);font-size:12px;font-weight:800;color:var(--mut);line-height:1;transition:background .3s,color .3s,box-shadow .3s}
@@ -1790,8 +1790,8 @@ function tick(){raf=0;if(off())return;
   /* сначала все замеры, потом все изменения — без лишних пересчётов страницы */
   var rf=words.length?fx.getBoundingClientRect():null,r2=rv?rv.getBoundingClientRect():null,sr=pl.length?steps.getBoundingClientRect():null,pr=null;
   if(sr&&sr.bottom>0&&sr.top<vh)pr=pl.map(function(x){return x.getBoundingClientRect().top;});
-  if(rf&&rf.bottom>0&&rf.top<vh){var p=clamp((-rf.top/(rf.height-vh))*1.2,0,1),k=Math.round(p*words.length);for(var i=0;i<words.length;i++){var on=i<k;if(words[i]._on!==on){words[i]._on=on;words[i].classList.toggle('on',on);}}}
-  if(r2&&r2.bottom>0&&r2.top<vh){var q=ease(clamp((-r2.top/(r2.height-vh))*1.35,0,1));rfr.style.clipPath='inset('+((1-q)*26)+'% '+((1-q)*30)+'% round '+(22+(1-q)*30)+'px)';rfr.style.setProperty('--cp',clamp((q-.7)/.3,0,1).toFixed(3));}
+  if(rf&&rf.bottom>0&&rf.top<vh){var p=clamp((vh*.55-rf.top)/(rf.height-vh*.45),0,1),k=Math.round(p*words.length);for(var i=0;i<words.length;i++){var on=i<k;if(words[i]._on!==on){words[i]._on=on;words[i].classList.toggle('on',on);}}}
+  if(r2&&r2.bottom>0&&r2.top<vh){var q=ease(clamp((vh*.6-r2.top)/(r2.height-vh*.2),0,1));rfr.style.clipPath='inset('+((1-q)*26)+'% '+((1-q)*30)+'% round '+(22+(1-q)*30)+'px)';rfr.style.setProperty('--cp',clamp((q-.7)/.3,0,1).toFixed(3));}
   if(pr)for(var j=0;j<pl.length;j++){var pp=0;if(j<pl.length-1)pp=clamp(1-(pr[j+1]-pr[j]-16)/(vh*.6),0,1);var v=pp.toFixed(2);if(pl[j]._p!==v){pl[j]._p=v;pl[j].style.setProperty('--p',v);}}
 }
 function req(){if(!raf)raf=requestAnimationFrame(tick);}
