@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="אתרים, חנויות אונליין ואפליקציות לעסקים בעברית, ברוסית ובאנגלית. מענה בוואטסאפ תוך שעתיים בשעות העבודה.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Apps &amp; Soul">
+<meta property="og:title" content="Apps & Soul — הסטודיו של דוד מושאילוב">
+<meta property="og:description" content="אתרים, חנויות ואפליקציות לעסקים. עברית, רוסית, אנגלית.">
+<meta property="og:image" content="https://priko2000.github.io/appsandsoul-site/img/og_he.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#16113A">
+<link rel="apple-touch-icon" sizes="180x180" href="img/icon-180.png">
+<link rel="icon" type="image/png" sizes="512x512" href="img/icon-512.png">
+<meta name="apple-mobile-web-app-title" content="Apps &amp; Soul">
+<link rel="icon" href="img/mark.svg" type="image/svg+xml">
+<title>Apps & Soul: אתר 2026 (דוגמה)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--bg:#F6F3EC;--ink:#111;--mut:#6A655C;--line:rgba(17,17,17,.12);--y:#FFC700;--vi:#5B3DF5;--mi:#26C281;--max:1320px;--pad:clamp(18px,4vw,64px);--disp:'Unbounded',system-ui,sans-serif;--body:'Manrope',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+h1,h2,h3{font-family:var(--disp);margin:0;letter-spacing:-.035em;line-height:1.05}
+.wrap{max-width:calc(var(--max) + 2*var(--pad));margin:0 auto;padding:0 var(--pad)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+::selection{background:var(--y)}
+[id]{scroll-margin-top:80px}
+
+/* меню + прогресс */
+.nav{position:fixed;top:0;left:0;right:0;z-index:40;background:rgba(246,243,236,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .in{display:flex;align-items:center;gap:24px;height:64px}
+.logo{font-family:var(--disp);font-weight:700;font-size:18px;display:flex;align-items:center;gap:9px;letter-spacing:-.02em;white-space:nowrap}
+.logo i{width:12px;height:12px;border-radius:50%;background:var(--y);box-shadow:0 0 0 2px var(--ink)}
+.nav nav{display:flex;gap:22px;margin-inline-start:auto;font-size:15px;color:var(--mut)}
+.nav nav a:hover{color:var(--ink)}
+.cnt{font-family:var(--disp);font-size:13px;font-weight:500;color:var(--mut);font-variant-numeric:tabular-nums;min-width:58px;text-align:end}
+.cnt b{color:var(--ink);font-weight:700}
+.prog{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+.cta{background:var(--ink);color:#fff;border-radius:999px;padding:11px 20px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+@media (max-width:1180px){.nav nav{display:none}.cnt{margin-inline-start:auto}}
+
+/* герой */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:80px;position:relative}
+.glow{position:absolute;z-index:-1;width:min(900px,90vw);aspect-ratio:1;left:50%;top:46%;transform:translate(-50%,-50%);border-radius:50%;filter:blur(70px);opacity:.5;background:conic-gradient(from var(--a,0deg),#FFC700,#FF8A3D,#5B3DF5,#26C281,#FFC700);animation:spin 14s linear infinite;mask:radial-gradient(closest-side,#000 30%,transparent 100%);-webkit-mask:radial-gradient(closest-side,#000 30%,transparent 100%)}
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes spin{to{--a:360deg}}
+.kick{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:var(--mut);margin-bottom:26px}
+.kick .dot{width:8px;height:8px;border-radius:50%;background:var(--mi);box-shadow:0 0 0 4px rgba(38,194,129,.2);animation:bl 2s infinite;flex:none}
+@keyframes bl{50%{opacity:.4}}
+.big{font-size:clamp(38px,6.2vw,100px);font-weight:800;max-width:13em}
+.sub{font-size:clamp(20px,2vw,32px);font-weight:600;margin:22px 0 0;max-width:24em;line-height:1.3}
+.sub em{font-style:normal;background:linear-gradient(transparent 62%,var(--y) 62%)}
+.doing{font-family:var(--disp);font-weight:700;font-size:clamp(20px,2.1vw,34px);margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:.35em;letter-spacing:-.02em}
+.flip{display:inline-flex;gap:.05em;vertical-align:-.12em;font-size:.86em}
+.flip span{display:inline-grid;place-items:center;width:1em;height:1.08em;background:#161616;color:var(--y);border-radius:.09em;font-size:.86em;letter-spacing:0;position:relative;overflow:hidden;box-shadow:inset 0 -.05em .08em rgba(0,0,0,.6),inset 0 .02em 0 rgba(255,255,255,.1)}
+.flip span::after{content:"";position:absolute;left:0;right:0;top:50%;height:.025em;background:#000}
+.flip span.f{animation:fl .14s linear}
+@keyframes fl{50%{transform:perspective(200px) rotateX(-80deg);filter:brightness(.5)}}
+.tldr{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.tldr span{border:1px solid var(--line);background:rgba(255,255,255,.6);border-radius:999px;padding:9px 16px;font-weight:600;font-size:15px}
+.hero .acts{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;border-radius:999px;padding:17px 28px;font-weight:600;font-size:16px;will-change:transform}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn svg{width:16px;height:16px}
+.reply{margin-top:16px;font-size:14px;color:var(--mut);display:flex;align-items:center;gap:8px}
+.scrollhint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:13px;color:var(--mut);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scrollhint i{width:1.5px;height:30px;background:linear-gradient(var(--ink),transparent);animation:sh 1.8s ease-in-out infinite;transform-origin:top}
+@keyframes sh{0%{transform:scaleY(0)}60%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+@media (max-height:760px){.scrollhint{display:none}}
+
+/* разделы */
+.sec{padding:clamp(70px,8vw,130px) 0}
+.sec.t0{padding-top:0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px 60px;flex-wrap:wrap;margin-bottom:clamp(28px,3.4vw,50px)}
+.head h2{font-size:clamp(32px,4.2vw,66px);font-weight:800}
+.head p{color:var(--mut);max-width:28em;margin:0}
+.num{font-family:var(--disp);font-size:13px;font-weight:600;color:var(--mut);margin-bottom:14px;display:block}
+
+/* для кого */
+.for{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.fc{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px 22px 22px;display:flex;flex-direction:column;gap:14px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.fc:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(30,25,15,.1)}
+.fc .k{font-family:var(--disp);font-size:13px;font-weight:700;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--y)}
+.fc:nth-child(2) .k{background:#E3DDFF}.fc:nth-child(3) .k{background:#CFF3E2}.fc:nth-child(4) .k{background:#FFE0CC}.fc:nth-child(5) .k{background:#E8E4DA}
+.fc p{margin:0;font-weight:700;font-size:17px;line-height:1.35}
+.fc p::before{content:"…";color:var(--mut)}
+.fc span.r{color:var(--mut);font-size:15px;line-height:1.45;margin-top:auto;padding-top:12px;border-top:1px dashed var(--line)}
+.forlead{font-family:var(--disp);font-weight:700;font-size:clamp(20px,2vw,30px);margin:0 0 22px;letter-spacing:-.02em}
+.forend{margin-top:22px;color:var(--mut)}
+.forend a{color:var(--ink);font-weight:700;border-bottom:2px solid var(--y)}
+@media (max-width:1100px){.for{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.for{grid-template-columns:1fr}}
+
+/* услуги: раскрывающийся список */
+.list{border-top:1px solid var(--ink)}
+.li{border-bottom:1px solid var(--line)}
+.lr{display:grid;grid-template-columns:60px minmax(0,1.05fr) minmax(0,1.35fr) 44px;gap:20px;align-items:center;padding:26px 18px;width:100%;position:relative;isolation:isolate;transition:color .35s}
+.lr::before{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleY(0);transform-origin:50% 100%;transition:transform .45s cubic-bezier(.7,0,.2,1);z-index:-1;border-radius:4px}
+.lr:hover,.li.open .lr{color:#fff}.lr:hover::before,.li.open .lr::before{transform:scaleY(1)}
+.lr .n{font-family:var(--disp);font-size:13px;font-weight:600;color:var(--mut)}
+.lr:hover .n,.li.open .n{color:var(--y)}
+.lr h3{font-size:clamp(20px,1.9vw,28px);font-weight:700}
+.lr p{margin:0;color:var(--mut);transition:color .35s}
+.lr:hover p,.li.open .lr p{color:rgba(255,255,255,.75)}
+.lr .pl{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;transition:transform .35s,background .35s}
+.lr .pl svg{transition:transform .35s}
+.li.open .pl{background:var(--y);color:var(--ink);border-color:var(--y)}
+.li.open .pl svg{transform:rotate(45deg)}
+.lb{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.li.open .lb{grid-template-rows:1fr}
+.lb>div{overflow:hidden}
+.lbin{display:grid;grid-template-columns:60px minmax(0,1.05fr) minmax(0,1.35fr) 44px;gap:20px;padding:26px 18px 34px}
+.lbin .l{grid-column:2;font-size:18px;font-weight:600;line-height:1.4}
+.lbin ul{grid-column:3;margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.lbin li{position:relative;padding-inline-start:26px;line-height:1.4}
+.lbin li::before{content:"";position:absolute;left:0;top:.32em;width:16px;height:16px;border-radius:50%;background:var(--mi) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 8.2l2.3 2.2 4.7-4.8' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/100%}
+.lbin .go{grid-column:3;margin-top:8px;justify-self:start;font-weight:700;border-bottom:2px solid var(--y)}
+@media (max-width:860px){.lr{grid-template-columns:36px 1fr 40px;gap:12px}.lr p{grid-column:2/-1;grid-row:2}.lr .pl{width:40px;height:40px}.lbin{grid-template-columns:1fr;padding:18px 18px 28px}.lbin .l,.lbin ul,.lbin .go{grid-column:1}.lbin ul{grid-template-columns:1fr}}
+
+/* холст работ */
+.canvas{position:relative;height:min(74svh,720px);border-radius:28px;overflow:hidden;background:#EFEBE2 radial-gradient(rgba(17,17,17,.18) 1.2px,transparent 1.3px) 0 0/26px 26px;border:1px solid var(--line);cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
+.canvas.drag{cursor:grabbing}
+.plane{position:absolute;left:0;top:0;width:2400px;height:1500px;will-change:transform}
+.it{position:absolute;width:230px;cursor:pointer;outline:none}
+.it .sc{border-radius:26px;overflow:hidden;aspect-ratio:9/17;background:#fff;box-shadow:0 0 0 1px rgba(17,17,17,.1),0 30px 60px rgba(30,25,15,.18);transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.it img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;pointer-events:none;transition:object-position 4s ease}
+.it:focus-visible .sc{transform:translateY(-6px) rotate(0deg)}
+.it:focus-visible .sc{box-shadow:0 0 0 3px var(--vi),0 30px 60px rgba(30,25,15,.18)}
+.it:hover img{object-position:bottom}
+.it b{display:block;margin-top:14px;font-family:var(--disp);font-weight:700;font-size:16px;letter-spacing:-.02em}
+.it span{display:block;color:var(--mut);font-size:14px;line-height:1.4}
+.it .more{display:inline-flex;margin-top:8px;font-size:13px;font-weight:700;color:var(--ink);border-bottom:2px solid var(--y)}
+.note{position:absolute;font-family:var(--disp);font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;background:var(--ink);color:#fff;white-space:nowrap}
+.note.y{background:var(--y);color:var(--ink)}.note.v{background:var(--vi)}
+.sticky{position:absolute;width:190px;padding:18px;background:#FFF5B8;box-shadow:0 14px 30px rgba(30,25,15,.12);font-size:15px;font-weight:600;line-height:1.35;transform:rotate(-3deg)}
+.chint{position:absolute;left:20px;bottom:18px;z-index:2;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);border-radius:999px;padding:9px 16px;font-size:13px;font-weight:600;display:flex;gap:8px;align-items:center;pointer-events:none}
+.mini{position:absolute;right:18px;bottom:18px;z-index:2;width:130px;height:81px;border-radius:10px;background:rgba(255,255,255,.75);backdrop-filter:blur(8px);border:1px solid var(--line);pointer-events:none}
+.mini i{position:absolute;border:1.5px solid var(--ink);border-radius:3px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;align-items:center}
+.chips small{color:var(--mut);font-size:14px;margin-inline-end:6px}
+.chips button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:600;font-size:14px;transition:background .2s}
+.chips button:hover{background:var(--y)}
+@media (max-width:600px){.mini{display:none}}
+
+/* история работы */
+dialog.story{border:0;padding:0;border-radius:28px;width:min(940px,calc(100vw - 28px));max-height:calc(100svh - 28px);background:var(--bg);color:var(--ink);box-shadow:0 40px 120px rgba(0,0,0,.35)}
+dialog.story::backdrop{background:rgba(17,17,17,.55);backdrop-filter:blur(6px)}
+dialog.story[open]{animation:pop .4s cubic-bezier(.2,.8,.2,1)}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.97)}}
+.sto{display:grid;grid-template-columns:280px minmax(0,1fr);gap:34px;padding:34px}
+.sto .ph{border-radius:24px;overflow:hidden;aspect-ratio:9/17;background:#fff;box-shadow:0 0 0 1px rgba(17,17,17,.1),0 20px 40px rgba(30,25,15,.15)}
+.sto .ph img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.sto .tag{display:inline-block;font-family:var(--disp);font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--y);margin-bottom:14px}
+.sto h3{font-size:clamp(24px,2.6vw,36px);font-weight:800;margin-bottom:22px}
+.sto dl{margin:0;display:grid;gap:16px}
+.sto dt{font-family:var(--disp);font-size:13px;font-weight:700;color:var(--mut);margin-bottom:4px}
+.sto dd{margin:0;font-size:17px;line-height:1.5}
+.sto dd.res{font-weight:700;background:#fff;border-radius:14px;padding:14px 16px;border-inline-start:4px solid var(--mi)}
+.sto .acts{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.sto .btn{padding:14px 22px;font-size:15px}
+.x{position:absolute;top:16px;right:16px;width:44px;height:44px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 0 0 1px var(--line)}
+@media (max-width:700px){.sto{grid-template-columns:1fr;padding:24px 20px;gap:20px}.sto .ph{aspect-ratio:16/11;max-height:240px}}
+
+/* как работаем */
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;position:relative;padding-top:34px}
+.steps::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
+.steps::after{content:"";position:absolute;left:0;top:9px;height:2px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.st{position:relative}
+.st::before{content:"";position:absolute;top:-34px;left:0;width:20px;height:20px;border-radius:50%;background:var(--bg);border:2px solid var(--ink);z-index:1;transition:background .3s}
+.steps.on .st::before{background:var(--y)}
+.st i{font-style:normal;font-family:var(--disp);font-size:12px;font-weight:700;color:var(--mut);display:block;margin-bottom:6px}
+.st b{display:block;font-family:var(--disp);font-size:18px;margin-bottom:6px;letter-spacing:-.02em}
+.st span{color:var(--mut);font-size:15px;line-height:1.45;display:block}
+.st em{font-style:normal;display:inline-block;margin-top:10px;background:var(--ink);color:var(--y);font-family:var(--disp);font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px}
+.link{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.link div{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 24px;display:flex;gap:16px;align-items:flex-start}
+.link svg{flex:none;width:28px;height:28px}
+.link b{display:block;font-family:var(--disp);font-size:17px;letter-spacing:-.02em;margin-bottom:4px}
+.link span{color:var(--mut);font-size:15px}
+@media (max-width:1100px){.steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:52px}.steps::before,.steps::after{display:none}.st::before{top:-30px}}
+@media (max-width:600px){.steps{grid-template-columns:1fr 1fr}.link{grid-template-columns:1fr}}
+
+/* гарантии и почему напрямую */
+.gar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.gc{background:var(--ink);color:#fff;border-radius:22px;padding:26px 22px;display:flex;flex-direction:column;gap:12px;min-height:230px;position:relative;overflow:hidden}
+.gc .ic{width:42px;height:42px;border-radius:12px;background:var(--y);color:var(--ink);display:grid;place-items:center}
+.gc b{font-family:var(--disp);font-size:18px;letter-spacing:-.02em;line-height:1.2}
+.gc span{color:rgba(255,255,255,.72);font-size:15px;line-height:1.45}
+.direct{margin-top:clamp(50px,6vw,90px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2fr);gap:clamp(24px,4vw,70px);align-items:start}
+.direct h3{font-size:clamp(26px,2.8vw,44px);font-weight:800}
+.direct h3 + p{color:var(--mut);margin:14px 0 0}
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ink)}
+.dl div{padding:22px 22px 22px 0;border-bottom:1px solid var(--line)}
+.dl div:nth-child(odd){padding-inline-end:28px;border-inline-end:1px solid var(--line)}
+.dl div:nth-child(even){padding-inline-start:28px}
+.dl b{display:block;font-family:var(--disp);font-size:18px;letter-spacing:-.02em;margin-bottom:6px}
+.dl span{color:var(--mut)}
+@media (max-width:1100px){.gar{grid-template-columns:repeat(2,minmax(0,1fr))}.direct{grid-template-columns:1fr}}
+@media (max-width:600px){.gar{grid-template-columns:1fr}.gc{min-height:0}.dl{grid-template-columns:1fr}.dl div:nth-child(n){padding:18px 0;border-inline-end:0}}
+
+/* обо мне */
+.about{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:clamp(30px,6vw,110px);align-items:center}
+.card{aspect-ratio:4/5;border-radius:28px;background:var(--ink);color:#fff;padding:34px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;max-height:560px}
+.card .g2{position:absolute;width:120%;aspect-ratio:1;left:-10%;top:30%;border-radius:50%;filter:blur(60px);opacity:.5;background:conic-gradient(from var(--a,0deg),#FFC700,#5B3DF5,#26C281,#FFC700);animation:spin 18s linear infinite}
+.card *{position:relative}
+.card .mono{font-family:var(--disp);font-weight:800;font-size:clamp(40px,4.4vw,72px);line-height:.95;letter-spacing:-.05em}
+.card small{color:rgba(255,255,255,.7);font-size:14px}
+.about h2{font-size:clamp(32px,4vw,60px);font-weight:800;margin-bottom:24px}
+.about p{font-size:clamp(17px,1.25vw,20px);color:#2c2a26;margin:0 0 16px;max-width:34em}
+.about p.big1{font-weight:700;color:var(--ink)}
+.sig{margin-top:26px;font-family:var(--disp);font-weight:700}
+.sig span{display:block;font-family:var(--body);font-weight:500;color:var(--mut);font-size:14px}
+@media (max-width:860px){.about{grid-template-columns:1fr}.card{aspect-ratio:auto;min-height:260px}}
+
+/* вопросы */
+.faq{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(24px,4vw,70px);align-items:start}
+.tabs{display:flex;flex-direction:column;gap:6px;position:sticky;top:90px}
+.tabs button{padding:14px 18px;border-radius:14px;font-weight:700;font-size:16px;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
+.tabs button small{font-family:var(--disp);font-size:12px;color:var(--mut)}
+.tabs button:hover{background:rgba(17,17,17,.05)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:#fff}
+.tabs button[aria-selected="true"] small{color:var(--y)}
+.qa{border-top:1px solid var(--ink)}
+.qi{border-bottom:1px solid var(--line)}
+.qh{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 4px;font-weight:700;font-size:clamp(17px,1.3vw,20px)}
+.qh i{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;transition:transform .3s,background .3s}
+.qi.open .qh i{transform:rotate(45deg);background:var(--y);border-color:var(--y)}
+.qb{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.8,.2,1)}
+.qi.open .qb{grid-template-rows:1fr}
+.qb>div{overflow:hidden}
+.qb p{margin:0;padding:0 60px 24px 4px;color:#3a3731;max-width:46em}
+.grp[hidden]{display:none}
+@media (max-width:860px){.faq{grid-template-columns:1fr}.tabs{position:static;flex-direction:row;overflow-x:auto;gap:6px;margin:0 calc(var(--pad)*-1);padding:0 var(--pad) 4px;scrollbar-width:none}.tabs button{white-space:nowrap;padding:10px 14px;font-size:15px;gap:8px;flex:none}.qb p{padding-inline-end:10px}}
+
+/* финал */
+.end{background:var(--ink);color:#fff;border-radius:40px 40px 0 0;padding:clamp(90px,10vw,150px) 0 50px;position:relative;overflow:hidden}
+.end .big{font-size:clamp(36px,6vw,96px);max-width:none}
+.end .flip span{background:#262626}
+.end .acts{display:flex;gap:18px;align-items:center;margin-top:44px;flex-wrap:wrap}
+.end .btn{background:var(--y);color:var(--ink);padding:22px 34px;font-size:18px}
+.end .ct{color:rgba(255,255,255,.7);display:flex;flex-direction:column;gap:4px;font-size:15px}
+.end .ct bdo{color:#fff;font-weight:600}
+.end .promise{margin-top:26px;display:inline-flex;align-items:center;gap:10px;font-size:17px;color:#fff;background:rgba(255,255,255,.08);border-radius:999px;padding:10px 18px}
+.end .promise .dot{width:8px;height:8px;border-radius:50%;background:var(--mi);box-shadow:0 0 0 4px rgba(38,194,129,.25)}
+.foot{display:flex;justify-content:space-between;margin-top:100px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14);color:rgba(255,255,255,.5);font-size:13px;flex-wrap:wrap;gap:10px}
+
+
+/* цифры */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:40px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats div{padding:18px 18px 18px 0}
+.stats div+div{padding-inline-start:22px;border-inline-start:1px solid var(--line)}
+.stats b{display:block;font-family:var(--disp);font-size:clamp(24px,2.4vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.stats span{color:var(--mut);font-size:14px;line-height:1.35;display:block;margin-top:4px}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(3){padding-inline-start:0;border-inline-start:0}.stats div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* масштаб */
+.scale{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.sc3{background:#fff;border:1px solid var(--line);border-radius:26px;overflow:hidden;display:flex;flex-direction:column}
+.sc3 .top{padding:28px 28px 0}
+.sc3 .lvl{font-family:var(--disp);font-size:12px;font-weight:700;color:var(--mut);letter-spacing:.02em}
+.sc3 .big3{white-space:nowrap;font-family:var(--disp);font-weight:800;font-size:clamp(38px,3.4vw,60px);letter-spacing:-.05em;line-height:1;margin:12px 0 4px}
+.sc3 .big3 small{display:block;font-size:.3em;letter-spacing:-.01em;font-weight:700;margin-top:8px}
+.sc3 h3{font-size:clamp(20px,1.6vw,26px);margin:10px 0 10px}
+.sc3 p{margin:0 0 14px;color:#3a3731}
+.sc3 ul{margin:0 0 22px;padding:0;list-style:none;display:grid;gap:8px}
+.sc3 li{padding-inline-start:22px;position:relative;font-size:15px;line-height:1.4}
+.sc3 li::before{content:"";position:absolute;left:0;top:.45em;width:10px;height:10px;border-radius:50%;background:var(--y);box-shadow:0 0 0 2px var(--ink)}
+.sc3 .shot{margin-top:auto;height:300px;background:#EFEBE2;position:relative;overflow:hidden;display:flex;justify-content:center;gap:14px;padding-top:26px}
+.sc3 .shot img{width:150px;height:300px;object-fit:cover;object-position:top;border-radius:20px 20px 0 0;box-shadow:0 0 0 1px rgba(17,17,17,.1),0 20px 40px rgba(30,25,15,.18)}
+.sc3 .shot.t1{align-items:center;padding:0}
+.sc3 .shot.t1 .pg{width:66%;background:#fff;border-radius:16px;box-shadow:0 20px 40px rgba(30,25,15,.14);padding:18px;display:grid;gap:9px}
+.sc3 .shot.t1 .pg i{display:block;height:10px;border-radius:5px;background:#E8E3D8}
+.sc3 .shot.t1 .pg i:first-child{height:60px;border-radius:10px;background:linear-gradient(120deg,#FFE58A,#C9BDFF)}
+.sc3 .shot.t1 .pg i:nth-child(3){width:70%}.sc3 .shot.t1 .pg i:last-child{width:40%;height:26px;border-radius:13px;background:var(--ink)}
+.sc3.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sc3.dark p{color:rgba(255,255,255,.78)}.sc3.dark .lvl{color:var(--y)}
+.sc3.dark li::before{box-shadow:0 0 0 2px #fff}
+.sc3.dark .shot{background:#1d1d1d}
+@media (max-width:1100px){.scale{grid-template-columns:1fr}.sc3 .shot{height:260px}}
+
+/* панель управления */
+.adm{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:start}
+.browser{border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px rgba(17,17,17,.1),0 40px 80px rgba(30,25,15,.18)}
+.browser .bar{height:34px;background:#EDE9E0;display:flex;align-items:center;gap:7px;padding:0 14px}
+.browser .bar i{width:10px;height:10px;border-radius:50%;background:#D5CFC2}
+.browser .bar span{margin-inline-start:14px;font-size:12px;color:var(--mut);background:#fff;border-radius:6px;padding:3px 12px}
+.browser img{display:block;width:100%}
+.phones{display:flex;gap:12px;margin-top:-70px;padding:0 20px;position:relative;justify-content:flex-end}
+.phones img{width:130px;height:250px;object-fit:cover;object-position:top;border-radius:20px;border:5px solid #111;box-shadow:0 20px 40px rgba(30,25,15,.25);background:#fff}
+.agr{display:grid;gap:12px}
+.ag{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px 20px}
+.ag b{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-size:16px;letter-spacing:-.02em;margin-bottom:8px}
+.ag b i{font-style:normal;width:28px;height:28px;border-radius:9px;background:var(--y);display:grid;place-items:center;font-size:14px}
+.ag b .pim{flex:none;width:58px;height:58px;border-radius:14px;overflow:hidden;background:#16113A;box-shadow:0 8px 18px rgba(0,0,0,.22)}
+.ag b .pim img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.ag:hover .pim img{transform:scale(1.08)}
+.ag b{gap:14px}
+.ag p{margin:0;color:#3a3731;font-size:15px;line-height:1.5}
+.admnote{margin-top:16px;color:var(--mut);font-size:15px}
+@media (max-width:1100px){.adm{grid-template-columns:1fr}.phones{justify-content:center;margin-top:-50px}}
+@media (max-width:600px){.phones img{width:96px;height:190px}}
+
+/* AI */
+.ai{background:var(--ink);color:#fff;border-radius:36px;padding:clamp(34px,5vw,80px);position:relative;overflow:hidden}
+.ai .g3{position:absolute;width:700px;aspect-ratio:1;right:-200px;top:-260px;border-radius:50%;filter:blur(80px);opacity:.35;background:conic-gradient(from var(--a,0deg),#5B3DF5,#26C281,#FFC700,#5B3DF5);animation:spin 20s linear infinite;pointer-events:none}
+.ai *{position:relative}
+.ai .num{color:rgba(255,255,255,.6)}
+.ai h2{font-size:clamp(32px,4.2vw,66px);font-weight:800;max-width:14em}
+.ai .lead2{color:rgba(255,255,255,.75);max-width:40em;margin:18px 0 36px;font-size:clamp(17px,1.2vw,19px)}
+.aig{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.aic{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:24px}
+.aic .ic{width:44px;height:44px;border-radius:14px;background:var(--y);color:var(--ink);display:grid;place-items:center;margin-bottom:16px}
+.aic b{display:block;font-family:var(--disp);font-size:18px;letter-spacing:-.02em;margin-bottom:8px;line-height:1.25}
+.aic>span:not(.ic){display:block;color:rgba(255,255,255,.72);font-size:15px;line-height:1.5}
+.aic em{font-style:normal;display:inline-block;margin-top:12px;font-size:12px;font-family:var(--disp);font-weight:700;padding:5px 10px;border-radius:999px;background:rgba(38,194,129,.18);color:#7BE8B5}
+.aic em.soon{background:rgba(255,199,0,.15);color:var(--y)}
+.ai .aiend{margin-top:30px;color:rgba(255,255,255,.7);font-size:15px}
+@media (max-width:1100px){.aig{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.aig{grid-template-columns:1fr}.ai{border-radius:26px}}
+
+/* свои инструменты */
+.tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.tl{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;text-align:start;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.tl:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(30,25,15,.12)}
+.tl .im{height:230px;overflow:hidden;background:#EFEBE2}
+.tl .im img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.tl .tx{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.tl .tag{font-family:var(--disp);font-size:11px;font-weight:700;color:var(--mut)}
+.tl b{font-family:var(--disp);font-size:18px;letter-spacing:-.02em}
+.tl span{color:#3a3731;font-size:15px;line-height:1.45}
+.tl u{text-decoration:none;margin-top:auto;padding-top:8px;font-weight:700;font-size:14px;border-bottom:2px solid var(--y);align-self:flex-start}
+@media (max-width:1100px){.tools{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.tools{grid-template-columns:1fr}}
+.grp-l{position:absolute;font-family:var(--disp);font-weight:800;font-size:22px;letter-spacing:-.03em;color:var(--ink);display:flex;align-items:center;gap:10px}
+.grp-l i{font-style:normal;font-size:12px;font-weight:700;background:var(--ink);color:#fff;border-radius:999px;padding:4px 10px}
+.sto dd ul{margin:0;padding-inline-start:20px;display:grid;gap:4px}
+
+
+/* ===== вау-функции ===== */
+/* 1 ночь на первом экране */
+.hphone{display:flex;justify-content:center;margin-top:34px}
+.night{width:340px;border-radius:34px;padding:22px 20px 18px;background:radial-gradient(420px 300px at 80% 0,#3b2a8f,transparent 60%),linear-gradient(180deg,#0b0a24,#1b1446);color:#fff;position:relative;overflow:hidden;box-shadow:0 40px 80px rgba(22,17,58,.28)}
+.nstars{position:absolute;inset:0;pointer-events:none}.nstars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.7;animation:tw 3s infinite}
+@keyframes tw{50%{opacity:.15}}
+.nmoon{position:absolute;top:18px;right:26px;width:40px;height:40px;border-radius:50%;box-shadow:-10px 4px 0 0 #FFE7A3;transform:rotate(-20deg)}
+.nclk{position:relative;font-family:var(--disp);font-size:13px;color:var(--y);margin-bottom:12px}
+.phone{width:280px;height:500px;border-radius:40px;background:#0d0b1f;padding:10px;box-shadow:0 30px 60px rgba(0,0,0,.35),inset 0 0 0 2px #2a2650;position:relative;margin:0 auto}
+.phone .pscr{width:100%;height:100%;border-radius:31px;overflow:hidden;position:relative;background:#fff}
+.phone .notch{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:84px;height:22px;border-radius:12px;background:#0d0b1f;z-index:5}
+.wa{position:absolute;inset:0;background:#ECE5DD url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='4' cy='4' r='1.2' fill='%23d8cfc4'/%3E%3C/svg%3E");display:flex;flex-direction:column}
+.wa .bar{background:#075E54;color:#fff;padding:38px 14px 11px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px}
+.wa .bar i{width:32px;height:32px;border-radius:50%;background:var(--y);display:grid;place-items:center;font-style:normal;color:#16113A;font-family:var(--disp);font-size:11px;flex:none}
+.wa .bar small{display:block;font-weight:500;opacity:.8;font-size:11px}
+.wa .msgs{flex:1;padding:10px;display:flex;flex-direction:column;gap:8px;overflow:hidden;justify-content:flex-end}
+.msg{background:#fff;border-radius:10px 10px 10px 2px;padding:8px 10px 5px;font-size:12px;line-height:1.35;color:#111;box-shadow:0 1px 1px rgba(0,0,0,.1);max-width:90%;animation:popin .35s cubic-bezier(.2,1.4,.4,1)}
+[dir=rtl] .msg{border-radius:10px 10px 2px 10px}
+.msg b{color:#075E54;display:block;margin-bottom:2px}.msg em{font-style:normal;display:block;text-align:end;color:#888;font-size:10px;margin-top:3px}
+@keyframes popin{from{transform:scale(.6) translateY(20px);opacity:0}}
+.nfoot{position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.nfoot b{font-family:var(--disp);font-size:26px;color:var(--y);display:block;line-height:1}.nfoot small{opacity:.7;font-size:12px}
+.nfoot button{background:rgba(255,255,255,.12);color:#fff;border-radius:999px;padding:9px 14px;font-weight:700;font-size:13px}
+@media (min-width:1100px){
+  .hero{display:grid;grid-template-columns:minmax(0,1fr) 340px;column-gap:clamp(30px,5vw,90px);align-content:center}
+  .hero>*{grid-column:1}.hero .glow,.hero .scrollhint{grid-column:auto}
+  .hero .hphone{grid-column:2;grid-row:1 / span 7;align-self:center;margin:0}
+  .hero .stats{grid-column:1 / -1}
+  .hero .big{font-size:clamp(40px,4.6vw,84px)}
+  html[lang=he] .hero .big{font-size:clamp(44px,5vw,92px)}
+}
+/* 2 конструктор */
+.bld{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(24px,5vw,80px);align-items:start;background:#F4F1FF;border-radius:32px;padding:clamp(22px,4vw,56px)}
+.bchips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.bchips button{padding:12px 16px;border-radius:16px;background:#fff;font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px;transition:background .2s,color .2s}
+.bchips button i{font-style:normal;width:24px;height:24px;border-radius:8px;background:#F4F1FF;display:grid;place-items:center;font-size:12px}
+.bchips button.on{background:var(--vi);color:#fff}.bchips button.on i{background:var(--y);color:#16113A}
+.bsum{background:#fff;border-radius:20px;padding:18px 20px;margin-bottom:18px}
+.bsum b{font-family:var(--disp);display:block;margin-bottom:6px}.bsum ul{margin:0;padding-inline-start:18px;color:#3a3660;line-height:1.6}
+.site{position:absolute;inset:0;display:flex;flex-direction:column;background:#fff}
+.site .blk{transform-origin:top;animation:grow .45s cubic-bezier(.2,1.2,.3,1) both}
+@keyframes grow{from{opacity:0;transform:translateY(-12px) scaleY(.6)}}
+.s-head{background:var(--vi);color:#fff;padding:42px 14px 13px;font-family:var(--disp);font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:6px}
+.s-head small{font-family:var(--body);font-size:10px;background:rgba(255,255,255,.2);border-radius:999px;padding:3px 7px;white-space:nowrap}
+.s-hero{margin:10px;border-radius:16px;padding:14px;background:linear-gradient(135deg,#FFE066,#FFB3D9);font-weight:800;font-size:15px;color:#16113A}
+.s-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 10px}
+.s-grid div{border-radius:12px;background:#F4F1FF;height:58px;position:relative}
+.s-grid div::after{content:"";position:absolute;inset-inline-start:8px;bottom:8px;width:50%;height:6px;border-radius:3px;background:#cfc6ff}
+.s-scan{margin:10px;border-radius:12px;background:#16113A;color:#fff;padding:10px 12px;font-size:12px;font-weight:700}
+.s-ai{margin:0 10px 10px;border-radius:12px;background:#E3FAF1;padding:10px 12px;font-size:11.5px;color:#16113A}
+.s-adm{margin:0 10px 10px;border-radius:12px;background:#E8F1FF;padding:8px;font-size:11px;display:flex;gap:6px}
+.s-adm span{flex:1;background:#fff;border-radius:8px;padding:6px 2px;text-align:center;font-weight:800;color:#16113A}
+.s-wa{margin:auto 10px 12px;border-radius:14px;background:#25D366;color:#fff;text-align:center;padding:11px;font-weight:800;font-size:13px}
+.s-cart{position:absolute;inset-inline-end:12px;bottom:60px;width:42px;height:42px;border-radius:50%;background:#FF5DA2;color:#fff;display:grid;place-items:center;font-weight:800;box-shadow:0 8px 20px rgba(255,93,162,.4)}
+@media (max-width:900px){.bld{grid-template-columns:1fr}}
+/* 3 чат */
+.aichat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);align-items:center;margin-top:36px}
+.aichat h3{font-size:clamp(22px,2.2vw,32px);margin-bottom:12px}.aichat p{color:rgba(255,255,255,.75);margin:0}
+.chatbox{border-radius:26px;background:#ECE5DD;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.3);display:flex;flex-direction:column;height:460px;color:#111}
+.chatbox .bar{background:#075E54;color:#fff;padding:13px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
+.chatbox .bar i{width:36px;height:36px;border-radius:50%;background:var(--y);color:#16113A;display:grid;place-items:center;font-style:normal;font-family:var(--disp);font-size:12px}
+.chatbox .bar small{display:block;font-weight:500;opacity:.8;font-size:12px}
+.chatlog{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
+.cm{max-width:84%;padding:9px 12px;border-radius:12px;font-size:15px;line-height:1.4;animation:popin .3s cubic-bezier(.2,1.4,.4,1)}
+.cm.me{align-self:flex-end;background:#DCF8C6}.cm.bot{align-self:flex-start;background:#fff}
+.typing{display:inline-flex;gap:4px}.typing i{width:7px;height:7px;border-radius:50%;background:#999;animation:bl2 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bl2{50%{opacity:.2;transform:translateY(-3px)}}
+.quick{display:flex;gap:6px;flex-wrap:wrap;padding:8px 12px;background:#f5f1ea}
+.quick button{background:#fff;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.inp{display:flex;gap:8px;padding:10px;background:#f5f1ea}
+.inp input{flex:1;border:0;border-radius:999px;padding:12px 16px;font:inherit;font-size:15px;outline:none;min-width:0}
+.inp button{width:46px;height:46px;border-radius:50%;background:#075E54;color:#fff;font-size:18px;flex:none}
+[dir=rtl] .inp button{transform:scaleX(-1)}
+@media (max-width:900px){.aichat{grid-template-columns:1fr}}
+/* 4 курсор-сканер */
+.cur.scan{width:96px;height:72px;margin:-36px 0 0 -48px;background:transparent;border-radius:12px;box-shadow:0 0 0 3px #FF5DA2,0 0 18px rgba(255,93,162,.45)}
+.cur.scan span{opacity:0}
+.cur.scan::after{content:"";position:absolute;left:10px;right:10px;top:50%;height:2px;background:#FF5DA2;box-shadow:0 0 10px #FF5DA2;animation:sl 1.2s ease-in-out infinite}
+@keyframes sl{50%{transform:translateY(-22px)}}
+.it.beep .sc{animation:hit .35s}
+@keyframes hit{40%{filter:brightness(1.25)}}
+/* 6 3D */
+.it .sc{transition:transform .25s ease-out}
+.it:focus-visible .sc{transform:translateY(-6px) rotate(0deg)!important}
+/* 5 переворот при смене языка */
+body.leave main,body.leave .end{transition:transform .45s cubic-bezier(.6,0,.4,1),opacity .45s;transform:perspective(1800px) rotateY(var(--ry,-14deg)) scale(.95);opacity:0}
+body.arrive main{animation:arrive .7s cubic-bezier(.2,.8,.2,1)}
+@keyframes arrive{from{transform:perspective(1800px) rotateY(var(--ra,14deg)) scale(.95);opacity:0}}
+/* 7 табло цифр */
+.stats b .onum{display:inline-block!important;unicode-bidi:isolate;font-size:inherit!important;color:inherit!important;margin:0!important}
+.stats b .od,.stats b .od span{font-size:inherit!important;color:inherit!important;margin:0!important;line-height:1.1em}
+.stats b .od{display:inline-block!important;height:1.1em;overflow:hidden;vertical-align:top}
+.stats b .od span{display:block;transition:transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.stats b .od span i{display:block;font-style:normal;height:1.1em;line-height:1.1em;text-align:center}
+
+
+/* ===== ещё ништяки ===== */
+/* калькулятор потерь */
+.loss{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);align-items:stretch}
+.lcard{background:#FFF4D6;border-radius:28px;padding:clamp(22px,3vw,40px)}
+.lrow{margin-bottom:22px}.lrow label{display:flex;justify-content:space-between;gap:10px;font-weight:700;margin-bottom:10px}
+.lrow label b{font-family:var(--disp);font-size:20px;color:var(--vi)}
+.lrow input[type=range]{width:100%;accent-color:#6C4BFF;height:28px}
+.lres{background:linear-gradient(135deg,#6C4BFF,#FF5DA2);color:#fff;border-radius:28px;padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;justify-content:center;gap:10px}
+.lres small{opacity:.85;font-size:15px}.lres .big4{font-family:var(--disp);font-weight:800;font-size:clamp(40px,4.6vw,72px);letter-spacing:-.03em;line-height:1}
+.lres .yr{font-family:var(--disp);font-size:clamp(20px,1.8vw,28px)}
+.lres p{margin:6px 0 10px;opacity:.85;font-size:14px}
+.lres .btn{background:#fff;color:#16113A;align-self:flex-start}
+@media (max-width:900px){.loss{grid-template-columns:1fr}}
+/* было / стало */
+.bagrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:40px}
+.ba{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:1;background:#f3f1ec;user-select:none;touch-action:none;cursor:ew-resize}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.ba .aft{clip-path:inset(0 0 0 var(--x,50%))}
+.ba .ln{position:absolute;top:0;bottom:0;left:var(--x,50%);width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);transform:translateX(-50%)}
+.ba .ln i{position:absolute;top:50%;left:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.2);display:grid;place-items:center;font-style:normal;font-weight:800}
+.ba .lb{position:absolute;top:14px;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:800;background:rgba(22,17,58,.75);color:#fff}
+.ba .lb.l{left:14px}.ba .lb.r{right:14px;background:#6C4BFF}
+.bacap{margin:14px 0 0;color:var(--mut)}
+@media (max-width:700px){.bagrid{grid-template-columns:1fr}}
+/* игра */
+.game{position:relative;border-radius:32px;overflow:hidden;background:linear-gradient(180deg,#E8F1FF,#FFE9E3);height:min(520px,70vh);user-select:none}
+.game .hud{position:absolute;top:16px;left:20px;right:20px;display:flex;justify-content:space-between;font-family:var(--disp);font-weight:800;font-size:20px;z-index:3}
+.game .itm{position:absolute;font-size:40px;line-height:1;will-change:transform;pointer-events:none}
+.game .bask{position:absolute;bottom:18px;width:110px;height:64px;margin-left:-55px;border-radius:0 0 26px 26px;background:#6C4BFF;box-shadow:0 12px 24px rgba(108,75,255,.35);display:grid;place-items:center;color:#fff;font-size:30px;z-index:2}
+.game .ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;background:rgba(255,255,255,.72);backdrop-filter:blur(4px);z-index:4;padding:20px}
+.game .ov h3{font-size:clamp(24px,3vw,40px)}.game .ov p{margin:0;color:var(--mut);max-width:30em}
+.game .pop{position:absolute;font-family:var(--disp);font-weight:800;color:#12B886;pointer-events:none;animation:up .7s forwards;z-index:3}
+@keyframes up{to{transform:translateY(-40px);opacity:0}}
+/* QR */
+.qr{position:fixed;inset-inline-start:20px;bottom:20px;z-index:30;background:#fff;border-radius:18px;padding:12px;box-shadow:0 20px 50px rgba(22,17,58,.18);display:none;align-items:center;gap:12px;width:250px}
+.qr img{width:86px;height:86px;border-radius:8px}.qr b{display:block;font-family:var(--disp);font-size:14px;margin-bottom:4px}.qr span{font-size:13px;color:var(--mut);line-height:1.35}
+.qr button{position:absolute;top:6px;inset-inline-end:8px;font-size:16px;color:var(--mut)}
+@media (min-width:1400px) and (hover:hover){.qr{display:flex}}
+/* микрофон */
+.inp .mic{background:#fff;color:#075E54;font-size:18px}.inp .mic.rec{background:#FF5DA2;color:#fff;animation:bl2 1s infinite}
+/* ночная плашка */
+.nightchip{display:none;align-items:center;gap:8px;margin:-12px 0 22px;padding:8px 14px;border-radius:999px;background:linear-gradient(90deg,#1b1446,#3b2a8f);color:#fff;font-size:14px;font-weight:700;width:max-content;max-width:100%}
+.isnight .nightchip{display:inline-flex}
+
+
+/* ===== телефон: доводка ===== */
+html,body{overflow-x:hidden;max-width:100%}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+section,footer,header{max-width:100vw}
+.game.run{touch-action:none}
+@media (max-width:700px){
+  .hero .big{font-size:min(9.2vw,46px);letter-spacing:-.02em}
+  .doing{font-size:min(6vw,26px)}
+  .doing .flip{font-size:.8em}
+  .stats b{font-size:min(6.2vw,26px);white-space:nowrap}
+  .hphone{margin-top:26px}
+  .night{width:100%;max-width:330px;padding:18px 16px 14px}
+  .night .phone{width:236px;height:400px;border-radius:34px}
+  .bld{padding:16px;border-radius:24px;gap:18px}
+  .bld>div:last-child{order:-1}
+  .bld .phone{width:200px;height:340px;border-radius:30px;padding:8px}
+  .bld .phone .pscr{border-radius:24px}
+  .bchips{gap:8px;margin-bottom:14px}
+  .bchips button{padding:9px 11px;font-size:13.5px;border-radius:12px;gap:6px}
+  .bchips button i{width:20px;height:20px;font-size:11px}
+  .bsum{padding:14px 16px;font-size:14px}
+  .game{height:440px;border-radius:24px}
+  .game .itm{font-size:34px}
+  .game .bask{width:96px;height:56px;margin-left:-48px;font-size:26px}
+  .game .hud{font-size:18px}
+  .chips.fold button:nth-of-type(n+7){display:none}
+  .chips .allb{background:var(--ink)!important;color:#fff;border-color:var(--ink)!important}
+  .tabs{flex-wrap:wrap;overflow:visible;margin:0;padding:0 0 4px}
+  .ba .lb{font-size:12px;top:10px;padding:5px 10px}
+  .ba .ln i{width:40px;height:40px;margin:-20px 0 0 -20px}
+  .lres .big4{font-size:min(12vw,52px)}
+}
+
+
+
+.nav nav a{white-space:nowrap}
+@media (max-width:1560px){.nav nav{gap:18px;font-size:14.5px}.nav nav a[href="#scale"],.nav nav a[href="#admin"]{display:none}}
+@media (max-width:1320px){.nav nav a[href="#process"]{display:none}}
+@media (max-width:560px){.langs a.on .fl{box-shadow:0 0 0 2px var(--ink),0 2px 6px rgba(22,17,58,.2)}}
+
+@media (min-width:701px) and (max-width:900px){.bld{grid-template-columns:minmax(0,1fr) auto}.bld .phone{width:230px;height:420px}.loss{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}}
+
+/* ===== бренд на примерах ===== */
+.brand{position:absolute;inset-inline-start:10px;bottom:10px;z-index:3;display:inline-flex;align-items:center;gap:5px;padding:4px 9px 4px 6px;border-radius:999px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);box-shadow:0 4px 12px rgba(22,17,58,.18);font-family:var(--disp);font-size:10px;font-weight:800;color:#16113A;letter-spacing:-.01em;white-space:nowrap;pointer-events:none;line-height:1}
+.brand img{width:16px!important;height:13px!important;object-fit:contain!important;box-shadow:none!important;border-radius:0!important;margin:0!important;position:static!important}
+.brand[hidden]{display:none}
+.it .sc,.tl .im,.sto .ph{position:relative}
+.sc3 .shot .brand{bottom:12px}
+.browser .bar .brand.in{position:static;margin-inline-start:auto;box-shadow:none;background:#fff;font-size:10.5px}
+.wa .bar i.av,.chatbox .bar i.av{background:#fff;padding:5px}
+.wa .bar i.av img,.chatbox .bar i.av img{width:100%;height:100%;object-fit:contain;display:block}
+
+/* ===== кнопка WhatsApp, доступность, окна ===== */
+.wabar{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:none;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:999px;background:#25D366;color:#fff;font-weight:800;font-size:16px;box-shadow:0 14px 30px rgba(18,140,70,.35);transform:translateY(140%);transition:transform .45s cubic-bezier(.2,1.2,.3,1)}
+.wabar small{font-weight:600;font-size:12px;opacity:.9}
+.wabar.show{transform:none}
+@media (max-width:700px){.wabar{display:flex}.end .foot{padding-bottom:84px}.wabar small{display:none}}
+.a11b{position:fixed;inset-inline-end:20px;bottom:20px;z-index:41;width:50px;height:50px;border-radius:50%;background:#1F5BFF;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(31,91,255,.4);transition:transform .3s}
+.a11b:hover{transform:scale(1.08)}
+@media (max-width:700px){.a11b{width:42px;height:42px;bottom:86px;inset-inline-end:14px}.a11b svg{width:20px;height:20px}}
+.a11p{position:fixed;inset-inline-end:20px;bottom:82px;z-index:42;width:250px;background:#fff;border-radius:20px;padding:14px;box-shadow:0 24px 60px rgba(22,17,58,.25);display:grid;gap:6px}
+.a11p[hidden]{display:none}
+.a11p b{font-family:var(--disp);font-size:15px;margin:2px 4px 6px}
+.a11p button{text-align:start;padding:11px 12px;border-radius:12px;background:#F4F1FF;font-weight:700;font-size:14px;color:#16113A}
+.a11p button.on{background:#1F5BFF;color:#fff}
+.a11p .rs{background:#fff;border:1px solid var(--line)}.a11p .lk{background:none;color:#1F5BFF;padding:8px 12px}
+@media (max-width:700px){.a11p{bottom:136px;inset-inline-end:14px}}
+.legal{max-width:640px;width:calc(100% - 32px);border:0;border-radius:26px;padding:34px 30px 26px;box-shadow:0 40px 90px rgba(22,17,58,.3);color:var(--ink)}
+.legal::backdrop{background:rgba(22,17,58,.5);backdrop-filter:blur(4px)}
+.legal h3{font-size:clamp(22px,3vw,30px);margin:0 0 14px;padding-inline-end:40px}
+.legal p{margin:0 0 12px;line-height:1.6}.legal .upd{color:var(--mut);font-size:14px;margin-top:18px}
+.legal .lx{position:absolute;top:16px;inset-inline-end:16px;width:38px;height:38px;border-radius:50%;background:#F4F1FF;font-size:16px}
+.legal-l{display:inline-flex;gap:16px;flex-wrap:wrap}.legal-l button{color:inherit;text-decoration:underline;text-underline-offset:3px;font-size:inherit}
+.ct a{color:inherit}
+html.a-big body{zoom:1.15}
+html.a-hc{--mut:#1d1a33;--line:rgba(0,0,0,.35)}html.a-hc body{filter:contrast(1.18)}
+html.a-na *,html.a-na *::before,html.a-na *::after{animation:none!important;transition:none!important}
+html.a-ul a,html.a-ul button.go{text-decoration:underline!important;text-underline-offset:3px}
+@media (min-width:1400px) and (hover:hover){.qr{bottom:20px}}
+
+/* ===== развитие: боковое меню, цвет, услуги, лента, поиск ===== */
+html.morph body{background:transparent}
+html.morph .sec,html.morph .hero{background:transparent!important}
+.bgm{position:fixed;inset:0;z-index:-1;background:#fff;transition:background-color .9s ease}
+.side{position:fixed;inset-inline-start:22px;top:50%;transform:translateY(-50%);z-index:35;display:none;flex-direction:column;gap:2px;max-height:80vh}
+.side a{display:flex;align-items:center;gap:10px;padding:6px 12px 6px 8px;border-radius:999px;font-size:13px;font-weight:600;color:var(--mut);white-space:nowrap;transition:background .3s,color .3s,transform .3s}
+.side a i{font-style:normal;font-family:var(--disp);font-size:11px;font-weight:800;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:rgba(22,17,58,.06);flex:none;transition:background .3s,color .3s}
+.side a:hover{color:var(--ink);transform:translateX(4px)}[dir=rtl] .side a:hover{transform:translateX(-4px)}
+.side a.on{background:#fff;color:var(--ink);box-shadow:0 6px 18px rgba(22,17,58,.12)}
+.side a.on i{background:var(--ink);color:#fff}
+@media (min-width:1800px) and (hover:hover){.side{display:flex}}
+@media (min-width:2200px){#works .wrap,#admin .wrap,#tools .wrap{max-width:1760px}}
+.sbtn{white-space:nowrap;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(22,17,58,.06);color:var(--ink);font-size:12px;font-weight:700}
+.sbtn kbd{font-family:var(--body);font-size:11px;color:var(--mut);background:#fff;border-radius:6px;padding:2px 6px;box-shadow:0 1px 0 rgba(0,0,0,.1)}
+@media (max-width:1300px){.sbtn kbd{display:none}}
+@media (max-width:560px){.sbtn{display:none}}
+.fc{cursor:pointer;transition:transform .35s cubic-bezier(.2,1.2,.3,1),box-shadow .35s,outline-color .3s;outline:3px solid transparent;outline-offset:3px}
+.fc:hover{transform:translateY(-4px)}
+.fc.sel{outline-color:var(--ink);transform:translateY(-6px) rotate(-1deg);box-shadow:0 20px 40px rgba(22,17,58,.18)}
+.fornote{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px;padding:12px 14px 12px 18px;border-radius:16px;background:var(--ink);color:#fff;font-weight:700;width:max-content;max-width:100%;animation:popin .4s cubic-bezier(.2,1.4,.4,1)}
+.fornote[hidden]{display:none}
+.fornote button{background:var(--y);color:#16113A;border-radius:999px;padding:7px 14px;font-weight:800}
+.fornote .fx{background:transparent;color:#fff;padding:4px 8px}
+.li.hl .lr{background:linear-gradient(90deg,rgba(255,224,102,.45),transparent 70%)}
+[dir=rtl] .li.hl .lr{background:linear-gradient(270deg,rgba(255,224,102,.45),transparent 70%)}
+.li.hl .lr h3::after{content:"✓";display:inline-grid;place-items:center;width:22px;height:22px;margin-inline-start:10px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;vertical-align:middle}
+.svprev{position:fixed;left:0;top:0;z-index:25;width:200px;aspect-ratio:9/16;border-radius:22px;overflow:hidden;pointer-events:none;box-shadow:0 30px 60px rgba(22,17,58,.3);opacity:0;transform:scale(.6);transition:opacity .25s,transform .35s cubic-bezier(.2,1.4,.4,1)}
+.svprev.on{opacity:1}
+.svprev img{width:100%;height:100%;object-fit:cover;object-position:top;background:#fff}
+.steps::after{transition:transform .25s linear!important}
+.st::before{transition:background .4s,transform .4s}
+.st.lit::before{background:var(--y)!important;transform:scale(1.25)}
+.st b,.st span{transition:opacity .5s}
+.steps:not(.done) .st:not(.lit) b,.steps:not(.done) .st:not(.lit) span{opacity:.35}
+.st em{position:relative;overflow:hidden}
+.st em::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--y)}
+.st.lit em::after{animation:fillw 1.6s ease-out forwards}
+.st.lit em{animation:pulse2 .6s 1.6s 2}
+@keyframes fillw{to{width:100%}}
+@keyframes pulse2{50%{transform:scale(1.12)}}
+.wf{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.wf button{padding:9px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-weight:700;font-size:14px;display:flex;gap:8px;align-items:center;transition:background .25s,color .25s}
+.wf button small{font-family:var(--disp);font-size:11px;color:var(--mut)}
+.wf button.on{background:var(--ink);color:#fff;border-color:var(--ink)}.wf button.on small{color:var(--y)}
+.it{transition:opacity .45s,filter .45s}
+.it.dim{opacity:.12;filter:grayscale(1) blur(1px);pointer-events:none}
+.grp-l{transition:opacity .45s}.grp-l.dim{opacity:.15}
+.marq{padding:30px 0 60px;overflow:hidden;display:grid;gap:18px;direction:ltr}
+.mrow{display:flex;gap:18px;width:max-content;animation:mq 90s linear infinite}
+.mrow.rev{animation-direction:reverse;animation-duration:110s}
+.marq:hover .mrow{animation-play-state:paused}
+.mrow button{width:150px;height:260px;border-radius:22px;overflow:hidden;flex:none;box-shadow:0 0 0 1px rgba(17,17,17,.08),0 16px 30px rgba(22,17,58,.12);transition:transform .35s cubic-bezier(.2,1.4,.4,1);background:#fff}
+.mrow button:hover{transform:translateY(-8px) rotate(-2deg)}
+.mrow img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (max-width:700px){.mrow button{width:110px;height:190px;border-radius:16px}.marq{padding:10px 0 40px;gap:12px}}
+.cmdk{position:fixed;inset:0;z-index:60;background:rgba(22,17,58,.45);backdrop-filter:blur(6px);display:flex;justify-content:center;align-items:flex-start;padding:12vh 16px 16px}
+.cmdk[hidden]{display:none}
+.ck{width:min(640px,100%);background:#fff;border-radius:22px;box-shadow:0 40px 100px rgba(22,17,58,.35);overflow:hidden;animation:popin .3s cubic-bezier(.2,1.4,.4,1)}
+.ckin{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);color:var(--mut)}
+.ckin input{flex:1;border:0;outline:0;font:600 18px var(--body);color:var(--ink);background:transparent;min-width:0}
+.ckin kbd{font-size:11px;background:#F4F1FF;border-radius:6px;padding:3px 7px;color:var(--mut)}
+.ckres{max-height:min(55vh,460px);overflow:auto;padding:8px}
+.ckres h6{margin:10px 10px 4px;font:800 11px var(--disp);letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.ckres button{display:flex;width:100%;text-align:start;gap:12px;align-items:center;padding:10px 12px;border-radius:12px;color:var(--ink)}
+.ckres button img{width:34px;height:46px;border-radius:8px;object-fit:cover;object-position:top;flex:none;box-shadow:0 0 0 1px var(--line)}
+.ckres button .ci{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:#F4F1FF;flex:none;font-size:15px}
+.ckres button b{display:block;font-size:15px}.ckres button small{display:block;color:var(--mut);font-size:13px;margin-top:2px;line-height:1.35}
+.ckres button.act{background:#F4F1FF}
+.ckres .none{padding:22px;text-align:center;color:var(--mut)}.ckres .none a{color:#1F5BFF;font-weight:700}
+.ckft{padding:10px 18px;border-top:1px solid var(--line);font-size:12px;color:var(--mut)}
+.heart{position:fixed;top:-60px;z-index:80;pointer-events:none;will-change:transform}
+@keyframes hfall{to{transform:translate(var(--dx),110vh) rotate(var(--r))}}
+.bigmark{position:fixed;left:50%;top:50%;z-index:81;width:180px;margin:-90px 0 0 -90px;pointer-events:none;animation:bigm 1.8s cubic-bezier(.2,1.4,.4,1) forwards}
+@keyframes bigm{0%{transform:scale(0) rotate(-30deg);opacity:0}25%{transform:scale(1.15);opacity:1}40%{transform:scale(1)}80%{opacity:1}100%{transform:scale(1.4);opacity:0}}
+
+/* ===== подвал: большой знак ===== */
+.end .wrap{position:relative}
+.fbrand{display:flex;align-items:center;gap:clamp(20px,3vw,48px);margin:clamp(40px,6vw,80px) 0 10px;padding-top:clamp(30px,4vw,50px);border-top:1px solid rgba(255,255,255,.18)}
+.bmw{flex:none;width:clamp(150px,16vw,260px);aspect-ratio:1720/1404;perspective:700px;cursor:pointer;background:none;border:0;padding:0}
+.bm{width:100%;height:100%;overflow:visible;transition:transform .25s ease-out;filter:drop-shadow(0 18px 30px rgba(0,0,0,.25))}
+.bm .bl{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0)}
+.bm .bt{transform-box:fill-box;transform-origin:0 100%;opacity:0;transform:translateY(40px)}
+
+.bm.drawn .bl{transform:scaleY(1);transition:transform .7s cubic-bezier(.2,.9,.3,1)}
+.bm.drawn .bt{opacity:1;transform:none;transition:opacity .5s .45s,transform .7s .45s cubic-bezier(.2,.9,.3,1)}
+
+@keyframes hbeat{0%,60%,100%{transform:scale(1)}12%{transform:scale(1.045)}24%{transform:scale(.99)}36%{transform:scale(1.025)}}
+.bm .all{transform-box:fill-box;transform-origin:50% 60%}
+.bm.beat .all{animation:hbeat 2.4s ease-in-out infinite}
+.bm.pop .all{animation:mpop .55s cubic-bezier(.2,1.5,.4,1)}
+@keyframes mpop{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
+.bm.beat{animation:glow 2.4s ease-in-out infinite}
+@keyframes glow{0%,60%,100%{filter:drop-shadow(0 18px 30px rgba(0,0,0,.25))}12%{filter:drop-shadow(0 18px 30px rgba(0,0,0,.25)) drop-shadow(0 0 22px rgba(255,216,107,.55))}}
+
+
+.fbt b{font-family:var(--disp);font-size:clamp(24px,2.6vw,40px);letter-spacing:-.02em;display:block}.fbt b em{font-style:normal;color:#FFD86B}
+.fbt p{margin:8px 0 0;max-width:34em;color:rgba(255,255,255,.82);font-size:clamp(15px,1.15vw,18px);line-height:1.55}
+@media (max-width:700px){.fbrand{flex-direction:column;align-items:flex-start;text-align:start}.bmw{width:150px}}
+html.a-na .bm .bl,html.a-na .bm .bt,html.a-na .bm .all{transform:none!important;opacity:1!important}
+.about .card .mono{font-size:clamp(30px,2.7vw,48px)!important;line-height:1.02}
+.about .card .cmark{width:min(46%,170px);margin:auto 0 18px;position:relative;filter:drop-shadow(0 14px 24px rgba(0,0,0,.35))}
+.burst{position:fixed;z-index:80;pointer-events:none;width:22px;height:20px;animation:bst 1.1s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes bst{0%{transform:translate(0,0) scale(.3);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(1) rotate(var(--r));opacity:0}}
+
+/* ===== первый экран: веер телефонов ===== */
+.fan{position:relative;justify-content:center}
+.fan .night{position:relative;z-index:3}
+.fan .fp{position:absolute;top:50%;left:50%;z-index:1;width:220px;height:440px;margin:-220px 0 0 -110px;transition:transform .5s cubic-bezier(.2,.9,.3,1);will-change:transform}
+.fan .fp .phone{width:100%;height:100%;border-radius:34px;padding:8px;box-shadow:0 30px 60px rgba(22,17,58,.28),inset 0 0 0 2px #2a2650}
+.fan .fp .pscr{border-radius:27px;background:#fff}
+.fan .fp .pscr img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.fan .fp .notch{width:70px;height:18px;top:14px}
+.fan .fl{transform:translateX(calc(-1*var(--sx,150px))) rotate(calc(-1*var(--sr,9deg))) scale(.9)}
+.fan .fr{transform:translateX(var(--sx,150px)) rotate(var(--sr,9deg)) scale(.9)}
+.fan.idle .fl{animation:fl1 6s ease-in-out infinite}.fan.idle .fr{animation:fr1 6s ease-in-out infinite}
+@keyframes fl1{50%{transform:translateX(-160px) rotate(-11deg) scale(.9) translateY(-8px)}}
+@keyframes fr1{50%{transform:translateX(160px) rotate(11deg) scale(.9) translateY(8px)}}
+@media (min-width:1100px){.hero{grid-template-columns:minmax(0,1fr) 560px!important}.fan{min-height:640px}.hero .big{font-size:clamp(38px,3.7vw,70px)!important}html[lang=he] .hero .big{font-size:clamp(42px,4.2vw,80px)!important}}
+@media (max-width:1099px){.fan{min-height:620px}}
+@media (max-width:700px){.fan{min-height:540px}.fan .fp{width:150px;height:300px;margin:-150px 0 0 -75px}.fan .fp .phone{border-radius:24px;padding:6px}.fan .fp .pscr{border-radius:19px}.fan .night{max-width:270px}}
+html.a-na .fan .fp{animation:none!important}
+
+/* ===== три пакета ===== */
+.pkgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:clamp(40px,5vw,70px)}
+.pkg{position:relative;background:#fff;border-radius:28px;padding:clamp(22px,2.4vw,34px);box-shadow:0 0 0 1px var(--line);display:flex;flex-direction:column;transition:transform .4s cubic-bezier(.2,1.2,.3,1),box-shadow .4s}
+.pkg:hover{transform:translateY(-6px);box-shadow:0 0 0 1px var(--line),0 30px 60px rgba(22,17,58,.14)}
+.pkg.mid{background:linear-gradient(160deg,#6C4BFF,#3B2A8F);color:#fff;box-shadow:0 30px 60px rgba(108,75,255,.3)}
+.pkg .pn{font-family:var(--disp);font-size:12px;font-weight:800;color:var(--mut)}.pkg.mid .pn{color:#FFD86B}
+.pkg h3{font-size:clamp(26px,2.4vw,38px);margin:10px 0 4px}
+.pkg .psz{font-family:var(--disp);font-weight:800;font-size:15px;color:#6C4BFF}.pkg.mid .psz{color:#FFD86B}
+.pkg p{margin:10px 0 16px;color:var(--mut)}.pkg.mid p{color:rgba(255,255,255,.8)}
+.pkg ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:9px}
+.pkg li{position:relative;padding-inline-start:26px;line-height:1.4}
+.pkg li::before{content:"✓";position:absolute;inset-inline-start:0;top:1px;width:18px;height:18px;border-radius:50%;background:#F4F1FF;color:#6C4BFF;font-size:11px;font-weight:800;display:grid;place-items:center}
+.pkg.mid li::before{background:rgba(255,255,255,.18);color:#FFD86B}
+.pkg .pbtn{margin-top:auto;align-self:flex-start}.pkg.mid .pbtn{background:#FFD86B;color:#16113A}
+.pkg.hl{outline:3px solid var(--ink);outline-offset:4px}
+.pkg.hl::after{content:"✓";position:absolute;top:-12px;inset-inline-end:-12px;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800}
+.addh{font-size:clamp(20px,1.8vw,26px);margin:0 0 14px}
+#list .li:nth-child(-n+2){display:none}
+@media (max-width:1000px){.pkgs{grid-template-columns:1fr}}
+
+/* ===== «עליי»: иллюстрация ===== */
+.about .card{padding:0;justify-content:flex-end;max-height:none;aspect-ratio:4/5}
+.about .card .g2{display:none}
+.about .card .aph{position:absolute;inset:0}
+.about .card .aph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity 1.2s ease,transform 6s ease}
+.about .card .aph .a2{opacity:0}
+.about .card.sw .aph .a2{opacity:1}
+.about .card:hover .aph img{transform:scale(1.04)}
+.about .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,17,58,.55) 0%,transparent 22%,transparent 55%,rgba(22,17,58,.85) 100%);pointer-events:none}
+.about .card>small,.about .card .amono{position:relative;z-index:2;padding:0 28px}
+.about .card>small:first-of-type{position:absolute;top:24px;left:0}
+[dir=rtl] .about .card>small:first-of-type{left:auto;right:0}
+.about .card .amono{font-size:clamp(26px,2.2vw,38px)!important;margin-bottom:8px}
+.about .card>small:last-child{padding-bottom:26px}
+@media (max-width:860px){.about .card{aspect-ratio:4/5;min-height:0}}
+
+/* ===== доводка мелочей ===== */
+.ar{display:inline-block}[dir=rtl] .ar{transform:scaleX(-1)}
+.side.off{opacity:0;pointer-events:none}
+.side{transition:opacity .4s}
+@media (max-width:860px){.about .card{max-width:440px;width:100%;margin:0 auto}}
+@media (max-width:700px){.a11b{inset-inline-end:auto;inset-inline-start:14px}.a11p{inset-inline-end:auto;inset-inline-start:14px}}
+
+/* ===== «איך אנחנו עובדים»: сцены ===== */
+.sti{aspect-ratio:1;border-radius:20px;overflow:hidden;margin:0 0 14px;box-shadow:0 14px 30px rgba(22,17,58,.18);transform:translateY(16px) scale(.94);opacity:.35;transition:transform .7s cubic-bezier(.2,1.2,.3,1),opacity .6s,box-shadow .4s;background:#16113A}
+.sti img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.st.lit .sti,.steps.done .sti{transform:none;opacity:1}
+.st:hover .sti img{transform:scale(1.06)}
+.st:hover .sti{box-shadow:0 20px 40px rgba(22,17,58,.26)}
+@media (max-width:600px){.sti{border-radius:16px;margin-bottom:10px}}
+html.a-na .sti{transform:none!important;opacity:1!important}
+
+/* ===== гарантии и сроки: картинки ===== */
+.gc{padding:14px 14px 22px}
+.gc .gim{display:block;aspect-ratio:1;border-radius:16px;overflow:hidden;margin-bottom:6px;box-shadow:0 10px 24px rgba(0,0,0,.22);background:#16113A}
+.gc .gim img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.gc:hover .gim img{transform:scale(1.07) rotate(-1deg)}
+.gc b,.gc>span:not(.gim){padding:0 8px}
+@media (max-width:600px){.gc{display:grid;grid-template-columns:96px 1fr;column-gap:14px;row-gap:4px;align-items:center;padding:12px}.gc .gim{grid-row:span 2;margin:0}.gc b,.gc>span:not(.gim){padding:0}}
+.link{grid-template-columns:150px minmax(0,1fr) minmax(0,1fr)!important;align-items:stretch}
+.link .lim{border-radius:20px;overflow:hidden;box-shadow:0 12px 28px rgba(22,17,58,.18);background:#16113A;padding:0!important}
+.link .lim img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:900px){.link{grid-template-columns:130px minmax(0,1fr)!important}.link .lim{grid-row:span 2;aspect-ratio:1;align-self:center}}
+@media (max-width:600px){.link{grid-template-columns:1fr!important}.link .lim{grid-row:auto;max-width:160px;aspect-ratio:1}}
+
+/* ===== пакеты: картинки ===== */
+.pkg .pkim{aspect-ratio:1;border-radius:20px;overflow:hidden;margin:-8px -8px 16px;box-shadow:0 14px 30px rgba(22,17,58,.2);background:#16113A}
+.pkg .pkim img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.pkg:hover .pkim img{transform:scale(1.06)}
+@media (max-width:1000px){.pkg .pkim{aspect-ratio:16/10}.pkg .pkim img{object-position:center 40%}}
+
+/* ===== «Для кого»: значки ===== */
+.fc{padding:12px 12px 20px}
+.fc .fim{aspect-ratio:1;border-radius:16px;overflow:hidden;background:#16113A;box-shadow:0 10px 22px rgba(22,17,58,.18);margin-bottom:2px}
+.fc .fim img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.fc:hover .fim img{transform:scale(1.07)}
+.fc .k,.fc p,.fc span.r{margin-inline:10px}
+.fc .k{margin-top:-30px;position:relative;z-index:1;box-shadow:0 0 0 4px #fff}
+@media (max-width:600px){.fc{display:grid;grid-template-columns:104px 1fr;column-gap:14px;row-gap:8px;align-items:start;padding:12px}.fc .fim{grid-row:span 3;margin:0}.fc .k{margin:0;box-shadow:none}.fc .k,.fc p,.fc span.r{margin-inline:0}.fc span.r{grid-column:1 / -1}}
+
+/* ===== подвал: фон с лентой ===== */
+.end{background:linear-gradient(90deg,rgba(74,34,201,.94) 0%,rgba(74,34,201,.8) 42%,rgba(74,34,201,.1) 72%),#4A22C9 url(img/foot.jpg) right bottom/cover no-repeat!important}
+@media (max-width:900px){.end{background:linear-gradient(180deg,rgba(74,34,201,.9),rgba(74,34,201,.78)),#4A22C9 url(img/foot.jpg) 78% bottom/cover no-repeat!important}}
+
+/* ===== AI: значки ===== */
+.aic{display:grid;grid-template-columns:92px 1fr;column-gap:16px;align-items:start}
+.aic .aim{grid-row:span 3;width:92px;height:92px;border-radius:18px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.28);background:#16113A}
+.aic .aim img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.aic:hover .aim img{transform:scale(1.08)}
+.aic>b,.aic>span:not(.aim),.aic>em{grid-column:2}
+.aic>em{justify-self:start}
+@media (max-width:600px){.ai{padding:28px 16px}.aic{grid-template-columns:64px 1fr;column-gap:14px;padding:18px 16px}.aic .aim{width:64px;height:64px;border-radius:14px}}
+/* ===== логотип ===== */
+.logo .mk{height:30px;width:auto;flex:none;transform-origin:60% 80%;animation:mkbeat 7s ease-in-out infinite;transition:transform .4s cubic-bezier(.2,1.4,.4,1)}
+.logo:hover .mk{transform:rotate(-8deg) scale(1.12);animation:none}
+@keyframes mkbeat{0%,86%,100%{transform:scale(1)}90%{transform:scale(1.14)}94%{transform:scale(.97)}97%{transform:scale(1.08)}}
+.logo .lt{display:flex;flex-direction:column;line-height:1}
+.logo .lt b{font-weight:800}.logo .lt em{font-style:normal;color:#B0873F}
+.logo .lt small{font-family:var(--body);font-size:8.5px;font-weight:700;letter-spacing:.32em;text-transform:uppercase;color:#B0873F;margin-top:4px}
+html[lang=he] .logo .lt small{letter-spacing:.2em}
+@media (max-width:900px){.logo .lt small{display:none}}
+@media (max-width:560px){.logo .mk{height:24px}}
+
+
+.langs{display:flex;gap:4px;background:rgba(22,17,58,.06);border-radius:999px;padding:4px;position:relative}
+.langs a{display:flex;align-items:center;gap:7px;padding:4px 11px 4px 4px;border-radius:999px;font-family:var(--disp);font-size:12px;font-weight:800;color:var(--mut);line-height:1;transition:background .3s,color .3s,box-shadow .3s}
+[dir=rtl] .langs a{padding:4px 4px 4px 11px}
+.langs .fl{width:24px;height:24px;border-radius:50%;overflow:hidden;flex:none;position:relative;box-shadow:0 0 0 1.5px rgba(22,17,58,.12),0 2px 6px rgba(22,17,58,.15);transition:transform .45s cubic-bezier(.2,1.6,.4,1),filter .3s;filter:saturate(.55)}
+.langs .fl svg{display:block;width:100%;height:100%}
+.langs .fl::after{content:"";position:absolute;inset:0;border-radius:50%;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.75) 48%,transparent 62%);transform:translateX(-120%);background-repeat:no-repeat}
+.langs a:hover .fl{transform:rotate(-14deg) scale(1.12);filter:none}
+.langs a:hover .fl::after{transform:translateX(120%);transition:transform .7s ease}
+.langs a:hover{color:var(--ink)}
+.langs a.on{background:#fff;color:var(--ink);box-shadow:0 4px 14px rgba(22,17,58,.14)}
+.langs a.on .fl{filter:none;animation:flwave 3.2s ease-in-out infinite}
+@keyframes flwave{0%,70%,100%{transform:rotate(0)}76%{transform:rotate(-12deg)}84%{transform:rotate(9deg)}92%{transform:rotate(-4deg)}}
+@media (max-width:560px){.cnt{display:none}.langs{margin-inline-start:auto;gap:2px;padding:3px}.langs a,[dir=rtl] .langs a{padding:3px}.langs .cd{display:none}.langs .fl{width:26px;height:26px}.nav .in{gap:8px}.cta{padding:9px 12px;font-size:13px}.logo{font-size:15px;gap:6px}}
+[dir=rtl] .lbin li::before,[dir=rtl] .sc3 li::before{left:auto;right:0}
+[dir=rtl] .st::before{left:auto;right:0}
+[dir=rtl] .steps::after{left:auto;right:0;transform-origin:100% 50%}
+[dir=rtl] .prog{transform-origin:100% 50%}
+[dir=rtl] .x{right:auto;left:16px}
+[dir=rtl] .chint{left:auto;right:20px}
+[dir=rtl] .mini{right:auto;left:18px}
+[dir=rtl] .btn svg,[dir=rtl] .chint svg{transform:scaleX(-1)}
+[dir=rtl] .ai .g3{right:auto;left:-200px}
+html[lang=he]{--disp:'Heebo',system-ui,sans-serif;--body:'Heebo',system-ui,sans-serif}
+html[lang=he] h1,html[lang=he] h2,html[lang=he] h3,html[lang=he] .big3,html[lang=he] .stats b,html[lang=he] .grp-l{letter-spacing:0;font-weight:900}
+html[lang=he] .big{font-size:clamp(40px,6.6vw,108px);line-height:1.05}
+html[lang=he] body{font-size:18px}
+
+/* курсор */
+.cur{position:fixed;left:0;top:0;z-index:100;pointer-events:none;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--ink);transition:width .3s cubic-bezier(.2,.8,.2,1),height .3s cubic-bezier(.2,.8,.2,1),margin .3s cubic-bezier(.2,.8,.2,1),background .3s;display:grid;place-items:center;color:var(--ink);font-family:var(--disp);font-weight:700;font-size:12px}
+.cur span{opacity:0;transition:opacity .2s}
+.cur.big2{width:78px;height:78px;margin:-39px 0 0 -39px;background:var(--y)}
+.cur.big2 span{opacity:1}
+body.modal .cur{display:none}
+@media (hover:none),(pointer:coarse){.cur{display:none}}
+
+@media (prefers-reduced-motion:reduce){.glow,.card .g2,.kick .dot,.scrollhint i{animation:none}html{scroll-behavior:auto}}
+
+/* ===== цвета: вариант 2 «Сочный» ===== */
+.nav{background:rgba(255,255,255,.82)}
+section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70px,8vw,120px)!important}
+:root{--bg:#FFFFFF;--ink:#16113A;--y:#FFD23F;--vi:#6C4BFF;--mi:#1FCB8F;--mut:#5B5875}
+.glow{opacity:.7;background:conic-gradient(from var(--a,0deg),#FFD23F,#FF5DA2,#6C4BFF,#1FCB8F,#FFD23F)}
+#for{background:#FFF4D6}#scale{background:#EEE9FF}#admin{background:#E3FAF1}#tools{background:#FFE9E3}#process{background:#E8F1FF}#faq{background:#FFF4D6}
+.ai{background:linear-gradient(135deg,#6C4BFF,#FF5DA2)}.ai .g3{display:none}.aic{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.25)}
+.end{background:#6C4BFF}.end .flip span{background:#4B2FD6}
+.gc:nth-child(1){background:#6C4BFF}.gc:nth-child(2){background:#FF6B4A}.gc:nth-child(3){background:#12B886}.gc:nth-child(4){background:#3B82F6}.gc:nth-child(5){background:#F59F00}
+.fc:nth-child(1){background:#FFE066}.fc:nth-child(2){background:#D0BFFF}.fc:nth-child(3){background:#96F2D7}.fc:nth-child(4){background:#FFC9C9}.fc:nth-child(5){background:#A5D8FF}
+.fc{border:0}.fc span{color:#2b2850!important}
+.sc3.dark{background:#6C4BFF;border-color:#6C4BFF}.sc3.dark .shot{background:#5639e0}
+.lr::before{background:#6C4BFF}
+
+</style>
+</head>
+<body>
+<div class="cur" id="cur"><span id="curT"></span></div>
+
+<header class="nav"><div class="wrap in">
+  <a class="logo" href="#top"><img class="mk" src="img/mark.svg" alt="" width="34" height="28"><span class="lt"><b>Apps <em>&amp; Soul</em></b><small>Technology with heart</small></span></a>
+  <nav><a href="#services">שירותים</a><a href="#scale">גודל</a><a href="#admin">פאנל</a><a href="#ai">AI</a><a href="#works">עבודות</a><a href="#process">איך עובדים</a><a href="#about">עליי</a><a href="#faq">שאלות</a></nav>
+  <button type="button" class="sbtn" id="sbtn" aria-label="חיפוש (Ctrl+K)" title="חיפוש (Ctrl+K)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><kbd>Ctrl K</kbd></button>
+  <div class="langs"><a href="index.html" lang="ru" title="Русский"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="he.html" lang="he" title="עברית" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="en.html" lang="en" title="English"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></div>
+  <div class="cnt" id="cnt"><b>01</b> / 12</div>
+  <a class="cta mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">לכתוב</a>
+  <div class="prog" id="prog"></div>
+</div></header>
+
+<main>
+<!-- 01 первый экран -->
+<section class="hero wrap" id="top" data-sec="01">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="kick"><span class="dot"></span>Apps &amp; Soul — הסטודיו של דוד מושאילוב</div>
+  <div class="nightchip">🌙 אצלכם עכשיו לילה, והחנויות באתרים שלי ממשיכות לקבל הזמנות</div>
+  <h1 class="big">העסק שלכם פתוח מסביב לשעון.</h1>
+  <p class="sub">גם כשאתם ישנים, <em>הזמנות מגיעות לוואטסאפ.</em></p>
+  <div class="doing" aria-label="בונה אתרים, חנויות, אפליקציות וקטלוגים מפתח ביד"><span aria-hidden="true">בונה</span><span class="flip" id="flip1" aria-hidden="true"></span><span aria-hidden="true">מפתח ביד</span></div>
+  <div class="tldr"><span>אתרים · חנויות · אפליקציות · קטלוגים</span><span>רוסית, עברית, אנגלית</span><span>מהרעיון ועד ההשקה, בלי מתווכים</span></div>
+  <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">ספרו לי על העסק שלכם <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="btn ghost mag" href="#works">לעבודות</a></div>
+  <div class="reply"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></svg>עונה בוואטסאפ תוך שעתיים בשעות העבודה</div>
+  <div class="hphone fan" id="fan"><div class="fp fl"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/he/w_rosa.jpg" alt="" loading="eager"></div></div></div><div class="fp fr"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/w_admin.jpg" alt="" loading="eager"></div></div></div><div class="night"><div class="nstars" id="nstars"></div><div class="nmoon"></div>
+    <div class="nclk" id="nclk">03:12 · לילה</div>
+    <div class="phone"><div class="notch"></div><div class="pscr"><div class="wa"><div class="bar"><i class="av"><img src="img/mark.svg" alt=""></i><div>הזמנות החנות<small>מחובר</small></div></div><div class="msgs" id="msgs"></div></div></div></div>
+    <div class="nfoot"><div><b id="ordN">0</b><small>הזמנות הלילה</small></div><button id="sndB" type="button">🔊 צליל</button></div>
+  </div></div>
+  <div class="stats"><div><b>4,800</b><span>מוצרים בחנות הגדולה ביותר</span></div><div><b>109,000+</b><span>ברקודים במאגר משלי</span></div><div><b>3 שפות</b><span>עברית, רוסית, אנגלית</span></div><div><b>שעתיים</b><span>לתשובה בשעות העבודה</span></div></div>
+  <div class="scrollhint" aria-hidden="true">גללו<i></i></div>
+</section>
+
+<!-- 02 для кого -->
+<section class="sec t0" id="for" data-sec="02"><div class="wrap">
+  <div class="head"><div><span class="num">02 — למי</span><h2 class="scr">פנו אליי אם אתם</h2></div><p>לא משנה אם יש לכם חנות, בית קפה או עסק משלכם. חשוב איזו משימה צריך לפתור. מזהים את עצמכם?</p></div>
+  <div class="for" id="forList"></div>
+  <div class="fornote" id="fornote" hidden><span>✓ השירותים המתאימים מסומנים למטה</span><button type="button" id="forgo">להציג ↓</button><button type="button" class="fx" id="forx" aria-label="✕">✕</button></div>
+  <p class="forend">המצב שלכם לא ברשימה? <a href="https://wa.me/972587800228" target="_blank" rel="noopener">כתבו, נבדוק.</a></p>
+</div></section>
+
+<!-- 03 услуги -->
+<section class="sec t0" id="services" data-sec="03"><div class="wrap">
+  <div class="head"><div><span class="num">03 — שירותים</span><h2 class="scr">מה אני עושה</h2></div><p>שלוש חבילות לפי גודל העסק ותוספות להן. המחיר תלוי במשימה: כתבו, ואשלח מחיר מדויק ולוח זמנים.</p></div>
+  <div class="pkgs" id="pkgs"><div class="pkg" id="pk1"><div class="pkim"><img src="img/pk1.jpg" alt="" loading="lazy"></div><span class="pn">01</span><h3>כרטיס ביקור</h3><div class="psz">עד 10 עמודים</div><p>אתר לחברה או לבעל מקצוע</p><ul><li>עיצוב בסגנון שלכם, בלי תבניות</li><li>נוח בטלפון ובמסך גדול</li><li>כפתורי וואטסאפ, חיוג ומפה</li><li>עד שלוש שפות</li><li>פרסום בכתובת שלכם</li></ul><a class="btn pbtn" data-pk="כרטיס ביקור" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה כרטיס ביקור <span class="ar">→</span></a></div><div class="pkg mid" id="pk2"><div class="pkim"><img src="img/pk2.jpg" alt="" loading="lazy"></div><span class="pn">02</span><h3>חנות</h3><div class="psz">עד 1,000 מוצרים</div><p>חנות אונליין עם קטלוג וסל</p><ul><li>קטלוג עם תמונות, מחירים וחיפוש</li><li>סל קניות, וההזמנה מגיעה לוואטסאפ כרשימה מוכנה</li><li>מבצעים, הנחות, מוצרים חדשים</li><li>הוספת מוצרים לפי ברקוד</li><li>פאנל ניהול לבעלים</li></ul><a class="btn pbtn" data-pk="חנות" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה חנות <span class="ar">→</span></a></div><div class="pkg" id="pk3"><div class="pkim"><img src="img/pk3.jpg" alt="" loading="lazy"></div><span class="pn">03</span><h3>פרויקט גדול</h3><div class="psz">5,000+ מוצרים</div><p>כמה חנויות, אפליקציה, מערכת משלכם</p><ul><li>כמה חנויות בסל אחד</li><li>העברת המבחר מהקופה</li><li>פאנל מלא: מלאי, דוחות, ספקים</li><li>אפליקציה לטלפון</li><li>עוזר AI ללקוחות</li></ul><a class="btn pbtn" data-pk="פרויקט גדול" target="_blank" rel="noopener" href="https://wa.me/972587800228">לדבר על פרויקט <span class="ar">→</span></a></div></div>
+  <h3 class="addh">אפשר להוסיף לכל חבילה</h3>
+  <div class="list" id="list"></div>
+</div></section>
+
+
+<!-- конструктор -->
+<section class="sec t0" id="build" data-sec="03"><div class="wrap">
+  <div class="head"><div><span class="num">בונה האתר</span><h2 class="scr">בנו את האתר שלכם</h2></div><p>לחצו על מה שהעסק שלכם צריך. הסקיצה נבנית בזמן אמת, והכפתור ישלח לי רשימה מוכנה בוואטסאפ.</p></div>
+  <div class="bld"><div><div class="bchips" id="bchips"></div><div class="bsum"><b>הסט שלכם</b><ul id="bsum"></ul></div><a class="btn" id="bsend" target="_blank" rel="noopener">לשלוח בוואטסאפ ←</a></div>
+    <div class="phone"><div class="notch"></div><div class="pscr"><div class="site" id="bsite"></div></div></div></div>
+</div></section>
+
+<!-- калькулятор -->
+<section class="sec t0" id="loss" data-sec="03"><div class="wrap">
+  <div class="head"><div><span class="num">מחשבון</span><h2 class="scr">כמה אתם מפסידים בלי אתר</h2></div><p>הזיזו את המחוונים לפי העסק שלכם. זה חישוב משוער לפי המספרים שלכם, בלי הבטחות.</p></div>
+  <div class="loss"><div class="lcard">
+      <div class="lrow"><label>קונים ביום<b id="lv1">40</b></label><input type="range" id="l1" min="5" max="300" value="40"></div>
+      <div class="lrow"><label>קנייה ממוצעת, ₪<b id="lv2">120</b></label><input type="range" id="l2" min="20" max="1000" step="10" value="120"></div>
+      <div class="lrow" style="margin:0"><label>כמה עוד היו מגיעים אילו יכלו להזמין מהטלפון, %<b id="lv3">10</b></label><input type="range" id="l3" min="2" max="40" value="10"></div>
+    </div>
+    <div class="lres"><small>אתם מפספסים בערך</small><div class="big4" id="lm">0 ₪</div><small>בחודש</small><div class="yr" id="ly">0 ₪ בשנה</div><p>החישוב: קונים ביום × אחוז × קנייה ממוצעת × 26 ימי עבודה.</p><a class="btn" id="lbtn" target="_blank" rel="noopener">רוצה להחזיר את הכסף הזה ←</a></div>
+  </div>
+</div></section>
+
+<!-- масштаб -->
+<section class="sec" id="scale" data-sec="04"><div class="wrap">
+  <div class="head"><div><span class="num">04 — גודל</span><h2 class="scr">החבילות בפעולה</h2></div><p>איך כל חבילה נראית בפרויקטים אמיתיים. לכל גודל ההיגיון שלו, כדי שהלקוח לא ילך לאיבוד ואתם תנהלו בקלות.</p></div>
+  <div class="scale">
+    <div class="sc3"><div class="top"><span class="lvl">חבילה 01 · כרטיס ביקור</span><div class="big3">עד&nbsp;10<small>עמודים</small></div><h3>אתר לחברה או לבעל מקצוע</h3><p>מי אתם, מה אתם מציעים, כמה זה עולה ואיך יוצרים קשר. עולה לאוויר הכי מהר.</p>
+      <ul><li>שירותים ומחירים, תמונות עבודות, המלצות</li><li>כפתורי וואטסאפ, חיוג ומפה</li><li>קביעת תור או פנייה מהאתר</li><li>שלוש שפות, נוח בטלפון ובמסך גדול</li></ul></div>
+      <div class="shot t1"><div class="pg"><i></i><i></i><i></i><i></i><i></i></div></div></div>
+    <div class="sc3"><div class="top"><span class="lvl">חבילה 02 · חנות</span><div class="big3">עד&nbsp;1,000<small>מוצרים</small></div><h3>חנות אונליין עם מחלקות</h3><p>דוגמה: חנות מעדנים, כ-900 מוצרים. בנויה כמו סופרמרקט גדול: מחלקה, קבוצה, מדף.</p>
+      <ul><li>החיפוש מבין שגיאות כתיב וקול</li><li>ארץ ייצור עם דגל, משקל, תיאור קצר</li><li>מוצרים במשקל מוזמנים בגרמים</li><li>מבצעים, ״להיטים״, מארזי חג</li><li>פריסה מיוחדת למסכים רחבים במיוחד</li></ul></div>
+      <div class="shot"><span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span><img src="img/he/w_rosa.jpg" alt="חנות המעדנים בטלפון" loading="lazy"><img src="img/w_admin.jpg" alt="פאנל ניהול לחנות" loading="lazy"></div></div>
+    <div class="sc3 dark"><div class="top"><span class="lvl">חבילה 03 · פרויקט גדול</span><div class="big3"><bdi>5,000+</bdi><small>מוצרים</small></div><h3>כמה חנויות, סל אחד</h3><p>דוגמה: שלוש חנויות של בעלים אחד, כמעט 4,800 מוצרים ישר מהקופה.</p>
+      <ul><li>הזמנה אחת לכל שלוש החנויות</li><li>תשע מחלקות גדולות במקום עשרים ושתיים</li><li>כל המבחר הועבר מהקופה, לא ידנית</li><li>כניסה נפרדת 18+ לאלכוהול</li><li>משלוח בעיר עם סכום הזמנה מינימלי</li></ul></div>
+      <div class="shot"><span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span><img src="img/he/w_azart.jpg" alt="שלוש חנויות בטלפון" loading="lazy"><img src="img/he/w_azart2.jpg" alt="מחלקות החנות הגדולה" loading="lazy"></div></div>
+  </div>
+</div></section>
+
+<!-- панель управления -->
+<section class="sec t0" id="admin" data-sec="05"><div class="wrap">
+  <div class="head"><div><span class="num">05 — פאנל ניהול</span><h2 class="scr">מה שהלקוח לא רואה</h2></div><p>לכל חנות פאנל ניהול משלה, במחשב ובטלפון. הלקוח רואה את חלון הראווה, ואתם מנהלים את כל השאר.</p></div>
+  <div class="adm">
+    <div><div class="browser"><div class="bar"><i></i><i></i><i></i><span>פאנל ניהול לחנות</span><em class="brand in"><img src="img/mark.svg" alt="">Apps &amp; Soul</em></div><img src="img/a_desk.jpg" alt="המסך הראשי של פאנל הניהול" loading="lazy"></div>
+      <div class="phones"><img src="img/a_orders.jpg" alt="הזמנות" loading="lazy"><img src="img/a_products.jpg" alt="מוצרים" loading="lazy"><img src="img/a_reports.jpg" alt="דוחות" loading="lazy"></div></div>
+    <div class="agr" id="admList"></div>
+  </div>
+  <p class="admnote">את הפאנל אני מתאים לעסק שלכם: לחנות צריך דבר אחד, לבית קפה אחר, לבעל מקצוע שלישי. בצילומים — פאנל של חנות שעובדת בעברית.</p>
+</div></section>
+
+<!-- AI -->
+<section class="sec t0" id="ai" data-sec="06"><div class="wrap"><div class="ai"><div class="g3"></div>
+  <span class="num">06 — עוזרי AI</span>
+  <h2 class="scr">עוזרים חכמים לעסק שלכם</h2>
+  <p class="lead2">אני משלב עוזרי AI באתרים ובתוכנות. הם לוקחים על עצמם את השגרה: עונים ללקוחות, כותבים תיאורים, מפענחים קול ותמונות. ההחלטות תמיד שלכם, העוזר רק עוזר.</p>
+  <div class="aig" id="aiList"></div>
+  <div class="aichat"><div><h3>נסו בעצמכם</h3><p>כך העוזר עונה ללקוחות החנות בוואטסאפ. כתבו שאלה או לחצו על שאלה מוכנה.</p></div>
+    <div class="chatbox"><div class="bar"><i class="av"><img src="img/mark.svg" alt=""></i><div>העוזר של החנות<small id="cst">מחובר</small></div></div><div class="chatlog" id="clog"></div><div class="quick" id="cquick"></div><form class="inp" id="cfrm"><button type="button" class="mic" id="cmic" aria-label="🎤">🎤</button><input id="cq" autocomplete="off"><button aria-label="➤">➤</button></form></div></div>
+  <p class="aiend">רוצים עוזר למשימה שלכם? <a href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20AI-%D0%B0%D1%81%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%82" target="_blank" rel="noopener" style="color:#fff;font-weight:700;border-bottom:2px solid var(--y)">תארו אותה בוואטסאפ ←</a></p>
+</div></div></section>
+
+<!-- игра -->
+<section class="sec t0" id="game" data-sec="06"><div class="wrap">
+  <div class="head"><div><span class="num">משחק</span><h2 class="scr">תפסו את ההזמנה</h2></div><p>15 שניות. הזיזו את הסל עם העכבר או האצבע ותפסו הזמנות. כך עובדת חנות שמקבלת הזמנות אונליין.</p></div>
+  <div class="game" id="gm"><div class="hud"><span id="gsc">0</span><span id="gt">15</span></div><div class="bask" id="gb">🛒</div>
+    <div class="ov" id="gov"><h3 id="gtt">מוכנים?</h3><p id="gtx">תפסו מוצרים והזמנות. את האיקסים ❌ לא תופסים.</p><button class="btn" id="gst" type="button">להתחיל לשחק</button></div></div>
+</div></section>
+
+<!-- 04 работы -->
+<section class="sec t0" id="works" data-sec="07"><div class="wrap">
+  <div class="head"><div><span class="num">07 — עבודות</span><h2 class="scr">עבודות על השולחן</h2></div><p>חנויות, תוכנות, אפליקציות, קטלוגים וספרים. גררו את השולחן בעכבר או באצבע, לחצו על מסך — ייפתח הסיפור: משימה, פתרון ומה בפנים.</p></div>
+  <div class="wf" id="wf"></div>
+  <div class="canvas" id="canvas" data-cur="לגרור">
+    <div class="plane" id="plane"></div>
+    <div class="chint"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1v14M1 8h14M8 1 6 3M8 1l2 2M8 15l-2-2M8 15l2-2M1 8l2-2M1 8l2 2M15 8l-2-2M15 8l-2 2"/></svg>גררו · לחצו על מסך</div>
+    <div class="mini" aria-hidden="true"><i id="miniV"></i></div>
+  </div>
+  <div class="chips" id="chips"><small>סיפורי פרויקטים:</small></div>
+</div></section>
+
+
+<!-- свои инструменты -->
+<section class="sec" id="tools" data-sec="08"><div class="wrap">
+  <div class="head"><div><span class="num">08 — פיתוחים שלי</span><h2 class="scr">הכלים של הסטודיו</h2></div><p>תוכנות שבניתי ללקוחות שלי ולעבודת הסטודיו. משתמשים בהן יחד עם האתרים או בנפרד.</p></div>
+  <div class="tools" id="toolList"></div>
+  <div class="bagrid">
+    <div><div class="ba" data-ba><img src="img/ba1_before.jpg" alt=""><img class="aft" src="img/ba1_after.jpg" alt=""><span class="lb l">לפני</span><span class="lb r">אחרי</span><div class="ln"><i>⇆</i></div></div><p class="bacap">צילום מהטלפון: הפריים יושר ונחתך, האריזה בהירה יותר. גררו את הקו.</p></div>
+    <div><div class="ba" data-ba><img src="img/ba2_before.jpg" alt=""><img class="aft" src="img/ba2_after.jpg" alt=""><span class="lb l">לפני</span><span class="lb r">אחרי</span><div class="ln"><i>⇆</i></div></div><p class="bacap">צולם בזווית, ועכשיו ישר כמו מסורק.</p></div>
+  </div>
+</div></section>
+
+<!-- 05 как работаем -->
+<section class="sec" id="process" data-sec="09"><div class="wrap">
+  <div class="head"><div><span class="num">09 — תהליך</span><h2 class="scr">איך אנחנו עובדים</h2></div><p>שישה שלבים מההודעה הראשונה ועד ההשקה. תמיד תדעו באיזה שלב הפרויקט.</p></div>
+  <div class="steps" id="steps">
+    <div class="st"><div class="sti"><img src="img/st1.jpg" alt="" loading="lazy"></div><i>01</i><b>היכרות</b><span>מדברים בטלפון או מתכתבים בוואטסאפ. אני מברר במה אתם עוסקים, מי הלקוחות שלכם ומה צריך לצאת.</span></div>
+    <div class="st"><div class="sti"><img src="img/st2.jpg" alt="" loading="lazy"></div><i>02</i><b>הצעה</b><span>אני שולח תוכנית: מה ייכלל, באיזה סדר ובאיזה לוח זמנים.</span></div>
+    <div class="st"><div class="sti"><img src="img/st3.jpg" alt="" loading="lazy"></div><i>03</i><b>סקיצה</b><span>אני מראה איך האתר ייראה. מתקנים עד שזה מוצא חן בעיניכם.</span><em>3–5 ימים</em></div>
+    <div class="st"><div class="sti"><img src="img/st4.jpg" alt="" loading="lazy"></div><i>04</i><b>פיתוח</b><span>אני בונה את האתר וממלא אותו במוצרים ובטקסטים שלכם. פעם בשבוע שולח מה מוכן.</span></div>
+    <div class="st"><div class="sti"><img src="img/st5.jpg" alt="" loading="lazy"></div><i>05</i><b>השקה</b><span>מפרסם בכתובת שלכם, בודק בטלפונים ובמחשבים ומראה איך משתמשים.</span></div>
+    <div class="st"><div class="sti"><img src="img/st6.jpg" alt="" loading="lazy"></div><i>06</i><b>תמיכה</b><span>נשאר זמין: תיקונים, עדכונים, רעיונות חדשים.</span></div>
+  </div>
+  <div class="link"><div class="lim"><img src="img/x_time.jpg" alt="" loading="lazy"></div>
+    <div><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2"><circle cx="14" cy="14" r="11"/><path d="M14 8v6l4 2.5"/></svg><p style="margin:0"><b>תשובה תוך שעתיים</b><span>עונה בוואטסאפ בשעות העבודה. בלי מנהלים ובלי מענה אוטומטי.</span></p></div>
+    <div><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="20" height="19" rx="3"/><path d="M4 11h20M10 3v4M18 3v4M9 16l3 3 6-6"/></svg><p style="margin:0"><b>דוח פעם בשבוע</b><span>בקצרה: מה נעשה ומה הלאה. לא צריך לשאול.</span></p></div>
+  </div>
+</div></section>
+
+<!-- 06 гарантии + почему напрямую -->
+<section class="sec t0" id="trust" data-sec="10"><div class="wrap">
+  <div class="head"><div><span class="num">10 — אחריות</span><h2 class="scr">מה אתם מקבלים</h2></div><p>אתם לא תלויים בי. כל מה שאני עושה שייך לכם ושמור בגיבויים.</p></div>
+  <div class="gar" id="gar"></div>
+  <div class="direct">
+    <div><h3>למה ישירות, ולא דרך סוכנות</h3><p>אתם תמיד מדברים עם מי שאחראי על הפרויקט שלכם.</p></div>
+    <div class="dl">
+      <div><b>מדברים עם מי שעושה</b><span>בלי מנהלים ובלי טלפון שבור.</span></div>
+      <div><b>מכירים את הפרויקט מכל הכיוונים</b><span>שום דבר לא הולך לאיבוד בדרך: מי שהתחיל, הוא זה שמסיים.</span></div>
+      <div><b>החלטות מהירות</b><span>לא מחכים לישיבות: שאלה — תשובה.</span></div>
+      <div><b>תשומת לב לפרטים</b><span>הפרויקט שלכם הוא לא ״אחד ממאה״.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 07 обо мне -->
+<section class="sec t0" id="about" data-sec="11"><div class="wrap about">
+  <div class="card"><div class="g2"></div><small>Apps &amp; Soul</small><div class="aph"><img src="img/about1.jpg" alt="" loading="lazy"><img class="a2" src="img/about2.jpg" alt="" loading="lazy"></div><div class="mono amono">Technology<br>with heart</div><small>דוד מושאילוב · מפתח ומייסד</small></div>
+  <div><span class="num">11 — עליי</span><h2 class="scr">שלום, אני דוד.</h2>
+    <p class="big1">אני המייסד של Apps &amp; Soul.</p>
+    <p>בשם הסטודיו יש שתי מילים, ושתיהן חשובות. Apps זה מה שאנחנו עושים: אתרים, חנויות, אפליקציות. Soul זה איך שאנחנו עושים את זה.</p>
+    <p>אני אדם עם נשמה של אמן, ואוהב כשדבר לא רק עובד אלא גם משמח את העין. כותב ספרים, יוצר כריכות, בונה קטלוגים. וכל פרויקט של לקוח אני מוביל כאילו הוא שלי.</p>
+    <div class="sig">דוד מושאילוב<span>מפתח, מייסד Apps &amp; Soul</span></div></div>
+</div></section>
+
+<!-- 08 вопросы -->
+<section class="sec" id="faq" data-sec="12"><div class="wrap">
+  <div class="head"><div><span class="num">12 — שאלות</span><h2 class="scr">שאלות ותשובות</h2></div><p>השאלות שנשאלות הכי הרבה. לא מצאתם את שלכם — שאלו בוואטסאפ.</p></div>
+  <div class="faq"><div class="tabs" id="tabs" role="tablist"></div><div id="qa"></div></div>
+</div></section>
+</main>
+
+<section class="marq" aria-label="כל העבודות"><div class="mrow" id="mr1"></div><div class="mrow rev" id="mr2"></div></section>
+
+<footer class="end" data-sec="12"><div class="wrap">
+  <h2 class="big">נבנה לכם<br><span class="flip" id="flip2"></span></h2>
+  <div class="promise"><span class="dot"></span>כתבו — אענה תוך שעתיים בשעות העבודה.</div>
+  <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">ספרו לי על העסק שלכם</a>
+    <div class="ct"><span>טלפון <a href="tel:+972587800228"><bdo dir="ltr">+972 58-780-0228</bdo></a></span><span>מייל <a href="mailto:hello@appsandsoul.com"><bdo dir="ltr">hello@appsandsoul.com</bdo></a></span></div></div>
+    <div class="fbrand" id="fbrand"><button type="button" class="bmw" id="bmw" aria-label="♥"><svg class="bm" id="bm" viewBox="442 511 1720 1404" aria-hidden="true"><defs><clipPath id="bmRc"><rect id="bmRr" x="442" y="511" width="1720" height="1404"/></clipPath></defs><g class="all"><g class="bl"><path d="M0 0 C25.16 21.17 41.11 48.73 55.62 77.88 C55.89 78.4 55.89 78.4 57.2 81.04 C68.87 104.56 79.24 128.58 88.88 153 C89.16 153.72 89.44 154.44 89.74 155.19 C90.54 157.23 91.34 159.27 92.14 161.32 C92.37 161.91 92.37 161.91 93.52 164.87 C94.38 167.21 95.1 169.44 95.62 171.88 C93.64 171.88 91.66 171.88 89.62 171.88 C79.4 192.06 69.62 212.44 60.43 233.11 C56.91 241.02 53.33 248.9 49.69 256.75 C44.74 267.43 39.87 278.14 35.04 288.87 C34.44 290.2 33.84 291.53 33.25 292.85 C33.1 293.18 33.1 293.18 32.34 294.86 C29.34 301.51 26.32 308.15 23.3 314.78 C11.11 341.56 -0.96 368.39 -12.89 395.29 C-17.13 404.84 -21.39 414.37 -25.73 423.88 C-29.3 431.69 -32.81 439.54 -36.31 447.39 C-39.61 454.76 -42.93 462.12 -46.3 469.45 C-46.64 470.18 -46.97 470.9 -47.31 471.65 C-47.99 473.13 -48.67 474.6 -49.35 476.08 C-55.13 488.67 -60.77 501.3 -66.23 514.02 C-71.01 525.14 -76 536.17 -81 547.19 C-86.59 559.49 -92.16 571.8 -97.56 584.18 C-99.9 589.53 -102.26 594.86 -104.67 600.17 C-105.51 602.03 -106.34 603.89 -107.18 605.75 C-107.98 607.51 -108.78 609.27 -109.58 611.02 C-110.06 612.09 -110.54 613.16 -111.04 614.26 C-111.47 615.2 -111.89 616.14 -112.33 617.11 C-113.48 620.15 -114.26 622.62 -114.38 625.88 C-112.38 628.06 -112.38 628.06 -110.38 629.88 C-110.99 630.03 -111.61 630.18 -112.25 630.33 C-160.46 642.05 -208.49 654.74 -254.38 673.88 C-256.59 674.78 -258.81 675.69 -261.03 676.6 C-295.51 690.84 -328.54 707.45 -360.38 726.88 C-361.28 727.43 -362.19 727.98 -363.12 728.54 C-374.95 735.77 -386.25 743.61 -397.38 751.88 C-398.09 752.41 -398.81 752.94 -399.55 753.49 C-410.48 761.58 -421.14 769.92 -431.48 778.74 C-434.96 781.7 -438.49 784.58 -442.06 787.44 C-446.7 791.2 -450.88 795.28 -455.05 799.55 C-457.04 801.54 -459.05 803.38 -461.19 805.19 C-469.21 812.07 -476.73 819.74 -483.57 827.79 C-485.95 830.54 -488.41 833.2 -490.88 835.88 C-525.45 873.51 -553.66 916.73 -577.38 961.88 C-578.73 957.82 -577.6 956.27 -576 952.33 C-575.87 952 -575.87 952 -575.2 950.32 C-574.31 948.11 -573.41 945.9 -572.51 943.69 C-571.88 942.13 -571.25 940.57 -570.62 939.01 C-569.29 935.68 -567.95 932.37 -566.6 929.05 C-564.5 923.87 -562.41 918.69 -560.32 913.51 C-558.25 908.37 -556.18 903.22 -554.1 898.08 C-548.93 885.26 -543.81 872.42 -538.75 859.56 C-537.45 856.26 -536.15 852.97 -534.85 849.67 C-534.7 849.29 -534.7 849.29 -533.94 847.38 C-529.63 836.44 -525.25 825.53 -520.88 814.62 C-519.26 810.6 -517.66 806.58 -516.05 802.56 C-505.17 775.28 -494.2 748.03 -482.93 720.9 C-478.87 711.12 -474.9 701.31 -470.94 691.5 C-466.07 679.46 -461.13 667.46 -456.09 655.5 C-451.54 644.73 -447.13 633.91 -442.75 623.06 C-438.64 612.88 -434.5 602.72 -430.19 592.62 C-424.87 580.19 -419.78 567.66 -414.69 555.12 C-408.57 540.09 -402.4 525.07 -396.06 510.12 C-390.5 497 -385.08 483.82 -379.75 470.6 C-375.51 460.1 -371.21 449.62 -366.81 439.19 C-362.31 428.5 -357.85 417.79 -353.44 407.06 C-353.29 406.71 -353.29 406.71 -352.56 404.92 C-350.79 400.62 -349.02 396.32 -347.25 392.01 C-334.72 361.5 -322.07 331.03 -309.3 300.62 C-306.37 293.64 -303.45 286.66 -300.55 279.68 C-300.22 278.9 -299.9 278.12 -299.57 277.32 C-298.91 275.75 -298.26 274.18 -297.6 272.6 C-292.64 260.67 -287.65 248.76 -282.53 236.89 C-280.03 231.09 -277.58 225.26 -275.12 219.44 C-270.83 209.25 -266.45 199.09 -262.04 188.95 C-258.79 181.47 -255.57 173.98 -252.41 166.45 C-247.08 153.72 -241.49 141.11 -235.82 128.52 C-231.22 118.31 -226.72 108.07 -222.38 97.75 C-189.21 19.59 -189.21 19.59 -163.38 -5.12 C-163.7 -3.8 -164.04 -2.49 -164.38 -1.12 C-159.09 -1.61 -155.34 -4.45 -151 -7.25 C-102.39 -37.64 -45.43 -35.69 0 0 Z " fill="#4F7BD9" transform="translate(1122.375,661.125)"/><path d="M0 0 C-0.43 0.83 -0.86 1.67 -1.3 2.53 C-5.76 11.3 -9.76 20.18 -13.56 29.25 C-14.17 30.69 -14.78 32.13 -15.39 33.57 C-20.19 44.99 -24.91 56.45 -29.61 67.91 C-34.01 78.64 -38.49 89.32 -43 100 C-48.16 112.23 -53.28 124.47 -58.31 136.75 C-62.85 147.81 -67.44 158.84 -72.11 169.84 C-75.36 177.47 -78.56 185.13 -81.75 192.79 C-84.53 199.49 -87.33 206.18 -90.14 212.87 C-90.51 213.76 -90.88 214.64 -91.26 215.56 C-93.21 220.2 -95.15 224.84 -97.1 229.48 C-100.78 238.24 -104.43 247.01 -107.96 255.84 C-108.57 257.38 -109.19 258.91 -109.81 260.45 C-110.94 263.25 -112.05 266.05 -113.15 268.86 C-118.46 282.21 -125.8 293.79 -136 304 C-136.68 304.7 -137.37 305.39 -138.07 306.11 C-156.22 323.42 -179.63 327.32 -203.81 327.27 C-205.46 327.28 -207.11 327.28 -208.76 327.29 C-213.2 327.3 -217.64 327.3 -222.09 327.3 C-225.81 327.3 -229.54 327.31 -233.27 327.31 C-242.07 327.32 -250.87 327.32 -259.68 327.32 C-268.72 327.31 -277.76 327.32 -286.8 327.34 C-294.6 327.36 -302.39 327.37 -310.19 327.36 C-314.83 327.36 -319.48 327.36 -324.12 327.38 C-328.49 327.39 -332.86 327.39 -337.23 327.38 C-338.82 327.37 -340.41 327.38 -341.99 327.38 C-355.64 327.45 -369.54 326.43 -382.25 321.06 C-383.43 320.58 -384.61 320.1 -385.83 319.6 C-388.94 318.03 -391.38 316.28 -394 314 C-393.22 313.65 -392.44 313.3 -391.64 312.95 C-388.2 310.41 -387.75 307.84 -386.81 303.88 C-382.25 287.43 -371.54 274.11 -361 261 C-360.44 260.3 -359.88 259.6 -359.3 258.88 C-356.04 254.83 -352.76 250.8 -349.46 246.79 C-348.11 245.13 -346.77 243.47 -345.43 241.8 C-341.74 237.22 -338.02 232.86 -333.78 228.78 C-332.02 227.02 -330.4 225.19 -328.78 223.29 C-325.07 219.03 -321.16 215.01 -317.16 211.03 C-316.43 210.3 -315.71 209.57 -314.96 208.83 C-313.44 207.3 -311.91 205.78 -310.39 204.25 C-308.07 201.94 -305.76 199.63 -303.45 197.31 C-301.96 195.82 -300.46 194.33 -298.97 192.84 C-298.29 192.16 -297.61 191.47 -296.91 190.77 C-292.99 186.87 -288.98 183.15 -284.79 179.55 C-282.02 177.15 -279.36 174.63 -276.69 172.12 C-271.89 167.66 -266.97 163.44 -261.87 159.34 C-258.58 156.66 -255.39 153.9 -252.19 151.12 C-245.91 145.71 -239.47 140.56 -232.92 135.49 C-230.87 133.9 -228.83 132.29 -226.79 130.69 C-216.01 122.24 -205.08 114.03 -194 106 C-193.32 105.5 -192.63 105.01 -191.93 104.49 C-178.61 94.84 -164.81 85.92 -151 77 C-150.57 76.72 -150.57 76.72 -148.4 75.31 C-120.31 57.12 -90.74 41.3 -61 26 C-60.08 25.52 -59.15 25.04 -58.2 24.55 C-45.98 18.23 -33.58 12.33 -21.01 6.72 C-19.47 6.04 -17.93 5.34 -16.38 4.65 C-14.22 3.68 -12.06 2.72 -9.89 1.76 C-9.23 1.47 -8.58 1.17 -7.91 0.87 C-3.34 -1.11 -3.34 -1.11 0 0 Z " fill="#4F7BD9" transform="translate(918,1548)"/></g><g class="bt"><path d="M0 0 C1.27 -0.01 2.53 -0.02 3.83 -0.03 C5.22 -0.03 6.6 -0.04 7.98 -0.04 C8.68 -0.04 9.38 -0.05 10.1 -0.05 C13.81 -0.07 17.51 -0.07 21.22 -0.08 C25.03 -0.08 28.83 -0.11 32.63 -0.14 C35.58 -0.16 38.53 -0.16 41.47 -0.16 C42.87 -0.17 44.27 -0.17 45.68 -0.19 C53.33 -0.25 60.14 0.1 67.44 2.49 C71.1 3.55 74.61 3.4 78.38 3.22 C86.65 3.05 92.95 3.91 100.5 7.22 C104.41 8.87 107.59 9.39 111.82 9.54 C119.6 9.95 126.15 12.45 133.35 15.24 C135.92 16.23 138.52 17.14 141.12 18.06 C151.24 21.66 159.42 25.29 167.75 32.16 C171.49 34.84 175.2 36.91 179.36 38.8 C187.98 42.75 195.89 47.54 201.75 55.16 C202.65 59.21 202.88 63.03 202.75 67.16 C204.5 67.79 204.5 67.79 206.75 68.16 C207.39 67.83 208.03 67.5 208.69 67.16 C211.51 65.79 212.77 66.27 215.75 67.16 C244.33 86.17 259.35 122.96 271.36 153.62 C272.76 157.18 274.18 160.73 275.62 164.28 C281.57 179.03 287.37 193.83 293.12 208.66 C297.94 221.07 302.78 233.46 307.63 245.85 C309.16 249.76 310.69 253.67 312.22 257.58 C312.41 258.07 312.41 258.07 313.37 260.51 C321.82 282.11 330.27 303.71 338.63 325.35 C344.32 340.08 350.08 354.79 355.84 369.5 C356.62 371.49 357.4 373.48 358.18 375.47 C358.56 376.45 358.95 377.43 359.34 378.45 C362.83 387.35 366.31 396.26 369.78 405.16 C387.14 449.68 404.52 494.2 422.31 538.56 C423.77 542.2 425.22 545.84 426.67 549.49 C434.73 569.71 434.73 569.71 438.88 579.74 C439.02 580.07 439.02 580.07 439.69 581.7 C440.24 583.03 440.8 584.36 441.35 585.69 C441.63 586.36 441.9 587.03 442.19 587.72 C442.33 588.06 442.33 588.06 443.03 589.75 C452.23 611.98 460.99 634.39 469.81 656.78 C470.48 658.47 471.15 660.15 471.83 661.84 C473.69 666.52 475.59 672.12 474.75 677.16 C472.01 681.34 468.75 681.75 464.16 682.7 C460.68 683.37 457.18 683.95 453.67 684.46 C453.28 684.52 453.28 684.52 451.3 684.8 C393.22 693.14 334.35 696.06 275.75 698.16 C275.12 698.18 275.12 698.18 271.9 698.3 C240.28 699.43 240.28 699.43 225.93 699.57 C224.15 699.59 222.36 699.62 220.58 699.67 C217.91 699.74 215.24 699.76 212.57 699.78 C211.78 699.81 210.99 699.84 210.18 699.87 C204.77 699.85 202.04 698.4 198.11 694.7 C196.34 692.69 195.48 690.87 194.82 688.29 C194.6 687.5 194.39 686.72 194.16 685.92 C194.03 685.34 193.89 684.76 193.75 684.16 C193.09 684.16 192.43 684.16 191.75 684.16 C191.51 683.6 191.26 683.03 191.01 682.45 C186.16 671.27 181.3 660.11 176.38 648.97 C172.44 640.04 168.58 631.08 164.75 622.1 C160.77 612.75 156.65 603.49 152.38 594.27 C147.65 584.02 143.11 573.68 138.57 563.35 C132.29 549.08 125.91 534.86 119.39 520.69 C114.51 510.1 109.8 499.45 105.2 488.73 C101.02 479 96.67 469.37 92.2 459.78 C88.63 452.11 85.17 444.4 81.75 436.66 C77.41 426.84 72.98 417.08 68.46 407.34 C64.73 399.29 61.05 391.21 57.39 383.13 C50.54 368 43.53 352.94 36.45 337.91 C32.8 330.14 29.19 322.37 25.59 314.58 C22.88 308.7 20.13 302.85 17.32 297.01 C11.01 283.83 5.24 270.58 0.07 256.91 C-14.47 218.59 -31.45 179.34 -54.25 145.16 C-54.69 144.49 -55.14 143.81 -55.6 143.12 C-61.42 134.42 -68 126.69 -75.25 119.16 C-75.89 118.46 -76.53 117.75 -77.19 117.02 C-95.48 97.51 -122.23 85.62 -148.25 81.16 C-149.01 81.03 -149.77 80.9 -150.55 80.76 C-182.86 76.25 -215.69 86.98 -242.17 105.15 C-246.8 108.24 -246.8 108.24 -249.45 107.77 C-250.04 107.57 -250.63 107.37 -251.25 107.16 C-249.17 102.52 -246.6 98.99 -243.12 95.35 C-242.87 95.08 -242.87 95.08 -241.58 93.71 C-239.81 91.85 -238.03 90 -236.25 88.16 C-235.54 87.43 -234.83 86.69 -234.1 85.94 C-231.85 83.6 -229.58 81.29 -227.31 78.97 C-226.59 78.23 -225.87 77.49 -225.12 76.72 C-224.43 76.03 -223.74 75.33 -223.03 74.62 C-222.42 74 -221.81 73.38 -221.18 72.74 C-218.99 70.95 -216.89 70.15 -214.25 69.16 C-212.31 67.49 -212.31 67.49 -210.25 65.41 C-202.87 58.55 -194.28 53.38 -185.87 47.9 C-182.33 45.55 -178.86 43.1 -175.41 40.63 C-170.73 37.45 -166.7 36.12 -161.12 35.79 C-157.47 35.51 -156.54 35.4 -153.62 32.97 C-152.84 32.05 -152.05 31.12 -151.25 30.16 C-144.78 23.7 -136.18 21.2 -127.76 18.26 C-125.31 17.41 -122.88 16.54 -120.44 15.67 C-118.87 15.11 -117.29 14.55 -115.72 13.99 C-115.36 13.86 -115.36 13.86 -113.55 13.22 C-105.78 10.52 -97.54 8.04 -89.25 9.16 C-86.5 10.66 -86.5 10.66 -84.25 12.16 C-81.43 12.35 -81.43 12.35 -79.25 12.16 C-78.98 11.58 -78.71 11.01 -78.43 10.41 C-77.16 7.99 -76.14 6.15 -74.25 4.16 C-61.41 0.61 -46.69 1.76 -33.5 1.6 C-30.22 1.55 -26.95 1.51 -23.67 1.46 C-21.65 1.42 -19.63 1.4 -17.61 1.38 C-16.7 1.36 -15.79 1.35 -14.85 1.33 C-14.45 1.33 -14.45 1.33 -12.44 1.31 C-10.25 1.16 -10.25 1.16 -8.35 0.66 C-5.54 -0.01 -2.89 0.02 0 0 Z " fill="#E3C48A" transform="translate(1208.246337890625,552.8388671875)"/><path d="M0 0 C2.26 0 4.53 0 6.79 0 C12.68 0.01 18.58 0.02 24.48 0.03 C30.52 0.04 36.56 0.04 42.6 0.05 C54.41 0.06 66.22 0.08 78.03 0.1 C78.03 0.43 78.03 0.76 78.03 1.1 C77.62 1.1 77.62 1.1 75.59 1.13 C67.99 1.23 60.4 1.33 52.81 1.44 C48.91 1.49 45 1.55 41.1 1.59 C37.33 1.64 33.57 1.7 29.8 1.75 C28.36 1.77 26.92 1.79 25.49 1.81 C23.47 1.83 21.46 1.86 19.45 1.89 C18.3 1.91 17.16 1.92 15.98 1.94 C13.46 2.07 11.44 2.46 9.03 3.1 C7.44 3.2 5.85 3.26 4.26 3.29 C3.79 3.3 3.79 3.3 1.41 3.34 C0.9 3.34 0.9 3.34 -1.65 3.38 C-2.7 3.4 -3.74 3.42 -4.82 3.43 C-8.16 3.49 -11.51 3.55 -14.85 3.6 C-19.24 3.67 -23.63 3.74 -28.03 3.82 C-29.03 3.83 -30.04 3.84 -31.08 3.86 C-35.82 3.94 -40.3 4.18 -44.97 5.1 C-46.76 5.16 -48.56 5.18 -50.35 5.16 C-50.78 5.16 -50.78 5.16 -53 5.13 C-53.32 5.13 -53.32 5.13 -54.97 5.1 C-54.64 4.44 -54.31 3.78 -53.97 3.1 C-36.75 -1.3 -17.62 -0.04 0 0 Z " fill="#C7A56A" transform="translate(1188.97265625,551.90234375)"/><path d="M0 0 C16.3 -0.95 32.73 2.24 48.5 6 C49.54 6.25 50.59 6.5 51.66 6.75 C57.03 8.09 61.99 9.64 67 12 C63.7 13.1 63.19 12.84 60 12 C58 11.9 56 11.82 54 11.75 C47.94 11.34 43.29 9.79 37.85 7.16 C31.92 4.75 26.01 4.95 19.75 5.12 C12.74 5.24 6.64 4.41 0 2 C0 1.34 0 0.68 0 0 Z " fill="#C7A56A" transform="translate(1267,552)"/><path d="M0 0 C11.14 8.02 21.52 17.07 31 27 C30.67 27.66 30.34 28.32 30 29 C29.48 28.51 28.96 28.01 28.43 27.5 C27.73 26.86 27.03 26.22 26.31 25.56 C25.63 24.92 24.94 24.29 24.24 23.63 C21.74 21.81 20.06 21.27 17 21 C16.15 21.35 15.31 21.7 14.44 22.06 C12 23 12 23 9.85 22.06 C9.24 21.71 8.63 21.36 8 21 C8.03 20.41 8.07 19.82 8.11 19.21 C8.28 14.24 8.24 11.02 5 7 C4.11 6.11 3.23 5.23 2.31 4.31 C1.55 3.55 0.79 2.79 0 2 C0 1.34 0 0.68 0 0 Z " fill="#C7A56A" transform="translate(1402,599)"/><path d="M0 0 C-1.39 4.42 -3.36 7.12 -7 10 C-10.57 9.91 -11.99 9 -15 7 C-18.14 6.8 -18.14 6.8 -21.69 6.88 C-22.87 6.89 -24.05 6.91 -25.26 6.93 C-25.71 6.94 -25.71 6.94 -28 7 C-27 5 -27 5 -25.05 4.31 C-24.22 4.11 -23.38 3.92 -22.52 3.71 C-21.6 3.49 -20.69 3.27 -19.74 3.05 C-18.77 2.83 -17.81 2.6 -16.81 2.38 C-15.87 2.15 -14.92 1.92 -13.94 1.68 C-9.22 0.57 -4.89 -0.31 0 0 Z " fill="#C7A56A" transform="translate(1134,556)"/><path d="M0 0 C-1.76 5.28 -6.52 8.87 -11 12 C-13.98 12.62 -13.98 12.62 -17.19 12.88 C-23.16 13.61 -27.06 15.35 -31.98 18.76 C-34 20 -34 20 -37 20 C-30.85 14.87 -24.07 11.18 -16.97 7.57 C-15.1 6.61 -13.24 5.65 -11.38 4.68 C-2.29 0 -2.29 0 0 0 Z " fill="#C7A56A" transform="translate(1063,577)"/><path d="M0 0 C8.25 3.59 15.65 8.22 23.12 13.19 C24.06 13.81 25 14.42 25.96 15.06 C26.4 15.36 26.4 15.36 28.63 16.86 C29.43 17.39 30.22 17.92 31.04 18.47 C33 20 33 20 35 23 C34.5 22.75 34 22.5 33.49 22.24 C31.44 21.22 29.38 20.21 27.32 19.2 C25.92 18.51 24.52 17.82 23.12 17.12 C22.43 16.79 21.74 16.45 21.02 16.1 C14.95 13.09 9.5 9.49 4.12 5.38 C3.34 4.78 2.56 4.19 1.76 3.59 C1.18 3.06 0.6 2.54 0 2 C0 1.34 0 0.68 0 0 Z " fill="#C7A56A" transform="translate(1367,577)"/><path d="M0 0 C0 0.66 0 1.32 0 2 C-0.95 2.26 -1.9 2.51 -2.88 2.78 C-13.2 5.66 -23.17 9.21 -33.15 13.14 C-34.14 13.52 -35.13 13.91 -36.15 14.3 C-37.04 14.66 -37.93 15.01 -38.84 15.37 C-41 16 -41 16 -43 15 C-34.57 10.49 -26.09 7.07 -17 4.12 C-15.8 3.72 -14.6 3.32 -13.36 2.91 C-4.54 0 -4.54 0 0 0 Z " fill="#C7A56A" transform="translate(1106,562)"/><path d="M0 0 C-1.45 3.62 -3.17 5.07 -6.44 7.14 C-7.33 7.71 -8.22 8.28 -9.14 8.87 C-10.08 9.47 -11.03 10.07 -12 10.69 C-19.61 15.62 -26.63 20.51 -33 27 C-33.66 26.67 -34.32 26.34 -35 26 C-29.78 20.41 -24.08 15.83 -17.94 11.31 C-17.07 10.66 -16.19 10.01 -15.29 9.34 C-2.72 0 -2.72 0 0 0 Z " fill="#C7A56A" transform="translate(1026,597)"/><path d="M0 0 C7.69 1.89 14.87 4.39 22.12 7.56 C23.07 7.96 24.01 8.36 24.98 8.77 C31.87 11.74 31.87 11.74 33 14 C26.14 11.75 19.35 9.35 12.56 6.88 C11.57 6.52 10.58 6.16 9.56 5.79 C8.61 5.44 7.67 5.1 6.69 4.74 C5.84 4.43 4.98 4.12 4.1 3.8 C2 3 2 3 0 2 C0 1.34 0 0.68 0 0 Z " fill="#C7A56A" transform="translate(1334,564)"/></g><g clip-path="url(#bmRc)"><path d="M0 0 C0.75 0 1.51 0 2.29 0 C13.79 0.05 24.47 0.73 35.44 4.38 C36.18 4.61 36.93 4.84 37.7 5.07 C61.59 12.54 84.35 27.23 100.87 46.16 C103.44 48.38 103.44 48.38 106.34 48.99 C110.41 48.18 112.88 46.14 115.94 43.5 C117.18 42.48 118.42 41.47 119.66 40.45 C120.29 39.94 120.92 39.42 121.57 38.89 C153.36 13.16 189.66 1.87 230.44 4.38 C255.73 7.24 280.56 19.54 299.44 36.38 C300.29 37.1 301.14 37.83 302.01 38.59 C333.95 66.46 352.09 108.82 355.28 150.67 C360.19 233.31 320.34 313.8 269.06 376.31 C268.51 376.99 267.96 377.66 267.39 378.36 C265.74 380.37 264.09 382.37 262.44 384.38 C261.97 384.94 261.5 385.51 261.02 386.1 C247.18 402.93 232.05 419.64 215.38 433.71 C212.9 435.83 210.52 438.04 208.12 440.25 C202.72 445.17 197.16 449.83 191.44 454.38 C191.12 454.63 191.12 454.63 189.52 455.91 C158.73 480.43 125.53 500.64 90.44 518.38 C89.61 518.79 88.78 519.21 87.93 519.65 C57.28 535.03 24.52 547.89 -8.66 556.61 C-10.91 557.51 -12.06 558.48 -13.56 560.38 C-14.68 567.22 -11.6 572.59 -8.75 578.69 C-7.72 580.95 -6.7 583.22 -5.67 585.49 C-5.15 586.64 -4.62 587.79 -4.08 588.98 C-1.8 594.08 0.35 599.22 2.5 604.38 C8.08 617.66 13.88 630.83 19.69 644.02 C24.1 654.04 28.48 664.07 32.81 674.12 C44.64 701.51 56.82 728.75 69.21 755.89 C73.15 764.54 77.06 773.2 80.94 781.88 C85.55 792.18 90.2 802.47 94.88 812.75 C99.72 823.39 104.56 834.03 109.38 844.69 C109.66 845.31 109.94 845.94 110.23 846.58 C115.43 858.08 120.54 869.61 125.66 881.14 C129.74 890.35 133.85 899.54 138.06 908.69 C138.49 909.61 138.91 910.53 139.35 911.48 C140.22 913.38 141.1 915.29 141.98 917.2 C172.12 982.78 172.12 982.78 161.22 1012.71 C154.31 1027.98 141.36 1038.5 125.91 1044.33 C115.65 1047.42 105.78 1047.67 95.16 1047.67 C93.42 1047.67 91.68 1047.68 89.95 1047.69 C85.26 1047.7 80.56 1047.71 75.87 1047.71 C72.93 1047.71 69.99 1047.72 67.05 1047.72 C56.76 1047.74 46.48 1047.75 36.19 1047.75 C26.65 1047.74 17.11 1047.77 7.56 1047.8 C-0.66 1047.82 -8.89 1047.83 -17.12 1047.83 C-22.02 1047.83 -26.92 1047.84 -31.81 1047.86 C-36.43 1047.88 -41.05 1047.88 -45.66 1047.86 C-47.34 1047.86 -49.02 1047.87 -50.7 1047.88 C-66.72 1047.99 -82.09 1045.6 -96.56 1038.38 C-96.97 1038.17 -96.97 1038.17 -99.06 1037.14 C-125.76 1022.58 -136.33 993.8 -147.16 967.24 C-150.03 960.22 -152.94 953.23 -155.88 946.25 C-156.14 945.62 -156.41 944.98 -156.68 944.33 C-164.08 926.7 -171.64 909.13 -179.2 891.57 C-184.72 878.75 -190.19 865.91 -195.5 853 C-199.74 842.69 -204.1 832.45 -208.55 822.23 C-213.43 811.03 -218.23 799.8 -223 788.56 C-223.36 787.71 -223.73 786.85 -224.1 785.97 C-225.91 781.71 -227.72 777.45 -229.52 773.18 C-231.38 768.81 -233.23 764.44 -235.09 760.07 C-240.05 748.4 -245 736.73 -249.92 725.04 C-260.51 699.9 -271.19 674.79 -281.98 649.73 C-284.22 644.51 -286.45 639.28 -288.65 634.04 C-289.85 631.21 -291.05 628.38 -292.25 625.55 C-293.03 623.7 -293.8 621.84 -294.57 619.99 C-299.5 608.4 -299.5 608.4 -305.56 605.38 C-315.15 604.63 -324.89 606.02 -334.43 606.95 C-336.18 607.12 -337.92 607.28 -339.67 607.45 C-344.3 607.89 -348.94 608.33 -353.57 608.78 C-356.45 609.06 -359.32 609.34 -362.19 609.62 C-390.01 612.29 -417.82 615.03 -445.56 618.38 C-446.24 618.46 -446.91 618.54 -447.6 618.62 C-456.51 619.69 -465.4 620.84 -474.28 622.06 C-476.78 622.41 -479.29 622.74 -481.79 623.08 C-578.05 636.2 -672.69 655.34 -841.35 716.57 C-844.02 717.73 -846.69 718.82 -849.42 719.82 C-869.37 727.17 -888.5 737.01 -907.56 746.38 C-908.58 746.87 -909.59 747.37 -910.63 747.88 C-929.04 756.89 -946.97 766.68 -964.75 776.88 C-965.75 777.44 -966.74 778.01 -967.77 778.6 C-984.29 788.13 -1000.2 798.66 -1016.06 809.25 C-1016.49 809.53 -1016.49 809.53 -1018.65 810.97 C-1030.1 818.62 -1041.46 826.32 -1052.39 834.71 C-1054.87 836.61 -1057.36 838.5 -1059.86 840.38 C-1065.11 844.36 -1070.34 848.36 -1075.56 852.38 C-1076.24 852.9 -1076.92 853.42 -1077.62 853.96 C-1084.76 859.46 -1091.71 865.13 -1098.52 871.03 C-1102.05 874.09 -1105.62 877.07 -1109.25 880 C-1114 883.86 -1118.53 887.91 -1123.03 892.05 C-1125.1 893.95 -1127.19 895.8 -1129.31 897.62 C-1140.69 907.54 -1151.48 918.12 -1162.13 928.81 C-1164.09 930.77 -1166.05 932.73 -1168.02 934.69 C-1174.08 940.75 -1180.03 946.82 -1185.56 953.38 C-1186.98 954.92 -1188.39 956.46 -1189.81 958 C-1194.85 963.59 -1199.46 969.46 -1204.05 975.42 C-1205.64 977.47 -1207.24 979.52 -1208.84 981.56 C-1232.16 1011.5 -1232.16 1011.5 -1235.73 1029.1 C-1236.8 1032.01 -1237.8 1032.98 -1240.56 1034.38 C-1248.01 1034.17 -1253.95 1026.91 -1258.96 1022.05 C-1275.16 1004.89 -1284.36 982.9 -1285.06 959.31 C-1284.85 953.69 -1284.13 948.45 -1282.88 942.96 C-1282.7 942.19 -1282.53 941.41 -1282.35 940.61 C-1280.39 932.24 -1277.77 924.13 -1275 916 C-1274.74 915.23 -1274.48 914.46 -1274.21 913.67 C-1269.16 898.7 -1263.62 883.97 -1257.56 869.38 C-1257.37 868.9 -1257.37 868.9 -1256.37 866.5 C-1249.61 850.31 -1242.05 834.48 -1234.53 818.64 C-1230.86 810.89 -1227.21 803.13 -1223.56 795.38 C-1222.9 795.38 -1222.24 795.38 -1221.56 795.38 C-1221.28 794.65 -1221 793.93 -1220.71 793.18 C-1214.22 777.36 -1204.95 762.61 -1195.56 748.38 C-1194.82 747.24 -1194.08 746.11 -1193.34 744.97 C-1182.68 728.62 -1171.71 712.67 -1159.56 697.38 C-1159.22 696.94 -1159.22 696.94 -1157.49 694.75 C-1154.14 690.54 -1150.79 686.39 -1147.12 682.44 C-1143.97 678.99 -1140.98 675.46 -1138.06 671.81 C-1134.5 667.41 -1130.71 663.42 -1126.66 659.47 C-1124.79 657.61 -1123.08 655.7 -1121.38 653.69 C-1114.16 645.29 -1106.12 637.35 -1097.67 630.2 C-1095.38 628.21 -1093.16 626.15 -1090.94 624.08 C-1085.62 619.11 -1080.23 614.32 -1074.55 609.77 C-1072.33 607.99 -1070.14 606.2 -1067.95 604.39 C-1058.83 596.84 -1049.45 589.79 -1039.78 582.95 C-1037.64 581.43 -1035.51 579.89 -1033.38 578.35 C-986.54 544.53 -933.55 519.1 -879.5 499.1 C-877.41 498.32 -875.32 497.53 -873.23 496.73 C-861.07 492.16 -848.79 488.11 -836.38 484.31 C-835.34 483.99 -834.3 483.68 -833.23 483.35 C-793.76 471.32 -753.75 461.69 -713.06 454.8 C-710.43 454.35 -707.8 453.88 -705.18 453.41 C-690.5 450.79 -675.78 448.57 -661 446.56 C-659.75 446.39 -658.5 446.22 -657.21 446.05 C-596.93 437.92 -536.28 433.27 -475.6 429.4 C-473.62 429.28 -471.64 429.15 -469.67 429.02 C-458.73 428.34 -447.79 427.94 -436.83 427.62 C-432.65 427.48 -428.51 427.23 -424.34 426.88 C-416.32 426.23 -408.29 426.06 -400.25 425.88 C-395.09 425.75 -389.93 425.62 -384.76 425.45 C-383.27 425.4 -381.77 425.36 -380.28 425.32 C-378.07 425.26 -375.86 425.18 -373.64 425.09 C-372.35 425.05 -371.06 425.01 -369.73 424.97 C-366.56 424.38 -366.56 424.38 -364.6 422.51 C-363.13 419.48 -363.77 417.61 -364.56 414.38 C-364.75 413.43 -364.93 412.48 -365.12 411.5 C-365.27 410.8 -365.41 410.1 -365.56 409.38 C-363.72 411.65 -362.41 413.7 -361.19 416.38 C-359.32 419.81 -357.83 421.25 -354.56 423.38 C-351.33 423.88 -351.33 423.88 -347.52 423.87 C-347.16 423.87 -347.16 423.87 -345.34 423.88 C-342.87 423.88 -340.41 423.85 -337.94 423.81 C-336.14 423.8 -334.34 423.79 -332.55 423.78 C-313.15 423.58 -293.76 422.77 -274.38 422 C-273.58 421.97 -272.78 421.94 -271.96 421.9 C-251.4 421.09 -230.87 420.06 -210.34 418.64 C-206.52 418.37 -202.7 418.12 -198.88 417.86 C-169.92 415.91 -141.07 413.69 -112.31 409.75 C-111.23 409.6 -110.14 409.46 -109.02 409.31 C-105.99 408.89 -102.95 408.46 -99.92 408.02 C-99.04 407.9 -98.16 407.78 -97.25 407.65 C-92.35 406.91 -88.21 406.02 -84.56 402.38 C-84.65 400.68 -84.81 399 -85 397.31 C-85.1 396.39 -85.2 395.47 -85.31 394.53 C-85.39 393.82 -85.48 393.11 -85.56 392.38 C-83.9 394.54 -82.44 396.6 -81.12 399 C-79.38 401.65 -78.47 402.26 -75.56 403.38 C-68.14 403.59 -60.46 401.49 -53.25 399.94 C-52.06 399.68 -50.88 399.43 -49.65 399.16 C-39.16 396.84 -28.76 394.16 -18.38 391.38 C-17.61 391.17 -16.85 390.97 -16.06 390.76 C-7.67 388.52 0.64 386.09 8.86 383.31 C9.58 383.08 10.3 382.85 11.04 382.61 C14.93 381.25 17.52 380.14 19.44 376.38 C18.57 371.28 14.74 368.7 10.94 365.62 C9.66 364.56 8.39 363.5 7.12 362.44 C6.49 361.92 5.86 361.4 5.22 360.87 C2.78 358.82 0.42 356.7 -1.94 354.56 C-4.73 352.03 -7.53 349.53 -10.38 347.06 C-18.38 340.08 -26.18 332.87 -33.62 325.29 C-35.42 323.52 -37.27 321.87 -39.2 320.23 C-44.05 316.01 -48.59 311.5 -53.12 306.94 C-53.53 306.53 -53.53 306.53 -55.58 304.49 C-59.87 300.2 -63.99 295.83 -67.95 291.23 C-69.98 288.89 -72.1 286.65 -74.24 284.41 C-80.61 277.7 -86.46 270.74 -92.04 263.37 C-93.7 261.19 -95.4 259.04 -97.09 256.89 C-110.6 239.55 -122.03 220.67 -130.56 200.38 C-130.7 200.05 -130.7 200.05 -131.4 198.38 C-143.25 169.78 -147.75 135.29 -138.56 105.38 C-138.33 104.61 -138.09 103.84 -137.85 103.04 C-130.81 80.92 -119.48 62.22 -103.56 45.38 C-103.16 44.94 -103.16 44.94 -101.15 42.73 C-81.75 22.25 -54.8 8.7 -27.56 2.38 C-26.77 2.19 -25.97 2 -25.15 1.8 C-16.8 0.05 -8.48 -0.02 0 0 Z M-34.62 111.82 C-36.41 114.28 -38.01 116.76 -39.56 119.38 C-40.02 120.12 -40.48 120.87 -40.96 121.63 C-49.58 137 -50.23 153.92 -45.61 170.52 C-44.94 172.81 -44.26 175.09 -43.56 177.38 C-43.29 178.31 -43.01 179.25 -42.73 180.22 C-36.55 198.07 -21.69 214.36 -8.96 227.89 C-6.62 230.38 -4.31 232.91 -2 235.44 C-1.55 235.93 -1.09 236.43 -0.62 236.93 C1.63 239.38 3.86 241.85 6.07 244.33 C10.19 248.94 14.3 253.26 19.04 257.23 C23.14 260.9 26.96 264.86 30.81 268.78 C34.54 272.57 38.39 276.14 42.42 279.61 C46.54 283.21 50.47 287.01 54.44 290.77 C58.43 294.54 62.49 298.21 66.64 301.81 C68.87 303.75 71.06 305.75 73.25 307.75 C77.64 311.71 82.17 315.46 86.76 319.17 C90.06 321.89 93.23 324.75 96.37 327.65 C99.61 330.35 102.41 332.17 106.56 333 C116.24 331.44 123.84 323.52 131.04 317.27 C134.47 314.31 138.04 311.52 141.62 308.75 C147.47 304.21 152.99 299.39 158.44 294.38 C159.77 293.2 161.1 292.04 162.44 290.88 C197.3 260.44 197.3 260.44 211.81 243.28 C213.74 241.03 215.74 238.86 217.75 236.69 C223.01 230.84 227.81 224.72 232.44 218.38 C232.86 217.8 233.28 217.23 233.71 216.64 C243.82 202.62 251.59 187.29 255.44 170.38 C255.63 169.62 255.82 168.86 256.02 168.09 C258.79 150.25 255.9 131.55 245.25 116.72 C234.75 103.23 220.33 95.7 203.44 93.38 C185.25 92.11 168.6 96.14 152.44 104.38 C151.83 104.68 151.22 104.98 150.6 105.3 C141.1 110.14 133.31 116.27 125.44 123.38 C124.49 124.21 123.55 125.04 122.58 125.9 C119.15 128.95 115.77 131.96 112.69 135.38 C109.87 137.88 108.2 138.38 104.44 138.38 C100.9 136.55 98.3 134.44 95.57 131.57 C94.86 130.83 94.15 130.08 93.41 129.32 C92.66 128.53 91.9 127.75 91.12 126.94 C70.81 106.24 45.98 90.3 16.12 88.94 C-2.87 89.62 -22.2 97.07 -34.62 111.82 Z " fill="#C7A56A" transform="translate(1766.5625,827.625)"/></g></g></svg></button><div class="fbt"><b>Apps <em>&amp;</em> Soul</b><p>Apps & Soul — טכנולוגיה עם לב. אנחנו בונים אתרים, חנויות ואפליקציות שעובדים בשביל העסק שלכם, בזמן שאתם עסוקים בדברים אחרים.</p></div></div>
+  <div class="foot"><span>© Apps &amp; Soul · הסטודיו של דוד מושאילוב</span><span class="legal-l"><button type="button" data-open="dA">הצהרת נגישות</button><button type="button" data-open="dP">פרטיות</button></span><span>דוגמה לעיצוב חדש. שלוש שפות: עברית, רוסית, אנגלית.</span></div>
+</div></footer>
+
+
+<a class="wabar" id="wabar" href="https://wa.me/972587800228" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>לכתוב בוואטסאפ <small>מענה תוך שעתיים</small></a>
+
+<button type="button" class="a11b" id="a11b" aria-label="נגישות" aria-expanded="false"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="4.5" r="1.8" fill="currentColor" stroke="none"/><path d="M5 8.5l7 1.5 7-1.5M12 10v5m0 0l-3.5 6M12 15l3.5 6"/></svg></button>
+<div class="a11p" id="a11p" hidden role="dialog" aria-label="נגישות">
+  <b>נגישות</b>
+  <button type="button" data-a="a-big">הגדלת טקסט</button>
+  <button type="button" data-a="a-hc">ניגודיות גבוהה</button>
+  <button type="button" data-a="a-na">עצירת אנימציות</button>
+  <button type="button" data-a="a-ul">הדגשת קישורים</button>
+  <button type="button" class="rs" id="a11r">איפוס</button>
+  <button type="button" class="lk" data-open="dA">הצהרת נגישות →</button>
+</div>
+
+<dialog class="legal" id="dA"><button type="button" class="x lx" aria-label="סגירה">✕</button>
+  <h3>הצהרת נגישות</h3>
+  <p>אני משתדל שהאתר יהיה נוח לשימוש לכולם, כולל לאנשים עם מוגבלויות. האתר נבנה בהתאם לתקן הישראלי IS 5568 ולהנחיות WCAG 2.0 ברמה AA.</p>
+  <p><b>מה יש באתר:</b> ניווט במקלדת, טקסט חלופי לתמונות, כיוון כתיבה נכון בעברית, התאמה לטלפון ולטאבלט, וכפתור ״נגישות״: הגדלת טקסט, ניגודיות גבוהה, עצירת אנימציות והדגשת קישורים.</p>
+  <p>אם מצאתם משהו שלא נוח לשימוש, כתבו לי ואתקן בהקדם האפשרי.</p>
+  <p><b>רכז הנגישות:</b> דוד מושאילוב, <bdo dir="ltr">+972 58-780-0228</bdo>, <bdo dir="ltr">hello@appsandsoul.com</bdo></p>
+  <p class="upd">עדכון אחרון: נובמבר 2026</p>
+</dialog>
+<dialog class="legal" id="dP"><button type="button" class="x lx" aria-label="סגירה">✕</button>
+  <h3>פרטיות</h3>
+  <p>האתר לא אוסף את המידע האישי שלכם ולא משתמש בעוגיות פרסום.</p>
+  <p>כשלוחצים על כפתור הוואטסאפ, נפתחת שיחה איתי. אני רואה את המספר שלכם ואת ההודעה ששלחתם, ומשתמש בהם רק כדי לענות לכם ולדבר על הפרויקט. אני לא מעביר אותם לאף אחד.</p>
+  <p>המחשבון, המשחק והבונה עובדים רק בדפדפן שלכם, ושום דבר לא נשלח. הקלט הקולי בצ׳אט משתמש בזיהוי הדיבור של הדפדפן.</p>
+  <p>כדי למחוק את השיחה או לשאול על המידע שלכם, כתבו לי. <bdo dir="ltr">hello@appsandsoul.com</bdo></p>
+  <p class="upd">עדכון אחרון: נובמבר 2026</p>
+</dialog>
+
+<nav class="side" id="side" aria-label="מדורים"></nav>
+<div class="svprev" id="svprev" aria-hidden="true"><img alt=""></div>
+<div class="cmdk" id="cmdk" hidden role="dialog" aria-modal="true" aria-label="חיפוש באתר"><div class="ck">
+  <div class="ckin"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="ckq" autocomplete="off" placeholder="למשל: חנות, מחשבון, מחיר"><kbd>Esc</kbd></div>
+  <div class="ckres" id="ckres"></div>
+  <div class="ckft">↑↓ בחירה · Enter פתיחה · Esc סגירה</div></div></div>
+
+<div class="qr" id="qr"><img src="img/qr.png" alt=""><div><b>פתחו בטלפון</b><span>כוונו את המצלמה כדי לראות את גרסת המובייל</span></div><button type="button" id="qrx" aria-label="✕">✕</button></div>
+
+<dialog class="story" id="story" aria-labelledby="stT">
+  <button class="x" id="stX" aria-label="סגירה"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3l10 10M13 3 3 13"/></svg></button>
+  <div class="sto">
+    <div class="ph"><img id="stI" alt=""><span class="brand" id="stBr"><img src="img/mark.svg" alt="">Apps &amp; Soul</span></div>
+    <div><span class="tag" id="stG"></span><h3 id="stT"></h3>
+      <dl><div><dt>משימה</dt><dd id="stA"></dd></div><div><dt>פתרון</dt><dd id="stB"></dd></div><div id="stDw"><dt>מה בפנים</dt><dd id="stD"></dd></div><div><dt>מה זה נותן</dt><dd class="res" id="stC"></dd></div></dl>
+      <div class="acts"><a class="btn" id="stW" target="_blank" rel="noopener">רוצה משהו דומה</a><button class="btn ghost" id="stN">העבודה הבאה ←</button></div></div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+var ASBt=false,ASBn=[],TASK='';
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+var AB='אבגדהוזחטיכלמנסעפצקרשת',WA='https://wa.me/972587800228';
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.textContent=h;return e;}
+var PLUS='<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v12M2 8h12"/></svg>';
+
+/* табло */
+function Flip(n0,words){var n=Math.max.apply(null,words.map(function(w){return w.length;})),cells=[],k=0;
+  for(var i=0;i<n;i++){var s=document.createElement('span');n0.appendChild(s);cells.push(s);}
+  function show(w){var pad=Math.floor((n-w.length)/2);cells.forEach(function(c,i){var t=w[i-pad]||'';if(c.textContent===t)return;var m=reduce?0:2+Math.floor(Math.random()*5);clearTimeout(c._t);
+    (function st(){if(m-->0){c.textContent=AB[Math.floor(Math.random()*AB.length)];c.classList.remove('f');void c.offsetWidth;c.classList.add('f');c._t=setTimeout(st,55+i*6);}else{c.textContent=t;}})();});}
+  show(words[0]);setInterval(function(){if(document.hidden)return;k=(k+1)%words.length;show(words[k]);},2600);}
+new Flip(document.getElementById('flip1'),['אתרים','חנויות','אפליקציות','קטלוגים']);
+new Flip(document.getElementById('flip2'),['אתר','חנות','קטלוג']);
+
+/* для кого: по задачам */
+var FOR=[['רוצים שלקוחות ימצאו אתכם ברשת, ולא רק את מספר הטלפון','אבנה אתר או קטלוג שבו רואים מה אתם מציעים ואפשר להזמין מיד.'],
+['מקבלים הזמנות בשיחות ובהודעות, והפריטים מתבלבלים','הלקוח מרכיב את ההזמנה בעצמו, ואליכם מגיעה לוואטסאפ רשימה מוכנה.'],
+['שולחים מחירון בתמונות או בטבלה, והלקוחות הולכים בו לאיבוד','קטלוג בקישור: עם תמונות, חיפוש ומחירים תמיד מעודכנים. וגם PDF להדפסה.'],
+['סופרים סחורה ידנית ומבזבזים שעות על ספירה','ספירה לפי ברקוד בטלפון: מכוונים מצלמה, והמוצר נספר.'],
+['עובדים עם לקוחות בכמה שפות','אתר בעברית, ברוסית ובאנגלית, עם כיוון טקסט נכון.']];
+var fl=document.getElementById('forList');
+FOR.forEach(function(f,i){var d=el('div','fc');var fi=el('div','fim');fi.innerHTML='<img src="img/f'+(i+1)+'.jpg" alt="" loading="lazy">';d.appendChild(fi);d.appendChild(el('span','k','0'+(i+1)));d.appendChild(el('p','',f[0]));d.appendChild(el('span','r','→ '+f[1]));fl.appendChild(d);});
+
+/* услуги */
+var S=[['אתר לעסק','כרטיס ביקור, דף נחיתה או אתר תדמית.','אתר שמסביר מי אתם, מה אתם מציעים ואיך יוצרים קשר.',['עיצוב בסגנון שלכם, בלי תבניות','נוח בטלפון, בטאבלט ובמסך גדול','עד שלוש שפות: עברית, רוסית, אנגלית','כפתורי וואטסאפ, חיוג ומפה','הגדרה בסיסית לחיפוש בגוגל','פרסום בכתובת שלכם']],
+['חנות אונליין','קטלוג, סל, מבצעים. ההזמנה מגיעה אליכם לוואטסאפ.','חנות שבה הלקוח בוחר מוצרים ומבצע הזמנה בעצמו.',['קטלוג עם תמונות, מחירים וחיפוש','סל קניות והזמנה','ההזמנה מגיעה אליכם לוואטסאפ כרשימה מוכנה','מבצעים, הנחות, מוצרים חדשים','הוספת מוצרים פשוטה, גם לפי ברקוד']],
+['אפליקציה לטלפון','מותקנת על מסך הבית ישר מהאתר.','אפליקציה שמותקנת על מסך הבית של הטלפון ישר מהאתר.',['אייקון על המסך, כמו אפליקציה רגילה','בלי לחכות לאישור של חנויות האפליקציות','עדכונים מגיעים מיד לכל המשתמשים']],
+['כלים לעבודה','ניהול מלאי, סורק ברקוד, מחשבון, מפת לקוחות.','תוכנות קטנות שחוסכות שעות בכל יום.',['ניהול מלאי וספירת מחסן לפי ברקוד','מחשבון רווח לכל פריט','מפת לקוחות עם מסלול יומי','אפליקציה לסוכני מכירות: לקוחות, קטלוג, הזמנות']],
+['קטלוגים ומחירונים','בטלפון, באתר וב-PDF להדפסה.','קטלוג שנוח לשלוח ללקוח.',['גרסה לטלפון, קישור בוואטסאפ','גרסה באתר','PDF להדפסה ולהפצה']],
+['פאנל ניהול','כל החנות במקום אחד: הזמנות, מוצרים, דוחות.','פאנל משלכם לבעלים ולעובדים, במחשב ובטלפון.',['הזמנות לפי סטטוס: חדשות, בטיפול, מוכנות','מוצרים, מחירים, תמונות ומחלקות, עריכה גורפת','מבצעים, ״הגיע היום״, תוקף','דוחות: מכירות, רווח, הוצאות, ספקים','כניסה מאובטחת עם קוד מאפליקציה בטלפון','יומן: מי שינה מה ומתי']],
+['עוזרי AI','עוזר שעונה ללקוחות ולוקח על עצמו את השגרה.','אני משלב עוזרי AI באתרים, בחנויות ובתוכנות.',['עוזר בוואטסאפ עונה לפי מאגר החנות שלכם','תיאורי מוצרים בשלוש שפות בלחיצה אחת','רישום קולי: אמרתם — התוכנה רשמה','סורק תוויות מזהה מוצר לפי תמונה','ההחלטות תמיד שלכם: העוזר מציע, אתם מאשרים']],
+['ספרים וסיפורי משפחה','ספרים, קטלוגים וכרוניקות משפחתיות בעיצוב מלא.','ספר מכתב יד ועד עימוד מוכן: טקסט, איורים, עימוד.',['כרוניקות היסטוריות ומשפחתיות','איורים לפרקים בסגנון אחיד','עימוד לדפוס ולגרסה דיגיטלית','אגדות אינטראקטיביות לילדים','בתיאום אישי']],
+['צילומי מוצרים','תמונות נקיות, ישרות ובהירות לקטלוג.','אני מביא את תמונות המוצרים למראה אחיד, כדי שהקטלוג ייראה כמו בחנות גדולה.',['מסיר רקע, המוצר גדול ובמרכז','מיישר פרספקטיבה והטיה','מבהיר ומחדד','מאות ואלפי תמונות בבת אחת','מסמן מה עדיף לצלם מחדש']],
+['בדיקה וקידום אתר','אודיט: מה מפריע למכור ואיך לתקן.','אני בודק את האתר וכותב תוכנית ברורה איך לקבל יותר פניות.',['מהירות בטלפון ובמחשב','אבטחה ודפי חובה לפי חוק','טקסטים, מחירים, המלצות ואמון','הגדרה לחיפוש בגוגל','תוכנית עם סדרי עדיפויות: מה דחוף ומה אחר כך']],
+['ליווי','עדכונים ושיפורים אחרי ההשקה.','אחרי ההשקה אני לצידכם. לא צריך להבין בטכנולוגיה.',['מעדכן מוצרים ומחירים','מתקן ומשפר','מוסיף מדורים חדשים','עונה על שאלות בוואטסאפ']]];
+var list=document.getElementById('list');
+S.forEach(function(s,i){var w=el('div','li'),b=el('button','lr');b.setAttribute('aria-expanded','false');b.dataset.cur='פתיחה';
+  var nn=i>=2?i-1:i+1;b.innerHTML='<span class="n">'+(nn<10?'0':'')+nn+'</span><h3></h3><p></p><span class="pl">'+PLUS+'</span>';b.querySelector('h3').textContent=s[0];b.querySelector('p').textContent=s[1];
+  var lb=el('div','lb'),inn=el('div'),bx=el('div','lbin');bx.appendChild(el('div','l',s[2]));var ul=el('ul');s[3].forEach(function(t){ul.appendChild(el('li','',t));});bx.appendChild(ul);
+  var go=el('a','go','לשיחה בוואטסאפ ←');go.href=WA+'?text='+encodeURIComponent('שלום! מתעניין/ת ב: '+s[0]);go.target='_blank';go.rel='noopener';bx.appendChild(go);
+  inn.appendChild(bx);lb.appendChild(inn);w.appendChild(b);w.appendChild(lb);list.appendChild(w);
+  b.addEventListener('click',function(){var o=w.classList.toggle('open');b.setAttribute('aria-expanded',o);});});
+
+/* работы: истории */
+var WG;var G=[['חנויות',0],['כלים',1],['אפליקציות',2],['קטלוגים',3],['ספרים',4],['שירותים',5]];
+WG=G;
+/* [картинка, название, коротко, метка, задача, решение, что даёт, группа, [что внутри]] */
+var W=[
+['img/he/w_rosa.jpg','חנות מעדנים','כ-900 מוצרים, שלוש שפות.','חנות אונליין','החנות עבדה דרך שירות משלוחים עם מחירים מנופחים וכללים של אחרים. היה צריך חנות משלה, שבה הלקוח רואה את המחירים האמיתיים.','חנות אונליין משלה: מחלקות, קבוצות ומדפים, כמו בסופרמרקט. ההזמנה נשלחת לוואטסאפ של החנות כרשימה מוכנה, ובאתר המחירים כמו בקופה.','החנות מוכרת ישירות, בלי מתווך ובלי התוספת שלו.',0,['כ-900 מוצרים, ארץ ייצור עם דגל, משקל','חיפוש עם שגיאות כתיב ובקול','עברית, רוסית, אנגלית','מארזי חג ו״להיטים״','פריסה מיוחדת למסכים רחבים במיוחד','פאנל ניהול לבעלים']],
+['img/he/w_azart.jpg','שלוש חנויות, סל אחד','כמעט 4,800 מוצרים מהקופה.','חנות אונליין','לבעלים שלוש חנויות: מינימרקט, מתוקים ובשר. הלקוח לא אמור לבצע שלוש הזמנות נפרדות.','אתר אחד לשלוש חנויות: סל משותף, הזמנה אחת, תשע מחלקות גדולות. כל המבחר הועבר ישירות מהקופה.','הלקוח מזמין הכול בבת אחת, והבעלים מקבל הזמנה אחת.',0,['4,799 פריטים: 2,790 + 1,223 + 786','תשע מחלקות במקום עשרים ושתיים','כניסת 18+ לאלכוהול','משלוח בעיר, סכום הזמנה מינימלי','תשלום במסירה']],
+['img/w_admin.jpg','פאנל ניהול לחנות','הזמנות, מוצרים, דוחות.','פאנל ניהול','הבעלים צריך לראות את החנות כולה: הזמנות, מלאי, מבצעים וכסף, בלי לפתוח עשר תוכנות.','פאנל במחשב ובטלפון: סיכום יומי, הזמנות לפי סטטוס, מוצרים, מבצעים, דוחות, יומן פעולות.','כל החנות בחלון אחד, מהטלפון.',0,['סיכום יומי: מכירות, הזמנות חדשות, מה נגמר','הזמנות: חדשות, בטיפול, מוכנות','מוצרים במנות, ביטול מנה בלחיצה אחת','״הגיע היום״, תוקף, ספקים','דוחות: מכירות, רווח, הוצאות','כניסה עם קוד מאפליקציה, הרשאות, יומן']],
+['img/he/w_assist.jpg','עוזר להעלאת מוצרים','סורק ברקוד, מאגר משלו של 109,000+.','כלי','לקוחות שולחים רשימות מוצרים בתמונות ובהודעות, ולסדר אותן לוקח זמן וקל לטעות.','הלקוח סורק ברקוד בטלפון, השם נשלף מהמאגר, והוא מוסיף מחיר ותמונה. הרשימה מגיעה לפאנל מוכנה.','המוצרים עולים לאתר מהר ובלי טעויות.',1,['מאגר משלו של יותר מ-109,000 ברקודים','עברית ורוסית','תמונת מוצר ישר מהמצלמה','פאנל: מי שלח וכמה, ייצוא לאקסל']],
+['img/w_polka.jpg','״מדף״','ספירה על המדף והזמנה מספקים.','אפליקציה','בעל החנות עובר בין המדפים עם מחברת ומנסה לזכור מה להזמין וממי.','סורקים את המדף בטלפון וקובעים מינימום. האפליקציה רואה מה חסר ומרכיבה הזמנה נפרדת לכל ספק.','הזמנה מספקים בדקות, שום דבר לא נשכח.',1,['ספירה לפי ברקוד או ידנית','מינימום לכל מוצר','הודעה נפרדת לכל ספק בוואטסאפ','היסטוריית ספירות וייצוא לאקסל','סימון ״בפיתוח״']],
+['img/w_map.jpg','מפת לקוחות','307 נקודות על מפה אחת.','כלי','לסוכן מכירות מאות נקודות, וקשה לתכנן את היום.','כל הלקוחות על מפה אחת עם סינון, הערות ובניית מסלול.','פחות קילומטרים מיותרים, אף אחד לא נשכח.',1,['307 נקודות ב-55 ערים','סינון: לקוחות, ביקורים, ״לחזור בעוד 30 יום״','מסלול יומי','״קרוב אליי״']],
+['img/he/w_price.jpg','מחירון עם הזמנה','הזמנה בקרטונים בוואטסאפ, 4 שפות.','קטלוג','לקוחות מזמינים בטלפון, מתבלבלים בפריטים, והמוכר מבזבז זמן על התכתבות.','מחירון בטלפון: בוחרים מוצרים בקרטונים או ביחידות, וההזמנה נשלחת לוואטסאפ כרשימה מוכנה.','הזמנה בלי טעויות ובלי שיחות.',1,['עברית, ערבית, רוסית, אנגלית','גופן גדול בלחיצה אחת','חיפוש לפי שם וברקוד','סכום הזמנה מינימלי','אימות גיל 18+']],
+['img/w_calc.jpg','מחשבון רווח','רווח מכל פריט.','כלי','בעל החנות לא יודע בדיוק כמה הוא מרוויח על כל פריט.','מחשבון שמחשב תוך שניות את הרווח הנקי מפריט, עם מע״מ ובלי.','ברור אילו מוצרים משתלמים ואילו לא.',1,['רווח על הקנייה ואחוז מהמחיר זה לצד זה','עם מע״מ ובלי','מחיר קרטון ויחידה']],
+['img/w_agent.jpg','אפליקציית סוכן','לקוחות, קטלוג, הזמנות.','אפליקציה','לקוחות, מלאי והזמנות מפוזרים במחברות ובצ׳אטים.','אפליקציה אחת: לקוחות, קטלוג, מלאי, היסטוריית הזמנות, פעולות מהירות.','הכול במקום אחד ובטלפון.',1,['כרטיסי לקוחות','קטלוג ומלאי','היסטוריית הזמנות','פעולות מהירות']],
+['img/he/w_tape.jpg','Apps & Soul Tape','מחשבון עם סרט לטלפון.','אפליקציה','מחשבון רגיל שוכח את החישוב, ואי אפשר לבדוק חשבון ארוך.','מחשבון עם סרט, כמו על נייר: כל שורה נראית ומתויגת. ובנוסף שכר בישראל, מע״מ, מטבעות וייצוא לכל מקום.','חישוב שאפשר לבדוק, לשמור ולשלוח.',2,['סרט עם תוויות לשורות, הקלדה קולית','מע״מ, הנחות, שערי מטבע','שכר ומסמכים של אזרח ישראלי','עיצובים מתחלפים','בהכנה ל-App Store']],
+['img/w_cc.jpg','Control Center','תוכנה לסטודיו ולבעלי מקצוע.','תוכנה','סטודיו ובעלי מקצוע מנהלים לקוחות, פרויקטים וכסף בטבלאות ובצ׳אטים שונים.','תוכנה אחת: לקוחות, יומן, משימות, חוזים, מנויים, כסף, אזור לקוח ואתר לסטודיו.','כל העסק בחלון אחד, עם תזכורות ודוחות.',2,['לקוחות, משפך מכירות, פניות','משימות, פרויקטים, יומן תורים','הצעות מחיר וחוזים עם חתימת לקוח','מנויים, תשלומים, תזכורות, דוחות','אזור לקוח ואתר תדמית עם קביעת תור','רישום קולי מהיר · סימון ״בפיתוח״']],
+['img/w_atlas.jpg','אטלס האלכוהול הישראלי','מפה, יצרנים, אנציקלופדיה.','אפליקציה','להראות שאפשר לבנות מדריך גדול עם מפה ועיצוב יפה.','אפליקציה בעברית: מפת יצרנים, קטלוג, אנציקלופדיה, סורק תוויות, התאמת יין.','דוגמה לפרויקט גדול עם מאגר נתונים משלו.',2,['מפת יצרנים אינטראקטיבית','אנציקלופדיה בסגנון כרוניקה','סורק תוויות','התאמת יין למנה ולערב']],
+['img/w_kawar.jpg','קטלוג קעואר','קטלוג מסחרי, 83 עמודים.','קטלוג','הספק צריך קטלוג שלא מתביישים לשלוח ללקוח.','קטלוג בעברית: ערק, יינות, בירה, ליקרים, עם תמונות ותיאורים.','הלקוחות רואים את כל המבחר בקובץ אחד.',3,['83 עמודים','תמונות ותיאורים','PDF להדפסה ולהפצה']],
+['img/w_oldvines.jpg','קטלוג גפנים בוגרות','יינות ומשקאות חריפים.','קטלוג','החנות צריכה קטלוג יינות יפה לטלפון.','קטלוג ״גפנים בוגרות״ בטלפון: יינות ומשקאות חריפים לפי מדורים.','נוח לשלוח ללקוח בקישור אחד.',3,['גרסה לטלפון','מדורים לפי סוגי משקאות']],
+['img/w_book1.jpg','״יהודי ההרים. דרך לאורך הדורות״','רומן-כרוניקה, 509 עמודים.','ספר','לספר את תולדות העם כך שיקראו, ולא רק ידפדפו.','ספר-כרוניקה עם איורים לפרקים, שירים ומפות.','מהדורה סופית, מוכנה להוצאה לאור.',4,['509 עמודים','איורים לפרקים','רוסית, עברית, אנגלית']],
+['img/w_book2.jpg','״ישראל 1948–2026״','מהדורה מאוירת.','ספר','לאסוף את תולדות המדינה למהדורה אחת חיה.','כרוניקה מאוירת: היסטוריה, אנשים, אירועים, עתיד.','מהדורה דיגיטלית מעודכנת.',4,['מהדורה מאוירת','גרסה דיגיטלית']],
+['img/w_book3.jpg','״המכונה כבר יודעת. ואתם?״','מדריך מעשי.','ספר','לאנשים בלי רקע טכני קשה להבין איך להשתמש בטכנולוגיות חדשות בעבודה.','מדריך מעשי בשפה פשוטה: מה הטכנולוגיות של היום יודעות ואיך ליישם אותן בעבודה ובעסק.','התחלה ברורה בלי רקע טכני.',4,['200 עמודים','לעבודה ולעסק']],
+['img/w_mila.jpg','״מילה וענן פושינקה״','אגדה אינטראקטיבית.','ספר','לילדים מעניין יותר לקרוא כשהספר מגיב לנגיעה.','אגדה עם משימות: קוראים יחד עם ההורים, לוחצים על התמונות, מקשיבים בקול.','הקריאה הופכת למשחק.',4,['20 עמודים','הקראה בקול','משימות בעמודים']],
+['img/w_aadmin.jpg','פאנל לשלוש חנויות','קטלוג, מלאי, הזמנות, דוחות.','פאנל ניהול','בעל שלוש חנויות צריך לראות את כל 4,799 המוצרים ולהבין איפה חסרות תמונות, שמות ומחירים.','פאנל משלו ברוסית ובעברית: סקירה, מוצרים, קטגוריות, מלאי, ייבוא וייצוא, הזמנות, לקוחות, מבצעים, דוחות.','רואים מה מוכן ומה צריך להשלים, בכל חנות.',0,['סקירה: סך המוצרים, עם תמונה ובלי, בלי מחיר','מוצרים וקטגוריות של שלוש החנויות','ייבוא וייצוא קבצים לאתר','הזמנות, לקוחות, מבצעים, דוחות','רוסית ועברית']],
+['img/w_photo.jpg','עיבוד צילומי מוצרים','1,795 תמונות הובאו למראה אחיד.','שירות','תמונות המוצרים צולמו במחסן, בזווית, על רקעים שונים. הקטלוג נראה מרושל.','עיבוד כל התמונות: הרקע הוסר, הפרספקטיבה וההטיה יושרו, המוצר גדול ובמרכז, בהיר וחד יותר.','הקטלוג נראה כמו בחנות גדולה.',5,['1,795 תמונות עובדו','1,626 — הרקע הוסר, המוצר גדול','349 — פרספקטיבה יושרה','225 — הטיה יושרה','169 — סומנו ״עדיף לצלם מחדש״']],
+['img/w_seo.jpg','אודיט אתר','מהירות, אבטחה, חוק, אמון.','שירות','יש אתר, אבל מעט פניות, ולא ברור למה.','אודיט טכני ושיווקי: מדידות מהירות, אבטחה, דפי חובה, טקסטים, אמון ותוכנית פיתוח.','רשימה ברורה: מה לתקן מיד, מה אחר כך ומה זה ייתן.',5,['מדידות מהירות בטלפון ובמחשב','בעיות לפי דחיפות: חוק, מכירות, איכות','תמונות, טקסטים, המלצות, מחירים','תוכנית פיתוח עם חישוב פניות']],
+['img/w_events.jpg','אזור עבודה לעסק אירועים','פרופיל לפי מקצוע.','פרופיל','חברת אירועים צריכה לזכור הקמה, ציוד, צוות ותשלום לכל אירוע.','אזור עבודה לפי מקצוע: תוכנית יום, לוח זמנים לפי דקות, ציוד ומחסן, צוות, כסף והתראה על התנגשות בהזמנות.','אף אירוע לא מתנגש בציוד.',5,['תוכנית יום ולוח זמנים לפי דקות','ציוד ומחסן, התנגשות בהזמנות','צוות וקבלני משנה','כסף: חבילה, מקדמה, יתרה','אזורי עבודה כאלה אני בונה לכל מקצוע']],
+['img/w_boom.jpg','״בום-ארנה״','משחק לטלפון.','משחק','להראות שאפשר לבנות משחק חי ישר בדפדפן.','משחק ארקייד עם גרפיקה צבעונית, שנפתח בקישור ועובד בטלפון.','דוגמה לפרויקט בידור.',2,['עובד בדפדפן של הטלפון','גרפיקה צבעונית']],
+['img/w_tales.jpg','״אגדות לפני השינה״','אוסף לילדים.','ספר','הורים צריכים אגדות טובות וקצרות לפני השינה.','אוסף אגדות מאוירות, עם שם לגיבורה בכל שפה.','קריאה חמה לפני השינה.',4,['איורים לכל אגדה','רוסית, עברית, אנגלית']],
+['img/w_guide.jpg','מדריך תרבות','הים התיכון.','ספר','מטייל רוצה להבין את התרבות, ולא רק כתובות.','מדריך מאויר לתרבות הים התיכון.','טיול עם היסטוריה.',4,['מהדורה מאוירת','תרבות והיסטוריה']]
+];
+var plane=document.getElementById('plane'),cv=document.getElementById('canvas'),chips=document.getElementById('chips');
+var dlg=document.getElementById('story'),cur=0;
+function openStory(i){cur=i;var w=W[i];document.getElementById('stI').src=w[0];document.getElementById('stI').alt=w[1];document.getElementById('stBr').hidden=(w[7]===4);document.getElementById('stG').textContent=w[3];document.getElementById('stT').textContent=w[1];
+  document.getElementById('stA').textContent=w[4];document.getElementById('stB').textContent=w[5];document.getElementById('stC').textContent=w[6];
+  var ins=document.getElementById('stD');ins.innerHTML='';var ul=el('ul');(w[8]||[]).forEach(function(t){ul.appendChild(el('li','',t));});ins.appendChild(ul);document.getElementById('stDw').hidden=!(w[8]&&w[8].length);
+  document.getElementById('stW').href=WA+'?text='+encodeURIComponent('שלום! אני רוצה משהו דומה ל״'+w[1]+'״');
+  if(!dlg.open){if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','');document.body.classList.add('modal');}}
+function closeStory(){if(dlg.close)dlg.close();else dlg.removeAttribute('open');}
+dlg.addEventListener('close',function(){document.body.classList.remove('modal');});
+document.getElementById('stX').addEventListener('click',closeStory);
+document.getElementById('stN').addEventListener('click',function(){openStory((cur+1)%W.length);});
+dlg.addEventListener('click',function(e){if(e.target===dlg)closeStory();});
+/* раскладка по группам: колонки групп слева направо */
+var ROT=[-3,2,-2,3,-1,2],colW=[2,3,2,1,3,2],COLX=[],gx=120;colW.forEach(function(c,i){COLX[i]=gx;gx+=c*290+120;});
+var count=[0,0,0,0,0,0],PHc=0;
+G.forEach(function(g){var l=el('div','grp-l');l.appendChild(document.createTextNode(g[0]));var n=W.filter(function(w){return w[7]===g[1];}).length;l.appendChild(el('i','',n));l.style.left=COLX[g[1]]+'px';l.style.top='60px';plane.appendChild(l);});
+var PWc=0;
+W.forEach(function(w,i){var g=w[7],k=count[g]++,cols=colW[g],cx=COLX[g]+(k%cols)*290,cy=130+Math.floor(k/cols)*600+((k%cols)%2?50:0);PWc=Math.max(PWc,cx+330);PHc=Math.max(PHc,cy+560);
+  var d=el('div','it');d.tabIndex=0;d.setAttribute('role','button');d.setAttribute('aria-label','סיפור הפרויקט: '+w[1]);d.dataset.cur='סיפור';d.dataset.i=i;
+  d.style.left=cx+'px';d.style.top=cy+'px';
+  d.dataset.rot=ROT[i%6];d.innerHTML='<div class="sc" style="transform:rotate('+ROT[i%6]+'deg)"><img alt="" loading="lazy">'+(w[7]!==4?'<span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span>':'')+'</div><b></b><span></span><em class="more">סיפור הפרויקט</em>';
+  d.querySelector('img').src=w[0];d.querySelector('b').textContent=w[1];d.querySelector('span').textContent=w[2];
+  d.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openStory(i);}});plane.appendChild(d);
+  var c=el('button','',w[1]);c.addEventListener('click',function(){openStory(i);});chips.appendChild(c);});
+if(W.length>6){chips.classList.add('fold');var ab=el('button','allb','כל הסיפורים ('+W.length+')');ab.addEventListener('click',function(){chips.classList.remove('fold');ab.remove();});chips.appendChild(ab);}
+var stk=el('div','sticky','כאן יופיעו עבודות חדשות. הרשימה מתעדכנת.');stk.style.left=(COLX[3])+'px';stk.style.top=(130+1200)+'px';PHc=Math.max(PHc,1500);plane.appendChild(stk);
+plane.style.width=PWc+'px';plane.style.height=PHc+'px';
+var PW=PWc,PH=PHc,x=0,y=0,vx=0,vy=0,drag=false,lx=0,ly=0,moved=0,downIt=null,miniV=document.getElementById('miniV');
+function clamp(){var cw=cv.clientWidth,ch=cv.clientHeight;x=Math.min(0,Math.max(cw-PW,x));y=Math.min(0,Math.max(ch-PH,y));}
+function apply(){plane.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0)';var cw=cv.clientWidth,ch=cv.clientHeight;miniV.style.left=(-x/PW*130)+'px';miniV.style.top=(-y/PH*81)+'px';miniV.style.width=(cw/PW*130)+'px';miniV.style.height=(ch/PH*81)+'px';}
+function center(){x=-(60);y=0;clamp();apply();}
+center();addEventListener('resize',center);
+cv.addEventListener('pointerdown',function(e){drag=true;moved=0;downIt=e.target.closest('.it');cv.classList.add('drag');lx=e.clientX;ly=e.clientY;vx=vy=0;cv.setPointerCapture(e.pointerId);});
+cv.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-lx,dy=e.clientY-ly;lx=e.clientX;ly=e.clientY;moved+=Math.abs(dx)+Math.abs(dy);x+=dx;y+=dy;vx=dx;vy=dy;clamp();apply();});
+function up(e){if(!drag)return;drag=false;cv.classList.remove('drag');
+  if(e.type==='pointerup'&&moved<8&&downIt){openStory(+downIt.dataset.i);downIt=null;return;}downIt=null;
+  (function inert(){if(drag)return;vx*=.93;vy*=.93;x+=vx;y+=vy;clamp();apply();if(Math.abs(vx)+Math.abs(vy)>.3)requestAnimationFrame(inert);})();}
+cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
+
+/* шаги */
+var steps=document.getElementById('steps');
+(function(){var sts=steps.querySelectorAll('.st'),n=sts.length;
+  function f(){var r=steps.getBoundingClientRect(),a=innerHeight*.85,b=innerHeight*.35,p=Math.max(0,Math.min(1,(a-r.top)/(a-b+r.height*.3)));
+    if(reduce)p=r.top<innerHeight?1:0;steps.style.setProperty('--p',p.toFixed(3));if(p>0)steps.classList.add('on');
+    sts.forEach(function(st,i){if(p>=(i+.5)/n)st.classList.add('lit');});if(p>=1)steps.classList.add('done');}
+  addEventListener('scroll',f,{passive:true});f();})();
+
+
+/* панель: группы возможностей */
+var ADM=[['◎','כל יום','סיכום יומי: מכירות, הזמנות חדשות, מה נגמר, משימות להיום. הזמנות לפי סטטוס: חדשות, בטיפול, מוכנות.'],
+['▦','מוצרים ומלאי','מחירים, תמונות, מחלקות ותיאורים. עריכה גורפת למאות מוצרים בבת אחת, וכל מנה אפשר לבטל. טעינה מהקופה או מטבלה.'],
+['✦','מכירות','מבצעים והנחות, ״הגיע היום״, תוקף, מועדון לקוחות, חוות דעת של לקוחות.'],
+['⇄','ספקים ומשלוחים','הזמנות מספקים, קבלת סחורה, אזורים וזמני משלוח, מסלול שליח.'],
+['₪','כסף ודוחות','מכירות, רווח והפסד, הוצאות, מחירי קנייה, השוואה לתקופה קודמת.'],
+['⚿','אמינות','כניסה עם סיסמה וקוד מאפליקציה, הרשאות לבעלים ולעובדים, רשימת מכשירים, יומן פעולות, גיבוי של הקטלוג כל שבוע.']];
+var al=document.getElementById('admList');
+ADM.forEach(function(a,k){var d=el('div','ag'),b=el('b'),i=el('span','pim');i.innerHTML='<img src="img/pn'+(k+1)+'.jpg" alt="" loading="lazy">';b.appendChild(i);b.appendChild(document.createTextNode(a[1]));d.appendChild(b);d.appendChild(el('p','',a[2]));al.appendChild(d);});
+/* AI */
+var AIC=['<path d="M4 5h12v8H9l-4 3v-3H4z"/>','<path d="M5 4h10v12H5z"/><path d="M8 8h4M8 11h4"/>','<rect x="7" y="3" width="6" height="10" rx="3"/><path d="M4 10a6 6 0 0 0 12 0M10 16v2"/>','<path d="M3 7V4h3M14 4h3v3M17 13v3h-3M6 16H3v-3"/><path d="M7 10h6"/>','<path d="M10 3l2 4 4 .6-3 3 .7 4.4L10 13l-3.7 2 .7-4.4-3-3L8 7z"/>','<path d="M4 15l4-4 3 3 5-6"/>'];
+var AI=[['עוזר בוואטסאפ','עונה ללקוחות מסביב לשעון לפי מאגר החנות: מחירים, מלאי, שעות פתיחה, משלוח. שאלות מורכבות מעביר אליכם.','בהזמנה'],
+['תיאורי מוצרים בלחיצה','כותב תיאורים קצרים מיד בעברית, ברוסית ובאנגלית. אתם בודקים ושומרים.','עובד בפאנל'],
+['רישום קולי','אומרים ״הלקוח שילם 500״ או ״משימה: לתקן תפריט״, והתוכנה מפענחת ומציעה לרשום.','עובד'],
+['סורק תוויות','מכוונים מצלמה לבקבוק או לאריזה, והעוזר מזהה את המוצר ומציג את הכרטיס שלו.','עובד'],
+['עוזר לקונה באתר','ממליץ מה לבחור לחג או לארוחת ערב, ומרכיב סל מהקטלוג.','בהזמנה'],
+['למשימה שלכם','תרגום מחירון, פענוח צילומי חשבוניות, תשובות לשאלות נפוצות. נבדוק יחד מה יחסוך לכם הכי הרבה זמן.','נדבר']];
+var ail=document.getElementById('aiList');
+AI.forEach(function(a,i){var d=el('div','aic');d.innerHTML='<span class="aim"><img src="img/ai'+(i+1)+'.jpg" alt="" loading="lazy"></span>';d.appendChild(el('b','',a[0]));d.appendChild(el('span','',a[1]));var e=el('em',a[2].indexOf('עובד')===0?'':'soon',a[2]);d.appendChild(e);ail.appendChild(d);});
+/* свои инструменты */
+var TL=[3,4,9,10],tll=document.getElementById('toolList');
+TL.forEach(function(i){var w=W[i],b=el('button','tl');b.dataset.cur='סיפור';b.innerHTML='<div class="im"><img alt="" loading="lazy"><span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span></div><div class="tx"></div>';b.querySelector('img').src=w[0];b.querySelector('img').alt=w[1];var t=b.querySelector('.tx');t.appendChild(el('span','tag',w[3].toUpperCase()));t.appendChild(el('b','',w[1]));t.appendChild(el('span','',w[5]));t.appendChild(el('u','','סיפור הפרויקט ←'));b.addEventListener('click',function(){openStory(i);});tll.appendChild(b);});
+
+
+/* ===== вау-функции ===== */
+var snd=false,actx=null;
+function beep(f,d,v){if(!snd)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();var o=actx.createOscillator(),g=actx.createGain();o.frequency.value=f;g.gain.value=v||.07;o.connect(g);g.connect(actx.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,actx.currentTime+(d||.15));o.stop(actx.currentTime+(d||.15));}catch(err){}}
+/* 1 ночь */
+(function(){var st=document.getElementById('nstars');for(var i=0;i<40;i++){var x=el('i');x.style.left=Math.random()*100+'%';x.style.top=Math.random()*100+'%';x.style.animationDelay=(Math.random()*3)+'s';st.appendChild(x);}
+var ORD=[['דנה','עוף 2 ק״ג, חומוס, לאפה ×3','148 ₪'],['איגור','גבינת ברי, זיתים, יין אדום','212 ₪'],['מירה','מארז ״ארוחת בוקר״, ביצים 12','85 ₪'],['אברהם','עוגת דבש, תה שחור','96 ₪'],['לנה','סלמון 400 גרם, לחם, שמנת','160 ₪'],['שי','פלמני ×2, שמנת','74 ₪'],['אולה','פירות, גבינה לבנה, קפיר ×2','63 ₪']];
+var m=document.getElementById('msgs'),k=0,n=0,mins=12;
+function add(){var o=ORD[k%ORD.length];k++;n++;mins+=Math.floor(Math.random()*9)+3;var t=('0'+(3+Math.floor(mins/60))).slice(-2)+':'+('0'+(mins%60)).slice(-2);
+  var d=el('div','msg'),b=el('b','','🛒 הזמנה חדשה מס׳ '+(1040+n));d.appendChild(b);d.appendChild(document.createTextNode(o[0]+': '+o[1]+' — '+o[2]));d.appendChild(el('em','',t+' ✓✓'));m.appendChild(d);
+  while(m.children.length>5)m.removeChild(m.firstChild);document.getElementById('ordN').textContent=n;document.getElementById('nclk').textContent=t+' · לילה';beep(880,.12);setTimeout(function(){beep(1320,.1);},90);}
+add();setInterval(function(){if(!document.hidden&&scrollY<innerHeight)add();},2600);
+document.getElementById('sndB').addEventListener('click',function(){snd=!snd;this.textContent=snd?'🔇 צליל':'🔊 צליל';beep(880,.12);});})();
+/* 2 конструктор */
+(function(){var OPT=[['shop','🛍','חנות אונליין','קטלוג, סל והזמנה'],['wa','💬','הזמנות בוואטסאפ','ההזמנה מגיעה כרשימה מוכנה'],['lang','🌍','שלוש שפות','עברית, רוסית, אנגלית'],['scan','▦','סורק ברקוד','העלאה וספירה של מוצרים'],['ai','✦','עוזר AI','תשובות ללקוחות מסביב לשעון'],['adm','⚙','פאנל ניהול','הזמנות, מוצרים, דוחות'],['app','📱','כמו אפליקציה','אייקון על מסך הטלפון']];
+var on={shop:true,wa:true},ch=document.getElementById('bchips');
+OPT.forEach(function(o){var b=el('button');b.type='button';b.innerHTML='<i>'+o[1]+'</i>';b.appendChild(document.createTextNode(o[2]));if(on[o[0]])b.classList.add('on');b.addEventListener('click',function(){ASBt=true;on[o[0]]=!on[o[0]];b.classList.toggle('on',!!on[o[0]]);beep(660,.08);render();});ch.appendChild(b);});
+function render(){var s=document.getElementById('bsite');s.innerHTML='';var h=el('div','s-head blk');h.appendChild(document.createTextNode('העסק שלכם'));if(on.lang)h.appendChild(el('small','','עב · RU · EN'));if(on.app)h.appendChild(el('small','','📱'));s.appendChild(h);
+  s.appendChild(el('div','s-hero blk',on.shop?'מבצע השבוע −20%':'ברוכים הבאים!'));
+  if(on.shop){var g=el('div','s-grid blk');for(var i=0;i<4;i++)g.appendChild(el('div'));s.appendChild(g);}
+  if(on.scan)s.appendChild(el('div','s-scan blk','▦  סריקת ברקוד'));
+  if(on.ai)s.appendChild(el('div','s-ai blk','✦ עוזר: ״כן, יש גבינה לבנה, נביא היום״'));
+  if(on.adm){var d=el('div','s-adm blk');['8 הזמנות','54 מוצרים','₪2 020'].forEach(function(t){d.appendChild(el('span','',t));});s.appendChild(d);}
+  if(on.wa)s.appendChild(el('div','s-wa blk','להזמין בוואטסאפ'));
+  if(on.shop)s.appendChild(el('div','s-cart blk','3'));
+  var L=document.getElementById('bsum');L.innerHTML='';var names=[];OPT.forEach(function(o){if(on[o[0]]){L.appendChild(el('li','',o[2]+' — '+o[3]));names.push(o[2]);}});if(!names.length)L.appendChild(el('li','','בחרו לפחות אפשרות אחת'));
+  document.getElementById('bsend').href=WA+'?text='+encodeURIComponent('שלום! אני רוצה אתר: '+names.join(', '));ASBn=names;if(window.updCTA)updCTA();}
+render();})();
+/* 3 чат */
+(function(){var KB=[['גבינה|חלב|קפיר|קוטג','כן, יש גבינה לבנה 5% ו-9%, ב-14.90 ₪. להוסיף להזמנה?'],['משלוח|שליח|להביא','משלוח בעיר 40 ₪, חינם מעל 300 ₪. היום נביא בין 17:00 ל-21:00.'],['שעות|פתוח|פתוחים|מתי','אנחנו פתוחים א׳–ה׳ 8:00–21:00, ביום שישי עד 14:00. הזמנה באתר אפשר להשאיר בכל שעה.'],['סלמון|דג','סלמון כבוש קל 200 גרם — 39.90 ₪, פילה 400 גרם — 72 ₪. במלאי.'],['תשלום|לשלם|כרטיס|ביט','תשלום במסירה: מזומן, כרטיס או ביט.'],['כשר','בקטלוג לכל מוצר יש סימון כשרות. להציג מוצרים כשרים?'],['שלום|היי','שלום! אני העוזר של החנות. שאלו על מוצר, מחירים, משלוח או שעות פתיחה.']];
+var QS=['יש גבינה לבנה?','כמה עולה משלוח?','מתי אתם פתוחים?','כמה עולה סלמון?','איך משלמים?'];
+var log=document.getElementById('clog'),qk=document.getElementById('cquick'),inp=document.getElementById('cq');inp.placeholder='לדוגמה: יש גבינה לבנה?';
+function say(t,me){log.appendChild(el('div','cm '+(me?'me':'bot'),t));log.scrollTop=log.scrollHeight;}
+function ask(t){if(!t.trim())return;say(t,true);beep(520,.06);var ty=el('div','cm bot');ty.innerHTML='<span class="typing"><i></i><i></i><i></i></span>';log.appendChild(ty);log.scrollTop=log.scrollHeight;document.getElementById('cst').textContent='מקליד…';
+  setTimeout(function(){ty.remove();var a='אבדוק עם המוכר ואחזור עם תשובה. בדרך כלל זה לוקח כמה דקות.';for(var i=0;i<KB.length;i++)if(new RegExp(KB[i][0],'i').test(t)){a=KB[i][1];break;}say(a,false);beep(760,.08);document.getElementById('cst').textContent='מחובר';},900+Math.random()*600);}
+QS.forEach(function(q){var b=el('button','',q);b.type='button';b.addEventListener('click',function(){ask(q);});qk.appendChild(b);});
+document.getElementById('cfrm').addEventListener('submit',function(e){e.preventDefault();ask(inp.value);inp.value='';});
+say('שלום! אני העוזר של החנות. איך אפשר לעזור?',false);})();
+/* 4+6 сканер и 3D на столе работ */
+plane.addEventListener('pointermove',function(e){if(drag)return;var it=e.target.closest('.it');if(!it)return;var r=it.getBoundingClientRect(),dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;it.querySelector('.sc').style.transform='perspective(700px) translateY(-8px) rotateY('+(dx*22)+'deg) rotateX('+(-dy*16)+'deg)';});
+plane.addEventListener('pointerout',function(e){var it=e.target.closest('.it');if(it&&!it.contains(e.relatedTarget))it.querySelector('.sc').style.transform='rotate('+it.dataset.rot+'deg)';});
+var _open=openStory;openStory=function(i){beep(1500,.09,.09);var it=plane.querySelector('.it[data-i="'+i+'"]');if(it){it.classList.remove('beep');void it.offsetWidth;it.classList.add('beep');}_open(i);};
+/* 5 переворот при смене языка */
+(function(){var rtl=document.documentElement.dir==='rtl';try{if(sessionStorage.getItem('asflip')){sessionStorage.removeItem('asflip');document.body.style.setProperty('--ra',(rtl?'-14deg':'14deg'));document.body.classList.add('arrive');}}catch(err){}
+document.querySelectorAll('.langs a').forEach(function(a){a.addEventListener('click',function(e){if(a.classList.contains('on'))return;e.preventDefault();var toRtl=/he\.html/.test(a.getAttribute('href'));document.body.style.setProperty('--ry',toRtl?'14deg':'-14deg');document.body.classList.add('leave');try{sessionStorage.setItem('asflip','1');}catch(err){}setTimeout(function(){location.href=a.href;},430);});});})();
+/* 7 табло цифр */
+(function(){var bs=document.querySelectorAll('.stats b');bs.forEach(function(b){var t=b.textContent,m=t.match(/^[\d][\d ,.]*\+?/);if(!m)return;var num=m[0].replace(/\s+$/,''),rest=t.slice(num.length);b.textContent='';var w=el('span','onum');w.setAttribute('dir','ltr');num.split('').forEach(function(c){if(/\d/.test(c)){var od=el('span','od'),col=el('span');for(var i=0;i<=9;i++)col.appendChild(el('i','',i));col.dataset.t=c;od.appendChild(col);w.appendChild(od);}else w.appendChild(document.createTextNode(c));});b.appendChild(w);b.appendChild(document.createTextNode(rest));});
+function roll(){document.querySelectorAll('.stats b .od').forEach(function(od){var c=od.firstChild,m=document.createElement('span');m.style.cssText='position:absolute;visibility:hidden;white-space:pre;font-size:inherit;margin:0;display:inline';m.textContent=c.dataset.t;od.parentNode.appendChild(m);od.style.width=m.getBoundingClientRect().width+'px';m.remove();});document.querySelectorAll('.stats b .od span').forEach(function(c,i){c.style.transitionDuration=(1.1+(i%6)*.22)+'s';c.style.transform='translateY(-'+(+c.dataset.t*1.1)+'em)';});}
+if(reduce||!('IntersectionObserver' in window))roll();else new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){setTimeout(roll,250);o.disconnect();}});},{threshold:.5}).observe(document.querySelector('.stats'));})();
+
+
+/* ===== ещё ништяки ===== */
+/* ночь у посетителя */
+(function(){var h=new Date().getHours();if(h>=22||h<6)document.body.classList.add('isnight');})();
+/* калькулятор */
+(function(){var a=document.getElementById('l1'),b=document.getElementById('l2'),c=document.getElementById('l3'),loc=document.documentElement.lang==='he'?'he-IL':document.documentElement.lang==='en'?'en-US':'ru-RU',shown=0,tm=null;
+function f(n){return Math.round(n).toLocaleString(loc)+' ₪';}
+function calc(){document.getElementById('lv1').textContent=a.value;document.getElementById('lv2').textContent=b.value;document.getElementById('lv3').textContent=c.value;
+  var m=a.value*c.value/100*b.value*26,start=shown,t0=null;cancelAnimationFrame(tm);
+  (function st(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/600),v=start+(m-start)*(1-Math.pow(1-p,3));document.getElementById('lm').textContent=f(v);document.getElementById('ly').textContent=f(v*12)+' בשנה';shown=v;if(p<1)tm=requestAnimationFrame(st);})(performance.now());
+  document.getElementById('lbtn').href=WA+'?text='+encodeURIComponent('שלום! לפי המחשבון אני מפסיד/ה בערך '+f(m)+' בחודש. רוצה לדבר על אתר.');}
+[a,b,c].forEach(function(x){x.addEventListener('input',calc);});calc();})();
+/* было / стало */
+document.querySelectorAll('[data-ba]').forEach(function(ba){var dn=false;function mv(e){var r=ba.getBoundingClientRect(),x=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));ba.style.setProperty('--x',(x*100)+'%');}
+  ba.addEventListener('pointerdown',function(e){dn=true;ba.setPointerCapture(e.pointerId);mv(e);});ba.addEventListener('pointermove',function(e){if(dn||e.pointerType==='mouse')mv(e);});ba.addEventListener('pointerup',function(){dn=false;});});
+/* QR */
+(function(){var q=document.getElementById('qr');try{if(sessionStorage.getItem('asqr'))q.remove();}catch(err){}document.getElementById('qrx').addEventListener('click',function(){q.remove();try{sessionStorage.setItem('asqr','1');}catch(err){}});})();
+/* голос в чате */
+(function(){var SR=window.SpeechRecognition||window.webkitSpeechRecognition,b=document.getElementById('cmic');if(!SR){b.remove();return;}var r=new SR();r.lang=document.documentElement.lang==='he'?'he-IL':document.documentElement.lang==='en'?'en-US':'ru-RU';r.interimResults=false;
+  r.onresult=function(e){var t=e.results[0][0].transcript;document.getElementById('cq').value=t;document.getElementById('cfrm').requestSubmit();};r.onend=function(){b.classList.remove('rec');};
+  b.addEventListener('click',function(){try{b.classList.add('rec');r.start();}catch(err){b.classList.remove('rec');}});})();
+/* игра */
+(function(){var gm=document.getElementById('gm'),gb=document.getElementById('gb'),ov=document.getElementById('gov'),run=false,items=[],sc=0,tl=15,bx=.5,last=0,spawn=0,t0=0;
+var GOOD=['🛒','📦','🧀','🥖','🍷','🥑','🍫','🐟'],BAD='❌';
+function setB(x){bx=Math.max(.08,Math.min(.92,x));gb.style.left=(bx*100)+'%';}setB(.5);
+function px(cx){var r=gm.getBoundingClientRect();setB((cx-r.left)/r.width);}
+gm.addEventListener('mousemove',function(e){px(e.clientX);});
+gm.addEventListener('touchstart',function(e){if(run){e.preventDefault();px(e.touches[0].clientX);}},{passive:false});
+gm.addEventListener('touchmove',function(e){if(run){e.preventDefault();px(e.touches[0].clientX);}},{passive:false});
+function start(){items.forEach(function(i){i.el.remove();});items=[];sc=0;tl=15;run=true;gm.classList.add('run');ov.style.display='none';document.getElementById('gsc').textContent='0';document.getElementById('gt').textContent='15';
+  var r=gm.getBoundingClientRect();if(r.top<0||r.bottom>innerHeight)gm.scrollIntoView({behavior:'smooth',block:'center'});
+  t0=performance.now()+400;last=t0;spawn=0;requestAnimationFrame(loop);}
+function end(){run=false;gm.classList.remove('run');items.forEach(function(i){i.el.remove();});items=[];document.getElementById('gtt').textContent='הזמנות: '+sc;document.getElementById('gtx').textContent='זה מספר ההזמנות שתפסתם ב־15 שניות. האתר תופס אותן לבד, כל יום וגם בלילה.';document.getElementById('gst').textContent='עוד פעם';ov.style.display='flex';}
+function loop(ts){if(!run)return;if(ts<t0){last=ts;requestAnimationFrame(loop);return;}var dt=Math.min(.05,(ts-last)/1000);last=ts;tl=15-(ts-t0)/1000;document.getElementById('gt').textContent=Math.max(0,Math.ceil(tl));if(tl<=0){end();return;}
+  var H=gm.clientHeight,W=gm.clientWidth,sz=W<500?34:40,bw=gb.offsetWidth,btop=H-18-gb.offsetHeight;
+  spawn-=dt;if(spawn<=0){spawn=(W<500?.7:.5)+Math.random()*.35;var bad=Math.random()<.18,e=el('div','itm',bad?BAD:GOOD[Math.floor(Math.random()*GOOD.length)]);gm.appendChild(e);
+    items.push({el:e,x:.08+Math.random()*.84,y:-sz,v:H*(.42+Math.random()*.3)*(1+(15-tl)/30),bad:bad});}
+  items=items.filter(function(i){i.y+=i.v*dt;i.el.style.transform='translate('+(i.x*W-sz/2)+'px,'+i.y+'px)';
+    if(i.y+sz>=btop+6&&i.y<=btop+30&&Math.abs(i.x-bx)*W<bw/2+sz*.35){var p=el('div','pop',i.bad?'−2':'+1');p.style.left=(i.x*W)+'px';p.style.top=(btop-30)+'px';if(i.bad)p.style.color='#FF5DA2';gm.appendChild(p);setTimeout(function(){p.remove();},700);sc=Math.max(0,sc+(i.bad?-2:1));document.getElementById('gsc').textContent=sc;beep(i.bad?220:990,.08);if(navigator.vibrate&&!i.bad)navigator.vibrate(15);i.el.remove();return false;}
+    if(i.y>H){i.el.remove();return false;}return true;});
+  requestAnimationFrame(loop);}
+document.getElementById('gst').addEventListener('click',start);})();
+
+/* ===== кнопка WhatsApp, доступность, окна ===== */
+(function(){var wb=document.getElementById('wabar'),end=document.querySelector('.end');
+  function chk(){var y=scrollY,show=y>innerHeight*.8;if(end){var r=end.getBoundingClientRect();if(r.top<innerHeight)show=false;}wb.classList.toggle('show',show);}
+  addEventListener('scroll',chk,{passive:true});chk();
+  var b=document.getElementById('a11b'),pn=document.getElementById('a11p'),H=document.documentElement,K=['a-big','a-hc','a-na','a-ul'],st={};
+  try{st=JSON.parse(localStorage.getItem('asa11')||'{}');}catch(e){}
+  function ap(){K.forEach(function(k){H.classList.toggle(k,!!st[k]);var x=pn.querySelector('[data-a="'+k+'"]');if(x){x.classList.toggle('on',!!st[k]);x.setAttribute('aria-pressed',!!st[k]);}});try{localStorage.setItem('asa11',JSON.stringify(st));}catch(e){}}
+  ap();
+  b.addEventListener('click',function(){pn.hidden=!pn.hidden;b.setAttribute('aria-expanded',!pn.hidden);});
+  pn.querySelectorAll('[data-a]').forEach(function(x){x.addEventListener('click',function(){st[x.dataset.a]=!st[x.dataset.a];ap();});});
+  document.getElementById('a11r').addEventListener('click',function(){st={};ap();});
+  document.addEventListener('click',function(e){if(!pn.hidden&&!pn.contains(e.target)&&!b.contains(e.target)){pn.hidden=true;b.setAttribute('aria-expanded','false');}});
+  document.querySelectorAll('[data-open]').forEach(function(x){x.addEventListener('click',function(){var d=document.getElementById(x.dataset.open);pn.hidden=true;if(d.showModal)d.showModal();else d.setAttribute('open','');});});
+  document.querySelectorAll('.legal').forEach(function(d){d.querySelector('.lx').addEventListener('click',function(){d.close();});d.addEventListener('click',function(e){if(e.target===d)d.close();});});
+})();
+
+/* гарантии */
+var IC=['<path d="M4 9l6-5 6 5v7H4z"/><path d="M8 16v-4h4v4"/>','<path d="M5 10h10M11 6l4 4-4 4"/><path d="M5 4v12"/>','<rect x="4" y="4" width="9" height="11" rx="1.5"/><path d="M7 4V3h9v11h-1"/>','<path d="M3 15l4-4 3 3 7-7"/><path d="M13 7h4v4"/>','<rect x="6" y="2.5" width="8" height="15" rx="2"/><path d="M9 15h2"/>'];
+var G=[['הכול שייך לכם','כתובת האתר, הקוד והגישות שלכם מהיום הראשון.'],['אתם לא קשורים אליי','את הפרויקט אפשר להעביר בכל רגע לאיש מקצוע אחר.'],['גיבויים','כל מה שעשיתי שמור בגיבויים.'],['הדרכה','אראה איך לשנות בעצמכם מחירים, מוצרים וטקסטים.'],['בדיקה לפני מסירה','האתר נבדק בטלפונים ובמסכים שונים.']];
+var gar=document.getElementById('gar');
+G.forEach(function(g,i){var d=el('div','gc');d.innerHTML='<span class="gim"><img src="img/g'+(i+1)+'.jpg" alt="" loading="lazy"></span>';d.appendChild(el('b','',g[0]));d.appendChild(el('span','',g[1]));gar.appendChild(d);});
+
+/* вопросы по темам */
+var Q=[['על הסטודיו',[
+ ['ומה אם תחלה או תהיה עסוק?','הקוד, הגישות וכתובת האתר שלכם, והכול שמור בגיבויים. האתר ימשיך לעבוד, ואת הפרויקט אפשר להעביר לאיש מקצוע אחר.'],
+ ['אתה עובד רק בישראל?','אני עובד מרחוק, כך שהלקוח יכול להיות בכל מקום. פגישות בוואטסאפ או בווידאו.'],
+ ['מאיפה מתחילים?','כתבו בוואטסאפ כמה מילים על העסק. אשאל כמה שאלות ואציע פתרון.']]],
+['מחיר וזמנים',[
+ ['כמה עולה אתר?','תלוי במשימה: כרטיס ביקור, חנות או אפליקציה הם עבודות שונות. כתבו מה צריך, ואשלח מחיר מדויק ולוח זמנים.'],
+ ['כמה זמן לוקחת העבודה?','סקיצה אני מציג תוך 3–5 ימים. הזמן הכולל תלוי במשימה: כרטיס ביקור מהיר יותר, חנות או אפליקציה לוקחות יותר. זמן מדויק אני נותן לפני תחילת העבודה.'],
+ ['אני צריך להכין משהו?','לוגו, תמונות, רשימת מוצרים ופרטי קשר, אם יש. אם משהו חסר, אסביר איך לאסוף אותו מהר.'],
+ ['אין לי לוגו ושפה גרפית.','לא נורא. נבחר צבעים וגופנים כדי שהאתר ייראה שלם.']]],
+['אפשרויות',[
+ ['האתר יהיה בעברית?','כן. עברית, רוסית, אנגלית — בכל שילוב, עם כיוון טקסט נכון מימין לשמאל.'],
+ ['האתר יעבוד בטלפון?','קודם כול בטלפון — רוב הלקוחות מגיעים דווקא ממנו.'],
+ ['איך ההזמנות מגיעות אליי?','הלקוח מרכיב הזמנה, לוחץ על כפתור, ואליכם מגיעה לוואטסאפ הודעה מוכנה עם הרשימה.'],
+ ['אוכל לשנות בעצמי מחירים ומוצרים?','כן. אראה לכם איך, ואם לא בא לכם — אעשה את זה בשבילכם.'],
+ ['אתה בונה אפליקציות ל-App Store?','בדרך כלל אני בונה אפליקציות שמותקנות בטלפון ישר מהאתר: זה מהיר וזול יותר. אם צריך דווקא חנות אפליקציות — נדבר.'],
+ ['כמה מוצרים יכולים להיות בחנות?','כמה שצריך. החנות הגדולה ביותר כרגע — כמעט 4,800 מוצרים של שלוש חנויות בסל אחד. את כל המבחר אפשר להעביר מהקופה או מטבלה, לא ידנית.'],
+ ['אתה בונה עוזרי AI?','כן. עוזר בוואטסאפ עונה ללקוחות לפי מאגר החנות, בפאנל יש תיאורי מוצרים בלחיצה, ובתוכנות — רישום קולי. העוזר מציע, אתם מחליטים.'],
+ ['אפשר לחדש את האתר הישן שלי?','כן. קודם אבדוק מה אפשר לשמור, ואציע מה לשפר.']]],
+['השקה ואחריה',[
+ ['אני צריך דומיין ואחסון?','דומיין הוא כתובת האתר, אחסון הוא המקום שבו הוא חי. אעזור לבחור ולחבר הכול. הכול יירשם על שמכם.'],
+ ['ומה אם העיצוב לא ימצא חן בעיניי?','קודם אני מציג סקיצה, ורק אחר כך מפתח. מתקנים עד שזה מוצא חן בעיניכם.'],
+ ['מה קורה אחרי ההשקה?','אני נשאר זמין. אפשר לסכם על ליווי קבוע או לפנות לפי הצורך.'],
+ ['תעזור עם קידום?','אני עושה הגדרה בסיסית לחיפוש בגוגל. על פרסום וקידום אפשר לדבר בנפרד.']]]];
+var tabs=document.getElementById('tabs'),qa=document.getElementById('qa'),grps=[],tbs=[];
+Q.forEach(function(g,gi){var t=el('button');t.setAttribute('role','tab');t.setAttribute('aria-selected',gi===0);t.appendChild(document.createTextNode(g[0]));t.appendChild(el('small','',g[1].length));tabs.appendChild(t);tbs.push(t);
+  var box=el('div','grp qa');if(gi)box.hidden=true;
+  g[1].forEach(function(q,qi){var it=el('div','qi'),h=el('button','qh');h.setAttribute('aria-expanded','false');h.appendChild(el('span','',q[0]));var ic=el('i');ic.innerHTML=PLUS;h.appendChild(ic);
+    var b=el('div','qb'),inn=el('div');inn.appendChild(el('p','',q[1]));b.appendChild(inn);it.appendChild(h);it.appendChild(b);box.appendChild(it);
+    h.addEventListener('click',function(){var o=it.classList.toggle('open');h.setAttribute('aria-expanded',o);});
+    if(qi===0&&gi===0){it.classList.add('open');h.setAttribute('aria-expanded','true');}});
+  qa.appendChild(box);grps.push(box);
+  t.addEventListener('click',function(){grps.forEach(function(x,j){x.hidden=j!==gi;tbs[j].setAttribute('aria-selected',j===gi);});});});
+
+/* заголовки расшифровываются */
+var scr=document.querySelectorAll('.scr');
+function decode(h){var fin=h.textContent,len=fin.length,t0=null,D=700;
+  function fr(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/D),out='';for(var i=0;i<len;i++){var c=fin[i];out+=(c===' '||i<p*len)?c:AB[Math.floor(Math.random()*AB.length)].toLowerCase();}h.textContent=out;if(p<1)requestAnimationFrame(fr);else h.textContent=fin;}
+  requestAnimationFrame(fr);}
+if(!reduce&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){decode(e.target);io.unobserve(e.target);}});},{threshold:.6});scr.forEach(function(h){io.observe(h);});}
+
+
+/* ===== развитие ===== */
+/* 8. задача посетителя */
+var TASKS=['אני רוצה שימצאו אותי באינטרנט','אני רוצה לקבל הזמנות בלי בלבול','אני רוצה קטלוג נוח במקום מחירון בתמונות','אני רוצה ספירת מלאי לפי ברקוד','אני צריך אתר בכמה שפות'],FMAP=[[0,1],[1,5],[4],[3,5],[0,1]];
+(function(){var cards=document.querySelectorAll('#forList .fc'),note=document.getElementById('fornote'),rows=document.querySelectorAll('#list .li');
+  cards.forEach(function(c,i){c.setAttribute('role','button');c.tabIndex=0;c.dataset.cur='✓';
+    function pick(){var was=c.classList.contains('sel');cards.forEach(function(x){x.classList.remove('sel');});rows.forEach(function(r){r.classList.remove('hl');});document.querySelectorAll('.pkg').forEach(function(x){x.classList.remove('hl');});
+      if(was){TASK='';note.hidden=true;}else{c.classList.add('sel');TASK=TASKS[i];(FMAP[i]||[]).forEach(function(k){if(k<2){var pc=document.getElementById(k?'pk2':'pk1');if(pc)pc.classList.add('hl');}else if(rows[k])rows[k].classList.add('hl');});note.hidden=false;beep(740,.08);}
+      updCTA();}
+    c.addEventListener('click',pick);c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick();}});});
+  document.getElementById('forgo').addEventListener('click',function(){document.getElementById('services').scrollIntoView({behavior:'smooth'});});
+  document.getElementById('forx').addEventListener('click',function(){note.hidden=true;});})();
+/* 9. кнопки связи помнят выбор */
+var CTAs=[].slice.call(document.querySelectorAll('.end .btn.mag,.nav .cta,#wabar,#top .acts a.btn.mag')),endB=document.querySelector('.end .btn.mag'),endH=endB?endB.innerHTML:'';
+function updCTA(){var msg='';
+  if(ASBt&&ASBn.length){msg='שלום! אני רוצה אתר: '+ASBn.join(', ')+(TASK?'. המשימה: '+TASK:'');}
+  else if(TASK){msg='שלום! '+TASK+'.';}
+  CTAs.forEach(function(a){a.href=WA+(msg?'?text='+encodeURIComponent(msg):'');});
+  if(endB){if(ASBt&&ASBn.length){endB.innerHTML='לשלוח את הסט שלי ('+ASBn.length+') <span class="ar">→</span>';}else endB.innerHTML=endH;}}
+window.updCTA=updCTA;
+/* 1. боковое меню */
+(function(){var side=document.getElementById('side'),ss=[].slice.call(document.querySelectorAll('section[id]')).filter(function(x){return x.id!=='game'||true;}),links=[];
+  ss.forEach(function(sec){var num=sec.querySelector('.num'),t=sec.id==='top'?'01 — התחלה':(num?num.textContent:'');if(!t)return;var m=t.match(/^(\d+)\s*—\s*(.+)$/),a=el('a');a.href='#'+sec.id;
+    a.appendChild(el('i','',m?m[1]:'•'));a.appendChild(document.createTextNode(m?m[2]:t));side.appendChild(a);links.push([sec,a]);});
+  var mq=document.querySelector('.marq');function f(){var cur=null;links.forEach(function(l){if(l[0].getBoundingClientRect().top<innerHeight*.45)cur=l;});links.forEach(function(l){l[1].classList.toggle('on',l===cur);});side.classList.toggle('off',!!mq&&mq.getBoundingClientRect().top<innerHeight*.75);}
+  addEventListener('scroll',f,{passive:true});f();})();
+/* 3. цвет перетекает между разделами */
+(function(){if(!window.getComputedStyle)return;var list=[].slice.call(document.querySelectorAll('.hero,.sec')).map(function(x){var c=getComputedStyle(x).backgroundColor;if(!c||c==='rgba(0, 0, 0, 0)'||c==='transparent')c='rgb(255, 255, 255)';return [x,c];});
+  var bg=el('div','bgm');document.body.insertBefore(bg,document.body.firstChild);document.documentElement.classList.add('morph');
+  function f(){var c=list[0][1];list.forEach(function(l){if(l[0].getBoundingClientRect().top<innerHeight*.55)c=l[1];});bg.style.backgroundColor=c;}
+  addEventListener('scroll',f,{passive:true});f();})();
+/* 4. превью работы у строки услуги */
+(function(){if(!fine)return;var IM=['img/w_events.jpg','img/he/w_rosa.jpg','img/w_polka.jpg','img/he/w_assist.jpg','img/he/w_price.jpg','img/w_admin.jpg','img/w_atlas.jpg','img/w_book1.jpg','img/w_photo.jpg','img/w_seo.jpg','img/w_aadmin.jpg'];
+  var pv=document.getElementById('svprev'),im=pv.querySelector('img'),tx=0,ty=0,cx=0,cy=0,vx=0,on=false;
+  document.querySelectorAll('#list .lr').forEach(function(b,i){b.addEventListener('pointerenter',function(){if(innerWidth<1100||!IM[i])return;im.src=IM[i];on=true;pv.classList.add('on');});b.addEventListener('pointerleave',function(){on=false;pv.classList.remove('on');});});
+  addEventListener('pointermove',function(e){tx=e.clientX+(document.documentElement.dir==='rtl'?-240:40);ty=e.clientY-180;});
+  (function loop(){var nx=cx+(tx-cx)*.15;vx=nx-cx;cx=nx;cy+=(ty-cy)*.15;pv.style.transform='translate('+cx+'px,'+cy+'px) rotate('+Math.max(-12,Math.min(12,vx*.6))+'deg) scale('+(on?1:.6)+')';requestAnimationFrame(loop);})();})();
+/* 11. фильтры стола работ */
+(function(){var wf=document.getElementById('wf');if(!wf)return;var its=plane.querySelectorAll('.it'),gl=plane.querySelectorAll('.grp-l'),btns=[];
+  function go(g,b){btns.forEach(function(x){x.classList.toggle('on',x===b);});
+    its.forEach(function(it){it.classList.toggle('dim',g>=0&&W[+it.dataset.i][7]!==g);});
+    gl.forEach(function(l,k){l.classList.toggle('dim',g>=0&&WG[k][1]!==g);});
+    var tx=g>=0?-(COLX[g]-60):-60,ty=0,sx=x,sy=y,t0=performance.now();
+    (function an(ts){var p=Math.min(1,(ts-t0)/700),e=1-Math.pow(1-p,3);x=sx+(tx-sx)*e;y=sy+(ty-sy)*e;clamp();apply();if(p<1)requestAnimationFrame(an);})(t0);}
+  var all=el('button','on');all.type='button';all.appendChild(document.createTextNode('כל העבודות'));all.appendChild(el('small','',W.length));all.addEventListener('click',function(){go(-1,all);});wf.appendChild(all);btns.push(all);
+  WG.forEach(function(g){var n=W.filter(function(w){return w[7]===g[1];}).length;if(!n)return;var b=el('button');b.type='button';b.appendChild(document.createTextNode(g[0]));b.appendChild(el('small','',n));b.addEventListener('click',function(){go(g[1],b);beep(600,.06);});wf.appendChild(b);btns.push(b);});})();
+/* 5. лента работ */
+(function(){var r1=document.getElementById('mr1'),r2=document.getElementById('mr2');if(!r1)return;
+  function fill(row,arr){var base=arr.slice();while(base.length*168<Math.max(screen.width,innerWidth)+400)base=base.concat(arr);for(var k=0;k<2;k++)base.forEach(function(i){var b=el('button');b.type='button';b.setAttribute('aria-label',W[i][1]);if(k)b.tabIndex=-1;var im=el('img');im.alt='';im.loading='lazy';im.src=W[i][0];b.appendChild(im);b.addEventListener('click',function(){openStory(i);});row.appendChild(b);});}
+  var ids=W.map(function(w,i){return i;});fill(r1,ids.filter(function(i){return i%2===0;}));fill(r2,ids.filter(function(i){return i%2===1;}));})();
+/* 12. было/стало показывает себя */
+(function(){var bas=document.querySelectorAll('[data-ba]');if(!bas.length||reduce||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);var ba=e.target,k=[].indexOf.call(bas,ba);
+    setTimeout(function(){var t0=performance.now();(function an(ts){var p=Math.min(1,(ts-t0)/1800),v=50+Math.sin(p*Math.PI*2)*32*(1-p*.3);if(p>=1)v=50;ba.style.setProperty('--x',v+'%');if(p<1)requestAnimationFrame(an);})(t0);},400+k*350);});},{threshold:.6});
+  bas.forEach(function(b){io.observe(b);});})();
+/* 13. поиск по сайту */
+(function(){var ck=document.getElementById('cmdk'),q=document.getElementById('ckq'),res=document.getElementById('ckres'),items=[],act=0,shown=[];
+  document.querySelectorAll('section[id]').forEach(function(sec){var num=sec.querySelector('.num'),h=sec.querySelector('h1,h2');if(!h)return;items.push({g:0,t:h.textContent,s:num?num.textContent:'',ic:'§',f:function(){sec.scrollIntoView({behavior:'smooth'});}});});
+  var rows=document.querySelectorAll('#list .li');S.forEach(function(sv,i){items.push({g:1,t:sv[0],s:sv[1],k:sv[3].join(' '),ic:'✦',f:function(){if(i<2){document.getElementById(i?'pk2':'pk1').scrollIntoView({behavior:'smooth',block:'center'});return;}var r=rows[i];if(!r.classList.contains('open'))r.querySelector('.lr').click();r.scrollIntoView({behavior:'smooth',block:'center'});}});});
+  W.forEach(function(w,i){items.push({g:2,t:w[1],s:w[2],k:w[3]+' '+w[4]+' '+w[5],img:w[0],f:function(){openStory(i);}});});
+  Q.forEach(function(g,gi){g[1].forEach(function(qq,qi){items.push({g:3,t:qq[0],s:qq[1],ic:'?',f:function(){tbs[gi].click();var it=grps[gi].querySelectorAll('.qi')[qi];if(!it.classList.contains('open'))it.querySelector('.qh').click();it.scrollIntoView({behavior:'smooth',block:'center'});}});});});
+  var GN=['מדורים','שירותים','עבודות','שאלות'];
+  function draw(){var v=q.value.trim().toLowerCase();res.innerHTML='';shown=[];
+    var m=items.filter(function(it){if(!v)return it.g===0||it.g===2&&shown.length<0;return (it.t+' '+it.s+' '+(it.k||'')).toLowerCase().indexOf(v)>=0;});
+    if(!v)m=items.filter(function(it){return it.g===0;});
+    GN.forEach(function(n,g){var part=m.filter(function(it){return it.g===g;}).slice(0,g===0&&!v?20:6);if(!part.length)return;res.appendChild(el('h6','',n));
+      part.forEach(function(it){var b=el('button');b.type='button';if(it.img){var im=el('img');im.src=it.img;im.alt='';b.appendChild(im);}else b.appendChild(el('span','ci',it.ic));var d=el('div');d.appendChild(el('b','',it.t));if(it.s)d.appendChild(el('small','',it.s.length>110?it.s.slice(0,110)+'…':it.s));b.appendChild(d);
+        var idx=shown.length;b.addEventListener('click',function(){run(idx);});b.addEventListener('pointermove',function(){sel(idx);});res.appendChild(b);shown.push([it,b]);});});
+    if(!shown.length){var d=el('div','none');d.appendChild(document.createTextNode('לא נמצא כלום. '));var a=el('a','','שאלו בוואטסאפ ←');a.href=WA+'?text='+encodeURIComponent('שלום! '+q.value);a.target='_blank';a.rel='noopener';d.appendChild(a);res.appendChild(d);}
+    sel(0);}
+  function sel(i){act=i;shown.forEach(function(s,k){s[1].classList.toggle('act',k===i);});if(shown[i])shown[i][1].scrollIntoView({block:'nearest'});}
+  function run(i){if(!shown[i])return;close();var it=shown[i][0];setTimeout(it.f,60);}
+  function open(){ck.hidden=false;q.value='';draw();setTimeout(function(){q.focus();},30);}
+  function close(){ck.hidden=true;}
+  document.getElementById('sbtn').addEventListener('click',open);
+  q.addEventListener('input',draw);
+  ck.addEventListener('click',function(e){if(e.target===ck)close();});
+  addEventListener('keydown',function(e){var k=e.key.toLowerCase();
+    if((e.ctrlKey||e.metaKey)&&(k==='k'||k==='л'||k==='ל')){e.preventDefault();ck.hidden?open():close();return;}
+    if(ck.hidden){if(k==='/'&&!/input|textarea/i.test(document.activeElement.tagName)){e.preventDefault();open();}return;}
+    if(k==='escape')close();else if(k==='arrowdown'){e.preventDefault();sel(Math.min(shown.length-1,act+1));}else if(k==='arrowup'){e.preventDefault();sel(Math.max(0,act-1));}else if(k==='enter'){e.preventDefault();run(act);}});})();
+/* 14. пасхалка: пять нажатий на логотип */
+(function(){var lg=document.querySelector('.nav .logo'),n=0,t=0;if(!lg)return;
+  var HS='<svg viewBox="0 0 24 22" width="100%" height="100%"><defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3D79A"/><stop offset="1" stop-color="#B0873F"/></linearGradient></defs><path d="M12 21s-8.5-5.3-10.3-10.4C.4 6.9 3 2.5 7 2.5c2.2 0 3.7 1.2 5 3 1.3-1.8 2.8-3 5-3 4 0 6.6 4.4 5.3 8.1C20.5 15.7 12 21 12 21z" fill="url(#hg)"/></svg>';
+  lg.addEventListener('click',function(){var now=Date.now();n=(now-t<700)?n+1:1;t=now;if(n<5)return;n=0;
+    var bm=el('img','bigmark');bm.src='img/mark.svg';bm.alt='';document.body.appendChild(bm);setTimeout(function(){bm.remove();},1900);beep(880,.1);setTimeout(function(){beep(1175,.12);},120);
+    for(var i=0;i<46;i++)(function(i){var h=el('div','heart'),sz=14+Math.random()*30;h.innerHTML=HS;h.style.width=sz+'px';h.style.height=sz+'px';h.style.left=(Math.random()*100)+'vw';
+      h.style.setProperty('--dx',(Math.random()*160-80)+'px');h.style.setProperty('--r',(Math.random()*720-360)+'deg');h.style.animation='hfall '+(2.4+Math.random()*2)+'s '+(Math.random()*.9)+'s cubic-bezier(.3,.1,.6,1) forwards';document.body.appendChild(h);setTimeout(function(){h.remove();},5600);})(i);});})();
+
+
+/* ===== подвал: большой знак ===== */
+(function(){var bm=document.getElementById('bm'),bmw=document.getElementById('bmw'),rr=document.getElementById('bmRr');if(!bm)return;
+  var HS='<svg viewBox="0 0 24 22" width="100%" height="100%"><path d="M12 21s-8.5-5.3-10.3-10.4C.4 6.9 3 2.5 7 2.5c2.2 0 3.7 1.2 5 3 1.3-1.8 2.8-3 5-3 4 0 6.6 4.4 5.3 8.1C20.5 15.7 12 21 12 21z" fill="#E3C48A"/></svg>';
+  var done=false;
+  function draw(){if(done)return;done=true;
+    if(reduce||document.documentElement.classList.contains('a-na')){rr.setAttribute('width',1720);bm.classList.add('drawn','beat');return;}
+    rr.setAttribute('width',0);bm.classList.add('drawn');
+    setTimeout(function(){var t0=performance.now();(function an(ts){var p=Math.min(1,(ts-t0)/1000),e=1-Math.pow(1-p,3);rr.setAttribute('width',(1720*e).toFixed(1));if(p<1)requestAnimationFrame(an);else{bm.classList.add('pop');setTimeout(function(){bm.classList.remove('pop');bm.classList.add('beat');},520);beep(988,.08);}})(t0);},700);}
+  rr.setAttribute('width',0);
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){draw();io.disconnect();}});},{threshold:.25});io.observe(bmw);}else draw();
+  var end=document.querySelector('.end');
+  if(fine)end.addEventListener('pointermove',function(e){var r=bmw.getBoundingClientRect(),dx=(e.clientX-(r.left+r.width/2))/innerWidth,dy=(e.clientY-(r.top+r.height/2))/innerHeight;
+    bm.style.transform='rotateY('+(dx*40).toFixed(1)+'deg) rotateX('+(-dy*30).toFixed(1)+'deg)';});
+  end.addEventListener('pointerleave',function(){bm.style.transform='';});
+  bmw.addEventListener('click',function(){var r=bmw.getBoundingClientRect(),cx=r.left+r.width*.82,cy=r.top+r.height*.35;beep(1175,.1);
+    for(var i=0;i<24;i++){var h=el('div','burst'),a=Math.random()*Math.PI*2,d=80+Math.random()*180;h.innerHTML=HS;h.style.left=cx+'px';h.style.top=cy+'px';
+      h.style.setProperty('--dx',(Math.cos(a)*d).toFixed(0)+'px');h.style.setProperty('--dy',(Math.sin(a)*d-60).toFixed(0)+'px');h.style.setProperty('--r',(Math.random()*540-270).toFixed(0)+'deg');h.style.animationDelay=(Math.random()*.15)+'s';
+      document.body.appendChild(h);setTimeout(function(x){return function(){x.remove();};}(h),1400);}
+    bm.classList.remove('beat');void bm.offsetWidth;bm.classList.add('pop');setTimeout(function(){bm.classList.remove('pop');bm.classList.add('beat');},520);});})();
+
+
+/* ===== веер телефонов ===== */
+(function(){var fan=document.getElementById('fan');if(!fan)return;var hero=document.getElementById('top');
+  var base=innerWidth<700?78:150;fan.style.setProperty('--sx',base+'px');fan.classList.add('idle');
+  if(fine&&!reduce)hero.addEventListener('pointermove',function(e){fan.classList.remove('idle');var r=fan.getBoundingClientRect(),dx=(e.clientX-(r.left+r.width/2))/r.width,near=Math.max(0,1-Math.abs(dx)*.9);
+    fan.style.setProperty('--sx',(base+near*70)+'px');fan.style.setProperty('--sr',(9+near*7)+'deg');});
+  hero.addEventListener('pointerleave',function(){fan.style.removeProperty('--sr');fan.style.setProperty('--sx',base+'px');fan.classList.add('idle');});
+  if(!fine){var t=0;setInterval(function(){t=!t;fan.style.setProperty('--sx',(base+(t?30:0))+'px');},2600);}})();
+
+
+/* ===== три пакета: ссылки ===== */
+document.querySelectorAll('.pbtn').forEach(function(a){a.href=WA+'?text='+encodeURIComponent('שלום! מתעניין/ת בחבילה: '+a.dataset.pk);});
+
+
+/* ===== «עליי»: смена картинок ===== */
+(function(){var c=document.querySelector('.about .card');if(!c||reduce)return;setInterval(function(){if(!document.documentElement.classList.contains('a-na'))c.classList.toggle('sw');},5000);})();
+
+/* прогресс и счётчик */
+var prog=document.getElementById('prog'),cnt=document.getElementById('cnt'),secs=document.querySelectorAll('[data-sec]'),TOT='12';
+function onS(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-innerHeight||1);prog.style.transform='scaleX('+p.toFixed(4)+')';
+  var c='01';secs.forEach(function(s){if(s.getBoundingClientRect().top<innerHeight*.45)c=s.dataset.sec;});cnt.innerHTML='<b>'+c+'</b> / '+TOT;}
+addEventListener('scroll',onS,{passive:true});onS();
+
+/* курсор и магнитные кнопки */
+if(fine&&!reduce){var cu=document.getElementById('cur'),cuT=document.getElementById('curT'),mx=-100,my=-100,cx=-100,cy=-100;
+  addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY;var sc=e.target.closest('.it');cu.classList.toggle('scan',!!sc);var t=e.target.closest('[data-cur]');if(t&&!sc){cu.classList.add('big2');cuT.textContent=t.dataset.cur;}else{cu.classList.remove('big2');}});
+  (function loop(){cx+=(mx-cx)*.2;cy+=(my-cy)*.2;cu.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(loop);})();
+  document.querySelectorAll('.mag').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.25)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)';});b.addEventListener('pointerleave',function(){b.style.transition='transform .4s cubic-bezier(.2,.8,.2,1)';b.style.transform='';setTimeout(function(){b.style.transition='';},400);});});}
+})();
+</script>
+</body>
+</html>
