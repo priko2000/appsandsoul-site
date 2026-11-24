@@ -938,6 +938,34 @@ html[lang=he]{--hand:'Playpen Sans Hebrew','Playpen Sans','Heebo',system-ui,sans
 .qr button,[dir=rtl] .qr button{inset-inline-end:auto;right:8px;left:auto}
 .a11b,[dir=rtl] .a11b{right:20px;left:auto;inset-inline-end:auto;inset-inline-start:auto;right:20px}
 .a11p,[dir=rtl] .a11p{right:20px;left:auto;inset-inline-end:auto;inset-inline-start:auto;right:20px}}
+
+/* мобильное меню */
+.burg{display:none;width:44px;height:44px;border-radius:14px;background:#fff;border:1px solid var(--line);flex:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;box-shadow:0 4px 12px rgba(22,17,58,.08);margin-inline-start:6px}
+.burg span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s,opacity .3s}
+.burg[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burg[aria-expanded=true] span:nth-child(2){opacity:0}
+.burg[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:1180px){.burg{display:flex}}
+@media (max-width:700px){.nav .cta{display:none}}
+.msheet{position:fixed;inset:0;z-index:60;background:rgba(246,243,236,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;flex-direction:column;padding:16px 18px calc(18px + env(safe-area-inset-bottom));overflow-y:auto;animation:msin .35s cubic-bezier(.2,.8,.2,1)}
+.msheet[hidden]{display:none}
+@keyframes msin{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+.mshead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.mshead b{font-family:var(--disp);font-size:22px}
+.msx{width:44px;height:44px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:28px;line-height:1;color:var(--ink);cursor:pointer}
+.mslist{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mslist a{display:flex;align-items:center;gap:10px;padding:10px;border-radius:16px;background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:700;font-size:15px;text-decoration:none;min-height:52px;animation:msin .4s both}
+.mslist a i{font-style:normal;font-family:var(--disp);font-size:12px;font-weight:800;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;flex:none;background:color-mix(in srgb,var(--c) 16%,#fff);color:color-mix(in srgb,var(--c) 85%,#000)}
+.mslist a.on{border-color:var(--c);box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 18%,transparent)}
+.mslist a.on i{background:var(--c);color:#fff}
+.msfoot{display:grid;gap:10px;margin-top:16px}
+.msfoot>*{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;border-radius:16px;font:inherit;font-weight:800;font-size:16px;text-decoration:none;cursor:pointer}
+.mssrch{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.msart{background:var(--ink);color:#fff}
+[dir=rtl] .msart span{display:inline-block;transform:scaleX(-1)}
+.mswa{background:#25D366;color:#fff}
+html.mslock{overflow:hidden}
+@media (max-width:360px){.mslist{grid-template-columns:1fr}}
 /* бесплатный разбор и статьи */
 .rev{margin-top:clamp(28px,4vw,48px);background:var(--y);border-radius:28px;padding:clamp(22px,3.4vw,44px);display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(18px,3vw,44px);align-items:center}
 .rev h3{font-family:var(--disp);font-size:clamp(24px,2.5vw,38px);line-height:1.1;margin:12px 0 12px}
@@ -1031,8 +1059,14 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
   <div class="langs"><a href="ru.html" lang="ru" title="Русский"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="index.html" lang="he" title="עברית"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="en.html" lang="en" title="English" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></div>
   <div class="cnt" id="cnt"><b>01</b> / 12</div>
   <a class="cta mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">Message</a>
+  <button type="button" class="burg" id="burg" aria-label="Open menu" aria-expanded="false" aria-controls="msheet"><span></span><span></span><span></span></button>
   <div class="prog" id="prog"></div>
 </div></header>
+<div class="msheet" id="msheet" hidden role="dialog" aria-modal="true">
+  <div class="mshead"><b class="msh">Menu</b><button type="button" class="msx" id="msx" aria-label="Close menu">×</button></div>
+  <nav class="mslist" id="mslist"></nav>
+  <div class="msfoot"><button type="button" class="mssrch" id="mssrch"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="mss">Search the site</span></button><a class="msart" href="articles/en/index.html">All articles for business owners <span aria-hidden="true">→</span></a><a class="mswa" href="https://wa.me/972587800228" target="_blank" rel="noopener">Message on WhatsApp</a></div>
+</div>
 
 <main>
 <!-- 01 первый экран -->
@@ -1882,6 +1916,16 @@ addEventListener('scroll',req,{passive:true});addEventListener('resize',req);set
 </script>
 <script>
 (function(){var f=document.getElementById('revF');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button'),u=document.getElementById('revUrl').value.trim();var m=b.getAttribute('data-msg')+(u?' '+u:'');window.open('https://wa.me/972587800228?text='+encodeURIComponent(m),'_blank','noopener');});})();
+</script>
+<script>
+(function(){var b=document.getElementById('burg'),sh=document.getElementById('msheet'),x=document.getElementById('msx'),list=document.getElementById('mslist');if(!b||!sh)return;
+function build(){list.innerHTML='';var side=document.querySelectorAll('#side a'),k=0;side.forEach(function(a){var n=document.createElement('a');n.href=a.getAttribute('href');n.style.setProperty('--c',a.style.getPropertyValue('--c')||'#5B3DF5');n.style.animationDelay=(k++*25)+'ms';var i=document.createElement('i');i.textContent=a.querySelector('i').textContent;n.appendChild(i);n.appendChild(document.createTextNode(a.title||a.textContent));if(a.classList.contains('on'))n.classList.add('on');n.addEventListener('click',function(){close();});list.appendChild(n);});}
+function open(){build();sh.hidden=false;b.setAttribute('aria-expanded','true');document.documentElement.classList.add('mslock');x.focus();}
+function close(){sh.hidden=true;b.setAttribute('aria-expanded','false');document.documentElement.classList.remove('mslock');}
+b.addEventListener('click',function(){sh.hidden?open():close();});x.addEventListener('click',close);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sh.hidden)close();});
+document.getElementById('mssrch').addEventListener('click',function(){close();var s=document.getElementById('sbtn');if(s)s.click();});
+sh.querySelectorAll('.msart,.mswa').forEach(function(a){a.addEventListener('click',close);});})();
 </script>
 </body>
 </html>
