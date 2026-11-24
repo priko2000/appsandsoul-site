@@ -1084,6 +1084,20 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 .fc:nth-child(n){background:#fff}.fc:nth-child(even){background:#FBF7EE}
 .fc .k,.fc:nth-child(n) .k{background:var(--navy);color:var(--gold2)!important}
 .bld{background:#F3EEDF}.bchips button.on{background:var(--navy)}
+/* 2. вкладки «Попробуйте сами»: подзаголовок вкладки скромный, без второго большого заголовка */
+section#try.sec{padding-bottom:0!important}section.trypane.sec{padding-top:44px!important}
+.trypane .head{display:block;margin-bottom:22px}
+.trypane .head h2.scr{font-size:clamp(22px,2vw,30px)!important;letter-spacing:-.02em;margin:0 0 8px}
+.trypane .head p{max-width:760px;margin:0}
+/* 3. подвал */
+.v2rotd{color:var(--gold2)}
+.v2rotd>span{background:linear-gradient(var(--gold2),var(--gold2)) 0 94%/100% .08em no-repeat}
+/* 5. контраст */
+.msg em{color:#666!important}
+.s-wa{background:#0E7A40!important}
+/* «Азарт» на телефоне: картинка сразу, без длинной прокрутки */
+@media (max-width:700px){.revx{height:auto!important}.revx .rst{position:static!important;height:auto!important;padding:20px 0 10px}
+.revx .rfr{clip-path:none!important;--cp:1!important;max-height:none}}
 /* 12. телефон: кнопка доступности переезжает в верхнюю полосу (рядом с меню) */
 .a11b.v2inhd{position:static;inset:auto;width:38px;height:38px;flex:none;box-shadow:0 4px 12px rgba(31,91,255,.3);transform:none}
 .a11b.v2inhd svg{width:19px;height:19px}
@@ -1118,12 +1132,12 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
   <div class="nightchip">🌙 У вас сейчас ночь — а магазины на моих сайтах продолжают принимать заказы</div>
   <h1 class="big">Ваш бизнес открыт круглосуточно.</h1>
   <p class="sub">Даже когда вы спите, <em>заказы приходят в&nbsp;WhatsApp.</em></p>
-  <div class="doing" aria-label="Делаю сайты, магазины, приложения и каталоги под ключ"><span aria-hidden="true">Делаю</span><span class="v2rot" id="flip1" aria-hidden="true"></span><span aria-hidden="true">под ключ</span></div>
+  <div class="doing"><span class="vh">Делаю сайты, магазины, приложения и каталоги под ключ</span><span aria-hidden="true">Делаю</span><span class="v2rot" id="flip1" aria-hidden="true"></span><span aria-hidden="true">под ключ</span></div>
   <div class="tldr"><span>Сайты · Магазины · Приложения · Каталоги</span><span>Русский, иврит, английский</span><span>От идеи до запуска, без посредников</span></div>
   <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>Написать в WhatsApp</a><a class="btn ghost mag" href="#works">Смотреть работы</a></div>
   <button type="button" class="v2vid" id="vOpen"><svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>Ролик · 17 секунд</button>
   <div class="reply"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></svg>Отвечаю в WhatsApp в течение 2 часов в рабочее время</div>
-  <div class="hphone fan" id="fan"><div class="fp fl"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/w_rosa.jpg" alt="" loading="eager"></div></div></div><div class="fp fr"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/w_admin.jpg" alt="" loading="eager"></div></div></div><div class="night"><div class="nstars" id="nstars"></div><div class="nmoon"></div>
+  <div class="hphone fan" id="fan"><div class="fp fl"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/w_rosa.jpg" alt="Интернет-магазин с витриной как в супермаркете" loading="eager"></div></div></div><div class="fp fr"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/w_admin.jpg" alt="" loading="eager"></div></div></div><div class="night"><div class="nstars" id="nstars"></div><div class="nmoon"></div>
     <div class="nclk" id="nclk">03:12 · ночь</div>
     <div class="phone"><div class="notch"></div><div class="pscr"><div class="wa"><div class="bar"><i class="av"><img src="img/mark.svg" alt=""></i><div>Заказы магазина<small>онлайн</small></div></div><div class="msgs" id="msgs"></div></div></div></div>
     <div class="nfoot"><div><b id="ordN">0</b><small>заказов этой ночью · пример</small></div><button id="sndB" type="button">🔊 Звук</button></div>
@@ -1200,7 +1214,7 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
   <h2 class="scr">Умные помощники для вашего бизнеса</h2>
   <p class="lead2">Встраиваю в сайты и программы AI-ассистентов. Они берут на себя рутину: отвечают покупателям, пишут описания, разбирают голос и фото. Решения всегда за вами, ассистент только помогает.</p>
   <div class="swh">← листайте →</div><div class="aig" id="aiList"></div>
-  <div class="aichat"><div><h3>Попробуйте сами</h3><span class="demo-t">Демонстрация</span><p>Так ассистент отвечает покупателям магазина в WhatsApp. Напишите вопрос или нажмите готовый.</p></div>
+  <div class="aichat"><div><h3>Спросите ассистента</h3><span class="demo-t">Демонстрация</span><p>Так ассистент отвечает покупателям магазина в WhatsApp. Напишите вопрос или нажмите готовый.</p></div>
     <div class="chatbox"><div class="bar"><i class="av"><img src="img/mark.svg" alt=""></i><div>Ассистент магазина<small id="cst">онлайн</small></div></div><div class="chatlog" id="clog"></div><div class="quick" id="cquick"></div><form class="inp" id="cfrm"><button type="button" class="mic" id="cmic" aria-label="🎤">🎤</button><input id="cq" autocomplete="off"><button aria-label="➤">➤</button></form></div></div>
   <p class="aiend">Хотите ассистента под свою задачу? <a href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20AI-%D0%B0%D1%81%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%82" target="_blank" rel="noopener" style="color:#fff;font-weight:700;border-bottom:2px solid var(--y)">Опишите её в WhatsApp →</a></p>
 </div></div></section>
@@ -1208,18 +1222,18 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 <!-- попробуйте сами -->
 <section class="sec t0" id="try" data-sec="07"><div class="wrap">
   <div class="head"><div><span class="num">07 — Попробуйте сами</span><h2 class="scr">Попробуйте сами</h2></div><p>Соберите свой сайт, посчитайте продажи или сыграйте 15 секунд. Выберите вкладку.</p></div>
-  <div class="trytabs" role="tablist"><button type="button" class="on" data-t="build">Конструктор</button><button type="button" data-t="loss">Калькулятор</button><button type="button" data-t="game">Игра</button></div>
+  <div class="trytabs" role="tablist"><button type="button" role="tab" aria-selected="true" aria-controls="build" class="on" data-t="build">Конструктор</button><button type="button" role="tab" aria-selected="false" aria-controls="loss" data-t="loss">Калькулятор</button><button type="button" role="tab" aria-selected="false" aria-controls="game" data-t="game">Игра</button></div>
 </div></section>
 
 <!-- конструктор -->
-<section class="sec t0 trypane" id="build" data-sec="07"><div class="wrap">
+<section class="sec t0 trypane" role="tabpanel" id="build" data-sec="07"><div class="wrap">
   <div class="head"><div><span class="num">Конструктор</span><h2 class="scr">Соберите свой сайт</h2></div><p>Нажимайте, что нужно вашему бизнесу. Макет собирается вживую, а кнопка отправит готовый список мне в WhatsApp.</p></div>
   <div class="bld"><div><div class="bchips" id="bchips"></div><div class="bsum"><b>Ваш набор</b><ul id="bsum"></ul></div><a class="btn" id="bsend" target="_blank" rel="noopener">Отправить в WhatsApp →</a></div>
     <div class="phone"><div class="notch"></div><div class="pscr"><div class="site" id="bsite"></div></div></div></div>
 </div></section>
 
 <!-- калькулятор -->
-<section class="sec t0 trypane" id="loss" data-sec="07" hidden><div class="wrap">
+<section class="sec t0 trypane" role="tabpanel" id="loss" data-sec="07" hidden><div class="wrap">
   <div class="head"><div><span class="num">Калькулятор</span><h2 class="scr">Сколько продаж может добавить онлайн-канал</h2></div><p>Подвиньте ползунки под ваш бизнес. Это примерный расчёт по вашим же цифрам, без обещаний.</p></div>
   <div class="loss"><div class="lcard">
       <div class="lrow"><label>Покупателей в день<b id="lv1">40</b></label><input type="range" id="l1" min="5" max="300" value="40"></div>
@@ -1231,7 +1245,7 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 </div></section>
 
 <!-- игра -->
-<section class="sec t0 trypane" id="game" data-sec="07" hidden><div class="wrap">
+<section class="sec t0 trypane" role="tabpanel" id="game" data-sec="07" hidden><div class="wrap">
   <div class="head"><div><span class="num">Игра</span><h2 class="scr">Поймайте заказ</h2></div><p>15 секунд. Двигайте корзину мышкой или пальцем и ловите заказы. Так работает магазин, который принимает заказы онлайн.</p></div>
   <div class="game" id="gm"><div class="hud"><span id="gsc">0</span><span id="gt">15</span></div><div class="bask" id="gb">🛒</div>
     <div class="ov" id="gov"><h3 id="gtt">Готовы?</h3><p id="gtx">Ловите товары и заказы. Крестики ❌ ловить не надо.</p><button class="btn" id="gst" type="button">Начать игру</button></div></div>
@@ -1299,7 +1313,7 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 <section class="marq" aria-label="Все работы"><div class="mrow" id="mr1"></div><div class="mrow rev" id="mr2"></div></section>
 
 <footer class="end" data-sec="11"><div class="wrap">
-  <h2 class="big">Сделаем ваш<br><span class="flip" id="flip2"></span></h2>
+  <h2 class="big">Сделаем ваш<br><span class="v2rot v2rotd" id="flip2"></span></h2>
   <div class="promise"><span class="dot"></span>Напишите — отвечу в течение 2 часов в рабочее время.</div>
   <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">Расскажите о вашем деле</a>
     <div class="ct"><span>Телефон <a href="tel:+972587800228"><bdo dir="ltr">+972 58-780-0228</bdo></a></span><span>Почта <a href="mailto:hello@appsandsoul.com"><bdo dir="ltr">hello@appsandsoul.com</bdo></a></span></div></div>
@@ -1402,7 +1416,7 @@ function V2Rot(n0,words){if(!n0)return;var sp=words.map(function(w){var e=docume
 (function(){var ab=document.getElementById('about'),done=false;function ld(){if(done)return;done=true;var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600;800&family=Playpen+Sans+Hebrew:wght@600;800&display=swap';document.head.appendChild(l);}
   if(!ab||!('IntersectionObserver' in window)){ld();return;}new IntersectionObserver(function(es,o){if(es[0].isIntersecting){ld();o.disconnect();}},{rootMargin:'1200px 0px'}).observe(ab);})();
 V2Rot(document.getElementById('flip1'),['САЙТЫ','МАГАЗИНЫ','ПРИЛОЖЕНИЯ','КАТАЛОГИ']);
-new Flip(document.getElementById('flip2'),['САЙТ','МАГАЗИН','КАТАЛОГ']);
+V2Rot(document.getElementById('flip2'),['САЙТ','МАГАЗИН','КАТАЛОГ']);
 
 /* для кого: по задачам */
 var FOR=[['хотите, чтобы покупатели находили вас в интернете, а не только номер телефона','Сделаю сайт или каталог, где видно, что вы предлагаете, и можно сразу заказать.'],
@@ -1486,7 +1500,7 @@ var count=[0,0,0,0,0,0],PHc=0;
 G.forEach(function(g){var l=el('div','grp-l');l.appendChild(document.createTextNode(g[0]));var n=W.filter(function(w){return w[7]===g[1];}).length;l.appendChild(el('i','',n));l.style.left=COLX[g[1]]+'px';l.style.top='60px';plane.appendChild(l);});
 var PWc=0;
 W.forEach(function(w,i){var g=w[7],k=count[g]++,cols=colW[g],cx=COLX[g]+(k%cols)*290,cy=130+Math.floor(k/cols)*600+((k%cols)%2?50:0);PWc=Math.max(PWc,cx+330);PHc=Math.max(PHc,cy+560);
-  var d=el('div','it');d.tabIndex=0;d.setAttribute('role','button');d.setAttribute('aria-label','История проекта: '+w[1]);d.dataset.cur='История';d.dataset.i=i;
+  var d=el('div','it');d.tabIndex=0;d.setAttribute('role','button');d.dataset.cur='История';d.dataset.i=i;
   d.style.left=cx+'px';d.style.top=cy+'px';
   d.dataset.rot=ROT[i%6];d.innerHTML='<div class="sc" style="transform:rotate('+ROT[i%6]+'deg)"><img alt="" loading="lazy">'+(w[7]!==4?'<span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span>':'')+(SG[w[0]]?'<span class="scrb">'+SCRB+'</span>':'')+'</div><b></b><span></span><em class="more">История проекта</em>';
   d.querySelector('img').src=w[0];d.querySelector('b').textContent=w[1];d.querySelector('span').textContent=w[2];
@@ -1721,7 +1735,7 @@ window.updCTA=updCTA;
     a.appendChild(el('i','',m?m[1]:'•'));a.appendChild(el('span','lb',m?m[2]:t));a.style.setProperty('--c',SPAL[links.length%SPAL.length]);a.title=m?m[2]:t;side.appendChild(a);links.push([sec,a]);});
   var mq=document.querySelector('.marq');function f(){var cur=null,ci=0,L=innerHeight*.45;links.forEach(function(l,i){if(l[0].getBoundingClientRect().top<L){cur=l;ci=i;}});links.forEach(function(l){l[1].classList.toggle('on',l===cur);});var fr=0;if(cur&&links[ci+1]){var a1=cur[0].getBoundingClientRect().top,a2=links[ci+1][0].getBoundingClientRect().top;fr=Math.max(0,Math.min(1,(L-a1)/((a2-a1)||1)));}var pr=links.length>1?(cur?(ci+fr)/(links.length-1):0):0;side.style.setProperty('--p',Math.min(1,pr).toFixed(4));if(cur)side.style.setProperty('--pc',cur[1].style.getPropertyValue('--c'));side.classList.toggle('off',!!mq&&mq.getBoundingClientRect().top<innerHeight*.75);}
   addEventListener('scroll',f,{passive:true});f();})();
-(function(){var tb=document.querySelectorAll('.trytabs button');tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.classList.toggle('on',x===b);});document.querySelectorAll('.trypane').forEach(function(p){p.hidden=p.id!==b.dataset.t;});window.dispatchEvent(new Event('resize'));});});
+(function(){var tb=document.querySelectorAll('.trytabs button');tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b?'true':'false');});document.querySelectorAll('.trypane').forEach(function(p){p.hidden=p.id!==b.dataset.t;});window.dispatchEvent(new Event('resize'));});});
 ['build','loss','game'].forEach(function(id){document.querySelectorAll('a[href="#'+id+'"]').forEach(function(a){a.addEventListener('click',function(){var b=document.querySelector('.trytabs button[data-t="'+id+'"]');if(b)b.click();});});});})();
 (function(){var b=document.getElementById('apptry'),h=document.getElementById('apphow');if(!b)return;var ev=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;});
 b.addEventListener('click',function(){if(ev){ev.prompt();ev=null;return;}var ua=navigator.userAgent,t;if(/iPhone|iPad|iPod/.test(ua))t=AIOS;else if(/Android/.test(ua))t=AAND;else if(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)t=AOK;else t=ADESK;h.textContent=t;h.hidden=false;});})();

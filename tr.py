@@ -691,3 +691,7 @@ T.update({
 1239:("נשארו 3 מקומות","3 spots left"),
 1240:("צריכים אפליקציה? במה הדרכים שונות ומה לבחור — במאמר:","Need an app? How the options differ and which to choose — in the article:"),
 })
+T.update({
+1241:("שאלו את העוזר","Ask the assistant"),
+1242:("חנות אונליין עם חלון ראווה כמו בסופרמרקט","Online store with a supermarket-style shelf"),
+})

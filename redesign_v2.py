@@ -91,6 +91,23 @@ for n in ['ru/pw1','pw2','pw3']:
 rep("""fi.innerHTML='<img src="img/f'+(i+1)+'.jpg" alt="" loading="lazy">';""",
     """fi.innerHTML='<img src="img/f'+(i+1)+'.jpg" srcset="img/f'+(i+1)+'_s.jpg 220w, img/f'+(i+1)+'.jpg 400w" sizes="(max-width:600px) 104px, 400px" width="400" height="400" alt="" loading="lazy" decoding="async">';""")
 
+# ---------- 25.11 (2): повтор заголовков, подвал, доступность, «Азарт» на телефоне ----------
+# 2. в блоке помощников свой заголовок вместо второго «Попробуйте сами»
+rep('<div class="aichat"><div><h3>Попробуйте сами</h3>','<div class="aichat"><div><h3>Спросите ассистента</h3>')
+# 3. подвал: та же спокойная смена слов, что на первом экране
+rep('<h2 class="big">Сделаем ваш<br><span class="flip" id="flip2"></span></h2>','<h2 class="big">Сделаем ваш<br><span class="v2rot v2rotd" id="flip2"></span></h2>')
+rep("new Flip(document.getElementById('flip2'),['САЙТ','МАГАЗИН','КАТАЛОГ']);","V2Rot(document.getElementById('flip2'),['САЙТ','МАГАЗИН','КАТАЛОГ']);")
+# 5. доступность
+rep('<div class="doing" aria-label="Делаю сайты, магазины, приложения и каталоги под ключ"><span aria-hidden="true">Делаю</span>',
+    '<div class="doing"><span class="vh">Делаю сайты, магазины, приложения и каталоги под ключ</span><span aria-hidden="true">Делаю</span>')
+rep('<div class="trytabs" role="tablist"><button type="button" class="on" data-t="build">Конструктор</button><button type="button" data-t="loss">Калькулятор</button><button type="button" data-t="game">Игра</button></div>',
+    '<div class="trytabs" role="tablist"><button type="button" role="tab" aria-selected="true" aria-controls="build" class="on" data-t="build">Конструктор</button><button type="button" role="tab" aria-selected="false" aria-controls="loss" data-t="loss">Калькулятор</button><button type="button" role="tab" aria-selected="false" aria-controls="game" data-t="game">Игра</button></div>')
+rep("tb.forEach(function(x){x.classList.toggle('on',x===b);});","tb.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b?'true':'false');});")
+for pid in ['build','loss','game']:
+    rep('<section class="sec t0 trypane" id="%s"'%pid,'<section class="sec t0 trypane" role="tabpanel" id="%s"'%pid)
+rep("d.setAttribute('aria-label','История проекта: '+w[1]);","")
+rep('<img src="img/w_rosa.jpg" alt="" loading="eager">','<img src="img/w_rosa.jpg" alt="Интернет-магазин с витриной как в супермаркете" loading="eager">')
+
 # ---------- новые стили (в самом конце, чтобы перекрывать старые) ----------
 CSS=r'''
 /* ===== редизайн v2 (24.11) ===== */
@@ -161,6 +178,20 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 .fc:nth-child(n){background:#fff}.fc:nth-child(even){background:#FBF7EE}
 .fc .k,.fc:nth-child(n) .k{background:var(--navy);color:var(--gold2)!important}
 .bld{background:#F3EEDF}.bchips button.on{background:var(--navy)}
+/* 2. вкладки «Попробуйте сами»: подзаголовок вкладки скромный, без второго большого заголовка */
+section#try.sec{padding-bottom:0!important}section.trypane.sec{padding-top:44px!important}
+.trypane .head{display:block;margin-bottom:22px}
+.trypane .head h2.scr{font-size:clamp(22px,2vw,30px)!important;letter-spacing:-.02em;margin:0 0 8px}
+.trypane .head p{max-width:760px;margin:0}
+/* 3. подвал */
+.v2rotd{color:var(--gold2)}
+.v2rotd>span{background:linear-gradient(var(--gold2),var(--gold2)) 0 94%/100% .08em no-repeat}
+/* 5. контраст */
+.msg em{color:#666!important}
+.s-wa{background:#0E7A40!important}
+/* «Азарт» на телефоне: картинка сразу, без длинной прокрутки */
+@media (max-width:700px){.revx{height:auto!important}.revx .rst{position:static!important;height:auto!important;padding:20px 0 10px}
+.revx .rfr{clip-path:none!important;--cp:1!important;max-height:none}}
 /* 12. телефон: кнопка доступности переезжает в верхнюю полосу (рядом с меню) */
 .a11b.v2inhd{position:static;inset:auto;width:38px;height:38px;flex:none;box-shadow:0 4px 12px rgba(31,91,255,.3);transform:none}
 .a11b.v2inhd svg{width:19px;height:19px}
