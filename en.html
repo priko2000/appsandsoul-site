@@ -932,6 +932,12 @@ html[lang=he]{--hand:'Playpen Sans Hebrew','Playpen Sans','Heebo',system-ui,sans
 .side:hover a:hover .lb{color:var(--c)}
 .side a:hover,[dir=rtl] .side a:hover{transform:none}
 @media (prefers-reduced-motion:reduce){.side a .lb,.side::after{transition:none}}
+
+/* QR всегда слева, доступность справа (на компьютере) */
+@media (min-width:701px){.qr,[dir=rtl] .qr{left:20px;right:auto;inset-inline-start:auto;inset-inline-end:auto;left:20px}
+.qr button,[dir=rtl] .qr button{inset-inline-end:auto;right:8px;left:auto}
+.a11b,[dir=rtl] .a11b{right:20px;left:auto;inset-inline-end:auto;inset-inline-start:auto;right:20px}
+.a11p,[dir=rtl] .a11p{right:20px;left:auto;inset-inline-end:auto;inset-inline-start:auto;right:20px}}
 /* бесплатный разбор и статьи */
 .rev{margin-top:clamp(28px,4vw,48px);background:var(--y);border-radius:28px;padding:clamp(22px,3.4vw,44px);display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(18px,3vw,44px);align-items:center}
 .rev h3{font-family:var(--disp);font-size:clamp(24px,2.5vw,38px);line-height:1.1;margin:12px 0 12px}
