@@ -71,8 +71,9 @@ def build(lang):
     for n in imgs:
         folder='he' if (lang=='he' or n!='w_price') else 'en'
         s=s.replace('img/%s.jpg'%n,'img/%s/%s.jpg'%(folder,n))
-    for n in ['pw2','pw3']: s=s.replace('img/%s.jpg'%n,'img/he/%s.jpg'%n)
-    s=s.replace('img/ru/pw1.jpg','img/%s/pw1.jpg'%lang)
+    for n in ['pw2','pw3']:
+        s=s.replace('img/%s.jpg'%n,'img/he/%s.jpg'%n).replace('img/%s_s.jpg'%n,'img/he/%s_s.jpg'%n)
+    s=s.replace('img/ru/pw1.jpg','img/%s/pw1.jpg'%lang).replace('img/ru/pw1_s.jpg','img/%s/pw1_s.jpg'%lang)
     s=s.replace('img/og_ru.jpg','img/og_%s.jpg'%lang)
     if lang!='he': s=s.replace('<link rel="canonical" href="%s">'%'https://priko2000.github.io/appsandsoul-site/','<link rel="canonical" href="https://priko2000.github.io/appsandsoul-site/%s.html">'%lang)
     s=s.replace('LANGLINKS',links(lang))

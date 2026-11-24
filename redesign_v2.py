@@ -76,6 +76,21 @@ rep("cnt.innerHTML='<b>'+c+'</b> / '+TOT;}","if(cnt)cnt.innerHTML='<b>'+c+'</b> 
 rep("var SPAL=['#5B3DF5','#FF7A1A','#26C281','#E5484D','#2F80ED','#C7A56A','#D63AF9','#00A3A3','#F5A300','#5B3DF5','#E5484D','#26C281'];",
     "var SPAL=['#16113A','#B8892E','#16113A','#B8892E','#16113A','#B8892E','#16113A','#B8892E','#16113A','#B8892E','#16113A','#B8892E'];")
 
+# ---------- 25.11: ширина блоков на 3440 и скорость ----------
+# шрифты: не задерживают показ страницы; почерк Playpen (только «Обо мне») грузится, когда до блока доходит прокрутка
+rep('<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&family=Playpen+Sans:wght@600;800&family=Playpen+Sans+Hebrew:wght@600;800&display=swap">',
+    '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&display=swap" media="print" onload="this.media=\'all\'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&display=swap"></noscript>')
+rep("V2Rot(document.getElementById('flip1')",
+"""(function(){var ab=document.getElementById('about'),done=false;function ld(){if(done)return;done=true;var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600;800&family=Playpen+Sans+Hebrew:wght@600;800&display=swap';document.head.appendChild(l);}
+  if(!ab||!('IntersectionObserver' in window)){ld();return;}new IntersectionObserver(function(es,o){if(es[0].isIntersecting){ld();o.disconnect();}},{rootMargin:'1200px 0px'}).observe(ab);})();
+V2Rot(document.getElementById('flip1')""")
+# картинки пакетов: маленькая версия для телефона
+for n in ['ru/pw1','pw2','pw3']:
+    rep('<img src="img/%s.jpg" alt="" loading="lazy">'%n,'<img src="img/%s.jpg" srcset="img/%s_s.jpg 640w, img/%s.jpg 1200w" sizes="(max-width:700px) 82vw, (max-width:1400px) 32vw, 600px" width="1200" height="750" alt="" loading="lazy" decoding="async">'%(n,n,n))
+# карточки «Для кого»: на телефоне картинка 104px
+rep("""fi.innerHTML='<img src="img/f'+(i+1)+'.jpg" alt="" loading="lazy">';""",
+    """fi.innerHTML='<img src="img/f'+(i+1)+'.jpg" srcset="img/f'+(i+1)+'_s.jpg 220w, img/f'+(i+1)+'.jpg 400w" sizes="(max-width:600px) 104px, 400px" width="400" height="400" alt="" loading="lazy" decoding="async">';""")
+
 # ---------- новые стили (в самом конце, чтобы перекрывать старые) ----------
 CSS=r'''
 /* ===== редизайн v2 (24.11) ===== */
@@ -130,6 +145,7 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 .nav nav{gap:26px}
 @media (max-width:1180px){.sbtn{margin-inline-start:auto}}
 /* 10. широкий экран 3440 */
+@media (min-width:2200px){#works .wrap,#admin .wrap,#tools .wrap{max-width:calc(var(--max) + var(--pad)*2)}}
 @media (min-width:2000px){:root{--max:min(2000px,64vw)}body{font-size:18px}.pkgs{gap:26px}}
 @media (min-width:2800px){:root{--max:2080px}}
 /* 11. приглушённые цвета */
