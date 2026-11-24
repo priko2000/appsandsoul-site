@@ -548,8 +548,6 @@ section,footer,header{max-width:100vw}
   .game .itm{font-size:34px}
   .game .bask{width:96px;height:56px;margin-left:-48px;font-size:26px}
   .game .hud{font-size:18px}
-  .chips.fold button:nth-of-type(n+7){display:none}
-  .chips .allb{background:var(--ink)!important;color:#fff;border-color:var(--ink)!important}
   .tabs{flex-wrap:wrap;overflow:visible;margin:0;padding:0 0 4px}
   .ba .lb{font-size:12px;top:10px;padding:5px 10px}
   .ba .ln i{width:40px;height:40px;margin:-20px 0 0 -20px}
@@ -1045,6 +1043,79 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 .sc3.dark{background:#6C4BFF;border-color:#6C4BFF}.sc3.dark .shot{background:#5639e0}
 .lr::before{background:#6C4BFF}
 
+
+/* ===== редизайн v2 (24.11) ===== */
+:root{--navy:#16113A;--gold:#C9A04A;--gold2:#E5C77A}
+/* 1. спокойная смена слов */
+.v2rot{display:inline-grid;vertical-align:baseline;color:var(--navy);position:relative;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.v2rot>span{grid-area:1/1;opacity:0;transform:translateY(.32em);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);justify-self:start;white-space:nowrap;background:linear-gradient(var(--gold),var(--gold)) 0 92%/100% .12em no-repeat;padding-bottom:.06em}
+.v2rot>span.on{opacity:1;transform:none}
+html:not([lang=he]) .v2rot>span{text-transform:lowercase}
+.hero .acts .btn svg{flex:none}
+.v2vid{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:14px;font-weight:600;color:var(--mut);text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
+.v2vid:hover{color:var(--ink)}
+html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backwards}
+.glow{background:conic-gradient(from var(--a,0deg),#E5C77A,#2A2370,#C9A04A,#5A4FB0,#E5C77A);opacity:.32}
+/* 3. пакеты с настоящими работами */
+.pkg .pkim.v2work{aspect-ratio:16/10;background:var(--navy)}
+.pkg .pkim.v2work img{object-fit:cover;object-position:center}
+.v2ex{font-size:14px!important;line-height:1.45;margin:-6px 0 12px!important;color:var(--mut)}
+.pkg.mid .v2ex{color:rgba(255,255,255,.72)!important}
+.pkg.mid{background:linear-gradient(160deg,#241C5C,#16113A);box-shadow:0 30px 60px rgba(22,17,58,.28)}
+.pkg.mid .pn,.pkg.mid .psz{color:var(--gold2)}.pkg.mid li::before{color:var(--gold2)}
+.pkg .psz{color:var(--navy)}.pkg li::before{background:#F3EEDF;color:#8A6A22}
+.pkg.mid .pbtn{background:var(--gold2)}
+/* 8. плашка «נשארו 3 מקומות» */
+.pnote.v2seats{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--navy);color:rgba(255,255,255,.78);border-radius:22px;padding:18px 22px;font-size:15px;margin:22px 0 30px}
+.pnote.v2seats b{color:#fff}
+.pnote.v2seats .lk{color:var(--gold2)}
+.v2badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold2);color:var(--navy);font-family:var(--disp);font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.v2badge i{width:8px;height:8px;border-radius:50%;background:#C0392B;box-shadow:0 0 0 3px rgba(192,57,43,.25);animation:bl 2s infinite}
+/* 4. строка про приложение */
+.v2app{margin:0 0 clamp(30px,4vw,50px);padding:16px 20px;border-radius:18px;background:#fff;box-shadow:0 0 0 1px var(--line);font-size:16px;color:var(--mut)}
+.v2app a{color:var(--navy);font-weight:700;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px}
+/* 5. шаги — одна полоса */
+#process .steps{padding-top:30px}
+#process .sti{aspect-ratio:4/3;border-radius:16px;margin-bottom:12px}
+#process .st b{font-size:17px}
+#process .st span{font-size:14px}
+#process .steps.on .st::before{background:var(--gold)}
+@media (max-width:1100px){#process .steps{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(var(--pad)*-1);padding:6px var(--pad) 14px;scrollbar-width:none}
+#process .steps::-webkit-scrollbar{display:none}
+#process .st{flex:0 0 min(42%,300px);scroll-snap-align:start}
+#process .st::before{display:none}}
+@media (max-width:600px){#process .st{flex-basis:62%}}
+/* 6. истории за одной кнопкой */
+.chips.fold button:not(.allb){display:none}
+.chips .allb{background:var(--navy)!important;color:#fff;border-color:var(--navy)!important}
+/* 7. блок бесплатного разбора */
+.v2audit{padding-top:0!important}
+.v2audit .adt{margin-top:0;background:linear-gradient(135deg,#F3E6C4,#E5C77A)}
+/* 9. меню: лупа без надписи */
+.sbtn{padding:9px;border-radius:50%}
+.nav nav{gap:26px}
+@media (max-width:1180px){.sbtn{margin-inline-start:auto}}
+/* 10. широкий экран 3440 */
+@media (min-width:2000px){:root{--max:min(2000px,64vw)}body{font-size:18px}.pkgs{gap:26px}}
+@media (min-width:2800px){:root{--max:2080px}}
+/* 11. приглушённые цвета */
+.ai{background:linear-gradient(140deg,#1E1750,#16113A 60%,#2A2266)!important}
+.ai .aic{background:rgba(255,255,255,.06);border-color:rgba(229,199,122,.22)}
+.gc:nth-child(n){background:var(--navy)}
+.gc b{color:var(--gold2)}
+.end{background:linear-gradient(90deg,rgba(22,17,58,.96) 0%,rgba(22,17,58,.85) 42%,rgba(22,17,58,.15) 72%),#16113A url(img/foot.jpg) right bottom/cover no-repeat!important}
+@media (max-width:900px){.end{background:linear-gradient(180deg,rgba(22,17,58,.92),rgba(22,17,58,.82)),#16113A url(img/foot.jpg) 78% bottom/cover no-repeat!important}}
+.end .flip span{background:#2A2266}
+.end .btn{background:var(--gold2)}
+.side::after{background:linear-gradient(180deg,var(--gold),var(--gold2))!important;box-shadow:none}
+.fc:nth-child(n){background:#fff}.fc:nth-child(even){background:#FBF7EE}
+.fc .k,.fc:nth-child(n) .k{background:var(--navy);color:var(--gold2)}
+.bld{background:#F3EEDF}.bchips button.on{background:var(--navy)}
+/* 12. телефон: кнопка доступности переезжает в верхнюю полосу (рядом с меню) */
+.a11b.v2inhd{position:static;inset:auto;width:38px;height:38px;flex:none;box-shadow:0 4px 12px rgba(31,91,255,.3);transform:none}
+.a11b.v2inhd svg{width:19px;height:19px}
+@media (max-width:700px){.a11p,[dir=rtl] .a11p{top:74px;bottom:auto;left:auto;right:12px;inset-inline-start:auto;inset-inline-end:auto}
+[dir=rtl] .a11p{right:auto;left:12px}}
 </style>
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("hin")</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Apps & Soul","alternateName":"Apps and Soul","slogan":"Technology with heart","description":"אתרים, חנויות אונליין ואפליקציות לעסקים בעברית, ברוסית ובאנגלית. מענה בוואטסאפ תוך שעתיים בשעות העבודה.","url":"https://priko2000.github.io/appsandsoul-site/","logo":"https://priko2000.github.io/appsandsoul-site/img/og_he.jpg","image":"https://priko2000.github.io/appsandsoul-site/img/og_he.jpg","telephone":"+972587800228","email":"hello@appsandsoul.com","founder":{"@type":"Person","name":"David Mushailov","alternateName":["דוד מושאילוב","מושאילוב דוד"]},"areaServed":{"@type":"Country","name":"Israel"},"availableLanguage":["he","ru","en"],"knowsAbout":["Web design","E-commerce","Progressive web apps","Mobile apps","AI assistants"],"contactPoint":{"@type":"ContactPoint","telephone":"+972587800228","contactType":"customer service","availableLanguage":["he","ru","en"]}}</script>
@@ -1054,10 +1125,9 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 
 <header class="nav"><div class="wrap in">
   <a class="logo" href="#top"><img class="mk" src="img/mark.svg" alt="" width="34" height="28"><span class="lt"><b>Apps <em>&amp; Soul</em></b><small>Technology with heart</small></span></a>
-  <nav><a href="#services">שירותים</a><a href="#works">עבודות</a><a href="#admin">פאנל</a><a href="#ai">AI</a><a href="#try">לנסות</a><a href="#process">איך עובדים</a><a href="#about">עליי</a><a href="#faq">שאלות</a><a href="articles/he/index.html" class="navart">מאמרים</a></nav>
-  <button type="button" class="sbtn" id="sbtn" aria-label="חיפוש (Ctrl+K)" title="חיפוש (Ctrl+K)"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><kbd>Ctrl K</kbd></button>
+  <nav><a href="#services">שירותים</a><a href="#works">עבודות</a><a href="#process">איך עובדים</a><a href="#about">עליי</a><a href="articles/he/index.html" class="navart">מאמרים</a></nav>
+  <button type="button" class="sbtn" id="sbtn" aria-label="חיפוש באתר" title="חיפוש באתר"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
   <div class="langs"><a href="ru.html" lang="ru" title="Русский"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="index.html" lang="he" title="עברית" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="en.html" lang="en" title="English"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></div>
-  <div class="cnt" id="cnt"><b>01</b> / 12</div>
   <a class="cta mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">לכתוב</a>
   <button type="button" class="burg" id="burg" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="msheet"><span></span><span></span><span></span></button>
   <div class="prog" id="prog"></div>
@@ -1076,9 +1146,10 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
   <div class="nightchip">🌙 אצלכם עכשיו לילה, והחנויות באתרים שלי ממשיכות לקבל הזמנות</div>
   <h1 class="big">העסק שלכם פתוח מסביב לשעון.</h1>
   <p class="sub">גם כשאתם ישנים, <em>הזמנות מגיעות לוואטסאפ.</em></p>
-  <div class="doing" aria-label="בונה אתרים, חנויות, אפליקציות וקטלוגים מקצה לקצה"><span aria-hidden="true">בונה</span><span class="flip" id="flip1" aria-hidden="true"></span><span aria-hidden="true">מקצה לקצה</span></div>
+  <div class="doing" aria-label="בונה אתרים, חנויות, אפליקציות וקטלוגים מקצה לקצה"><span aria-hidden="true">בונה</span><span class="v2rot" id="flip1" aria-hidden="true"></span><span aria-hidden="true">מקצה לקצה</span></div>
   <div class="tldr"><span>אתרים · חנויות · אפליקציות · קטלוגים</span><span>רוסית, עברית, אנגלית</span><span>מהרעיון ועד ההשקה, בלי מתווכים</span></div>
-  <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">ספרו לי על העסק שלכם <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a class="btn ghost mag" href="#works">לעבודות</a><button type="button" class="btn ghost mag vbtn" id="vOpen"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg>סרטון · 17 שניות</button></div>
+  <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>לכתוב בוואטסאפ</a><a class="btn ghost mag" href="#works">לעבודות</a></div>
+  <button type="button" class="v2vid" id="vOpen"><svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>סרטון · 17 שניות</button>
   <div class="reply"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></svg>עונה בוואטסאפ תוך שעתיים בשעות העבודה</div>
   <div class="hphone fan" id="fan"><div class="fp fl"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/he/w_rosa.jpg" alt="" loading="eager"></div></div></div><div class="fp fr"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/w_admin.jpg" alt="" loading="eager"></div></div></div><div class="night"><div class="nstars" id="nstars"></div><div class="nmoon"></div>
     <div class="nclk" id="nclk">03:12 · לילה</div>
@@ -1089,7 +1160,7 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
   <div class="scrollhint" aria-hidden="true">גללו<i></i></div>
 </section>
 
-<section class="fillx" aria-label="המסר המרכזי"><div class="fst"><div class="wrap"><p class="filt" id="filt">בזמן שאתם ישנים, החנות שלכם <em>עובדת</em>: מקבלת הזמנות ואוספת סלים. אתם מתעוררים — <em>וההזמנות כבר בוואטסאפ</em>.</p></div></div></section>
+
 
 <!-- 02 для кого -->
 <section class="sec t0" id="for" data-sec="02"><div class="wrap">
@@ -1102,37 +1173,12 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 <!-- 03 услуги -->
 <section class="sec t0" id="services" data-sec="03"><div class="wrap">
   <div class="head"><div><span class="num">03 — שירותים</span><h2 class="scr">מה אני עושה</h2></div><p>שלוש חבילות לפי גודל העסק ותוספות להן. המחיר תלוי במשימה: את המחיר המדויק ולוח הזמנים אמסור אחרי שיחה קצרה.</p></div>
-  <div class="swh">← החליקו בין החבילות →</div><div class="pkgs" id="pkgs"><div class="pkg" id="pk1"><div class="pkim"><img src="img/pk1.jpg" alt="" loading="lazy"></div><span class="pn">01</span><h3>אתר תדמית</h3><div class="psz">עד 10 עמודים</div><p>אתר לחברה או לבעל מקצוע</p><ul><li>עיצוב בסגנון שלכם, בלי תבניות</li><li>נוח בטלפון ובמסך גדול</li><li>כפתורי וואטסאפ, חיוג ומפה</li><li>עד שלוש שפות</li><li>פרסום בכתובת שלכם</li></ul><a class="btn pbtn" data-pk="אתר תדמית" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה אתר תדמית <span class="ar">→</span></a></div><div class="pkg mid" id="pk2"><div class="pkim"><img src="img/pk2.jpg" alt="" loading="lazy"></div><span class="pn">02</span><h3>חנות</h3><div class="psz">עד 3,000 מוצרים</div><p>חנות אונליין עם קטלוג וסל</p><ul><li>קטלוג עם תמונות, מחירים וחיפוש</li><li>סל קניות, וההזמנה מגיעה לוואטסאפ כרשימה מוכנה</li><li>מבצעים, הנחות, מוצרים חדשים</li><li>הוספת מוצרים לפי ברקוד</li><li>פאנל ניהול לבעלים</li></ul><a class="btn pbtn" data-pk="חנות" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה חנות <span class="ar">→</span></a></div><div class="pkg" id="pk3"><div class="pkim"><img src="img/pk3.jpg" alt="" loading="lazy"></div><span class="pn">03</span><h3>פרויקט גדול</h3><div class="psz">3,000 מוצרים ומעלה</div><p>כמה חנויות, אפליקציה, מערכת משלכם</p><ul><li>כמה חנויות בסל אחד</li><li>העברת המבחר מהקופה</li><li>פאנל מלא: מלאי, דוחות, ספקים</li><li>אפליקציה לטלפון</li><li>עוזר AI ללקוחות</li></ul><a class="btn pbtn" data-pk="פרויקט גדול" target="_blank" rel="noopener" href="https://wa.me/972587800228">לדבר על פרויקט <span class="ar">→</span></a></div></div>
-<p class="pnote"><b>לשלושת הלקוחות הראשונים — 30% הנחה</b> תמורת המלצה ואישור להציג את הפרויקט. את המחיר המדויק אמסור אחרי שיחה קצרה. בפירוט — ב<button type="button" class="lk" data-open="dT">תנאי העבודה</button>.</p>
-<div class="appw" id="app2">
-  <h3 class="addh">אפליקציה לעסק שלכם — שתי דרכים</h3>
-  <p class="appl">בחרו מה שמתאים לכם. אפשר להתחיל בראשונה ולעבור אחר כך לשנייה: האתר, המוצרים וההזמנות נשארים.</p>
-  <p class="appdiff"><b>חשוב: זה לא אותו דבר.</b> הדרך הראשונה — האתר שלכם, שמותקן על מסך הטלפון כמו אפליקציה. השנייה — אפליקציה נפרדת שעוברת בדיקה של Apple ו-Google ונמצאת בחנויות שלהן. האפשרויות, הזמנים והעלויות שונים.</p>
-  <div class="appg">
-<div class="appc a1"><span class="appn">1</span><h4>אפליקציה על מסך הטלפון</h4><span class="appt">מהיר · בלי חנויות אפליקציות</span><b class="apps">איך זה עובד</b><ol><li>הלקוח פותח את האתר שלכם בטלפון.</li><li>iPhone: כפתור „שיתוף” ← „הוספה למסך הבית”. Android: „התקנת אפליקציה”.</li><li>על המסך מופיע הסמל של החנות שלכם. נפתח בנגיעה אחת, כמו אפליקציה רגילה.</li></ol><b class="apps">יתרונות</b><ul class="appy"><li>סמל עם הלוגו שלכם ליד האפליקציות האחרות</li><li>נפתח במסך מלא, בלי שורת כתובת</li><li>לא צריך לחכות לבדיקה של Apple ו-Google</li><li>עדכונים מגיעים לכולם מיד, בלי הורדה</li><li>כמעט לא תופס זיכרון בטלפון</li><li>בלי תשלום שנתי לחנויות האפליקציות</li></ul><b class="apps">מה חשוב לדעת</b><ul class="appm"><li>לא מוצאים אותה בחיפוש ב-App Store וב-Google Play: הלקוח מתקין אותה מהאתר שלכם</li><li>ב-iPhone התראות עובדות רק אחרי התקנה למסך</li></ul><button type="button" class="btn apptry" id="apptry">נסו: התקינו את האתר הזה</button><p class="apphow" id="apphow" hidden></p></div>
-<div class="appc a2"><span class="appn">2</span><h4>אפליקציה מלאה ב-App Store וב-Google Play</h4><span class="appt">מקסימום אפשרויות</span><b class="apps">איך זה עובד</b><ol><li>אני בונה אפליקציה ל-iPhone ול-Android על בסיס האתר ומאגר המוצרים שלכם.</li><li>פותחים חשבונות מפתח על שם העסק שלכם.</li><li>אני מגיש את האפליקציה לחנויות ועובר את הבדיקה של Apple ו-Google.</li><li>האפליקציה מופיעה בחיפוש ב-App Store וב-Google Play.</li></ol><b class="apps">יתרונות</b><ul class="appy"><li>לקוחות מוצאים אתכם בחיפוש בחנויות האפליקציות</li><li>יותר אמון: „יש להם אפליקציה משלהם”</li><li>התראות על מבצעים בכל הטלפונים</li><li>גישה מלאה למצלמה, לסורק ולמיקום</li></ul><b class="apps">מה חשוב לדעת</b><ul class="appm"><li>חשבונות מפתח: Apple — ‏99$ בשנה, Google — ‏25$ פעם אחת. משלם בעל העסק</li><li>הבדיקה של Apple לוקחת זמן, וגם עדכונים עוברים בדיקה</li><li>את עלות הפיתוח אמסור אחרי שיחה קצרה</li></ul></div>
-  </div>
-  <p class="appadv">העצה שלי: התחילו בדרך הראשונה. כשיהיו יותר לקוחות, נעבור לשנייה.</p>
-</div>
+  <div class="swh">← החליקו בין החבילות →</div><div class="pkgs" id="pkgs"><div class="pkg" id="pk1"><div class="pkim v2work"><img src="img/he/pw1.jpg" alt="" loading="lazy"></div><p class="v2ex">לדוגמה: האתר של סטודיו Apps &amp; Soul — זה שאתם רואים עכשיו.</p><span class="pn">01</span><h3>אתר תדמית</h3><div class="psz">עד 10 עמודים</div><p>אתר לחברה או לבעל מקצוע</p><ul><li>עיצוב בסגנון שלכם, בלי תבניות</li><li>נוח בטלפון ובמסך גדול</li><li>כפתורי וואטסאפ, חיוג ומפה</li><li>עד שלוש שפות</li><li>פרסום בכתובת שלכם</li></ul><a class="btn pbtn" data-pk="אתר תדמית" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה אתר תדמית <span class="ar">→</span></a></div><div class="pkg mid" id="pk2"><div class="pkim v2work"><img src="img/he/pw2.jpg" alt="" loading="lazy"></div><p class="v2ex">דוגמה: חנות מעדנים, כ-900 מוצרים. בנויה כמו סופרמרקט גדול: מחלקה, קבוצה, מדף.</p><span class="pn">02</span><h3>חנות</h3><div class="psz">עד 3,000 מוצרים</div><p>חנות אונליין עם קטלוג וסל</p><ul><li>קטלוג עם תמונות, מחירים וחיפוש</li><li>סל קניות, וההזמנה מגיעה לוואטסאפ כרשימה מוכנה</li><li>מבצעים, הנחות, מוצרים חדשים</li><li>הוספת מוצרים לפי ברקוד</li><li>פאנל ניהול לבעלים</li></ul><a class="btn pbtn" data-pk="חנות" target="_blank" rel="noopener" href="https://wa.me/972587800228">אני רוצה חנות <span class="ar">→</span></a></div><div class="pkg" id="pk3"><div class="pkim v2work"><img src="img/he/pw3.jpg" alt="" loading="lazy"></div><p class="v2ex">דוגמה: שלוש חנויות של בעלים אחד, כמעט 4,800 מוצרים ישר מהקופה.</p><span class="pn">03</span><h3>פרויקט גדול</h3><div class="psz">3,000 מוצרים ומעלה</div><p>כמה חנויות, אפליקציה, מערכת משלכם</p><ul><li>כמה חנויות בסל אחד</li><li>העברת המבחר מהקופה</li><li>פאנל מלא: מלאי, דוחות, ספקים</li><li>אפליקציה לטלפון</li><li>עוזר AI ללקוחות</li></ul><a class="btn pbtn" data-pk="פרויקט גדול" target="_blank" rel="noopener" href="https://wa.me/972587800228">לדבר על פרויקט <span class="ar">→</span></a></div></div>
+<p class="pnote v2seats"><span class="v2badge"><i></i>נשארו 3 מקומות</span><b>לשלושת הלקוחות הראשונים — 30% הנחה</b> תמורת המלצה ואישור להציג את הפרויקט. את המחיר המדויק אמסור אחרי שיחה קצרה. בפירוט — ב<button type="button" class="lk" data-open="dT">תנאי העבודה</button>.</p>
+<p class="v2app">צריכים אפליקציה? במה הדרכים שונות ומה לבחור — במאמר: <a href="articles/he/site-or-app.html">אתר, אפליקציה על המסך או אפליקציה ב-App Store?</a></p>
+
   <h3 class="addh">אפשר להוסיף לכל חבילה</h3>
   <div class="list" id="list"></div>
-</div></section>
-
-
-<!-- масштаб -->
-<section class="sec" id="scale" data-sec="03"><div class="wrap">
-  <div class="head"><div><span class="num">חבילות בפעולה</span><h2 class="scr">חבילות בפעולה</h2></div><p>איך כל חבילה נראית בפרויקטים אמיתיים. לכל גודל ההיגיון שלו, כדי שהלקוח לא ילך לאיבוד ואתם תנהלו בקלות.</p></div>
-  <div class="scale">
-    <div class="sc3"><div class="top"><span class="lvl">חבילה 01 · אתר תדמית</span><div class="big3">עד&nbsp;10<small>עמודים</small></div><h3>אתר לחברה או לבעל מקצוע</h3><p>מי אתם, מה אתם מציעים, כמה זה עולה ואיך יוצרים קשר. עולה לאוויר הכי מהר.</p>
-      <ul><li>שירותים ומחירים, תמונות עבודות, המלצות</li><li>כפתורי וואטסאפ, חיוג ומפה</li><li>קביעת תור או פנייה מהאתר</li><li>שלוש שפות, נוח בטלפון ובמסך גדול</li></ul></div>
-      <div class="shot t1"><div class="pg"><i></i><i></i><i></i><i></i><i></i></div></div></div>
-    <div class="sc3"><div class="top"><span class="lvl">חבילה 02 · חנות</span><div class="big3">עד&nbsp;3,000<small>מוצרים</small></div><h3>חנות אונליין עם מחלקות</h3><p>דוגמה: חנות מעדנים, כ-900 מוצרים. בנויה כמו סופרמרקט גדול: מחלקה, קבוצה, מדף.</p>
-      <ul><li>החיפוש מבין שגיאות כתיב וקול</li><li>ארץ ייצור עם דגל, משקל, תיאור קצר</li><li>מוצרים במשקל מוזמנים בגרמים</li><li>מבצעים, ״להיטים״, מארזי חג</li><li>פריסה מיוחדת למסכים רחבים במיוחד</li></ul></div>
-      <div class="shot"><span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span><img src="img/he/w_rosa.jpg" alt="חנות המעדנים בטלפון" loading="lazy"><img src="img/w_admin.jpg" alt="פאנל ניהול לחנות" loading="lazy"></div></div>
-    <div class="sc3 dark"><div class="top"><span class="lvl">חבילה 03 · פרויקט גדול</span><div class="big3"><bdi>3,000+</bdi><small>מוצרים</small></div><h3>כמה חנויות, סל אחד</h3><p>דוגמה: שלוש חנויות של בעלים אחד, כמעט 4,800 מוצרים ישר מהקופה.</p>
-      <ul><li>הזמנה אחת לכל שלוש החנויות</li><li>תשע מחלקות גדולות במקום עשרים ושתיים</li><li>כל המבחר הועבר מהקופה, לא ידנית</li><li>כניסה נפרדת 18+ לאלכוהול</li><li>משלוח בעיר עם סכום הזמנה מינימלי</li></ul></div>
-      <div class="shot"><span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span><img src="img/he/w_azart.jpg" alt="שלוש חנויות בטלפון" loading="lazy"><img src="img/he/w_azart2.jpg" alt="מחלקות החנות הגדולה" loading="lazy"></div></div>
-  </div>
 </div></section>
 
 
@@ -1150,6 +1196,14 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
   <div class="chips" id="chips"><small>סיפורי פרויקטים:</small></div>
 </div></section>
 
+
+<!-- бесплатный разбор -->
+<section class="sec v2audit"><div class="wrap">
+  <div class="adt" id="rev">
+    <div><span class="rtag">חינם</span><h3>בדיקה חינם לאתר שלכם</h3><p>שלחו קישור לאתר, לחנות או לעמוד ברשתות החברתיות. אסתכל עליו בעיני לקוח ואכתוב לכם בוואטסאפ שלוש עצות מעשיות: מה מפריע למכור ומה כדאי לתקן קודם.</p><p class="rsm">בלי התחייבות. עדיין אין אתר? שלחו קישור לאינסטגרם או לפייסבוק.</p></div>
+    <form class="revf" id="revF"><label for="revUrl">קישור לאתר או לעמוד שלכם</label><input id="revUrl" type="text" inputmode="url" autocomplete="url" placeholder="למשל, mysite.co.il" dir="ltr"><button type="submit" data-msg="שלום דוד! אשמח לבדיקה חינם לאתר:">לקבל בדיקה בוואטסאפ <span aria-hidden="true">→</span></button></form>
+  </div>
+</div></section>
 
 <!-- свои инструменты -->
 <section class="sec" id="tools" data-sec="04" hidden><div class="wrap">
@@ -1242,10 +1296,6 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
     </div>
   </div>
 
-  <div class="adt" id="rev">
-    <div><span class="rtag">חינם</span><h3>בדיקה חינם לאתר שלכם</h3><p>שלחו קישור לאתר, לחנות או לעמוד ברשתות החברתיות. אסתכל עליו בעיני לקוח ואכתוב לכם בוואטסאפ שלוש עצות מעשיות: מה מפריע למכור ומה כדאי לתקן קודם.</p><p class="rsm">בלי התחייבות. עדיין אין אתר? שלחו קישור לאינסטגרם או לפייסבוק.</p></div>
-    <form class="revf" id="revF"><label for="revUrl">קישור לאתר או לעמוד שלכם</label><input id="revUrl" type="text" inputmode="url" autocomplete="url" placeholder="למשל, mysite.co.il" dir="ltr"><button type="submit" data-msg="שלום דוד! אשמח לבדיקה חינם לאתר:">לקבל בדיקה בוואטסאפ <span aria-hidden="true">→</span></button></form>
-  </div>
 </div></section>
 
 <!-- 07 обо мне -->
@@ -1371,7 +1421,13 @@ function Flip(n0,words){var n=Math.max.apply(null,words.map(function(w){return w
   function show(w){var pad=Math.floor((n-w.length)/2);cells.forEach(function(c,i){var t=w[i-pad]||'';if(c.textContent===t)return;var m=reduce?0:2+Math.floor(Math.random()*5);clearTimeout(c._t);
     (function st(){if(m-->0){c.textContent=AB[Math.floor(Math.random()*AB.length)];if(c.animate)c.animate([{opacity:.35,transform:'translateY(-30%)'},{opacity:1,transform:'none'}],{duration:140});c._t=setTimeout(st,80+i*8);}else{c.textContent=t;}})();});}
   show(words[0]);var vis=true;if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;}).observe(n0);setInterval(function(){if(document.hidden||!vis)return;k=(k+1)%words.length;show(words[k]);},3400);}
-new Flip(document.getElementById('flip1'),['אתרים','חנויות','אפליקציות','קטלוגים']);
+function V2Rot(n0,words){if(!n0)return;var sp=words.map(function(w){var e=document.createElement('span');e.textContent=w;n0.appendChild(e);return e;}),k=0;sp[0].classList.add('on');function fit(){n0.style.width=sp[k].offsetWidth+'px';}fit();addEventListener('resize',fit);if(document.fonts)document.fonts.ready.then(fit);
+  if(reduce)return;var vis=true;if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;}).observe(n0);
+  setInterval(function(){if(document.hidden||!vis)return;sp[k].classList.remove('on');k=(k+1)%sp.length;sp[k].classList.add('on');fit();},2800);}
+(function(){var b=document.getElementById('a11b'),bu=document.getElementById('burg'),pn=document.getElementById('a11p');if(!b||!bu||!pn)return;var mq=matchMedia('(max-width:700px)');
+  function m(){if(mq.matches){if(b.parentNode!==bu.parentNode)bu.parentNode.insertBefore(b,bu);b.classList.add('v2inhd');}else{if(b.nextElementSibling!==pn)pn.parentNode.insertBefore(b,pn);b.classList.remove('v2inhd');}}
+  m();if(mq.addEventListener)mq.addEventListener('change',m);})();
+V2Rot(document.getElementById('flip1'),['אתרים','חנויות','אפליקציות','קטלוגים']);
 new Flip(document.getElementById('flip2'),['אתר','חנות','קטלוג']);
 
 /* для кого: по задачам */
@@ -1386,7 +1442,7 @@ FOR.forEach(function(f,i){var d=el('div','fc');var fi=el('div','fim');fi.innerHT
 /* услуги */
 var S=[['אתר לעסק','אתר תדמית, דף נחיתה או אתר חברה.','אתר שמסביר מי אתם, מה אתם מציעים ואיך יוצרים קשר.',['עיצוב בסגנון שלכם, בלי תבניות','נוח בטלפון, בטאבלט ובמסך גדול','עד שלוש שפות: עברית, רוסית, אנגלית','כפתורי וואטסאפ, חיוג ומפה','הגדרה בסיסית לחיפוש בגוגל','פרסום בכתובת שלכם']],
 ['חנות אונליין','קטלוג, סל, מבצעים. ההזמנה מגיעה אליכם לוואטסאפ.','חנות שבה הלקוח בוחר מוצרים ומבצע הזמנה בעצמו.',['קטלוג עם תמונות, מחירים וחיפוש','סל קניות והזמנה','ההזמנה מגיעה אליכם לוואטסאפ כרשימה מוכנה','מבצעים, הנחות, מוצרים חדשים','הוספת מוצרים פשוטה, גם לפי ברקוד']],
-['אפליקציה לטלפון','שתי דרכים: ישר מהאתר או מ-App Store ו-Google Play.','הדרך המהירה — אייקון על המסך ישר מהאתר. הדרך המלאה — אפליקציה ב-App Store וב-Google Play. זה לא אותו דבר: ההבדל מוסבר בבלוק „אפליקציה לעסק שלכם”.',['מהאתר: מהיר, בלי תשלום לחנויות האפליקציות','ב-App Store וב-Google Play: לוקח יותר זמן, עולה יותר, ויש תשלום לחנויות','את הדרך בוחרים אחרי שיחה על המשימה']],
+['אפליקציה לטלפון','שתי דרכים: ישר מהאתר או מ-App Store ו-Google Play.','הדרך המהירה — אייקון על המסך ישר מהאתר. הדרך המלאה — אפליקציה ב-App Store וב-Google Play. זה לא אותו דבר: ההבדל מוסבר במאמר „אתר, אפליקציה על המסך או אפליקציה ב-App Store?”.',['מהאתר: מהיר, בלי תשלום לחנויות האפליקציות','ב-App Store וב-Google Play: לוקח יותר זמן, עולה יותר, ויש תשלום לחנויות','את הדרך בוחרים אחרי שיחה על המשימה']],
 ['כלים לעבודה','ניהול מלאי, סורק ברקוד, מחשבון, מפת לקוחות.','תוכנות קטנות שחוסכות שעות בכל יום.',['ניהול מלאי וספירת מחסן לפי ברקוד','מחשבון רווח לכל פריט','מפת לקוחות עם מסלול יומי','אפליקציה לסוכני מכירות: לקוחות, קטלוג, הזמנות']],
 ['קטלוגים ומחירונים','בטלפון, באתר וב-PDF להדפסה.','קטלוג שנוח לשלוח ללקוח.',['גרסה לטלפון, קישור בוואטסאפ','גרסה באתר','PDF להדפסה ולשליחה']],
 ['פאנל ניהול','כל החנות במקום אחד: הזמנות, מוצרים, דוחות.','פאנל משלכם לבעלים ולעובדים, במחשב ובטלפון.',['הזמנות לפי סטטוס: חדשות, בטיפול, מוכנות','מוצרים, מחירים, תמונות ומחלקות, עריכה גורפת','מבצעים, ״הגיע היום״, תוקף','דוחות: מכירות, רווח, הוצאות, ספקים','כניסה מאובטחת עם קוד מאפליקציה בטלפון','יומן: מי שינה מה ומתי']],
@@ -1686,7 +1742,7 @@ function updCTA(){var msg='';
   if(endB){if(ASBt&&ASBn.length){endB.innerHTML='לשלוח את הסט שלי ('+ASBn.length+') <span class="ar">→</span>';}else endB.innerHTML=endH;}}
 window.updCTA=updCTA;
 /* 1. боковое меню */
-(function(){var SPAL=['#5B3DF5','#FF7A1A','#26C281','#E5484D','#2F80ED','#C7A56A','#D63AF9','#00A3A3','#F5A300','#5B3DF5','#E5484D','#26C281'];var side=document.getElementById('side'),ss=[].slice.call(document.querySelectorAll('section[id]')).filter(function(x){return x.id!=='game'||true;}),links=[];
+(function(){var SPAL=['#16113A','#B8892E','#16113A','#B8892E','#16113A','#B8892E','#16113A','#B8892E','#16113A','#B8892E','#16113A','#B8892E'];var side=document.getElementById('side'),ss=[].slice.call(document.querySelectorAll('section[id]')).filter(function(x){return x.id!=='game'||true;}),links=[];
   ss.forEach(function(sec){if(sec.hidden||sec.classList.contains('trypane')||sec.id==='scale')return;var num=sec.querySelector('.num'),t=sec.id==='top'?'01 — התחלה':(num?num.textContent:'');if(!t)return;var m=t.match(/^(\d+)\s*—\s*(.+)$/),a=el('a');a.href='#'+sec.id;
     a.appendChild(el('i','',m?m[1]:'•'));a.appendChild(el('span','lb',m?m[2]:t));a.style.setProperty('--c',SPAL[links.length%SPAL.length]);a.title=m?m[2]:t;side.appendChild(a);links.push([sec,a]);});
   var mq=document.querySelector('.marq');function f(){var cur=null,ci=0,L=innerHeight*.45;links.forEach(function(l,i){if(l[0].getBoundingClientRect().top<L){cur=l;ci=i;}});links.forEach(function(l){l[1].classList.toggle('on',l===cur);});var fr=0;if(cur&&links[ci+1]){var a1=cur[0].getBoundingClientRect().top,a2=links[ci+1][0].getBoundingClientRect().top;fr=Math.max(0,Math.min(1,(L-a1)/((a2-a1)||1)));}var pr=links.length>1?(cur?(ci+fr)/(links.length-1):0):0;side.style.setProperty('--p',Math.min(1,pr).toFixed(4));if(cur)side.style.setProperty('--pc',cur[1].style.getPropertyValue('--c'));side.classList.toggle('off',!!mq&&mq.getBoundingClientRect().top<innerHeight*.75);}
@@ -1801,7 +1857,7 @@ document.querySelectorAll('.pbtn').forEach(function(a){a.href=WA+'?text='+encode
 /* прогресс и счётчик */
 var prog=document.getElementById('prog'),cnt=document.getElementById('cnt'),secs=document.querySelectorAll('[data-sec]'),TOT='12';
 function onS(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-innerHeight||1);prog.style.transform='scaleX('+p.toFixed(4)+')';
-  var c='01';secs.forEach(function(s){if(s.getBoundingClientRect().top<innerHeight*.45)c=s.dataset.sec;});cnt.innerHTML='<b>'+c+'</b> / '+TOT;}
+  var c='01';secs.forEach(function(s){if(s.getBoundingClientRect().top<innerHeight*.45)c=s.dataset.sec;});if(cnt)cnt.innerHTML='<b>'+c+'</b> / '+TOT;}
 addEventListener('scroll',onS,{passive:true});onS();
 
 /* курсор и магнитные кнопки */
@@ -1895,8 +1951,7 @@ if(filt){
 /* 3: шаги процесса — плиты */
 var steps=document.getElementById('steps'),pl=[];
 var COL=['#FFF1B8','#E7E0FF','#D9F6E8','#FFE0DA','#DCEBFF','#16113A'];
-if(steps&&!off()){steps.classList.add('plx','done','on');pl=[].slice.call(steps.querySelectorAll('.st'));
-  pl.forEach(function(st,i){st.style.setProperty('--i',i);st.style.setProperty('--c',COL[i%COL.length]);if(i===COL.length-1)st.classList.add('dk');});}
+if(steps){steps.classList.add('done','on');}
 /* 4: раскрытие кадра */
 var rv=document.querySelector('.revx'),rfr=document.getElementById('rfr');
 if(rv&&off()){rv.style.height='auto';rv.querySelector('.rst').style.cssText='position:static;height:auto;padding:10vh 0';rfr.style.setProperty('--cp',1);}
