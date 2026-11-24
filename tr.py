@@ -683,3 +683,11 @@ T.update({1230: ('כל המאמרים לפי נושאים · 23 ', 'All articles
 T.update({1232: ('<a href="articles/he/index.html" class="navart">מאמרים</a>', '<a href="articles/en/index.html" class="navart">Articles</a>')})
 
 T.update({1233: ('aria-label="פתיחת תפריט"', 'aria-label="Open menu"'), 1234: ('aria-label="סגירת התפריט"', 'aria-label="Close menu"'), 1235: ('<b class="msh">תפריט</b>', '<b class="msh">Menu</b>'), 1236: ('<span class="mss">חיפוש באתר</span>', '<span class="mss">Search the site</span>'), 1237: ('כל המאמרים לבעלי עסקים ', 'All articles for business owners ')})
+
+# --- редизайн v2 (24.11) ---
+T[37]=("הדרך המהירה — אייקון על המסך ישר מהאתר. הדרך המלאה — אפליקציה ב-App Store וב-Google Play. זה לא אותו דבר: ההבדל מוסבר במאמר „אתר, אפליקציה על המסך או אפליקציה ב-App Store?”.","The quick way is an icon on the screen straight from the site. The full way is an app in the App Store and Google Play. They are not the same: the difference is explained in the article “A website, a home-screen app or an App Store app?”.")
+T.update({
+1238:("לדוגמה: האתר של סטודיו Apps &amp; Soul — זה שאתם רואים עכשיו.","Example: the Apps &amp; Soul studio site — the one you are looking at now."),
+1239:("נשארו 3 מקומות","3 spots left"),
+1240:("צריכים אפליקציה? במה הדרכים שונות ומה לבחור — במאמר:","Need an app? How the options differ and which to choose — in the article:"),
+})

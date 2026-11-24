@@ -11,6 +11,6 @@ git add -A
 git -c user.name="priko2000" -c user.email="davidmushailov@gmail.com" commit -qm "$1
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_01SmWZkdKbRWLdFK9ywzZ6vc" || echo "нет изменений"
+Claude-Session: https://claude.ai/code/session_01SmWZkfm6eob4xNaTTzoy7F" || echo "нет изменений"
 git -c push.negotiate=true push -q origin main 2>&1 | tail -2
 git log --oneline | head -1

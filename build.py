@@ -34,7 +34,7 @@ html[lang=he] body{font-size:18px}
 '''
 src=src.replace("/* курсор */",LANGCSS+"\n/* курсор */",1)
 src=src.replace("family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap","family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Heebo:wght@400;500;700;800;900&display=swap")
-src=src.replace('<div class="cnt" id="cnt">','<div class="langs">LANGLINKS</div>\n  <div class="cnt" id="cnt">',1)
+src=src.replace('<a class="cta mag"','<div class="langs">LANGLINKS</div>\n  <a class="cta mag"',1)
 src=src.replace('Пример нового дизайна. Иврит и английский будут добавлены.','Пример нового дизайна. Три языка: русский, иврит, английский.')
 U=[ ('Пример нового дизайна. Три языка: русский, иврит, английский.' if u=='Пример нового дизайна. Иврит и английский будут добавлены.' else u) for u in U]
 FILES={'ru':'ru.html','he':'index.html','en':'en.html'}
@@ -71,6 +71,8 @@ def build(lang):
     for n in imgs:
         folder='he' if (lang=='he' or n!='w_price') else 'en'
         s=s.replace('img/%s.jpg'%n,'img/%s/%s.jpg'%(folder,n))
+    for n in ['pw2','pw3']: s=s.replace('img/%s.jpg'%n,'img/he/%s.jpg'%n)
+    s=s.replace('img/ru/pw1.jpg','img/%s/pw1.jpg'%lang)
     s=s.replace('img/og_ru.jpg','img/og_%s.jpg'%lang)
     if lang!='he': s=s.replace('<link rel="canonical" href="%s">'%'https://priko2000.github.io/appsandsoul-site/','<link rel="canonical" href="https://priko2000.github.io/appsandsoul-site/%s.html">'%lang)
     s=s.replace('LANGLINKS',links(lang))

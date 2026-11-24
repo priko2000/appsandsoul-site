@@ -21,3 +21,8 @@ chmod +x make_site.sh deploy_gh.sh
 - `ru_strings.json` + `tr.py` — переводы на иврит и английский (build.py подставляет).
 - `articles_src.py`, `art_*.py` — 23 статьи на трёх языках; `build_articles.py` собирает хаб и статьи.
 - Коммит `dcdf3ad` в main — копия сайта до редизайна (24.11.2026), к нему можно вернуться.
+
+## Редизайн v2 (24.11.2026)
+- `redesign_v2.py` — все правки плана одним скриптом: берёт копию `backups/v1/index.ru.bak` (= исходник до редизайна, он же `site/index.ru.bak` из коммита до этого) и пишет новый `site/index.ru.bak`. Новые служебные классы — с приставкой `v2`.
+- Картинки пакетов: `img/pw2.jpg`, `img/pw3.jpg` (+ `img/he/…`), `img/{ru,he,en}/pw1.jpg` — собираются `tools/comp.py` и `tools/pw1.py`.
+- Точка возврата: коммит `dcdf3ad` в main.
