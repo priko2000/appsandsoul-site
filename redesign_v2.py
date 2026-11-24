@@ -36,7 +36,7 @@ cut('<section class="fillx" aria-label="Главная мысль">','\n\n<!-- 0
 
 # ---------- 3. пакеты + настоящие работы ----------
 rep('<div class="pkim"><img src="img/pk1.jpg" alt="" loading="lazy"></div>',
-    '<div class="pkim v2work"><img src="img/ru/pw1.jpg" alt="" loading="lazy"></div><p class="v2ex">Пример: сайт студии Apps &amp; Soul — тот, что вы сейчас смотрите.</p>')
+    '<div class="pkim v2work"><img src="img/pw1_visitka.jpg" srcset="img/pw1_visitka_s.jpg 640w, img/pw1_visitka.jpg 1200w" sizes="(max-width:700px) 82vw, (max-width:1400px) 32vw, 600px" width="1200" height="750" alt="" loading="lazy" decoding="async"></div><p class="v2ex">Образец: сайт-визитка винодельни — одна страница, всё главное на одном экране.</p>')
 rep('<div class="pkim"><img src="img/pk2.jpg" alt="" loading="lazy"></div>',
     '<div class="pkim v2work"><img src="img/pw2.jpg" alt="" loading="lazy"></div><p class="v2ex">Пример: магазин деликатесов, около 900 товаров. Устроен как большой супермаркет: отдел, группа, полка.</p>')
 rep('<div class="pkim"><img src="img/pk3.jpg" alt="" loading="lazy"></div>',
@@ -85,7 +85,7 @@ rep("V2Rot(document.getElementById('flip1')",
   if(!ab||!('IntersectionObserver' in window)){ld();return;}new IntersectionObserver(function(es,o){if(es[0].isIntersecting){ld();o.disconnect();}},{rootMargin:'1200px 0px'}).observe(ab);})();
 V2Rot(document.getElementById('flip1')""")
 # картинки пакетов: маленькая версия для телефона
-for n in ['ru/pw1','pw2','pw3']:
+for n in ['pw2','pw3']:
     rep('<img src="img/%s.jpg" alt="" loading="lazy">'%n,'<img src="img/%s.jpg" srcset="img/%s_s.jpg 640w, img/%s.jpg 1200w" sizes="(max-width:700px) 82vw, (max-width:1400px) 32vw, 600px" width="1200" height="750" alt="" loading="lazy" decoding="async">'%(n,n,n))
 # карточки «Для кого»: на телефоне картинка 104px
 rep("""fi.innerHTML='<img src="img/f'+(i+1)+'.jpg" alt="" loading="lazy">';""",

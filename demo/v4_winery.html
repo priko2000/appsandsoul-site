@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>יקב ערפל — יקב בוטיק בגליל | דוגמה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;500;700;900&family=Heebo:wght@300;400;500;700&display=swap">
+<style>
+:root{--plum:#24112B;--plum2:#3A1C40;--wine:#6E2440;--gold:#C9965A;--gold2:#E8C48E;--cream:#F7F0E6;--ink:#2A1630;--mut:#7A6670}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font:17px/1.7 Heebo,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.tagd{position:fixed;top:12px;left:12px;z-index:20;font-size:11px;background:#0004;color:#eee;padding:4px 9px;border-radius:6px}
+
+/* ---------- первый экран ---------- */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;background:#1E1033;color:var(--cream)}
+.scene{position:absolute;inset:0;width:100%;height:100%}
+.layer{will-change:transform;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.mist{animation:mist 22s ease-in-out infinite alternate}
+.mist.m2{animation-duration:30s;animation-delay:-8s}
+@keyframes mist{from{transform:translateX(-60px)}to{transform:translateX(80px)}}
+.sunglow{animation:breathe 7s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.75}}
+.birds{animation:fly 40s linear infinite}
+@keyframes fly{from{transform:translate(0,0)}to{transform:translate(-1700px,-60px)}}
+header{position:absolute;inset:0 0 auto;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:26px 6vw}
+.logo{display:flex;align-items:center;gap:12px;font:700 24px "Frank Ruhl Libre",serif;letter-spacing:.01em}
+.logo svg{width:34px;height:34px}
+nav{display:flex;gap:34px;font-size:15px;font-weight:300;color:#F1E3D6}
+nav a{position:relative}nav a:after{content:"";position:absolute;right:0;bottom:-4px;width:0;height:1px;background:var(--gold2);transition:.4s}nav a:hover:after{width:100%}
+.hcta{border:1px solid #F1E3D688;padding:11px 22px;border-radius:999px;font-size:15px;backdrop-filter:blur(6px);background:#ffffff0d}
+.htext{position:absolute;z-index:4;top:22vh;right:6vw;max-width:640px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:15px;font-weight:300;color:var(--gold2);margin-bottom:22px}
+.eyebrow:before{content:"";width:40px;height:1px;background:var(--gold2)}
+h1{font:900 clamp(52px,7.4vw,124px)/.95 "Frank Ruhl Libre",serif;letter-spacing:-.01em;text-shadow:0 2px 40px #1E103366}
+h1 span{display:block;font-weight:300;font-style:normal;color:var(--gold2)}
+h1>*{animation:rise 1.4s cubic-bezier(.2,.9,.2,1) backwards}
+h1 span{animation-delay:.18s}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}}
+.hp{font-size:clamp(17px,1.35vw,20px);font-weight:300;color:#F7EDE3;text-shadow:0 1px 18px #24112Bcc;max-width:470px;margin:26px 0 34px;animation:rise 1.4s .35s cubic-bezier(.2,.9,.2,1) backwards}
+.acts{display:flex;gap:14px;flex-wrap:wrap;animation:rise 1.4s .5s cubic-bezier(.2,.9,.2,1) backwards}
+.b1{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#2A1630;font-weight:700;padding:16px 28px;border-radius:999px;box-shadow:0 20px 40px -18px #000a}
+.b1 svg{width:19px;height:19px}
+.b2{padding:16px 26px;border-radius:999px;border:1px solid #F1E3D699;font-weight:500}
+.scroll{position:absolute;z-index:4;bottom:30px;left:50%;transform:translateX(-50%);font-size:13px;letter-spacing:.06em;color:#F1E3D6aa;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll i{width:1px;height:40px;background:linear-gradient(#F1E3D6,transparent);animation:sc 2s ease-in-out infinite;transform-origin:top}
+@keyframes sc{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- блоки ---------- */
+section{padding:clamp(80px,10vw,140px) 6vw}
+.w{max-width:1240px;margin:0 auto}
+.kick{display:inline-flex;align-items:center;gap:12px;color:var(--gold);font-size:15px;margin-bottom:16px}
+.kick:before{content:"";width:34px;height:1px;background:var(--gold)}
+h2{font:700 clamp(38px,4.6vw,68px)/1.02 "Frank Ruhl Libre",serif;color:var(--plum);margin-bottom:22px;max-width:800px}
+.lead{font-size:19px;color:var(--mut);max-width:560px;font-weight:300}
+
+.wines{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px}
+.wn{position:relative;background:#fff;border-radius:30px;padding:30px 30px 34px;overflow:hidden;transition:transform .6s cubic-bezier(.2,.8,.2,1),box-shadow .6s;box-shadow:0 1px 0 #0000000a}
+.wn:hover{transform:translateY(-8px);box-shadow:0 40px 60px -30px #24112B55}
+.wn .bt{height:330px;display:grid;place-items:center;border-radius:22px;margin-bottom:24px;position:relative;overflow:hidden}
+.wn .bt:after{content:"";position:absolute;inset:auto 15% 18px;height:18px;border-radius:50%;background:#0003;filter:blur(8px)}
+.wn svg{height:290px;position:relative;z-index:1;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.wn:hover svg{transform:rotate(-4deg) translateY(-6px)}
+.t1{background:radial-gradient(circle at 50% 35%,#F3DCCB,#E2B9A0)}.t2{background:radial-gradient(circle at 50% 35%,#F6E9C9,#E5CC92)}.t3{background:radial-gradient(circle at 50% 35%,#E9D6DE,#C79AAE)}
+.wn small{color:var(--gold);font-weight:500}
+.wn b{display:block;font:700 30px/1.1 "Frank Ruhl Libre",serif;color:var(--plum);margin:6px 0 8px}
+.wn p{color:var(--mut);font-size:16px}
+.wn .pr{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid #2A16301a;font-weight:500}
+.wn .pr span{font:700 24px "Frank Ruhl Libre",serif;color:var(--wine)}
+
+.visit{background:var(--plum);color:var(--cream);border-radius:44px;margin:0 3vw;position:relative;overflow:hidden}
+.visit h2{color:var(--cream)}.visit .lead{color:#CDB9C2}
+.vg{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:start}
+.times{display:grid;gap:2px;margin-top:10px}
+.tm{display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:baseline;padding:24px 0;border-bottom:1px solid #ffffff1f}
+.tm:first-child{border-top:1px solid #ffffff1f}
+.tm em{font:300 46px/1 "Frank Ruhl Libre",serif;font-style:normal;color:var(--gold2);direction:ltr;text-align:right}
+.tm b{display:block;font-size:20px;font-weight:500}.tm span{color:#CDB9C2;font-size:15px}
+.tm i{font-style:normal;color:var(--gold2);font-weight:500;white-space:nowrap}
+.hills{position:absolute;inset:auto 0 0;height:120px;width:100%;opacity:.5}
+
+.story{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+blockquote{font:300 clamp(30px,3.2vw,48px)/1.25 "Frank Ruhl Libre",serif;color:var(--plum)}
+blockquote b{font-weight:700;color:var(--wine)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.facts div{border-top:2px solid var(--plum);padding-top:16px}
+.facts strong{display:block;font:700 46px/1 "Frank Ruhl Libre",serif;color:var(--plum)}
+.facts span{color:var(--mut);font-size:15px}
+
+.end{position:relative;overflow:hidden;text-align:center;background:linear-gradient(180deg,#3A1C40,#24112B);color:var(--cream);padding:130px 6vw 0}
+.end h2{color:var(--cream);margin:0 auto 18px}
+.end .lead{margin:0 auto 36px;color:#CDB9C2}
+.info{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:40px 0 0;font-size:15px;color:#CDB9C2}
+.info b{color:var(--cream);font-weight:500}
+.end>svg{display:block;width:calc(100% + 12vw);max-width:none;height:auto;margin:70px -6vw 0}
+footer{background:#1A0D22;color:#9C8794;font-size:14px;display:flex;justify-content:space-between;padding:22px 6vw}
+
+@media(max-width:860px){nav{display:none}header{padding:20px}
+.htext{top:16vh;right:22px;left:22px}.hp{max-width:none}
+.wines{grid-template-columns:1fr}.vg,.story{grid-template-columns:1fr;gap:40px}
+.tm{grid-template-columns:96px 1fr;gap:4px 16px}.tm em{font-size:34px;grid-row:span 2}.tm i{grid-column:2}
+.visit{margin:0;border-radius:32px}.facts strong{font-size:34px}section{padding:80px 22px}.info{gap:14px;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="tagd">דוגמה</div>
+
+<div class="hero" id="top">
+  <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#1E1033"/><stop offset=".38" stop-color="#4A2150"/><stop offset=".62" stop-color="#B4506A"/><stop offset=".8" stop-color="#E9906A"/><stop offset="1" stop-color="#F6C88E"/>
+      </linearGradient>
+      <radialGradient id="sun" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFF1CF"/><stop offset=".25" stop-color="#FFD9A0" stop-opacity=".95"/><stop offset=".6" stop-color="#F3A574" stop-opacity=".35"/><stop offset="1" stop-color="#F3A574" stop-opacity="0"/></radialGradient>
+      <linearGradient id="h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A9506A"/><stop offset="1" stop-color="#7A3558"/></linearGradient>
+      <linearGradient id="h2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6C2C52"/><stop offset="1" stop-color="#4D1F44"/></linearGradient>
+      <linearGradient id="h3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#43193F"/><stop offset="1" stop-color="#2E1233"/></linearGradient>
+      <linearGradient id="h4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26102A"/><stop offset="1" stop-color="#1A0B1F"/></linearGradient>
+      <filter id="blur" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="30"/></filter>
+      <clipPath id="c3"><path d="M0 640 C220 590 420 560 640 600 C860 640 1060 610 1260 570 C1420 540 1520 560 1600 580 V900 H0Z"/></clipPath>
+    </defs>
+    <rect width="1600" height="900" fill="url(#sky)"/>
+    <g class="stars" fill="#fff">
+      <circle cx="210" cy="90" r="1.4" opacity=".7"/><circle cx="420" cy="160" r="1" opacity=".5"/><circle cx="640" cy="70" r="1.2" opacity=".6"/><circle cx="900" cy="130" r="1" opacity=".5"/><circle cx="1180" cy="60" r="1.5" opacity=".7"/><circle cx="1420" cy="150" r="1" opacity=".5"/><circle cx="1520" cy="80" r="1.2" opacity=".6"/><circle cx="80" cy="200" r="1" opacity=".4"/>
+    </g>
+    <g class="layer" data-d="0.08"><circle class="sunglow" cx="720" cy="560" r="330" fill="url(#sun)"/><circle cx="720" cy="560" r="62" fill="#FFF0CC"/></g>
+    <g class="birds" fill="none" stroke="#2A1630" stroke-width="2.2" stroke-linecap="round" opacity=".55">
+      <path d="M1500 300 q8 -7 16 0 q8 -7 16 0"/><path d="M1540 285 q6 -5 12 0 q6 -5 12 0"/><path d="M1470 320 q6 -5 12 0 q6 -5 12 0"/>
+    </g>
+    <g class="layer" data-d="0.14"><path d="M0 545 C120 500 240 470 380 500 C520 530 640 560 780 520 C920 480 1020 430 1160 445 C1300 460 1420 510 1600 480 V900 H0Z" fill="url(#h1)" opacity=".9"/></g>
+    <g class="mist" opacity=".55"><ellipse cx="500" cy="590" rx="520" ry="40" fill="#F7D6C0" filter="url(#blur)"/><ellipse cx="1250" cy="560" rx="420" ry="34" fill="#F7D6C0" filter="url(#blur)"/></g>
+    <g class="layer" data-d="0.22"><path d="M0 620 C200 580 380 560 560 590 C760 622 960 560 1160 540 C1340 522 1480 560 1600 575 V900 H0Z" fill="url(#h2)"/>
+      <!-- кипарисы на дальнем холме -->
+      <g fill="#3A1638" transform="translate(-980 50)"><path d="M1180 545 c-6 -40 -2 -70 6 -90 c8 20 12 50 6 90z"/><path d="M1205 548 c-5 -30 -1 -52 5 -66 c6 14 9 36 5 66z"/><path d="M1228 546 c-6 -36 -2 -62 6 -80 c8 18 11 44 6 80z"/></g>
+      <!-- домик винодельни -->
+      <g transform="translate(300 556)"><rect x="0" y="0" width="70" height="38" fill="#3A1638"/><path d="M-6 2 L35 -22 L76 2Z" fill="#331433"/><rect x="28" y="16" width="12" height="22" fill="#F6C88E" opacity=".9"/><rect x="8" y="12" width="10" height="9" fill="#F6C88E" opacity=".7"/><rect x="52" y="12" width="10" height="9" fill="#F6C88E" opacity=".7"/></g>
+    </g>
+    <g class="mist m2" opacity=".4"><ellipse cx="900" cy="650" rx="600" ry="42" fill="#F2C7B7" filter="url(#blur)"/></g>
+    <g class="layer" data-d="0.32">
+      <path d="M0 640 C220 590 420 560 640 600 C860 640 1060 610 1260 570 C1420 540 1520 560 1600 580 V900 H0Z" fill="url(#h3)"/>
+      <g clip-path="url(#c3)" id="rows" fill="none" stroke="#5E2752" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 13"></g>
+    </g>
+    <g class="layer" data-d="0.45">
+      <path d="M0 800 C180 770 360 752 560 776 C760 800 980 790 1180 760 C1360 734 1500 750 1600 766 V900 H0Z" fill="url(#h4)"/>
+      <!-- лоза на переднем плане -->
+      <g transform="translate(-30 -190) scale(1.25)"><g stroke="#120714" stroke-width="3" fill="none" stroke-linecap="round">
+        <path d="M120 900 C130 820 110 780 150 740"/><path d="M150 740 C170 720 200 726 214 712"/><path d="M150 760 C120 740 100 748 86 734"/>
+      </g>
+      <g fill="#120714"><ellipse cx="216" cy="708" rx="16" ry="9" transform="rotate(-30 216 708)"/><ellipse cx="84" cy="730" rx="15" ry="8" transform="rotate(25 84 730)"/><ellipse cx="170" cy="726" rx="12" ry="7" transform="rotate(-10 170 726)"/></g>
+      <g fill="#3B0F2A"><circle cx="160" cy="772" r="6"/><circle cx="170" cy="780" r="6"/><circle cx="152" cy="782" r="6"/><circle cx="162" cy="791" r="6"/><circle cx="172" cy="796" r="5"/><circle cx="156" cy="800" r="5"/><circle cx="165" cy="808" r="4.5"/></g></g>
+    </g>
+  </svg>
+
+  <header>
+    <a class="logo" href="#top"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#E8C48E" stroke-width="1.2"/><g fill="#E8C48E"><circle cx="20" cy="15" r="3"/><circle cx="16" cy="20" r="3"/><circle cx="24" cy="20" r="3"/><circle cx="20" cy="25" r="3"/><circle cx="20" cy="31" r="2.4"/></g><path d="M20 12 C21 8 24 7 26 7" stroke="#E8C48E" stroke-width="1.2"/></svg>יקב ערפל</a>
+    <nav><a href="#wines">היינות</a><a href="#visit">סיורים וטעימות</a><a href="#story">הסיפור</a><a href="#contact">צרו קשר</a></nav>
+    <a class="hcta" href="#visit">להזמנת טעימה</a>
+  </header>
+
+  <div class="htext">
+    <div class="eyebrow">יקב בוטיק · הגליל העליון</div>
+    <h1>יין שנולד<span>בין הערפל להר</span></h1>
+    <p class="hp">כרם קטן על מדרון בגליל, ארבעה זנים, יד אחת שעושה הכול. בואו לטעום אצלנו, מול השקיעה.</p>
+    <div class="acts"><a class="b1" href="#visit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>להזמנת טעימה</a><a class="b2" href="#wines">להכיר את היינות</a></div>
+  </div>
+  <div class="scroll">גללו<i></i></div>
+</div>
+
+<section id="wines"><div class="w">
+  <div class="kick">היינות שלנו</div>
+  <h2>שלושה יינות. בציר אחד בשנה.</h2>
+  <p class="lead">כל בקבוק מכרם אחד ומבציר ידני. מהדורות קטנות, שנגמרות מהר.</p>
+  <div class="wines">
+    <div class="wn"><div class="bt t1"><svg viewBox="0 0 80 300"><defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#2A0E1C"/><stop offset=".35" stop-color="#5A1A33"/><stop offset=".5" stop-color="#7A2A48"/><stop offset="1" stop-color="#22091A"/></linearGradient></defs><path d="M32 0h16v70c0 18 22 30 22 60v160c0 6-4 10-10 10H20c-6 0-10-4-10-10V130c0-30 22-42 22-60z" fill="url(#g1)"/><rect x="31" y="0" width="18" height="34" fill="#C9965A"/><rect x="14" y="160" width="52" height="80" rx="3" fill="#F7F0E6"/><text x="40" y="192" text-anchor="middle" font-family="Frank Ruhl Libre" font-size="12" font-weight="700" fill="#2A1630">ערפל</text><text x="40" y="210" text-anchor="middle" font-family="Heebo" font-size="7" fill="#7A6670">קברנה סוביניון</text><line x1="26" y1="220" x2="54" y2="220" stroke="#C9965A"/><path d="M24 70 Q22 140 24 280" stroke="#fff3" stroke-width="3" fill="none"/></svg></div>
+      <small>אדום · 2022</small><b>ערפל אדום</b><p>קברנה סוביניון מהמדרון העליון. פירות יער כהים, עץ עדין, סיומת ארוכה.</p><div class="pr">בקבוק 750 מ״ל<span>₪ 140</span></div></div>
+    <div class="wn"><div class="bt t2"><svg viewBox="0 0 80 300"><defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#7A6A2A"/><stop offset=".4" stop-color="#C8B46A"/><stop offset=".55" stop-color="#E4D290"/><stop offset="1" stop-color="#6E5E24"/></linearGradient></defs><path d="M32 0h16v70c0 18 22 30 22 60v160c0 6-4 10-10 10H20c-6 0-10-4-10-10V130c0-30 22-42 22-60z" fill="url(#g2)" opacity=".92"/><rect x="31" y="0" width="18" height="34" fill="#24112B"/><rect x="14" y="160" width="52" height="80" rx="3" fill="#24112B"/><text x="40" y="192" text-anchor="middle" font-family="Frank Ruhl Libre" font-size="12" font-weight="700" fill="#E8C48E">ערפל</text><text x="40" y="210" text-anchor="middle" font-family="Heebo" font-size="7" fill="#CDB9C2">שרדונה</text><line x1="26" y1="220" x2="54" y2="220" stroke="#E8C48E"/><path d="M24 70 Q22 140 24 280" stroke="#fff6" stroke-width="3" fill="none"/></svg></div>
+      <small>לבן · 2023</small><b>ערפל לבן</b><p>שרדונה רענן, הדרים ופרחים לבנים. מושלם לארוחת שישי בחוץ.</p><div class="pr">בקבוק 750 מ״ל<span>₪ 115</span></div></div>
+    <div class="wn"><div class="bt t3"><svg viewBox="0 0 80 300"><defs><linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#9A4A62"/><stop offset=".4" stop-color="#E39AAE"/><stop offset=".55" stop-color="#F3BFCB"/><stop offset="1" stop-color="#8A3A55"/></linearGradient></defs><path d="M32 0h16v70c0 18 22 30 22 60v160c0 6-4 10-10 10H20c-6 0-10-4-10-10V130c0-30 22-42 22-60z" fill="url(#g3)" opacity=".9"/><rect x="31" y="0" width="18" height="34" fill="#F7F0E6"/><rect x="14" y="160" width="52" height="80" rx="3" fill="#F7F0E6"/><text x="40" y="192" text-anchor="middle" font-family="Frank Ruhl Libre" font-size="12" font-weight="700" fill="#6E2440">ערפל</text><text x="40" y="210" text-anchor="middle" font-family="Heebo" font-size="7" fill="#7A6670">רוזה</text><line x1="26" y1="220" x2="54" y2="220" stroke="#C9965A"/><path d="M24 70 Q22 140 24 280" stroke="#fff6" stroke-width="3" fill="none"/></svg></div>
+      <small>רוזה · 2024</small><b>ערפל רוזה</b><p>גרנאש בהיר ויבש, תות שדה ופריחה. נשתה צונן, בשקיעה.</p><div class="pr">בקבוק 750 מ״ל<span>₪ 98</span></div></div>
+  </div>
+</div></section>
+
+<section class="visit" id="visit"><div class="w vg">
+  <div><div class="kick">ביקור ביקב</div><h2>טעימה מול השקיעה</h2><p class="lead">סיור קצר בכרם ובמרתף, ואז שולחן על המרפסת עם שלושה יינות, גבינות מקומיות ונוף עד החרמון.</p></div>
+  <div class="times">
+    <div class="tm"><em>11:00</em><div><b>סיור בוקר</b><span>שישי · כרם, מרתף וטעימה</span></div><i>₪ 85 לאדם</i></div>
+    <div class="tm"><em>13:30</em><div><b>טעימה עם ארוחה</b><span>שישי ושבת · מגש גבינות ולחם</span></div><i>₪ 140 לאדם</i></div>
+    <div class="tm"><em>17:00</em><div><b>טעימת שקיעה</b><span>שבת · במרפסת, עד 12 אורחים</span></div><i>₪ 120 לאדם</i></div>
+  </div>
+</div>
+<svg class="hills" viewBox="0 0 1600 120" preserveAspectRatio="none"><path d="M0 80 C200 40 400 30 620 60 C840 90 1040 50 1240 40 C1420 32 1520 50 1600 60 V120 H0Z" fill="#3A1C40"/></svg>
+</section>
+
+<section id="story"><div class="w story">
+  <blockquote>„אנחנו לא ממהרים. <b>הכרם קובע את הקצב,</b> ואנחנו רק מקשיבים.”</blockquote>
+  <div><div class="kick">הסיפור</div><p class="lead">התחלנו בשנת 2014 עם חלקה אחת וכמה מאות גפנים. היום יש לנו ארבעה דונם, מרתף קטן ומשפחה שעושה הכול בעצמה — מהגיזום ועד ההדבקה של כל תווית.</p>
+    <div class="facts"><div><strong>4</strong><span>דונם כרם</span></div><div><strong>3,000</strong><span>בקבוקים בשנה</span></div><div><strong>650</strong><span>מטר מעל הים</span></div></div></div>
+</div></section>
+
+<div class="end" id="contact">
+  <div class="kick" style="justify-content:center">צרו קשר</div>
+  <h2>נשמור לכם מקום במרפסת</h2>
+  <p class="lead">כתבו לנו בוואטסאפ את היום ומספר האורחים, ונחזור אליכם עוד היום.</p>
+  <a class="b1" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>כתבו לנו בוואטסאפ</a>
+  <div class="info"><span><b>שעות</b> · שישי 10:00 עד 16:00 · שבת 11:00 עד 18:00</span><span><b>כתובת</b> · דרך הכרמים, הגליל העליון</span></div>
+  <svg viewBox="0 0 1600 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90 C200 50 420 40 640 70 C860 100 1060 60 1260 50 C1420 42 1520 60 1600 70 V160 H0Z" fill="#2E1233"/><path d="M0 120 C220 100 420 92 640 108 C860 124 1080 110 1300 96 C1460 88 1540 98 1600 104 V160 H0Z" fill="#1A0D22"/></svg>
+</div>
+<footer><span>© יקב ערפל</span><span>דוגמה לאתר תדמית · Apps &amp; Soul</span></footer>
+
+<script>
+{
+  // ряды виноградника по склону ближнего холма
+  const g=document.getElementById('rows');let h='';
+  for(let i=0;i<9;i++){const y=600+i*30, k=i*4;
+    h+=`<path d="M-20 ${y+40} C220 ${y-10-k} 420 ${y-40-k} 640 ${y} C860 ${y+40} 1060 ${y+10} 1260 ${y-30-k} C1420 ${y-60} 1520 ${y-40} 1640 ${y-20}" stroke-width="${4+i*0.7}" stroke-dasharray="2 ${12+i}" opacity="${0.5+i*0.05}"/>`;}
+  g.innerHTML=h;
+  // мягкий параллакс: прокрутка и мышь
+  const L=[...document.querySelectorAll('.layer')];let mx=0,sy=0,raf=0;
+  const move=()=>{raf=0;L.forEach(l=>{const d=+l.dataset.d;l.style.transform=`translate(${mx*d*-60}px,${sy*d}px)`;});};
+  const req=()=>{if(!raf)raf=requestAnimationFrame(move);};
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    addEventListener('scroll',()=>{sy=Math.min(scrollY,900);req();},{passive:true});
+    addEventListener('mousemove',e=>{mx=e.clientX/innerWidth-.5;req();},{passive:true});
+  }
+}
+</script>
+</body>
+</html>

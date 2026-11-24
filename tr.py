@@ -695,3 +695,4 @@ T.update({
 1241:("שאלו את העוזר","Ask the assistant"),
 1242:("חנות אונליין עם חלון ראווה כמו בסופרמרקט","Online store with a supermarket-style shelf"),
 })
+T.update({1243:("דוגמה: אתר תדמית ליקב — עמוד אחד, כל העיקר במסך אחד.","Sample: a one-page business site for a winery — everything important on one screen.")})
