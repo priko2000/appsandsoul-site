@@ -59,14 +59,38 @@ ol.chk li::before{content:counter(c);position:absolute;inset-inline-start:16px;t
 footer{border-top:1px solid var(--line);text-align:center;font-size:14px;color:var(--mut);padding:24px}
 @media (max-width:820px){.ag{grid-template-columns:1fr}}
 @media (max-width:560px){.wa1{display:none}.logo{font-size:15px}body{font-size:17px}}
+
+.ac::before{background:var(--sc,var(--vi))!important}
+.ac small{font-size:12px;font-weight:800;color:var(--sc,var(--vi));text-transform:uppercase;letter-spacing:.04em}
+html[lang=he] .ac small{text-transform:none;letter-spacing:0}
+.ac em{font-style:normal;font-size:13px;color:var(--mut);margin-top:auto}
+.kick{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px;font-size:14px}
+.kick a{background:var(--sc);color:#fff;text-decoration:none;border-radius:999px;padding:5px 12px;font-weight:800}
+.kick span{color:var(--mut)}
+.note{font-size:14px;color:var(--mut);border-inline-start:3px solid var(--line);padding-inline-start:12px;margin-top:24px}
+.allb{display:inline-flex;margin-top:18px;background:var(--ink);color:#fff;text-decoration:none;border-radius:14px;padding:13px 20px;font-weight:800}
+.hub{max-width:1180px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(18px,4vw,40px) 30px}
+.hub h1{font-size:clamp(34px,5vw,64px);max-width:16ch}
+.hub .lead{max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 10px;position:sticky;top:58px;z-index:3;background:rgba(246,243,236,.92);backdrop-filter:blur(8px);padding:10px 0}
+.chips a{text-decoration:none;border:1.5px solid var(--sc);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:800;font-size:14px;display:flex;gap:8px;align-items:center}
+.chips a i{font-style:normal;background:var(--sc);color:#fff;border-radius:999px;font-size:12px;padding:1px 8px}
+.chips a:hover{background:var(--sc);color:#fff}
+.hsec{padding-top:34px;scroll-margin-top:120px}
+.hsec h2{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.hsec h2::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--sc);flex:none}
+.hsec .ag{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (min-width:1700px){.hub{max-width:1560px}.hub .ag{grid-template-columns:repeat(4,minmax(0,1fr))}.more{max-width:1300px}}
+@media (max-width:820px){.hsec .ag{grid-template-columns:1fr}.chips{position:static;margin-top:18px}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "אתר, אפליקציה על המסך או אפליקציה ב-App Store?", "description": "בעלי עסקים אומרים לא פעם „אנחנו צריכים אפליקציה”, אבל מתכוונים לדברים שונים. בפועל יש שלוש אפשרויות, והן שונות מאוד ביכולות, בזמנים ובעלויות. נעבור על כל אחת בכנות.", "inLanguage": "he", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/he/site-or-app.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_he.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "אתר, אפליקציה על המסך או אפליקציה ב-App Store?", "description": "בעלי עסקים אומרים לא פעם „אנחנו צריכים אפליקציה”, אבל מתכוונים לדברים שונים. בפועל יש שלוש אפשרויות, והן שונות מאוד ביכולות, בזמנים ובעלויות. נעבור על כל אחת בכנות.", "inLanguage": "he", "articleSection": "אפליקציות וטכנולוגיה", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/he/site-or-app.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_he.jpg"}</script>
 </head>
 <body>
 <header class="top"><div class="in"><a class="logo" href="../../"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/site-or-app.html" lang="ru" title="Русский">RU</a><a href="../he/site-or-app.html" lang="he" title="עברית" class="on">עב</a><a href="../en/site-or-app.html" lang="en" title="English">EN</a></nav><a class="wa1" href="https://wa.me/972587800228?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%21%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%9E%D7%90%D7%9E%D7%A8%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98." target="_blank" rel="noopener">לכתוב בוואטסאפ</a></div></header>
-<main>
-<div class="crumbs"><a href="../../">ראשי</a> › <a href="../../#blog">מאמרים</a></div>
+<main style="--sc:#FF7A1A">
+<div class="crumbs"><a href="../../">ראשי</a> › <a href="index.html">מאמרים</a> › <a href="index.html#tech">אפליקציות וטכנולוגיה</a></div>
 <article>
+<div class="kick"><a href="index.html#tech">אפליקציות וטכנולוגיה</a><span>2 דקות קריאה</span></div>
 <h1>אתר, אפליקציה על המסך או אפליקציה ב-App Store?</h1>
 <p class="lead">בעלי עסקים אומרים לא פעם „אנחנו צריכים אפליקציה”, אבל מתכוונים לדברים שונים. בפועל יש שלוש אפשרויות, והן שונות מאוד ביכולות, בזמנים ובעלויות. נעבור על כל אחת בכנות.</p>
 <div class="by">מושאילוב דוד, מייסד Apps & Soul</div>
@@ -95,7 +119,7 @@ footer{border-top:1px solid var(--line);text-align:center;font-size:14px;color:v
 </article>
 <div class="cta"><h2>נדבר על הפרויקט שלכם?</h2><p>כתבו בוואטסאפ: אני עונה תוך שעתיים בשעות העבודה. או הזמינו בדיקה חינם לאתר שלכם.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%21%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%9E%D7%90%D7%9E%D7%A8%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98." target="_blank" rel="noopener">לכתוב בוואטסאפ</a><a class="p2" href="../../#rev">בדיקה חינם לאתר</a></div></div>
 </main>
-<section class="more"><h3>מאמרים נוספים</h3><div class="ag"><a class="ac c1 on" href="site-or-app.html"><b>אתר, אפליקציה על המסך או אפליקציה ב-App Store?</b><span>בעלי עסקים אומרים לא פעם „אנחנו צריכים אפליקציה”, אבל מתכוונים לדברים שונים.</span></a><a class="ac c2" href="own-site-or-builder.html"><b>אתר משלכם או בונה אתרים כמו Wix ו-Shopify</b><span>בוני אתרים מבטיחים אתר בערב אחד, ומפתחים מבטיחים אתר „בהתאמה אישית”.</span></a><a class="ac c3" href="shop-checklist.html"><b>מה צריך אתר של חנות כדי למכור</b><span>אתר יפה עדיין לא אומר אתר שמוכר.</span></a></div></section>
+<section class="more"><h3>עוד בנושא</h3><div class="ag"><a class="ac" style="--sc:#FF7A1A" href="notifications.html"><small>אפליקציות וטכנולוגיה</small><b>התראות: איך להזכיר ללקוחות שאתם קיימים בלי להציק</b><span>התראה בטלפון היא הדרך הקצרה ביותר אל הלקוח.</span><em>2 דקות קריאה</em></a><a class="ac" style="--sc:#FF7A1A" href="ai-assistant.html"><small>אפליקציות וטכנולוגיה</small><b>עוזר AI לחנות: מה הוא יודע ומה לא</b><span>על בינה מלאכותית מדברים כאילו היא תחליף את כל הצוות.</span><em>2 דקות קריאה</em></a><a class="ac" style="--sc:#FF7A1A" href="admin-panel.html"><small>אפליקציות וטכנולוגיה</small><b>פאנל ניהול: מה בעל העסק רואה ומשנה בעצמו</b><span>אתר בלי פאנל ניהול נוח דומה לחנות שהמפתחות שלה אצל מישהו אחר.</span><em>2 דקות קריאה</em></a></div><a class="allb" href="index.html">כל המאמרים · 23</a></section>
 <footer>© Apps & Soul · הסטודיו של דוד מושאילוב</footer>
 </body>
 </html>

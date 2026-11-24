@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="../../img/mark.svg" type="image/svg+xml">
+<meta name="robots" content="noindex, nofollow"><!-- СНЯТЬ ПЕРЕД ЗАПУСКОМ на appsandsoul.com -->
+<title>Панель управления: что владелец видит и меняет сам — Apps &amp; Soul</title>
+<meta name="description" content="Сайт без удобной панели управления похож на магазин, ключи от которого у кого-то другого. Вот что должно быть в хорошей панели и зачем.">
+<link rel="canonical" href="https://priko2000.github.io/appsandsoul-site/articles/ru/admin-panel.html"><link rel="alternate" hreflang="he" href="https://priko2000.github.io/appsandsoul-site/articles/he/admin-panel.html"><link rel="alternate" hreflang="ru" href="https://priko2000.github.io/appsandsoul-site/articles/ru/admin-panel.html"><link rel="alternate" hreflang="en" href="https://priko2000.github.io/appsandsoul-site/articles/en/admin-panel.html"><link rel="alternate" hreflang="x-default" href="https://priko2000.github.io/appsandsoul-site/articles/he/admin-panel.html">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Apps &amp; Soul"><meta property="og:title" content="Панель управления: что владелец видит и меняет сам"><meta property="og:description" content="Сайт без удобной панели управления похож на магазин, ключи от которого у кого-то другого. Вот что должно быть в хорошей панели и зачем."><meta property="og:image" content="https://priko2000.github.io/appsandsoul-site/img/og_ru.jpg"><meta property="og:url" content="https://priko2000.github.io/appsandsoul-site/articles/ru/admin-panel.html">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F3EC;--ink:#111;--mut:#6A655C;--line:rgba(17,17,17,.12);--y:#FFC700;--vi:#5B3DF5;--mi:#26C281;--disp:'Unbounded',system-ui,sans-serif;--body:'Manrope',system-ui,sans-serif}
+html[lang=he]{--disp:'Heebo',system-ui,sans-serif;--body:'Heebo',system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.top{position:sticky;top:0;z-index:5;background:rgba(246,243,236,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .in{max-width:1100px;margin:0 auto;padding:12px clamp(16px,4vw,40px);display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:'Unbounded',system-ui,sans-serif;font-weight:800;font-size:17px;direction:ltr}
+.logo em{font-style:normal;color:#C7A56A}
+.langs{margin-inline-start:auto;display:flex;gap:4px;background:rgba(22,17,58,.06);border-radius:999px;padding:4px}
+.langs a{padding:6px 12px;border-radius:999px;font-weight:800;font-size:13px;text-decoration:none;color:var(--mut)}
+.langs a.on{background:#fff;color:var(--ink);box-shadow:0 4px 14px rgba(22,17,58,.14)}
+.wa1{background:var(--ink);color:#fff;text-decoration:none;border-radius:999px;padding:9px 16px;font-weight:800;font-size:14px;white-space:nowrap}
+main{max-width:760px;margin:0 auto;padding:clamp(24px,5vw,56px) clamp(18px,4vw,40px) 40px}
+.crumbs{font-size:14px;color:var(--mut);margin-bottom:18px}
+.crumbs a{text-decoration:none;color:var(--vi);font-weight:700}
+h1{font-family:var(--disp);font-size:clamp(30px,4.4vw,50px);line-height:1.12;margin:0 0 18px;letter-spacing:-.01em}
+html[lang=he] h1,html[lang=he] h2{font-weight:900;letter-spacing:0}
+.lead{font-size:clamp(19px,1.7vw,22px);line-height:1.6;color:#2b2925;margin:0 0 14px}
+.by{font-size:14px;color:var(--mut);padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:10px}
+h2{font-family:var(--disp);font-size:clamp(22px,2.3vw,28px);line-height:1.25;margin:38px 0 10px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 18px;padding-inline-start:24px}
+li{margin:0 0 10px}
+li::marker{color:var(--vi);font-weight:800}
+ol.chk{list-style:none;padding:0;counter-reset:c;margin-top:26px}
+ol.chk li{counter-increment:c;position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 18px 16px 66px;margin-bottom:12px}
+[dir=rtl] ol.chk li{padding:16px 66px 16px 18px}
+ol.chk li::before{content:counter(c);position:absolute;inset-inline-start:16px;top:15px;width:36px;height:36px;border-radius:50%;background:var(--y);display:grid;place-items:center;font-family:'Unbounded',system-ui,sans-serif;font-weight:800;font-size:14px}
+.cta{margin:46px 0 10px;background:var(--y);border-radius:26px;padding:clamp(22px,4vw,38px)}
+.cta h2{margin:0 0 10px}
+.cta .b{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.cta a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;border-radius:14px;padding:14px 20px}
+.cta .p1{background:var(--ink);color:#fff}.cta .p2{background:#fff;color:var(--ink)}
+.more{max-width:1100px;margin:0 auto;padding:10px clamp(18px,4vw,40px) 60px}
+.more h3{font-family:var(--disp);font-size:22px;margin:0 0 16px}
+.ag{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ac{display:flex;flex-direction:column;gap:8px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;text-decoration:none;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.ac::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--vi)}
+.ac.c2::before{background:var(--mi)}.ac.c3::before{background:var(--y)}
+.ac:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(17,17,17,.12)}
+.ac b{font-family:var(--disp);font-size:18px;line-height:1.25}
+.ac span{color:var(--mut);font-size:15px;line-height:1.5}
+.ac.on{outline:2px solid var(--vi)}
+footer{border-top:1px solid var(--line);text-align:center;font-size:14px;color:var(--mut);padding:24px}
+@media (max-width:820px){.ag{grid-template-columns:1fr}}
+@media (max-width:560px){.wa1{display:none}.logo{font-size:15px}body{font-size:17px}}
+
+.ac::before{background:var(--sc,var(--vi))!important}
+.ac small{font-size:12px;font-weight:800;color:var(--sc,var(--vi));text-transform:uppercase;letter-spacing:.04em}
+html[lang=he] .ac small{text-transform:none;letter-spacing:0}
+.ac em{font-style:normal;font-size:13px;color:var(--mut);margin-top:auto}
+.kick{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px;font-size:14px}
+.kick a{background:var(--sc);color:#fff;text-decoration:none;border-radius:999px;padding:5px 12px;font-weight:800}
+.kick span{color:var(--mut)}
+.note{font-size:14px;color:var(--mut);border-inline-start:3px solid var(--line);padding-inline-start:12px;margin-top:24px}
+.allb{display:inline-flex;margin-top:18px;background:var(--ink);color:#fff;text-decoration:none;border-radius:14px;padding:13px 20px;font-weight:800}
+.hub{max-width:1180px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(18px,4vw,40px) 30px}
+.hub h1{font-size:clamp(34px,5vw,64px);max-width:16ch}
+.hub .lead{max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 10px;position:sticky;top:58px;z-index:3;background:rgba(246,243,236,.92);backdrop-filter:blur(8px);padding:10px 0}
+.chips a{text-decoration:none;border:1.5px solid var(--sc);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:800;font-size:14px;display:flex;gap:8px;align-items:center}
+.chips a i{font-style:normal;background:var(--sc);color:#fff;border-radius:999px;font-size:12px;padding:1px 8px}
+.chips a:hover{background:var(--sc);color:#fff}
+.hsec{padding-top:34px;scroll-margin-top:120px}
+.hsec h2{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.hsec h2::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--sc);flex:none}
+.hsec .ag{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (min-width:1700px){.hub{max-width:1560px}.hub .ag{grid-template-columns:repeat(4,minmax(0,1fr))}.more{max-width:1300px}}
+@media (max-width:820px){.hsec .ag{grid-template-columns:1fr}.chips{position:static;margin-top:18px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Панель управления: что владелец видит и меняет сам", "description": "Сайт без удобной панели управления похож на магазин, ключи от которого у кого-то другого. Вот что должно быть в хорошей панели и зачем.", "inLanguage": "ru", "articleSection": "Приложения и технологии", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/ru/admin-panel.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_ru.jpg"}</script>
+</head>
+<body>
+<header class="top"><div class="in"><a class="logo" href="../../ru.html"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/admin-panel.html" lang="ru" title="Русский" class="on">RU</a><a href="../he/admin-panel.html" lang="he" title="עברית">עב</a><a href="../en/admin-panel.html" lang="en" title="English">EN</a></nav><a class="wa1" href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%21%20%D0%AF%20%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82." target="_blank" rel="noopener">Написать в WhatsApp</a></div></header>
+<main style="--sc:#FF7A1A">
+<div class="crumbs"><a href="../../ru.html">Главная</a> › <a href="index.html">Статьи</a> › <a href="index.html#tech">Приложения и технологии</a></div>
+<article>
+<div class="kick"><a href="index.html#tech">Приложения и технологии</a><span>2 мин чтения</span></div>
+<h1>Панель управления: что владелец видит и меняет сам</h1>
+<p class="lead">Сайт без удобной панели управления похож на магазин, ключи от которого у кого-то другого. Вот что должно быть в хорошей панели и зачем.</p>
+<div class="by">Мушаилов Давид, основатель Apps & Soul</div>
+
+<h2>Что владелец должен делать сам, без разработчика</h2>
+<ul>
+<li>Менять цены и наличие, добавлять и скрывать товары.</li>
+<li>Запускать и выключать акции.</li>
+<li>Видеть новые заказы и менять их статус.</li>
+<li>Менять часы работы, баннеры, короткие тексты.</li>
+</ul>
+<h2>Что полезно видеть</h2>
+<ul>
+<li><b>Заказы за день и за неделю</b> — сколько, на какую сумму, какие ещё не обработаны.</li>
+<li><b>Что продаётся лучше</b> и что лежит без движения.</li>
+<li><b>Что заканчивается</b>, чтобы вовремя заказать у поставщика.</li>
+<li><b>Откуда приходят клиенты</b>: Google, соцсети, WhatsApp.</li>
+</ul>
+<h2>Удобство важнее количества кнопок</h2>
+<p>Хорошая панель не та, где сто функций, а та, где частые действия делаются в два касания, в том числе с телефона. Если чтобы поменять цену нужно пройти пять экранов, панелью перестанут пользоваться.</p>
+<h2>Права и безопасность</h2>
+<ul>
+<li>Разные права для сотрудников: продавцу — заказы, бухгалтеру — отчёты, владельцу — всё.</li>
+<li>Журнал действий: кто и что изменил.</li>
+<li>Надёжный вход и регулярные резервные копии.</li>
+</ul>
+<h2>Растёт вместе с бизнесом</h2>
+<p>Начать можно с простого: товары и заказы. Потом добавить склад, курьеров, связь с кассой, отчёты. Главное, чтобы основа позволяла добавлять, а не начинать заново.</p>
+
+</article>
+<div class="cta"><h2>Обсудим ваш проект?</h2><p>Напишите в WhatsApp: отвечаю в течение 2 часов в рабочее время. Или закажите бесплатный разбор вашего сайта.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%21%20%D0%AF%20%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82." target="_blank" rel="noopener">Написать в WhatsApp</a><a class="p2" href="../../ru.html#rev">Бесплатный разбор сайта</a></div></div>
+</main>
+<section class="more"><h3>Ещё в разделе</h3><div class="ag"><a class="ac" style="--sc:#FF7A1A" href="site-or-app.html"><small>Приложения и технологии</small><b>Сайт, приложение на экране или приложение в App Store?</b><span>Владельцы бизнеса часто говорят «нам нужно приложение», а имеют в виду разные вещи.</span><em>2 мин чтения</em></a><a class="ac" style="--sc:#FF7A1A" href="notifications.html"><small>Приложения и технологии</small><b>Уведомления: как напоминать клиентам о себе и не надоедать</b><span>Уведомление на телефоне — самый короткий путь к клиенту.</span><em>2 мин чтения</em></a><a class="ac" style="--sc:#FF7A1A" href="ai-assistant.html"><small>Приложения и технологии</small><b>AI-ассистент для магазина: что умеет и чего не умеет</b><span>Об искусственном интеллекте говорят так, будто он заменит весь персонал.</span><em>2 мин чтения</em></a></div><a class="allb" href="index.html">Все статьи · 23</a></section>
+<footer>© Apps & Soul · студия Давида Мушаилова</footer>
+</body>
+</html>

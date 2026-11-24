@@ -59,14 +59,38 @@ ol.chk li::before{content:counter(c);position:absolute;inset-inline-start:16px;t
 footer{border-top:1px solid var(--line);text-align:center;font-size:14px;color:var(--mut);padding:24px}
 @media (max-width:820px){.ag{grid-template-columns:1fr}}
 @media (max-width:560px){.wa1{display:none}.logo{font-size:15px}body{font-size:17px}}
+
+.ac::before{background:var(--sc,var(--vi))!important}
+.ac small{font-size:12px;font-weight:800;color:var(--sc,var(--vi));text-transform:uppercase;letter-spacing:.04em}
+html[lang=he] .ac small{text-transform:none;letter-spacing:0}
+.ac em{font-style:normal;font-size:13px;color:var(--mut);margin-top:auto}
+.kick{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px;font-size:14px}
+.kick a{background:var(--sc);color:#fff;text-decoration:none;border-radius:999px;padding:5px 12px;font-weight:800}
+.kick span{color:var(--mut)}
+.note{font-size:14px;color:var(--mut);border-inline-start:3px solid var(--line);padding-inline-start:12px;margin-top:24px}
+.allb{display:inline-flex;margin-top:18px;background:var(--ink);color:#fff;text-decoration:none;border-radius:14px;padding:13px 20px;font-weight:800}
+.hub{max-width:1180px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(18px,4vw,40px) 30px}
+.hub h1{font-size:clamp(34px,5vw,64px);max-width:16ch}
+.hub .lead{max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 10px;position:sticky;top:58px;z-index:3;background:rgba(246,243,236,.92);backdrop-filter:blur(8px);padding:10px 0}
+.chips a{text-decoration:none;border:1.5px solid var(--sc);color:var(--ink);border-radius:999px;padding:8px 14px;font-weight:800;font-size:14px;display:flex;gap:8px;align-items:center}
+.chips a i{font-style:normal;background:var(--sc);color:#fff;border-radius:999px;font-size:12px;padding:1px 8px}
+.chips a:hover{background:var(--sc);color:#fff}
+.hsec{padding-top:34px;scroll-margin-top:120px}
+.hsec h2{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.hsec h2::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--sc);flex:none}
+.hsec .ag{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (min-width:1700px){.hub{max-width:1560px}.hub .ag{grid-template-columns:repeat(4,minmax(0,1fr))}.more{max-width:1300px}}
+@media (max-width:820px){.hsec .ag{grid-template-columns:1fr}.chips{position:static;margin-top:18px}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Your own website or a builder like Wix and Shopify", "description": "Builders promise a website in one evening, developers promise a site “made for you”. Both are legitimate; the question is what your business actually needs. Here is an honest comparison, no sales pitch.", "inLanguage": "en", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/en/own-site-or-builder.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_en.jpg"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Your own website or a builder like Wix and Shopify", "description": "Builders promise a website in one evening, developers promise a site “made for you”. Both are legitimate; the question is what your business actually needs. Here is an honest comparison, no sales pitch.", "inLanguage": "en", "articleSection": "Getting started", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/en/own-site-or-builder.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_en.jpg"}</script>
 </head>
 <body>
 <header class="top"><div class="in"><a class="logo" href="../../en.html"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/own-site-or-builder.html" lang="ru" title="Русский">RU</a><a href="../he/own-site-or-builder.html" lang="he" title="עברית">עב</a><a href="../en/own-site-or-builder.html" lang="en" title="English" class="on">EN</a></nav><a class="wa1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a></div></header>
-<main>
-<div class="crumbs"><a href="../../en.html">Home</a> › <a href="../../en.html#blog">Articles</a></div>
+<main style="--sc:#5B3DF5">
+<div class="crumbs"><a href="../../en.html">Home</a> › <a href="index.html">Articles</a> › <a href="index.html#start">Getting started</a></div>
 <article>
+<div class="kick"><a href="index.html#start">Getting started</a><span>2 min read</span></div>
 <h1>Your own website or a builder like Wix and Shopify</h1>
 <p class="lead">Builders promise a website in one evening, developers promise a site “made for you”. Both are legitimate; the question is what your business actually needs. Here is an honest comparison, no sales pitch.</p>
 <div class="by">David Mushailov, founder of Apps & Soul</div>
@@ -100,7 +124,7 @@ footer{border-top:1px solid var(--line);text-align:center;font-size:14px;color:v
 </article>
 <div class="cta"><h2>Shall we talk about your project?</h2><p>Message me on WhatsApp: I reply within 2 hours during working hours. Or ask for a free review of your website.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a><a class="p2" href="../../en.html#rev">Free website review</a></div></div>
 </main>
-<section class="more"><h3>More articles</h3><div class="ag"><a class="ac c1" href="site-or-app.html"><b>A website, a home-screen app or an App Store app?</b><span>Business owners often say “we need an app” while meaning quite different things.</span></a><a class="ac c2 on" href="own-site-or-builder.html"><b>Your own website or a builder like Wix and Shopify</b><span>Builders promise a website in one evening, developers promise a site “made for you”.</span></a><a class="ac c3" href="shop-checklist.html"><b>What a store website needs in order to sell</b><span>A beautiful website is not the same as one that sells.</span></a></div></section>
+<section class="more"><h3>More in this topic</h3><div class="ag"><a class="ac" style="--sc:#5B3DF5" href="seven-questions.html"><small>Getting started</small><b>Seven questions to ask yourself before ordering a website</b><span>The most expensive mistakes in development happen not in the code but before it: when the goal is unclear.</span><em>2 min read</em></a><a class="ac" style="--sc:#5B3DF5" href="prepare-materials.html"><small>Getting started</small><b>How to prepare texts, photos and products so your site launches faster</b><span>What delays a launch is usually not development but materials: no photos, texts not ready, the product list spread over three different files.</span><em>2 min read</em></a><a class="ac" style="--sc:#5B3DF5" href="domain-hosting.html"><small>Getting started</small><b>Domain, hosting, email: what they are in plain words</b><span>Three words that sound technical but stand for simple things.</span><em>2 min read</em></a></div><a class="allb" href="index.html">All articles · 23</a></section>
 <footer>© Apps & Soul · David Mushailov’s studio</footer>
 </body>
 </html>
