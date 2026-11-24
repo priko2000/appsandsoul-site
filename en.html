@@ -967,10 +967,10 @@ html[lang=he]{--hand:'Playpen Sans Hebrew','Playpen Sans','Heebo',system-ui,sans
 html.mslock{overflow:hidden}
 @media (max-width:360px){.mslist{grid-template-columns:1fr}}
 /* бесплатный разбор и статьи */
-.rev{margin-top:clamp(28px,4vw,48px);background:var(--y);border-radius:28px;padding:clamp(22px,3.4vw,44px);display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(18px,3vw,44px);align-items:center}
-.rev h3{font-family:var(--disp);font-size:clamp(24px,2.5vw,38px);line-height:1.1;margin:12px 0 12px}
-.rev p{margin:0 0 10px;font-size:17px;line-height:1.55}
-.rev .rsm{font-size:15px;opacity:.75;margin:0}
+.adt{margin-top:clamp(28px,4vw,48px);background:var(--y);border-radius:28px;padding:clamp(22px,3.4vw,44px);display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(18px,3vw,44px);align-items:center}
+.adt h3{font-family:var(--disp);font-size:clamp(24px,2.5vw,38px);line-height:1.1;margin:12px 0 12px}
+.adt p{margin:0 0 10px;font-size:17px;line-height:1.55}
+.adt .rsm{font-size:15px;opacity:.75;margin:0}
 .rtag{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:800}
 .revf{display:flex;flex-direction:column;gap:10px;background:#fff;border-radius:22px;padding:clamp(16px,2vw,24px);box-shadow:0 10px 30px rgba(17,17,17,.12)}
 .revf label{font-weight:700;font-size:15px}
@@ -992,7 +992,7 @@ html.mslock{overflow:hidden}
 .art em{font-style:normal;font-weight:800;color:var(--vi)}
 [dir=rtl] .art em span{display:inline-block;transform:scaleX(-1)}
 .artall{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:22px}.artall a{background:var(--ink);color:#fff;text-decoration:none;border-radius:14px;padding:15px 22px;font-weight:800;transition:background .2s,transform .2s}.artall a:hover{background:var(--vi);transform:translateY(-2px)}.artall span{color:var(--mut);font-size:15px}[dir=rtl] .artall a span{display:inline-block;transform:scaleX(-1)}
-@media (max-width:900px){.rev{grid-template-columns:1fr}.arts{grid-template-columns:1fr}}
+@media (max-width:900px){.adt{grid-template-columns:1fr}.arts{grid-template-columns:1fr}}
 
 .langs{display:flex;gap:4px;background:rgba(22,17,58,.06);border-radius:999px;padding:4px;position:relative}
 .langs a{display:flex;align-items:center;gap:7px;padding:4px 11px 4px 4px;border-radius:999px;font-family:var(--disp);font-size:12px;font-weight:800;color:var(--mut);line-height:1;transition:background .3s,color .3s,box-shadow .3s}
@@ -1242,7 +1242,7 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
     </div>
   </div>
 
-  <div class="rev" id="rev">
+  <div class="adt" id="rev">
     <div><span class="rtag">Free</span><h3>A free review of your website</h3><p>Send a link to your website, store or social media page. I’ll look at it through a customer’s eyes and send you three specific tips on WhatsApp: what is getting in the way of sales and what to fix first.</p><p class="rsm">No obligation. No website yet? Send a link to your Instagram or Facebook.</p></div>
     <form class="revf" id="revF"><label for="revUrl">Link to your website or page</label><input id="revUrl" type="text" inputmode="url" autocomplete="url" placeholder="for example, mysite.co.il" dir="ltr"><button type="submit" data-msg="Hello David! I’d like a free website review:">Get the review on WhatsApp <span aria-hidden="true">→</span></button></form>
   </div>
