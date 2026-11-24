@@ -138,20 +138,94 @@ main article li::marker{color:var(--sc)}
 main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transparent);padding-inline-start:16px}
 .cta{background:linear-gradient(135deg,var(--y),#FFDD55)}
 @media (max-width:700px){.shead{grid-template-columns:auto 1fr}.shead b{grid-column:2;justify-self:start}.shead>i{width:48px;height:48px;border-radius:14px}}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px}
+.stats div{display:flex;align-items:baseline;gap:8px}
+.stats b{font-family:'Unbounded',system-ui,sans-serif;font-size:clamp(28px,3vw,44px);line-height:1;color:var(--ink)}
+.stats span{color:var(--mut);font-weight:700}
+.tools2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin:18px 0 6px;align-items:start}
+.pick{background:linear-gradient(135deg,#16113A,#2A1F6E);color:#fff;border-radius:26px;padding:clamp(20px,2.4vw,30px);position:relative;overflow:hidden}
+.pick::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#FFC70055,transparent 70%);inset-inline-end:-60px;top:-80px;pointer-events:none}
+.pick h2{color:#fff;margin:0 0 6px;font-size:clamp(22px,2vw,28px)}
+.pick>p{margin:0 0 16px;color:#cfc9f0}
+.pq{margin:0 0 12px}
+.pq b{display:block;font-size:15px;margin-bottom:8px;color:#fff}
+.pq .ops{display:flex;flex-wrap:wrap;gap:8px}
+.pq button{font:inherit;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:9px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pq button:hover{border-color:#fff}
+.pq button.on{background:#FFC700;color:#16113A;border-color:#FFC700}
+.pres{display:none;margin-top:8px}
+.pres.on{display:block;animation:fadeup .45s ease both}
+.pres h3{font-size:16px;margin:0 0 10px;color:#FFC700}
+.pres .ag{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pres .ac{padding:14px!important;color:var(--ink)}
+.pres .ac b{font-size:15px!important}
+.pres .ac>span:not(.ai),.pres .ac small{display:none}
+.pres .ai i{width:36px;height:36px}
+.pagain{margin-top:10px;background:none;border:0;color:#cfc9f0;font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.side2{display:flex;flex-direction:column;gap:16px}
+.sbox{position:relative}
+.sbox input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:17px 20px;padding-inline-start:52px;border-radius:18px;border:2px solid var(--line);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.sbox input:focus{border-color:var(--vi);box-shadow:0 0 0 5px #5B3DF51f}
+.sbox svg{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.rdbar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px}
+.rdbar div{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rdbar i{display:block;height:8px;border-radius:99px;background:#eee;overflow:hidden}
+.rdbar i u{display:block;height:100%;width:0;background:linear-gradient(90deg,#5B3DF5,#26C281,#FFC700);border-radius:99px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.tipc{display:block;text-decoration:none;color:var(--ink);background:#FFF6D6;border:1px solid #FFE38A;border-radius:18px;padding:16px 18px;transition:transform .2s}
+.tipc:hover{transform:translateY(-2px)}
+.tipc small{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13px;color:#9A6B00}
+.tipc p{margin:6px 0 6px;font-weight:600;line-height:1.5}
+.tipc em{font-style:normal;font-size:14px;color:var(--vi);font-weight:800}
+.ac.rd .ai u::after{content:" ✓";color:#26C281}
+.ac.rd{opacity:.82}
+.ac .rdl{display:none;font-size:12px;font-weight:800;color:#1a9a62;background:#e6f8ef;border-radius:99px;padding:2px 8px}
+.ac.rd .rdl{display:inline-block}
+.nf{display:none;padding:26px;text-align:center;background:#fff;border:1px dashed var(--line);border-radius:20px;margin-top:20px}
+.nf a{color:var(--vi);font-weight:800;text-decoration:none}
+.endc{margin:56px 0 10px;background:linear-gradient(135deg,#16113A,#3A2A9A);color:#fff;border-radius:30px;padding:clamp(26px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.endc h2{color:#fff;margin:0 0 6px}
+.endc p{margin:0;color:#d6d0f5}
+.endc a{background:#25D366;color:#fff;text-decoration:none;font-weight:800;border-radius:16px;padding:16px 24px;display:inline-flex;gap:10px;align-items:center}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:980px){.tools2{grid-template-columns:1fr}.pres .ag{grid-template-columns:1fr}}
+.rprog{position:fixed;top:0;left:0;right:0;height:4px;z-index:9;pointer-events:none}
+.rprog i{display:block;height:100%;width:100%;background:var(--sc);transform-origin:0 50%;transform:scaleX(0)}
+[dir=rtl] .rprog i{transform-origin:100% 50%}
+.wrapa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,760px) minmax(0,1fr);gap:40px;max-width:1700px;margin:0 auto}
+.wrapa>main{grid-column:2;max-width:none;width:100%;padding-inline:0}
+.toc{grid-column:3;align-self:start;position:sticky;top:96px;margin-top:150px;max-width:300px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin-bottom:10px}
+html[lang=he] .toc b{text-transform:none;letter-spacing:0;font-size:15px}
+.toc a{display:block;text-decoration:none;color:var(--mut);font-size:15px;line-height:1.35;padding:7px 12px;border-inline-start:3px solid var(--line);transition:color .2s,border-color .2s}
+.toc a:hover,.toc a.on{color:var(--ink);border-color:var(--sc);font-weight:700}
+.tocl{grid-column:1}
+@media (max-width:1399px){.wrapa{display:block}.toc{display:none}.wrapa>main{max-width:760px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}}
+.shr{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:14px;color:#128C4A;background:#E7F8EE;border-radius:999px;padding:6px 12px}
+.shr:hover{background:#25D366;color:#fff}
+.cta .p3{background:#25D366;color:#fff}
+
+.scov{display:block;width:100%;aspect-ratio:16/5;object-fit:cover;border-radius:20px;margin:0 0 14px;box-shadow:0 14px 34px rgba(17,17,17,.12)}
+.acov{display:block;width:100%;aspect-ratio:16/6;object-fit:cover;border-radius:22px;margin:0 0 22px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI-ассистент для магазина: что умеет и чего не умеет", "description": "Об искусственном интеллекте говорят так, будто он заменит весь персонал. В реальности это полезный помощник с понятными границами. Разберём честно.", "inLanguage": "ru", "articleSection": "Приложения и технологии", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/ru/ai-assistant.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_ru.jpg"}</script>
 </head>
 <body>
 <header class="top"><div class="in"><a class="logo" href="../../ru.html"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/ai-assistant.html" lang="ru" title="Русский" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="../he/ai-assistant.html" lang="he" title="עברית"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="../en/ai-assistant.html" lang="en" title="English"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></nav><a class="wa1" href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%21%20%D0%AF%20%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82." target="_blank" rel="noopener">Написать в WhatsApp</a></div></header>
-<main style="--sc:#FF7A1A">
+<div class="rprog" style="--sc:#FF7A1A"><i id="rpi"></i></div>
+<div class="wrapa" style="--sc:#FF7A1A">
+<main>
 <div class="crumbs"><a href="../../ru.html">Главная</a> › <a href="index.html">Статьи</a> › <a href="index.html#tech">Приложения и технологии</a></div>
 <article>
-<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M19 3v4M17 5h4"/></svg></i><div class="kick"><a href="index.html#tech"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>Приложения и технологии</a><span>2 мин чтения</span></div></div>
+<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M19 3v4M17 5h4"/></svg></i><div class="kick"><a href="index.html#tech"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>Приложения и технологии</a><span>2 мин чтения</span><a class="shr" href="https://wa.me/?text=%D0%9F%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8F%3A%20AI-%D0%B0%D1%81%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%D0%B0%3A%20%D1%87%D1%82%D0%BE%20%D1%83%D0%BC%D0%B5%D0%B5%D1%82%20%D0%B8%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%BD%D0%B5%20%D1%83%D0%BC%D0%B5%D0%B5%D1%82%20https%3A//priko2000.github.io/appsandsoul-site/articles/ru/ai-assistant.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Отправить статью в WhatsApp</a></div></div>
 <h1>AI-ассистент для магазина: что умеет и чего не умеет</h1>
 <p class="lead">Об искусственном интеллекте говорят так, будто он заменит весь персонал. В реальности это полезный помощник с понятными границами. Разберём честно.</p>
 <div class="by">Мушаилов Давид, основатель Apps & Soul</div>
 
-<h2>Что умеет хороший ассистент</h2>
+<h2 id="p1">Что умеет хороший ассистент</h2>
 <ul>
 <li><b>Отвечать на частые вопросы</b> круглосуточно: часы работы, доставка, наличие, цены.</li>
 <li><b>Подбирать товар</b> по описанию: «нужно красное сухое вино к мясу до 100 ₪».</li>
@@ -159,23 +233,34 @@ main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transpa
 <li><b>Принимать заявку или заказ</b> и передавать вам готовым.</li>
 <li><b>Помогать владельцу</b>: писать описания товаров, переводить, разбирать отзывы.</li>
 </ul>
-<h2>Чего он не умеет (или не должен)</h2>
+<h2 id="p2">Чего он не умеет (или не должен)</h2>
 <ul>
 <li><b>Знать то, чего ему не дали.</b> Ассистент отвечает по вашей базе товаров и правил. Если данных нет, хороший ассистент так и скажет и передаст вопрос человеку.</li>
 <li><b>Решать спорные ситуации.</b> Жалобы, возвраты, особые договорённости — это работа для вас.</li>
 <li><b>Принимать решения за вас.</b> Скидки, исключения и ответственность остаются за владельцем.</li>
 </ul>
-<h2>Главный риск: выдумки</h2>
+<h2 id="p3">Главный риск: выдумки</h2>
 <p>Языковые модели иногда уверенно отвечают то, чего нет. Поэтому ассистент для бизнеса нужно ограничивать: отвечать только по вашим данным, не обещать того, чего нет в правилах, и честно говорить «не знаю».</p>
-<h2>Кому он нужен</h2>
+<h2 id="p4">Кому он нужен</h2>
 <p>Тем, у кого много однотипных вопросов, большой ассортимент или клиенты пишут в нерабочее время. Если вопросов пять в день, возможно, пока достаточно хорошего раздела вопросов и ответов на сайте.</p>
-<h2>Как начать без риска</h2>
+<h2 id="p5">Как начать без риска</h2>
 <p>Сначала ассистент только предлагает ответы, а отправляете вы. Когда видно, что он отвечает точно, можно доверить ему простые вопросы полностью.</p>
 
 </article>
-<div class="cta"><h2>Обсудим ваш проект?</h2><p>Напишите в WhatsApp: отвечаю в течение 2 часов в рабочее время. Или закажите бесплатный разбор вашего сайта.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%21%20%D0%AF%20%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82." target="_blank" rel="noopener">Написать в WhatsApp</a><a class="p2" href="../../ru.html#rev">Бесплатный разбор сайта</a></div></div>
+<div class="cta"><h2>Обсудим ваш проект?</h2><p>Напишите в WhatsApp: отвечаю в течение 2 часов в рабочее время. Или закажите бесплатный разбор вашего сайта.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%21%20%D0%AF%20%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82." target="_blank" rel="noopener">Написать в WhatsApp</a><a class="p2" href="../../ru.html#rev">Бесплатный разбор сайта</a><a class="p3" href="https://wa.me/?text=%D0%9F%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8F%3A%20AI-%D0%B0%D1%81%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD%D0%B0%3A%20%D1%87%D1%82%D0%BE%20%D1%83%D0%BC%D0%B5%D0%B5%D1%82%20%D0%B8%20%D1%87%D0%B5%D0%B3%D0%BE%20%D0%BD%D0%B5%20%D1%83%D0%BC%D0%B5%D0%B5%D1%82%20https%3A//priko2000.github.io/appsandsoul-site/articles/ru/ai-assistant.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Отправить статью в WhatsApp</a></div></div>
 </main>
-<section class="more"><h3>Ещё в разделе</h3><div class="ag"><a class="ac" style="--sc:#FF7A1A" href="site-or-app.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg></i><u>13</u></span><small>Приложения и технологии</small><b>Сайт, приложение на экране или приложение в App Store?</b><span>Владельцы бизнеса часто говорят «нам нужно приложение», а имеют в виду разные вещи.</span><em>2 мин чтения<b>→</b></em></a><a class="ac" style="--sc:#FF7A1A" href="notifications.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></i><u>14</u></span><small>Приложения и технологии</small><b>Уведомления: как напоминать клиентам о себе и не надоедать</b><span>Уведомление на телефоне — самый короткий путь к клиенту.</span><em>2 мин чтения<b>→</b></em></a><a class="ac" style="--sc:#FF7A1A" href="admin-panel.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></i><u>16</u></span><small>Приложения и технологии</small><b>Панель управления: что владелец видит и меняет сам</b><span>Сайт без удобной панели управления похож на магазин, ключи от которого у кого-то другого.</span><em>2 мин чтения<b>→</b></em></a></div><a class="allb" href="index.html">Все статьи · 23</a></section>
+<aside class="toc" aria-label="В этой статье"><b>В этой статье</b><a href="#p1">Что умеет хороший ассистент</a><a href="#p2">Чего он не умеет (или не должен)</a><a href="#p3">Главный риск: выдумки</a><a href="#p4">Кому он нужен</a><a href="#p5">Как начать без риска</a></aside>
+</div>
+<section class="more"><h3>Ещё в разделе</h3><div class="ag"><a data-s="site-or-app" data-k="сайт, приложение на экране или приложение в app store? владельцы бизнеса часто говорят «нам нужно приложение», а имеют в виду разные вещи. на деле есть три варианта, и они сильно отличаются по возможностям, срокам и расходам. разберём каждый честно. 1. обычный сайт открывается по ссылке в любом браузере, на телефоне и на компьютере. его находят в google, им легко поделиться в whatsapp. это самый быстрый и доступный вариант, и для многих бизнесов его достаточно. 2. приложение на экране телефона это тот же сайт, но сделанный так, что клиент может добавить его на главный экран телефона. дальше он открывается как приложение: со своим значком, на весь экран, без адресной строки браузера. на iphone его добавляют через safari: «поделиться» → «на экран „домой“». на android браузер сам предлагает установить. не нужно проходить проверку магазинов приложений, а обновления видны клиентам сразу. может присылать уведомления, в том числе на iphone, если приложение добавлено на экран. ограничения тоже есть: такого приложения нет в app store и google play, а часть функций телефона ему недоступна или доступна с ограничениями. 3. полноценное приложение в app store и google play его скачивают из магазина приложений. оно глубже работает с телефоном и выглядит солиднее для постоянных клиентов. но у него больше расходов и правил: аккаунт разработчика: apple берёт 99 $ в год, google — разово 25 $. каждую версию проверяют магазины, поэтому обновления выходят не мгновенно. разработка и поддержка обычно дороже, чем у сайта. с чего разумно начать большинству небольших бизнесов лучше начать с сайта, который работает и как приложение на экране. это быстро, недорого и уже даёт клиенту значок на телефоне. полноценное приложение имеет смысл, когда у вас много постоянных клиентов, которые заказывают часто, или нужны функции телефона, которых нет у сайта. хорошая новость: эти шаги не исключают друг друга. можно начать с сайта и позже перейти к приложению в магазинах, не теряя товары, заказы и клиентов. приложения и технологии" class="ac" style="--sc:#FF7A1A" href="site-or-app.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg></i><u>13</u></span><small>Приложения и технологии</small><b>Сайт, приложение на экране или приложение в App Store?</b><span>Владельцы бизнеса часто говорят «нам нужно приложение», а имеют в виду разные вещи.</span><em><span class="rdl">Прочитано ✓</span>2 мин чтения<b>→</b></em></a><a data-s="notifications" data-k="уведомления: как напоминать клиентам о себе и не надоедать уведомление на телефоне — самый короткий путь к клиенту. и самый быстрый способ его потерять, если писать слишком часто. вот как найти баланс. какие бывают каналы уведомления сайта или приложения. приходят на экран телефона. работают и у сайта, добавленного на главный экран, в том числе на iphone. whatsapp. его читают почти все, поэтому злоупотреблять им особенно опасно. письма и sms. подходят для подтверждений, счетов и редких новостей. главное правило: только с разрешения клиент должен сам согласиться получать уведомления, и ему должно быть понятно, что он будет получать и как отказаться. рекламные рассылки без согласия в израиле запрещены законом. что действительно полезно клиенту статус заказа: принят, собран, в пути. товар, которого ждали, снова в наличии. напоминание о записи или о том, что пора повторить заказ. действительно выгодная акция, а не любая. сколько — это слишком нет единой цифры, но есть простой тест: если бы вам такие сообщения приходили от другого магазина, вы бы их читали или отключили? лучше одно ценное сообщение в неделю, чем ежедневный шум. время и тон не пишите поздно вечером и в шабат, если ваши клиенты это соблюдают. коротко, по делу, с одной понятной кнопкой. обращайтесь по имени и учитывайте прошлые покупки: «ваш кофе снова в наличии» лучше, чем «у нас новинки». приложения и технологии" class="ac" style="--sc:#FF7A1A" href="notifications.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></i><u>14</u></span><small>Приложения и технологии</small><b>Уведомления: как напоминать клиентам о себе и не надоедать</b><span>Уведомление на телефоне — самый короткий путь к клиенту.</span><em><span class="rdl">Прочитано ✓</span>2 мин чтения<b>→</b></em></a><a data-s="admin-panel" data-k="панель управления: что владелец видит и меняет сам сайт без удобной панели управления похож на магазин, ключи от которого у кого-то другого. вот что должно быть в хорошей панели и зачем. что владелец должен делать сам, без разработчика менять цены и наличие, добавлять и скрывать товары. запускать и выключать акции. видеть новые заказы и менять их статус. менять часы работы, баннеры, короткие тексты. что полезно видеть заказы за день и за неделю — сколько, на какую сумму, какие ещё не обработаны. что продаётся лучше и что лежит без движения. что заканчивается , чтобы вовремя заказать у поставщика. откуда приходят клиенты : google, соцсети, whatsapp. удобство важнее количества кнопок хорошая панель не та, где сто функций, а та, где частые действия делаются в два касания, в том числе с телефона. если чтобы поменять цену нужно пройти пять экранов, панелью перестанут пользоваться. права и безопасность разные права для сотрудников: продавцу — заказы, бухгалтеру — отчёты, владельцу — всё. журнал действий: кто и что изменил. надёжный вход и регулярные резервные копии. растёт вместе с бизнесом начать можно с простого: товары и заказы. потом добавить склад, курьеров, связь с кассой, отчёты. главное, чтобы основа позволяла добавлять, а не начинать заново. приложения и технологии" class="ac" style="--sc:#FF7A1A" href="admin-panel.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></i><u>16</u></span><small>Приложения и технологии</small><b>Панель управления: что владелец видит и меняет сам</b><span>Сайт без удобной панели управления похож на магазин, ключи от которого у кого-то другого.</span><em><span class="rdl">Прочитано ✓</span>2 мин чтения<b>→</b></em></a></div><a class="allb" href="index.html">Все статьи · 23</a></section>
+<script>
+(function(){
+try{var R=JSON.parse(localStorage.getItem('as_read')||'[]');if(R.indexOf('ai-assistant')<0){R.push('ai-assistant');localStorage.setItem('as_read',JSON.stringify(R));}document.querySelectorAll('.ac[data-s]').forEach(function(c){if(R.indexOf(c.getAttribute('data-s'))>=0)c.classList.add('rd');});}catch(e){}
+var bar=document.getElementById('rpi'),art=document.querySelector('article'),links=[].slice.call(document.querySelectorAll('.toc a')),hs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function on(){var r=art.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.max(0,(h*0.35-r.top)/(r.height-h*0.5)));bar.style.transform='scaleX('+p.toFixed(4)+')';
+var cur=-1;hs.forEach(function(x,i){if(x&&x.getBoundingClientRect().top<h*0.35)cur=i;});links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+addEventListener('scroll',on,{passive:true});addEventListener('resize',on);on();
+})();
+</script>
 <footer>© Apps & Soul · студия Давида Мушаилова</footer>
 </body>
 </html>

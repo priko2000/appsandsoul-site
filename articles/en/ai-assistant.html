@@ -138,20 +138,94 @@ main article li::marker{color:var(--sc)}
 main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transparent);padding-inline-start:16px}
 .cta{background:linear-gradient(135deg,var(--y),#FFDD55)}
 @media (max-width:700px){.shead{grid-template-columns:auto 1fr}.shead b{grid-column:2;justify-self:start}.shead>i{width:48px;height:48px;border-radius:14px}}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px}
+.stats div{display:flex;align-items:baseline;gap:8px}
+.stats b{font-family:'Unbounded',system-ui,sans-serif;font-size:clamp(28px,3vw,44px);line-height:1;color:var(--ink)}
+.stats span{color:var(--mut);font-weight:700}
+.tools2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin:18px 0 6px;align-items:start}
+.pick{background:linear-gradient(135deg,#16113A,#2A1F6E);color:#fff;border-radius:26px;padding:clamp(20px,2.4vw,30px);position:relative;overflow:hidden}
+.pick::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#FFC70055,transparent 70%);inset-inline-end:-60px;top:-80px;pointer-events:none}
+.pick h2{color:#fff;margin:0 0 6px;font-size:clamp(22px,2vw,28px)}
+.pick>p{margin:0 0 16px;color:#cfc9f0}
+.pq{margin:0 0 12px}
+.pq b{display:block;font-size:15px;margin-bottom:8px;color:#fff}
+.pq .ops{display:flex;flex-wrap:wrap;gap:8px}
+.pq button{font:inherit;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:9px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pq button:hover{border-color:#fff}
+.pq button.on{background:#FFC700;color:#16113A;border-color:#FFC700}
+.pres{display:none;margin-top:8px}
+.pres.on{display:block;animation:fadeup .45s ease both}
+.pres h3{font-size:16px;margin:0 0 10px;color:#FFC700}
+.pres .ag{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pres .ac{padding:14px!important;color:var(--ink)}
+.pres .ac b{font-size:15px!important}
+.pres .ac>span:not(.ai),.pres .ac small{display:none}
+.pres .ai i{width:36px;height:36px}
+.pagain{margin-top:10px;background:none;border:0;color:#cfc9f0;font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.side2{display:flex;flex-direction:column;gap:16px}
+.sbox{position:relative}
+.sbox input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:17px 20px;padding-inline-start:52px;border-radius:18px;border:2px solid var(--line);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.sbox input:focus{border-color:var(--vi);box-shadow:0 0 0 5px #5B3DF51f}
+.sbox svg{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.rdbar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px}
+.rdbar div{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rdbar i{display:block;height:8px;border-radius:99px;background:#eee;overflow:hidden}
+.rdbar i u{display:block;height:100%;width:0;background:linear-gradient(90deg,#5B3DF5,#26C281,#FFC700);border-radius:99px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.tipc{display:block;text-decoration:none;color:var(--ink);background:#FFF6D6;border:1px solid #FFE38A;border-radius:18px;padding:16px 18px;transition:transform .2s}
+.tipc:hover{transform:translateY(-2px)}
+.tipc small{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13px;color:#9A6B00}
+.tipc p{margin:6px 0 6px;font-weight:600;line-height:1.5}
+.tipc em{font-style:normal;font-size:14px;color:var(--vi);font-weight:800}
+.ac.rd .ai u::after{content:" ✓";color:#26C281}
+.ac.rd{opacity:.82}
+.ac .rdl{display:none;font-size:12px;font-weight:800;color:#1a9a62;background:#e6f8ef;border-radius:99px;padding:2px 8px}
+.ac.rd .rdl{display:inline-block}
+.nf{display:none;padding:26px;text-align:center;background:#fff;border:1px dashed var(--line);border-radius:20px;margin-top:20px}
+.nf a{color:var(--vi);font-weight:800;text-decoration:none}
+.endc{margin:56px 0 10px;background:linear-gradient(135deg,#16113A,#3A2A9A);color:#fff;border-radius:30px;padding:clamp(26px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.endc h2{color:#fff;margin:0 0 6px}
+.endc p{margin:0;color:#d6d0f5}
+.endc a{background:#25D366;color:#fff;text-decoration:none;font-weight:800;border-radius:16px;padding:16px 24px;display:inline-flex;gap:10px;align-items:center}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:980px){.tools2{grid-template-columns:1fr}.pres .ag{grid-template-columns:1fr}}
+.rprog{position:fixed;top:0;left:0;right:0;height:4px;z-index:9;pointer-events:none}
+.rprog i{display:block;height:100%;width:100%;background:var(--sc);transform-origin:0 50%;transform:scaleX(0)}
+[dir=rtl] .rprog i{transform-origin:100% 50%}
+.wrapa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,760px) minmax(0,1fr);gap:40px;max-width:1700px;margin:0 auto}
+.wrapa>main{grid-column:2;max-width:none;width:100%;padding-inline:0}
+.toc{grid-column:3;align-self:start;position:sticky;top:96px;margin-top:150px;max-width:300px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin-bottom:10px}
+html[lang=he] .toc b{text-transform:none;letter-spacing:0;font-size:15px}
+.toc a{display:block;text-decoration:none;color:var(--mut);font-size:15px;line-height:1.35;padding:7px 12px;border-inline-start:3px solid var(--line);transition:color .2s,border-color .2s}
+.toc a:hover,.toc a.on{color:var(--ink);border-color:var(--sc);font-weight:700}
+.tocl{grid-column:1}
+@media (max-width:1399px){.wrapa{display:block}.toc{display:none}.wrapa>main{max-width:760px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}}
+.shr{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:14px;color:#128C4A;background:#E7F8EE;border-radius:999px;padding:6px 12px}
+.shr:hover{background:#25D366;color:#fff}
+.cta .p3{background:#25D366;color:#fff}
+
+.scov{display:block;width:100%;aspect-ratio:16/5;object-fit:cover;border-radius:20px;margin:0 0 14px;box-shadow:0 14px 34px rgba(17,17,17,.12)}
+.acov{display:block;width:100%;aspect-ratio:16/6;object-fit:cover;border-radius:22px;margin:0 0 22px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "An AI assistant for a store: what it can and cannot do", "description": "People talk about artificial intelligence as if it will replace the whole staff. In reality it is a useful helper with clear limits. Here is an honest look.", "inLanguage": "en", "articleSection": "Apps and technology", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/en/ai-assistant.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_en.jpg"}</script>
 </head>
 <body>
 <header class="top"><div class="in"><a class="logo" href="../../en.html"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/ai-assistant.html" lang="ru" title="Русский"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="../he/ai-assistant.html" lang="he" title="עברית"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="../en/ai-assistant.html" lang="en" title="English" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></nav><a class="wa1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a></div></header>
-<main style="--sc:#FF7A1A">
+<div class="rprog" style="--sc:#FF7A1A"><i id="rpi"></i></div>
+<div class="wrapa" style="--sc:#FF7A1A">
+<main>
 <div class="crumbs"><a href="../../en.html">Home</a> › <a href="index.html">Articles</a> › <a href="index.html#tech">Apps and technology</a></div>
 <article>
-<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M19 3v4M17 5h4"/></svg></i><div class="kick"><a href="index.html#tech"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>Apps and technology</a><span>2 min read</span></div></div>
+<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M19 3v4M17 5h4"/></svg></i><div class="kick"><a href="index.html#tech"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>Apps and technology</a><span>2 min read</span><a class="shr" href="https://wa.me/?text=A%20useful%20article%3A%20An%20AI%20assistant%20for%20a%20store%3A%20what%20it%20can%20and%20cannot%20do%20https%3A//priko2000.github.io/appsandsoul-site/articles/en/ai-assistant.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Send this article on WhatsApp</a></div></div>
 <h1>An AI assistant for a store: what it can and cannot do</h1>
 <p class="lead">People talk about artificial intelligence as if it will replace the whole staff. In reality it is a useful helper with clear limits. Here is an honest look.</p>
 <div class="by">David Mushailov, founder of Apps & Soul</div>
 
-<h2>What a good assistant can do</h2>
+<h2 id="p1">What a good assistant can do</h2>
 <ul>
 <li><b>Answer frequent questions</b> around the clock: opening hours, delivery, stock, prices.</li>
 <li><b>Suggest products</b> from a description: “a dry red wine for meat under 100 ₪”.</li>
@@ -159,23 +233,34 @@ main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transpa
 <li><b>Take an enquiry or order</b> and pass it to you ready.</li>
 <li><b>Help the owner</b>: write product descriptions, translate, sort through reviews.</li>
 </ul>
-<h2>What it cannot (or should not) do</h2>
+<h2 id="p2">What it cannot (or should not) do</h2>
 <ul>
 <li><b>Know what it was not given.</b> The assistant answers from your product data and rules. If the data is missing, a good assistant says so and hands the question to a person.</li>
 <li><b>Resolve disputes.</b> Complaints, returns, special arrangements — that is your job.</li>
 <li><b>Make decisions for you.</b> Discounts, exceptions and responsibility stay with the owner.</li>
 </ul>
-<h2>The main risk: making things up</h2>
+<h2 id="p3">The main risk: making things up</h2>
 <p>Language models sometimes answer confidently with things that are not true. So a business assistant must be constrained: answer only from your data, promise nothing outside your rules, and honestly say “I don’t know”.</p>
-<h2>Who needs one</h2>
+<h2 id="p4">Who needs one</h2>
 <p>Businesses with many similar questions, a large range, or customers who write outside working hours. If you get five questions a day, a good FAQ section on the site may be enough for now.</p>
-<h2>How to start without risk</h2>
+<h2 id="p5">How to start without risk</h2>
 <p>At first the assistant only suggests answers and you send them. Once it is clearly accurate, you can let it handle simple questions fully.</p>
 
 </article>
-<div class="cta"><h2>Shall we talk about your project?</h2><p>Message me on WhatsApp: I reply within 2 hours during working hours. Or ask for a free review of your website.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a><a class="p2" href="../../en.html#rev">Free website review</a></div></div>
+<div class="cta"><h2>Shall we talk about your project?</h2><p>Message me on WhatsApp: I reply within 2 hours during working hours. Or ask for a free review of your website.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a><a class="p2" href="../../en.html#rev">Free website review</a><a class="p3" href="https://wa.me/?text=A%20useful%20article%3A%20An%20AI%20assistant%20for%20a%20store%3A%20what%20it%20can%20and%20cannot%20do%20https%3A//priko2000.github.io/appsandsoul-site/articles/en/ai-assistant.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Send this article on WhatsApp</a></div></div>
 </main>
-<section class="more"><h3>More in this topic</h3><div class="ag"><a class="ac" style="--sc:#FF7A1A" href="site-or-app.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg></i><u>13</u></span><small>Apps and technology</small><b>A website, a home-screen app or an App Store app?</b><span>Business owners often say “we need an app” while meaning quite different things.</span><em>2 min read<b>→</b></em></a><a class="ac" style="--sc:#FF7A1A" href="notifications.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></i><u>14</u></span><small>Apps and technology</small><b>Notifications: reminding customers you exist without annoying them</b><span>A phone notification is the shortest path to a customer.</span><em>2 min read<b>→</b></em></a><a class="ac" style="--sc:#FF7A1A" href="admin-panel.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></i><u>16</u></span><small>Apps and technology</small><b>A management panel: what the owner sees and changes alone</b><span>A website without a convenient management panel is like a store whose keys are held by someone else.</span><em>2 min read<b>→</b></em></a></div><a class="allb" href="index.html">All articles · 23</a></section>
+<aside class="toc" aria-label="In this article"><b>In this article</b><a href="#p1">What a good assistant can do</a><a href="#p2">What it cannot (or should not) do</a><a href="#p3">The main risk: making things up</a><a href="#p4">Who needs one</a><a href="#p5">How to start without risk</a></aside>
+</div>
+<section class="more"><h3>More in this topic</h3><div class="ag"><a data-s="site-or-app" data-k="a website, a home-screen app or an app store app? business owners often say “we need an app” while meaning quite different things. in practice there are three options, and they differ a lot in capabilities, timelines and costs. here is an honest look at each. 1. a regular website it opens from a link in any browser, on a phone or a computer. people find it on google, and it is easy to share on whatsapp. it is the fastest and most affordable option, and for many businesses it is enough. 2. an app on the phone’s home screen this is the same website, built so the customer can add it to the phone’s home screen. from then on it opens like an app: with its own icon, full screen, without the browser’s address bar. on iphone you add it through safari: “share” → “add to home screen”. on android the browser offers to install it. there is no app store review, and updates reach customers immediately. it can send notifications, including on iphone once it has been added to the home screen. there are limits too: this kind of app is not listed in the app store or google play, and some phone features are unavailable to it or only partly available. 3. a full app in the app store and google play it is downloaded from an app store. it integrates more deeply with the phone and looks more established to regular customers. but it comes with more costs and rules: a developer account: apple charges $99 a year, google a one-time $25. every version is reviewed by the stores, so updates are not instant. development and maintenance usually cost more than a website. where it makes sense to start most small businesses are better off starting with a website that also works as a home-screen app. it is quick, affordable and already gives the customer an icon on their phone. a full app makes sense when you have many regular customers who order often, or you need phone features a website does not have. the good news: these steps do not exclude each other. you can start with a website and later move to a store app without losing products, orders or customers. apps and technology" class="ac" style="--sc:#FF7A1A" href="site-or-app.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg></i><u>13</u></span><small>Apps and technology</small><b>A website, a home-screen app or an App Store app?</b><span>Business owners often say “we need an app” while meaning quite different things.</span><em><span class="rdl">Read ✓</span>2 min read<b>→</b></em></a><a data-s="notifications" data-k="notifications: reminding customers you exist without annoying them a phone notification is the shortest path to a customer. it is also the fastest way to lose them if you write too often. here is how to find the balance. the channels website or app notifications. they appear on the phone screen. they also work for a site added to the home screen, including on iphone. whatsapp. almost everyone reads it, which makes overusing it especially risky. email and sms. good for confirmations, invoices and occasional news. the main rule: only with permission customers must agree to receive notifications themselves and understand what they will get and how to opt out. advertising messages without consent are prohibited by law in israel. what is genuinely useful to the customer order status: received, packed, on the way. a product they were waiting for is back in stock. a booking reminder, or that it is time to reorder. a genuinely good deal, not just any deal. how much is too much there is no single number, but there is a simple test: if another store sent you these messages, would you read them or switch them off? one valuable message a week beats daily noise. timing and tone do not write late at night or on shabbat if your customers observe it. short, to the point, with one clear button. use their name and consider past purchases: “your coffee is back in stock” beats “we have new products”. apps and technology" class="ac" style="--sc:#FF7A1A" href="notifications.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></i><u>14</u></span><small>Apps and technology</small><b>Notifications: reminding customers you exist without annoying them</b><span>A phone notification is the shortest path to a customer.</span><em><span class="rdl">Read ✓</span>2 min read<b>→</b></em></a><a data-s="admin-panel" data-k="a management panel: what the owner sees and changes alone a website without a convenient management panel is like a store whose keys are held by someone else. here is what a good panel should contain and why. what the owner should do alone, without a developer change prices and stock, add and hide products. switch promotions on and off. see new orders and update their status. change opening hours, banners and short texts. what is useful to see orders today and this week — how many, for how much, which are still unprocessed. what sells best and what is not moving. what is running out , so you can reorder from the supplier in time. where customers come from : google, social media, whatsapp. convenience matters more than the number of buttons a good panel is not the one with a hundred features but the one where frequent actions take two taps, including on a phone. if changing a price means going through five screens, people stop using the panel. permissions and security different permissions for staff: orders for the seller, reports for the accountant, everything for the owner. an activity log: who changed what. secure login and regular backups. it grows with the business you can start simple: products and orders. later add stock, couriers, a till connection, reports. what matters is that the foundation allows adding, not starting over. apps and technology" class="ac" style="--sc:#FF7A1A" href="admin-panel.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></i><u>16</u></span><small>Apps and technology</small><b>A management panel: what the owner sees and changes alone</b><span>A website without a convenient management panel is like a store whose keys are held by someone else.</span><em><span class="rdl">Read ✓</span>2 min read<b>→</b></em></a></div><a class="allb" href="index.html">All articles · 23</a></section>
+<script>
+(function(){
+try{var R=JSON.parse(localStorage.getItem('as_read')||'[]');if(R.indexOf('ai-assistant')<0){R.push('ai-assistant');localStorage.setItem('as_read',JSON.stringify(R));}document.querySelectorAll('.ac[data-s]').forEach(function(c){if(R.indexOf(c.getAttribute('data-s'))>=0)c.classList.add('rd');});}catch(e){}
+var bar=document.getElementById('rpi'),art=document.querySelector('article'),links=[].slice.call(document.querySelectorAll('.toc a')),hs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function on(){var r=art.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.max(0,(h*0.35-r.top)/(r.height-h*0.5)));bar.style.transform='scaleX('+p.toFixed(4)+')';
+var cur=-1;hs.forEach(function(x,i){if(x&&x.getBoundingClientRect().top<h*0.35)cur=i;});links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+addEventListener('scroll',on,{passive:true});addEventListener('resize',on);on();
+})();
+</script>
 <footer>© Apps & Soul · David Mushailov’s studio</footer>
 </body>
 </html>

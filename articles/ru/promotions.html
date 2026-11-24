@@ -138,46 +138,131 @@ main article li::marker{color:var(--sc)}
 main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transparent);padding-inline-start:16px}
 .cta{background:linear-gradient(135deg,var(--y),#FFDD55)}
 @media (max-width:700px){.shead{grid-template-columns:auto 1fr}.shead b{grid-column:2;justify-self:start}.shead>i{width:48px;height:48px;border-radius:14px}}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px}
+.stats div{display:flex;align-items:baseline;gap:8px}
+.stats b{font-family:'Unbounded',system-ui,sans-serif;font-size:clamp(28px,3vw,44px);line-height:1;color:var(--ink)}
+.stats span{color:var(--mut);font-weight:700}
+.tools2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin:18px 0 6px;align-items:start}
+.pick{background:linear-gradient(135deg,#16113A,#2A1F6E);color:#fff;border-radius:26px;padding:clamp(20px,2.4vw,30px);position:relative;overflow:hidden}
+.pick::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#FFC70055,transparent 70%);inset-inline-end:-60px;top:-80px;pointer-events:none}
+.pick h2{color:#fff;margin:0 0 6px;font-size:clamp(22px,2vw,28px)}
+.pick>p{margin:0 0 16px;color:#cfc9f0}
+.pq{margin:0 0 12px}
+.pq b{display:block;font-size:15px;margin-bottom:8px;color:#fff}
+.pq .ops{display:flex;flex-wrap:wrap;gap:8px}
+.pq button{font:inherit;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:9px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pq button:hover{border-color:#fff}
+.pq button.on{background:#FFC700;color:#16113A;border-color:#FFC700}
+.pres{display:none;margin-top:8px}
+.pres.on{display:block;animation:fadeup .45s ease both}
+.pres h3{font-size:16px;margin:0 0 10px;color:#FFC700}
+.pres .ag{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pres .ac{padding:14px!important;color:var(--ink)}
+.pres .ac b{font-size:15px!important}
+.pres .ac>span:not(.ai),.pres .ac small{display:none}
+.pres .ai i{width:36px;height:36px}
+.pagain{margin-top:10px;background:none;border:0;color:#cfc9f0;font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.side2{display:flex;flex-direction:column;gap:16px}
+.sbox{position:relative}
+.sbox input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:17px 20px;padding-inline-start:52px;border-radius:18px;border:2px solid var(--line);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.sbox input:focus{border-color:var(--vi);box-shadow:0 0 0 5px #5B3DF51f}
+.sbox svg{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.rdbar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px}
+.rdbar div{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rdbar i{display:block;height:8px;border-radius:99px;background:#eee;overflow:hidden}
+.rdbar i u{display:block;height:100%;width:0;background:linear-gradient(90deg,#5B3DF5,#26C281,#FFC700);border-radius:99px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.tipc{display:block;text-decoration:none;color:var(--ink);background:#FFF6D6;border:1px solid #FFE38A;border-radius:18px;padding:16px 18px;transition:transform .2s}
+.tipc:hover{transform:translateY(-2px)}
+.tipc small{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13px;color:#9A6B00}
+.tipc p{margin:6px 0 6px;font-weight:600;line-height:1.5}
+.tipc em{font-style:normal;font-size:14px;color:var(--vi);font-weight:800}
+.ac.rd .ai u::after{content:" ✓";color:#26C281}
+.ac.rd{opacity:.82}
+.ac .rdl{display:none;font-size:12px;font-weight:800;color:#1a9a62;background:#e6f8ef;border-radius:99px;padding:2px 8px}
+.ac.rd .rdl{display:inline-block}
+.nf{display:none;padding:26px;text-align:center;background:#fff;border:1px dashed var(--line);border-radius:20px;margin-top:20px}
+.nf a{color:var(--vi);font-weight:800;text-decoration:none}
+.endc{margin:56px 0 10px;background:linear-gradient(135deg,#16113A,#3A2A9A);color:#fff;border-radius:30px;padding:clamp(26px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.endc h2{color:#fff;margin:0 0 6px}
+.endc p{margin:0;color:#d6d0f5}
+.endc a{background:#25D366;color:#fff;text-decoration:none;font-weight:800;border-radius:16px;padding:16px 24px;display:inline-flex;gap:10px;align-items:center}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:980px){.tools2{grid-template-columns:1fr}.pres .ag{grid-template-columns:1fr}}
+.rprog{position:fixed;top:0;left:0;right:0;height:4px;z-index:9;pointer-events:none}
+.rprog i{display:block;height:100%;width:100%;background:var(--sc);transform-origin:0 50%;transform:scaleX(0)}
+[dir=rtl] .rprog i{transform-origin:100% 50%}
+.wrapa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,760px) minmax(0,1fr);gap:40px;max-width:1700px;margin:0 auto}
+.wrapa>main{grid-column:2;max-width:none;width:100%;padding-inline:0}
+.toc{grid-column:3;align-self:start;position:sticky;top:96px;margin-top:150px;max-width:300px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin-bottom:10px}
+html[lang=he] .toc b{text-transform:none;letter-spacing:0;font-size:15px}
+.toc a{display:block;text-decoration:none;color:var(--mut);font-size:15px;line-height:1.35;padding:7px 12px;border-inline-start:3px solid var(--line);transition:color .2s,border-color .2s}
+.toc a:hover,.toc a.on{color:var(--ink);border-color:var(--sc);font-weight:700}
+.tocl{grid-column:1}
+@media (max-width:1399px){.wrapa{display:block}.toc{display:none}.wrapa>main{max-width:760px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}}
+.shr{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:14px;color:#128C4A;background:#E7F8EE;border-radius:999px;padding:6px 12px}
+.shr:hover{background:#25D366;color:#fff}
+.cta .p3{background:#25D366;color:#fff}
+
+.scov{display:block;width:100%;aspect-ratio:16/5;object-fit:cover;border-radius:20px;margin:0 0 14px;box-shadow:0 14px 34px rgba(17,17,17,.12)}
+.acov{display:block;width:100%;aspect-ratio:16/6;object-fit:cover;border-radius:22px;margin:0 0 22px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Акции и скидки, которые работают в интернете", "description": "Скидка сама по себе не продаёт. Продаёт понятное предложение, которое клиент видит в нужный момент. Вот приёмы, которые хорошо работают в интернет-магазине.", "inLanguage": "ru", "articleSection": "Магазин", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/ru/promotions.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_ru.jpg"}</script>
 </head>
 <body>
 <header class="top"><div class="in"><a class="logo" href="../../ru.html"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/promotions.html" lang="ru" title="Русский" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="../he/promotions.html" lang="he" title="עברית"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="../en/promotions.html" lang="en" title="English"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></nav><a class="wa1" href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%21%20%D0%AF%20%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82." target="_blank" rel="noopener">Написать в WhatsApp</a></div></header>
-<main style="--sc:#26C281">
+<div class="rprog" style="--sc:#26C281"><i id="rpi"></i></div>
+<div class="wrapa" style="--sc:#26C281">
+<main>
 <div class="crumbs"><a href="../../ru.html">Главная</a> › <a href="index.html">Статьи</a> › <a href="index.html#shop">Магазин</a></div>
 <article>
-<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></i><div class="kick"><a href="index.html#shop"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Магазин</a><span>2 мин чтения</span></div></div>
+<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></i><div class="kick"><a href="index.html#shop"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Магазин</a><span>2 мин чтения</span><a class="shr" href="https://wa.me/?text=%D0%9F%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8F%3A%20%D0%90%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B8%20%D1%81%D0%BA%D0%B8%D0%B4%D0%BA%D0%B8%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%8E%D1%82%20%D0%B2%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B5%20https%3A//priko2000.github.io/appsandsoul-site/articles/ru/promotions.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Отправить статью в WhatsApp</a></div></div>
 <h1>Акции и скидки, которые работают в интернете</h1>
 <p class="lead">Скидка сама по себе не продаёт. Продаёт понятное предложение, которое клиент видит в нужный момент. Вот приёмы, которые хорошо работают в интернет-магазине.</p>
 <div class="by">Мушаилов Давид, основатель Apps & Soul</div>
 
-<h2>Бесплатная доставка от суммы</h2>
+<h2 id="p1">Бесплатная доставка от суммы</h2>
 <p>Одна из самых сильных акций. Клиенту не хватает немного до порога, и он добавляет ещё товар. Покажите прямо в корзине: «Добавьте ещё на 40 ₪ — и доставка бесплатно».</p>
-<h2>1+1 и наборы</h2>
+<h2 id="p2">1+1 и наборы</h2>
 <p>«Второй со скидкой» или готовые наборы к празднику увеличивают средний чек и избавляют клиента от выбора. Особенно хорошо работают перед праздниками.</p>
-<h2>Ограничение по времени</h2>
+<h2 id="p3">Ограничение по времени</h2>
 <p>Акция до воскресенья подталкивает решить сейчас, а не «потом». Главное — честно: если акция закончилась, она должна закончиться.</p>
-<h2>Для постоянных клиентов</h2>
+<h2 id="p4">Для постоянных клиентов</h2>
 <ul>
 <li>Скидка на повторный заказ.</li>
 <li>Подарок на десятый заказ.</li>
 <li>Ранний доступ к новинкам.</li>
 </ul>
 <p>Привлечь нового клиента обычно дороже, чем вернуть старого, поэтому забота о постоянных окупается.</p>
-<h2>Где показывать акции</h2>
+<h2 id="p5">Где показывать акции</h2>
 <ul>
 <li>Строка на весь сайт сверху: коротко и заметно.</li>
 <li>Отметка «Акция» прямо на карточке товара.</li>
 <li>Подсказка в корзине в момент решения.</li>
 <li>Уведомление тем, кто разрешил его получать.</li>
 </ul>
-<h2>Чего избегать</h2>
+<h2 id="p6">Чего избегать</h2>
 <p>Постоянные скидки на всё. Если цена всегда «перечёркнута», клиент перестаёт верить и ждёт следующей распродажи. Лучше несколько продуманных акций, чем вечная распродажа.</p>
 
 </article>
-<div class="cta"><h2>Обсудим ваш проект?</h2><p>Напишите в WhatsApp: отвечаю в течение 2 часов в рабочее время. Или закажите бесплатный разбор вашего сайта.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%21%20%D0%AF%20%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82." target="_blank" rel="noopener">Написать в WhatsApp</a><a class="p2" href="../../ru.html#rev">Бесплатный разбор сайта</a></div></div>
+<div class="cta"><h2>Обсудим ваш проект?</h2><p>Напишите в WhatsApp: отвечаю в течение 2 часов в рабочее время. Или закажите бесплатный разбор вашего сайта.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%94%D0%B0%D0%B2%D0%B8%D0%B4%21%20%D0%AF%20%D0%BF%D1%80%D0%BE%D1%87%D0%B8%D1%82%D0%B0%D0%BB%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8E%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5%20%D0%B8%20%D1%85%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82." target="_blank" rel="noopener">Написать в WhatsApp</a><a class="p2" href="../../ru.html#rev">Бесплатный разбор сайта</a><a class="p3" href="https://wa.me/?text=%D0%9F%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D0%B0%D1%8F%20%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8F%3A%20%D0%90%D0%BA%D1%86%D0%B8%D0%B8%20%D0%B8%20%D1%81%D0%BA%D0%B8%D0%B4%D0%BA%D0%B8%2C%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%8E%D1%82%20%D0%B2%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D0%B5%20https%3A//priko2000.github.io/appsandsoul-site/articles/ru/promotions.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Отправить статью в WhatsApp</a></div></div>
 </main>
-<section class="more"><h3>Ещё в разделе</h3><div class="ag"><a class="ac" style="--sc:#26C281" href="shop-checklist.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></i><u>07</u></span><small>Магазин</small><b>Что нужно сайту магазина, чтобы он продавал</b><span>Красивый сайт ещё не значит продающий.</span><em>2 мин чтения<b>→</b></em></a><a class="ac" style="--sc:#26C281" href="whatsapp-and-site.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></i><u>08</u></span><small>Магазин</small><b>WhatsApp и сайт вместе: как принимать заказы с двух сторон</b><span>В Израиле клиенты привыкли писать в WhatsApp.</span><em>2 мин чтения<b>→</b></em></a><a class="ac" style="--sc:#26C281" href="big-catalog.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10M12 7v10M16 7v10"/></svg></i><u>09</u></span><small>Магазин</small><b>Каталог на тысячи товаров: как загрузить его быстро</b><span>Магазин на пятьдесят товаров можно заполнить руками за вечер.</span><em>2 мин чтения<b>→</b></em></a></div><a class="allb" href="index.html">Все статьи · 23</a></section>
+<aside class="toc" aria-label="В этой статье"><b>В этой статье</b><a href="#p1">Бесплатная доставка от суммы</a><a href="#p2">1+1 и наборы</a><a href="#p3">Ограничение по времени</a><a href="#p4">Для постоянных клиентов</a><a href="#p5">Где показывать акции</a><a href="#p6">Чего избегать</a></aside>
+</div>
+<section class="more"><h3>Ещё в разделе</h3><div class="ag"><a data-s="shop-checklist" data-k="что нужно сайту магазина, чтобы он продавал красивый сайт ещё не значит продающий. вот десять пунктов, которые можно проверить на своём сайте за десять минут. откройте его на телефоне и пройдитесь по списку глазами покупателя. понятно за пять секунд. с первого экрана ясно, что вы продаёте, где и почему у вас. удобно на телефоне. большинство покупателей приходят с телефона: кнопки крупные, текст читается без увеличения. быстро открывается. каждая лишняя секунда ожидания — часть покупателей, которые ушли. цены и наличие на виду. покупатель не должен писать вам, чтобы узнать цену. связь в одно касание. кнопка whatsapp или звонка видна на каждой странице. простой заказ. минимум полей и шагов, без обязательной регистрации. условия доставки сразу. зоны, сроки, минимальная сумма, возврат — до корзины, а не после. настоящие фото. свои снимки товаров и магазина вызывают больше доверия, чем картинки из интернета. доверие и закон. адрес, телефон, отзывы, заявление о доступности и политика конфиденциальности. в израиле сайты большинства бизнесов должны соответствовать правилам доступности, а с августа 2025 года действует поправка 13 к закону о защите приватности. язык ваших клиентов. если покупатели говорят на иврите, русском и английском, сайт должен говорить так же. что делать с результатом если «нет» набралось три и больше, сайт, скорее всего, теряет заказы. начните с пунктов 2, 5 и 6: они сильнее всего влияют на продажи и обычно исправляются быстрее остальных. не хотите проверять сами? пришлите ссылку, и я бесплатно пришлю вам в whatsapp три самых важных совета по вашему сайту. магазин" class="ac" style="--sc:#26C281" href="shop-checklist.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></i><u>07</u></span><small>Магазин</small><b>Что нужно сайту магазина, чтобы он продавал</b><span>Красивый сайт ещё не значит продающий.</span><em><span class="rdl">Прочитано ✓</span>2 мин чтения<b>→</b></em></a><a data-s="whatsapp-and-site" data-k="whatsapp и сайт вместе: как принимать заказы с двух сторон в израиле клиенты привыкли писать в whatsapp. это не конкурент сайту, а его лучший партнёр, если правильно их соединить. почему не только whatsapp переписка удобна, пока заказов мало. когда их десятки в день, начинаются проблемы: сообщения теряются, клиент спрашивает цену того, что уже давно закончилось, а вы весь вечер отвечаете на одни и те же вопросы. почему не только сайт многие клиенты, особенно постоянные, не хотят регистрироваться и заполнять формы. им проще написать «как обычно» в чат. как соединить каталог на сайте, заказ в whatsapp. клиент собирает корзину на сайте, нажимает кнопку, и в whatsapp уходит готовый, аккуратный список с суммой. вам не нужно уточнять, что он имел в виду. ссылки на товары в чате. когда спрашивают «что есть», вы отправляете ссылку на раздел сайта вместо фото по одному. ответы на частые вопросы. доставка, часы, оплата — на сайте. в чате остаётся только то, что требует человека. кнопка whatsapp на каждой странице. клиент, у которого возник вопрос, пишет сразу, а не уходит к конкуренту. что получает владелец заказы приходят в одном формате, цены всегда актуальны, а время на переписку сокращается. когда заказов становится много, тот же сайт можно дополнить онлайн-оплатой и панелью, где видно все заказы, без переделки с нуля. с чего начать если вы уже принимаете заказы в whatsapp, начните с каталога на сайте с кнопкой «заказать в whatsapp». это самый мягкий переход: клиенты продолжают писать вам, как привыкли, только теперь с готовым списком. магазин" class="ac" style="--sc:#26C281" href="whatsapp-and-site.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></i><u>08</u></span><small>Магазин</small><b>WhatsApp и сайт вместе: как принимать заказы с двух сторон</b><span>В Израиле клиенты привыкли писать в WhatsApp.</span><em><span class="rdl">Прочитано ✓</span>2 мин чтения<b>→</b></em></a><a data-s="big-catalog" data-k="каталог на тысячи товаров: как загрузить его быстро магазин на пятьдесят товаров можно заполнить руками за вечер. магазин на три тысячи — нет. вот как справляются с большими каталогами. источник номер один: ваша касса если в магазине есть кассовая программа, в ней уже есть названия, цены и штрихкоды. чаще всего их можно выгрузить в таблицу и загрузить на сайт одним файлом. штрихкод как ключ штрихкод — это уникальный номер товара. по нему можно: не создавать дубли одного и того же товара; обновлять цены и остатки массово, одной таблицей; находить фото и описание товара в собственной базе, которая растёт с каждым магазином; добавлять новый товар, просто отсканировав его телефоном. фото для тысяч товаров это самая трудоёмкая часть. помогают: фото от поставщиков (с их разрешения), съёмка партиями на одном фоне, а для похожих товаров — одно фото на группу вариантов. структура каталога не больше двух-трёх уровней категорий: клиент должен найти товар за три нажатия. фильтры, которые важны покупателю: бренд, размер, цена, страна. быстрый поиск, который понимает опечатки и разные языки. как не утонуть после запуска каталог живой: цены меняются, товары заканчиваются, приходят новые. нужна панель, где это делается в пару действий, или регулярная автоматическая синхронизация с кассой. иначе через месяц сайт будет показывать устаревшие цены, а это хуже, чем отсутствие сайта. магазин" class="ac" style="--sc:#26C281" href="big-catalog.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10M12 7v10M16 7v10"/></svg></i><u>09</u></span><small>Магазин</small><b>Каталог на тысячи товаров: как загрузить его быстро</b><span>Магазин на пятьдесят товаров можно заполнить руками за вечер.</span><em><span class="rdl">Прочитано ✓</span>2 мин чтения<b>→</b></em></a></div><a class="allb" href="index.html">Все статьи · 23</a></section>
+<script>
+(function(){
+try{var R=JSON.parse(localStorage.getItem('as_read')||'[]');if(R.indexOf('promotions')<0){R.push('promotions');localStorage.setItem('as_read',JSON.stringify(R));}document.querySelectorAll('.ac[data-s]').forEach(function(c){if(R.indexOf(c.getAttribute('data-s'))>=0)c.classList.add('rd');});}catch(e){}
+var bar=document.getElementById('rpi'),art=document.querySelector('article'),links=[].slice.call(document.querySelectorAll('.toc a')),hs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function on(){var r=art.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.max(0,(h*0.35-r.top)/(r.height-h*0.5)));bar.style.transform='scaleX('+p.toFixed(4)+')';
+var cur=-1;hs.forEach(function(x,i){if(x&&x.getBoundingClientRect().top<h*0.35)cur=i;});links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+addEventListener('scroll',on,{passive:true});addEventListener('resize',on);on();
+})();
+</script>
 <footer>© Apps & Soul · студия Давида Мушаилова</footer>
 </body>
 </html>

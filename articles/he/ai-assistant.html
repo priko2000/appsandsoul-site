@@ -138,20 +138,94 @@ main article li::marker{color:var(--sc)}
 main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transparent);padding-inline-start:16px}
 .cta{background:linear-gradient(135deg,var(--y),#FFDD55)}
 @media (max-width:700px){.shead{grid-template-columns:auto 1fr}.shead b{grid-column:2;justify-self:start}.shead>i{width:48px;height:48px;border-radius:14px}}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px}
+.stats div{display:flex;align-items:baseline;gap:8px}
+.stats b{font-family:'Unbounded',system-ui,sans-serif;font-size:clamp(28px,3vw,44px);line-height:1;color:var(--ink)}
+.stats span{color:var(--mut);font-weight:700}
+.tools2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin:18px 0 6px;align-items:start}
+.pick{background:linear-gradient(135deg,#16113A,#2A1F6E);color:#fff;border-radius:26px;padding:clamp(20px,2.4vw,30px);position:relative;overflow:hidden}
+.pick::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#FFC70055,transparent 70%);inset-inline-end:-60px;top:-80px;pointer-events:none}
+.pick h2{color:#fff;margin:0 0 6px;font-size:clamp(22px,2vw,28px)}
+.pick>p{margin:0 0 16px;color:#cfc9f0}
+.pq{margin:0 0 12px}
+.pq b{display:block;font-size:15px;margin-bottom:8px;color:#fff}
+.pq .ops{display:flex;flex-wrap:wrap;gap:8px}
+.pq button{font:inherit;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:9px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pq button:hover{border-color:#fff}
+.pq button.on{background:#FFC700;color:#16113A;border-color:#FFC700}
+.pres{display:none;margin-top:8px}
+.pres.on{display:block;animation:fadeup .45s ease both}
+.pres h3{font-size:16px;margin:0 0 10px;color:#FFC700}
+.pres .ag{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pres .ac{padding:14px!important;color:var(--ink)}
+.pres .ac b{font-size:15px!important}
+.pres .ac>span:not(.ai),.pres .ac small{display:none}
+.pres .ai i{width:36px;height:36px}
+.pagain{margin-top:10px;background:none;border:0;color:#cfc9f0;font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.side2{display:flex;flex-direction:column;gap:16px}
+.sbox{position:relative}
+.sbox input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:17px 20px;padding-inline-start:52px;border-radius:18px;border:2px solid var(--line);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.sbox input:focus{border-color:var(--vi);box-shadow:0 0 0 5px #5B3DF51f}
+.sbox svg{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.rdbar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px}
+.rdbar div{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rdbar i{display:block;height:8px;border-radius:99px;background:#eee;overflow:hidden}
+.rdbar i u{display:block;height:100%;width:0;background:linear-gradient(90deg,#5B3DF5,#26C281,#FFC700);border-radius:99px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.tipc{display:block;text-decoration:none;color:var(--ink);background:#FFF6D6;border:1px solid #FFE38A;border-radius:18px;padding:16px 18px;transition:transform .2s}
+.tipc:hover{transform:translateY(-2px)}
+.tipc small{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13px;color:#9A6B00}
+.tipc p{margin:6px 0 6px;font-weight:600;line-height:1.5}
+.tipc em{font-style:normal;font-size:14px;color:var(--vi);font-weight:800}
+.ac.rd .ai u::after{content:" ✓";color:#26C281}
+.ac.rd{opacity:.82}
+.ac .rdl{display:none;font-size:12px;font-weight:800;color:#1a9a62;background:#e6f8ef;border-radius:99px;padding:2px 8px}
+.ac.rd .rdl{display:inline-block}
+.nf{display:none;padding:26px;text-align:center;background:#fff;border:1px dashed var(--line);border-radius:20px;margin-top:20px}
+.nf a{color:var(--vi);font-weight:800;text-decoration:none}
+.endc{margin:56px 0 10px;background:linear-gradient(135deg,#16113A,#3A2A9A);color:#fff;border-radius:30px;padding:clamp(26px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.endc h2{color:#fff;margin:0 0 6px}
+.endc p{margin:0;color:#d6d0f5}
+.endc a{background:#25D366;color:#fff;text-decoration:none;font-weight:800;border-radius:16px;padding:16px 24px;display:inline-flex;gap:10px;align-items:center}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:980px){.tools2{grid-template-columns:1fr}.pres .ag{grid-template-columns:1fr}}
+.rprog{position:fixed;top:0;left:0;right:0;height:4px;z-index:9;pointer-events:none}
+.rprog i{display:block;height:100%;width:100%;background:var(--sc);transform-origin:0 50%;transform:scaleX(0)}
+[dir=rtl] .rprog i{transform-origin:100% 50%}
+.wrapa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,760px) minmax(0,1fr);gap:40px;max-width:1700px;margin:0 auto}
+.wrapa>main{grid-column:2;max-width:none;width:100%;padding-inline:0}
+.toc{grid-column:3;align-self:start;position:sticky;top:96px;margin-top:150px;max-width:300px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin-bottom:10px}
+html[lang=he] .toc b{text-transform:none;letter-spacing:0;font-size:15px}
+.toc a{display:block;text-decoration:none;color:var(--mut);font-size:15px;line-height:1.35;padding:7px 12px;border-inline-start:3px solid var(--line);transition:color .2s,border-color .2s}
+.toc a:hover,.toc a.on{color:var(--ink);border-color:var(--sc);font-weight:700}
+.tocl{grid-column:1}
+@media (max-width:1399px){.wrapa{display:block}.toc{display:none}.wrapa>main{max-width:760px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}}
+.shr{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:14px;color:#128C4A;background:#E7F8EE;border-radius:999px;padding:6px 12px}
+.shr:hover{background:#25D366;color:#fff}
+.cta .p3{background:#25D366;color:#fff}
+
+.scov{display:block;width:100%;aspect-ratio:16/5;object-fit:cover;border-radius:20px;margin:0 0 14px;box-shadow:0 14px 34px rgba(17,17,17,.12)}
+.acov{display:block;width:100%;aspect-ratio:16/6;object-fit:cover;border-radius:22px;margin:0 0 22px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "עוזר AI לחנות: מה הוא יודע ומה לא", "description": "על בינה מלאכותית מדברים כאילו היא תחליף את כל הצוות. במציאות זה עוזר שימושי עם גבולות ברורים. נעבור על זה בכנות.", "inLanguage": "he", "articleSection": "אפליקציות וטכנולוגיה", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/he/ai-assistant.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_he.jpg"}</script>
 </head>
 <body>
 <header class="top"><div class="in"><a class="logo" href="../../"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/ai-assistant.html" lang="ru" title="Русский"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="../he/ai-assistant.html" lang="he" title="עברית" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="../en/ai-assistant.html" lang="en" title="English"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></nav><a class="wa1" href="https://wa.me/972587800228?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%21%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%9E%D7%90%D7%9E%D7%A8%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98." target="_blank" rel="noopener">לכתוב בוואטסאפ</a></div></header>
-<main style="--sc:#FF7A1A">
+<div class="rprog" style="--sc:#FF7A1A"><i id="rpi"></i></div>
+<div class="wrapa" style="--sc:#FF7A1A">
+<main>
 <div class="crumbs"><a href="../../">ראשי</a> › <a href="index.html">מאמרים</a> › <a href="index.html#tech">אפליקציות וטכנולוגיה</a></div>
 <article>
-<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M19 3v4M17 5h4"/></svg></i><div class="kick"><a href="index.html#tech"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>אפליקציות וטכנולוגיה</a><span>2 דקות קריאה</span></div></div>
+<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/><path d="M19 3v4M17 5h4"/></svg></i><div class="kick"><a href="index.html#tech"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>אפליקציות וטכנולוגיה</a><span>2 דקות קריאה</span><a class="shr" href="https://wa.me/?text=%D7%9E%D7%90%D7%9E%D7%A8%20%D7%A9%D7%99%D7%9E%D7%95%D7%A9%D7%99%3A%20%D7%A2%D7%95%D7%96%D7%A8%20AI%20%D7%9C%D7%97%D7%A0%D7%95%D7%AA%3A%20%D7%9E%D7%94%20%D7%94%D7%95%D7%90%20%D7%99%D7%95%D7%93%D7%A2%20%D7%95%D7%9E%D7%94%20%D7%9C%D7%90%20https%3A//priko2000.github.io/appsandsoul-site/articles/he/ai-assistant.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>לשלוח את המאמר בוואטסאפ</a></div></div>
 <h1>עוזר AI לחנות: מה הוא יודע ומה לא</h1>
 <p class="lead">על בינה מלאכותית מדברים כאילו היא תחליף את כל הצוות. במציאות זה עוזר שימושי עם גבולות ברורים. נעבור על זה בכנות.</p>
 <div class="by">מושאילוב דוד, מייסד Apps & Soul</div>
 
-<h2>מה עוזר טוב יודע לעשות</h2>
+<h2 id="p1">מה עוזר טוב יודע לעשות</h2>
 <ul>
 <li><b>לענות על שאלות נפוצות</b> מסביב לשעון: שעות פתיחה, משלוחים, מלאי, מחירים.</li>
 <li><b>להתאים מוצר</b> לפי תיאור: „צריך יין אדום יבש לבשר עד 100 ₪”.</li>
@@ -159,23 +233,34 @@ main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transpa
 <li><b>לקבל פנייה או הזמנה</b> ולהעביר אותה אליכם מוכנה.</li>
 <li><b>לעזור לבעל העסק</b>: לכתוב תיאורי מוצרים, לתרגם, לנתח ביקורות.</li>
 </ul>
-<h2>מה הוא לא יודע (או לא צריך)</h2>
+<h2 id="p2">מה הוא לא יודע (או לא צריך)</h2>
 <ul>
 <li><b>לדעת מה שלא נתנו לו.</b> העוזר עונה לפי מאגר המוצרים והכללים שלכם. אם אין מידע, עוזר טוב יגיד את זה ויעביר את השאלה לאדם.</li>
 <li><b>לפתור מצבים שנויים במחלוקת.</b> תלונות, החזרות, הסכמים מיוחדים — זו עבודה שלכם.</li>
 <li><b>לקבל החלטות במקומכם.</b> הנחות, חריגים ואחריות נשארים אצל בעל העסק.</li>
 </ul>
-<h2>הסיכון העיקרי: המצאות</h2>
+<h2 id="p3">הסיכון העיקרי: המצאות</h2>
 <p>מודלי שפה עונים לפעמים בביטחון דברים שאינם נכונים. לכן עוזר לעסק צריך להגביל: לענות רק לפי הנתונים שלכם, לא להבטיח מה שאין בכללים, ולומר בכנות „אני לא יודע”.</p>
-<h2>למי הוא מתאים</h2>
+<h2 id="p4">למי הוא מתאים</h2>
 <p>למי שיש לו הרבה שאלות דומות, מגוון מוצרים גדול, או לקוחות שכותבים מחוץ לשעות העבודה. אם יש חמש שאלות ביום, ייתכן שכרגע מספיק פרק שאלות ותשובות טוב באתר.</p>
-<h2>איך מתחילים בלי סיכון</h2>
+<h2 id="p5">איך מתחילים בלי סיכון</h2>
 <p>בהתחלה העוזר רק מציע תשובות, ואתם שולחים. כשרואים שהוא עונה במדויק, אפשר להפקיד בידיו שאלות פשוטות לגמרי.</p>
 
 </article>
-<div class="cta"><h2>נדבר על הפרויקט שלכם?</h2><p>כתבו בוואטסאפ: אני עונה תוך שעתיים בשעות העבודה. או הזמינו בדיקה חינם לאתר שלכם.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%21%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%9E%D7%90%D7%9E%D7%A8%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98." target="_blank" rel="noopener">לכתוב בוואטסאפ</a><a class="p2" href="../../#rev">בדיקה חינם לאתר</a></div></div>
+<div class="cta"><h2>נדבר על הפרויקט שלכם?</h2><p>כתבו בוואטסאפ: אני עונה תוך שעתיים בשעות העבודה. או הזמינו בדיקה חינם לאתר שלכם.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%21%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%9E%D7%90%D7%9E%D7%A8%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98." target="_blank" rel="noopener">לכתוב בוואטסאפ</a><a class="p2" href="../../#rev">בדיקה חינם לאתר</a><a class="p3" href="https://wa.me/?text=%D7%9E%D7%90%D7%9E%D7%A8%20%D7%A9%D7%99%D7%9E%D7%95%D7%A9%D7%99%3A%20%D7%A2%D7%95%D7%96%D7%A8%20AI%20%D7%9C%D7%97%D7%A0%D7%95%D7%AA%3A%20%D7%9E%D7%94%20%D7%94%D7%95%D7%90%20%D7%99%D7%95%D7%93%D7%A2%20%D7%95%D7%9E%D7%94%20%D7%9C%D7%90%20https%3A//priko2000.github.io/appsandsoul-site/articles/he/ai-assistant.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>לשלוח את המאמר בוואטסאפ</a></div></div>
 </main>
-<section class="more"><h3>עוד בנושא</h3><div class="ag"><a class="ac" style="--sc:#FF7A1A" href="site-or-app.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg></i><u>13</u></span><small>אפליקציות וטכנולוגיה</small><b>אתר, אפליקציה על המסך או אפליקציה ב-App Store?</b><span>בעלי עסקים אומרים לא פעם „אנחנו צריכים אפליקציה”, אבל מתכוונים לדברים שונים.</span><em>2 דקות קריאה<b>→</b></em></a><a class="ac" style="--sc:#FF7A1A" href="notifications.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></i><u>14</u></span><small>אפליקציות וטכנולוגיה</small><b>התראות: איך להזכיר ללקוחות שאתם קיימים בלי להציק</b><span>התראה בטלפון היא הדרך הקצרה ביותר אל הלקוח.</span><em>2 דקות קריאה<b>→</b></em></a><a class="ac" style="--sc:#FF7A1A" href="admin-panel.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></i><u>16</u></span><small>אפליקציות וטכנולוגיה</small><b>פאנל ניהול: מה בעל העסק רואה ומשנה בעצמו</b><span>אתר בלי פאנל ניהול נוח דומה לחנות שהמפתחות שלה אצל מישהו אחר.</span><em>2 דקות קריאה<b>→</b></em></a></div><a class="allb" href="index.html">כל המאמרים · 23</a></section>
+<aside class="toc" aria-label="במאמר הזה"><b>במאמר הזה</b><a href="#p1">מה עוזר טוב יודע לעשות</a><a href="#p2">מה הוא לא יודע (או לא צריך)</a><a href="#p3">הסיכון העיקרי: המצאות</a><a href="#p4">למי הוא מתאים</a><a href="#p5">איך מתחילים בלי סיכון</a></aside>
+</div>
+<section class="more"><h3>עוד בנושא</h3><div class="ag"><a data-s="site-or-app" data-k="אתר, אפליקציה על המסך או אפליקציה ב-app store? בעלי עסקים אומרים לא פעם „אנחנו צריכים אפליקציה”, אבל מתכוונים לדברים שונים. בפועל יש שלוש אפשרויות, והן שונות מאוד ביכולות, בזמנים ובעלויות. נעבור על כל אחת בכנות. 1. אתר רגיל נפתח בקישור בכל דפדפן, בטלפון ובמחשב. מוצאים אותו בגוגל, וקל לשתף אותו בוואטסאפ. זו האפשרות המהירה והנגישה ביותר, ולעסקים רבים היא מספיקה. 2. אפליקציה על מסך הטלפון זה אותו אתר, אבל בנוי כך שהלקוח יכול להוסיף אותו למסך הבית של הטלפון. משם הוא נפתח כמו אפליקציה: עם אייקון משלו, על כל המסך, בלי שורת הכתובת של הדפדפן. באייפון מוסיפים דרך safari: „שיתוף” ← „הוספה למסך הבית”. באנדרואיד הדפדפן מציע להתקין בעצמו. אין צורך לעבור בדיקה של חנויות האפליקציות, ועדכונים מגיעים ללקוחות מיד. אפשר לשלוח התראות, גם באייפון, כשהאפליקציה נוספה למסך. יש גם מגבלות: האפליקציה הזו לא מופיעה ב-app store וב-google play, וחלק מהיכולות של הטלפון לא זמינות לה או זמינות באופן חלקי. 3. אפליקציה מלאה ב-app store וב-google play מורידים אותה מחנות האפליקציות. היא משתלבת עמוק יותר בטלפון ונראית רצינית יותר ללקוחות קבועים. אבל יש לה יותר עלויות וכללים: חשבון מפתח: apple גובה 99 $ בשנה, google — 25 $ חד־פעמי. כל גרסה עוברת בדיקה של החנויות, ולכן עדכונים לא יוצאים מיד. הפיתוח והתחזוקה בדרך כלל יקרים יותר מאתר. מאיפה נכון להתחיל לרוב העסקים הקטנים עדיף להתחיל באתר שעובד גם כאפליקציה על המסך. זה מהיר, משתלם, וכבר נותן ללקוח אייקון בטלפון. אפליקציה מלאה הגיונית כשיש לכם הרבה לקוחות קבועים שמזמינים לעיתים קרובות, או כשצריך יכולות טלפון שאין לאתר. החדשות הטובות: השלבים האלה לא סותרים זה את זה. אפשר להתחיל באתר ובהמשך לעבור לאפליקציה בחנויות, בלי לאבד מוצרים, הזמנות ולקוחות. אפליקציות וטכנולוגיה" class="ac" style="--sc:#FF7A1A" href="site-or-app.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg></i><u>13</u></span><small>אפליקציות וטכנולוגיה</small><b>אתר, אפליקציה על המסך או אפליקציה ב-App Store?</b><span>בעלי עסקים אומרים לא פעם „אנחנו צריכים אפליקציה”, אבל מתכוונים לדברים שונים.</span><em><span class="rdl">נקרא ✓</span>2 דקות קריאה<b>→</b></em></a><a data-s="notifications" data-k="התראות: איך להזכיר ללקוחות שאתם קיימים בלי להציק התראה בטלפון היא הדרך הקצרה ביותר אל הלקוח. וגם הדרך המהירה ביותר לאבד אותו, אם כותבים יותר מדי. הנה איך למצוא את האיזון. אילו ערוצים יש התראות של אתר או אפליקציה. מגיעות למסך הטלפון. עובדות גם באתר שנוסף למסך הבית, כולל באייפון. וואטסאפ. כמעט כולם קוראים אותו, ולכן מסוכן במיוחד להגזים בו. מיילים ו-sms. מתאימים לאישורים, חשבוניות וחדשות נדירות. הכלל החשוב: רק באישור הלקוח צריך להסכים בעצמו לקבל התראות, ולהבין מה יקבל ואיך מסירים את עצמו. דיוור פרסומי בלי הסכמה אסור בחוק בישראל. מה באמת מועיל ללקוח סטטוס הזמנה: התקבלה, נארזה, בדרך. מוצר שחיכו לו חזר למלאי. תזכורת לתור, או שהגיע הזמן להזמין שוב. מבצע שבאמת משתלם, ולא כל מבצע. כמה זה יותר מדי אין מספר אחד, אבל יש מבחן פשוט: אם הייתם מקבלים הודעות כאלה מחנות אחרת, הייתם קוראים אותן או מכבים? עדיף הודעה אחת בעלת ערך בשבוע מאשר רעש יומי. זמן וטון אל תכתבו מאוחר בלילה ובשבת, אם הלקוחות שלכם שומרים. קצר, ענייני, עם כפתור ברור אחד. פנו בשם והתחשבו ברכישות קודמות: „הקפה שלך חזר למלאי” עדיף על „יש לנו חדשים”. אפליקציות וטכנולוגיה" class="ac" style="--sc:#FF7A1A" href="notifications.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></i><u>14</u></span><small>אפליקציות וטכנולוגיה</small><b>התראות: איך להזכיר ללקוחות שאתם קיימים בלי להציק</b><span>התראה בטלפון היא הדרך הקצרה ביותר אל הלקוח.</span><em><span class="rdl">נקרא ✓</span>2 דקות קריאה<b>→</b></em></a><a data-s="admin-panel" data-k="פאנל ניהול: מה בעל העסק רואה ומשנה בעצמו אתר בלי פאנל ניהול נוח דומה לחנות שהמפתחות שלה אצל מישהו אחר. הנה מה צריך להיות בפאנל טוב ולמה. מה בעל העסק צריך לעשות בעצמו, בלי מפתח לשנות מחירים ומלאי, להוסיף ולהסתיר מוצרים. להפעיל ולכבות מבצעים. לראות הזמנות חדשות ולשנות את הסטטוס שלהן. לשנות שעות פתיחה, באנרים וטקסטים קצרים. מה כדאי לראות הזמנות היום והשבוע — כמה, באיזה סכום, אילו עוד לא טופלו. מה נמכר הכי טוב ומה עומד בלי תנועה. מה נגמר , כדי להזמין מהספק בזמן. מאיפה מגיעים הלקוחות : גוגל, רשתות, וואטסאפ. נוחות חשובה יותר ממספר הכפתורים פאנל טוב הוא לא זה שיש בו מאה פונקציות, אלא זה שבו פעולות נפוצות נעשות בשתי נגיעות, גם מהטלפון. אם כדי לשנות מחיר צריך לעבור חמישה מסכים, יפסיקו להשתמש בפאנל. הרשאות ואבטחה הרשאות שונות לעובדים: למוכר — הזמנות, לרואה החשבון — דוחות, לבעלים — הכול. יומן פעולות: מי שינה מה. כניסה מאובטחת וגיבויים קבועים. גדל יחד עם העסק אפשר להתחיל בפשוט: מוצרים והזמנות. אחר כך להוסיף מלאי, שליחים, חיבור לקופה, דוחות. העיקר שהבסיס יאפשר להוסיף, ולא להתחיל מחדש. אפליקציות וטכנולוגיה" class="ac" style="--sc:#FF7A1A" href="admin-panel.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></i><u>16</u></span><small>אפליקציות וטכנולוגיה</small><b>פאנל ניהול: מה בעל העסק רואה ומשנה בעצמו</b><span>אתר בלי פאנל ניהול נוח דומה לחנות שהמפתחות שלה אצל מישהו אחר.</span><em><span class="rdl">נקרא ✓</span>2 דקות קריאה<b>→</b></em></a></div><a class="allb" href="index.html">כל המאמרים · 23</a></section>
+<script>
+(function(){
+try{var R=JSON.parse(localStorage.getItem('as_read')||'[]');if(R.indexOf('ai-assistant')<0){R.push('ai-assistant');localStorage.setItem('as_read',JSON.stringify(R));}document.querySelectorAll('.ac[data-s]').forEach(function(c){if(R.indexOf(c.getAttribute('data-s'))>=0)c.classList.add('rd');});}catch(e){}
+var bar=document.getElementById('rpi'),art=document.querySelector('article'),links=[].slice.call(document.querySelectorAll('.toc a')),hs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function on(){var r=art.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.max(0,(h*0.35-r.top)/(r.height-h*0.5)));bar.style.transform='scaleX('+p.toFixed(4)+')';
+var cur=-1;hs.forEach(function(x,i){if(x&&x.getBoundingClientRect().top<h*0.35)cur=i;});links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+addEventListener('scroll',on,{passive:true});addEventListener('resize',on);on();
+})();
+</script>
 <footer>© Apps & Soul · הסטודיו של דוד מושאילוב</footer>
 </body>
 </html>

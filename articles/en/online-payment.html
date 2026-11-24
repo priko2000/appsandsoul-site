@@ -138,22 +138,96 @@ main article li::marker{color:var(--sc)}
 main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transparent);padding-inline-start:16px}
 .cta{background:linear-gradient(135deg,var(--y),#FFDD55)}
 @media (max-width:700px){.shead{grid-template-columns:auto 1fr}.shead b{grid-column:2;justify-self:start}.shead>i{width:48px;height:48px;border-radius:14px}}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px}
+.stats div{display:flex;align-items:baseline;gap:8px}
+.stats b{font-family:'Unbounded',system-ui,sans-serif;font-size:clamp(28px,3vw,44px);line-height:1;color:var(--ink)}
+.stats span{color:var(--mut);font-weight:700}
+.tools2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin:18px 0 6px;align-items:start}
+.pick{background:linear-gradient(135deg,#16113A,#2A1F6E);color:#fff;border-radius:26px;padding:clamp(20px,2.4vw,30px);position:relative;overflow:hidden}
+.pick::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#FFC70055,transparent 70%);inset-inline-end:-60px;top:-80px;pointer-events:none}
+.pick h2{color:#fff;margin:0 0 6px;font-size:clamp(22px,2vw,28px)}
+.pick>p{margin:0 0 16px;color:#cfc9f0}
+.pq{margin:0 0 12px}
+.pq b{display:block;font-size:15px;margin-bottom:8px;color:#fff}
+.pq .ops{display:flex;flex-wrap:wrap;gap:8px}
+.pq button{font:inherit;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:9px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pq button:hover{border-color:#fff}
+.pq button.on{background:#FFC700;color:#16113A;border-color:#FFC700}
+.pres{display:none;margin-top:8px}
+.pres.on{display:block;animation:fadeup .45s ease both}
+.pres h3{font-size:16px;margin:0 0 10px;color:#FFC700}
+.pres .ag{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pres .ac{padding:14px!important;color:var(--ink)}
+.pres .ac b{font-size:15px!important}
+.pres .ac>span:not(.ai),.pres .ac small{display:none}
+.pres .ai i{width:36px;height:36px}
+.pagain{margin-top:10px;background:none;border:0;color:#cfc9f0;font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.side2{display:flex;flex-direction:column;gap:16px}
+.sbox{position:relative}
+.sbox input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:17px 20px;padding-inline-start:52px;border-radius:18px;border:2px solid var(--line);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.sbox input:focus{border-color:var(--vi);box-shadow:0 0 0 5px #5B3DF51f}
+.sbox svg{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.rdbar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px}
+.rdbar div{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rdbar i{display:block;height:8px;border-radius:99px;background:#eee;overflow:hidden}
+.rdbar i u{display:block;height:100%;width:0;background:linear-gradient(90deg,#5B3DF5,#26C281,#FFC700);border-radius:99px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.tipc{display:block;text-decoration:none;color:var(--ink);background:#FFF6D6;border:1px solid #FFE38A;border-radius:18px;padding:16px 18px;transition:transform .2s}
+.tipc:hover{transform:translateY(-2px)}
+.tipc small{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13px;color:#9A6B00}
+.tipc p{margin:6px 0 6px;font-weight:600;line-height:1.5}
+.tipc em{font-style:normal;font-size:14px;color:var(--vi);font-weight:800}
+.ac.rd .ai u::after{content:" ✓";color:#26C281}
+.ac.rd{opacity:.82}
+.ac .rdl{display:none;font-size:12px;font-weight:800;color:#1a9a62;background:#e6f8ef;border-radius:99px;padding:2px 8px}
+.ac.rd .rdl{display:inline-block}
+.nf{display:none;padding:26px;text-align:center;background:#fff;border:1px dashed var(--line);border-radius:20px;margin-top:20px}
+.nf a{color:var(--vi);font-weight:800;text-decoration:none}
+.endc{margin:56px 0 10px;background:linear-gradient(135deg,#16113A,#3A2A9A);color:#fff;border-radius:30px;padding:clamp(26px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.endc h2{color:#fff;margin:0 0 6px}
+.endc p{margin:0;color:#d6d0f5}
+.endc a{background:#25D366;color:#fff;text-decoration:none;font-weight:800;border-radius:16px;padding:16px 24px;display:inline-flex;gap:10px;align-items:center}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:980px){.tools2{grid-template-columns:1fr}.pres .ag{grid-template-columns:1fr}}
+.rprog{position:fixed;top:0;left:0;right:0;height:4px;z-index:9;pointer-events:none}
+.rprog i{display:block;height:100%;width:100%;background:var(--sc);transform-origin:0 50%;transform:scaleX(0)}
+[dir=rtl] .rprog i{transform-origin:100% 50%}
+.wrapa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,760px) minmax(0,1fr);gap:40px;max-width:1700px;margin:0 auto}
+.wrapa>main{grid-column:2;max-width:none;width:100%;padding-inline:0}
+.toc{grid-column:3;align-self:start;position:sticky;top:96px;margin-top:150px;max-width:300px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin-bottom:10px}
+html[lang=he] .toc b{text-transform:none;letter-spacing:0;font-size:15px}
+.toc a{display:block;text-decoration:none;color:var(--mut);font-size:15px;line-height:1.35;padding:7px 12px;border-inline-start:3px solid var(--line);transition:color .2s,border-color .2s}
+.toc a:hover,.toc a.on{color:var(--ink);border-color:var(--sc);font-weight:700}
+.tocl{grid-column:1}
+@media (max-width:1399px){.wrapa{display:block}.toc{display:none}.wrapa>main{max-width:760px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}}
+.shr{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:14px;color:#128C4A;background:#E7F8EE;border-radius:999px;padding:6px 12px}
+.shr:hover{background:#25D366;color:#fff}
+.cta .p3{background:#25D366;color:#fff}
+
+.scov{display:block;width:100%;aspect-ratio:16/5;object-fit:cover;border-radius:20px;margin:0 0 14px;box-shadow:0 14px 34px rgba(17,17,17,.12)}
+.acov{display:block;width:100%;aspect-ratio:16/6;object-fit:cover;border-radius:22px;margin:0 0 22px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Online payment in Israel: what the options are", "description": "There are several ways to accept payment on a website in Israel. Here is how it works and what to check before signing a contract.", "inLanguage": "en", "articleSection": "Online store", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/en/online-payment.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_en.jpg"}</script>
 </head>
 <body>
 <header class="top"><div class="in"><a class="logo" href="../../en.html"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/online-payment.html" lang="ru" title="Русский"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="../he/online-payment.html" lang="he" title="עברית"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="../en/online-payment.html" lang="en" title="English" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></nav><a class="wa1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a></div></header>
-<main style="--sc:#26C281">
+<div class="rprog" style="--sc:#26C281"><i id="rpi"></i></div>
+<div class="wrapa" style="--sc:#26C281">
+<main>
 <div class="crumbs"><a href="../../en.html">Home</a> › <a href="index.html">Articles</a> › <a href="index.html#shop">Online store</a></div>
 <article>
-<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg></i><div class="kick"><a href="index.html#shop"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Online store</a><span>2 min read</span></div></div>
+<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg></i><div class="kick"><a href="index.html#shop"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>Online store</a><span>2 min read</span><a class="shr" href="https://wa.me/?text=A%20useful%20article%3A%20Online%20payment%20in%20Israel%3A%20what%20the%20options%20are%20https%3A//priko2000.github.io/appsandsoul-site/articles/en/online-payment.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Send this article on WhatsApp</a></div></div>
 <h1>Online payment in Israel: what the options are</h1>
 <p class="lead">There are several ways to accept payment on a website in Israel. Here is how it works and what to check before signing a contract.</p>
 <div class="by">David Mushailov, founder of Apps & Soul</div>
 
-<h2>How it works</h2>
+<h2 id="p1">How it works</h2>
 <p>The website itself does not process cards. Payment processing companies (חברות סליקה) do that. The customer taps “pay”, lands on the company’s secure payment page, and the money reaches your account. Card details are not stored on your site, which is good for security.</p>
-<h2>Which payment methods can be connected</h2>
+<h2 id="p2">Which payment methods can be connected</h2>
 <ul>
 <li>Credit cards, including payment in instalments (תשלומים), which Israeli buyers are used to.</li>
 <li>bit, Apple Pay and Google Pay — through many Israeli payment companies.</li>
@@ -161,7 +235,7 @@ main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transpa
 <li>Cash on delivery or bank transfer — for those who prefer not to pay online.</li>
 </ul>
 <p>Note: some built-in payment solutions of popular builders are not available in Israel. For example, Wix itself states that Wix Payments does not work in the country and suggests connecting local companies.</p>
-<h2>What to compare</h2>
+<h2 id="p3">What to compare</h2>
 <ul>
 <li><b>The fee</b> per transaction. Online it is often higher than in a store because the fraud risk is higher.</li>
 <li><b>Monthly fee</b> and setup fee.</li>
@@ -169,14 +243,25 @@ main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transpa
 <li><b>Automatic invoices and receipts</b> — they save a lot of time.</li>
 <li><b>Contract length</b> and exit terms.</li>
 </ul>
-<h2>Do you need it right away?</h2>
+<h2 id="p4">Do you need it right away?</h2>
 <p>Not always. Many stores start with ordering through the site and payment on delivery or by link, and add online payment once orders grow. What matters is that the site is ready for it from the start.</p>
 <p class="note">Payment companies’ terms change; check the current terms with the company itself before signing.</p>
 
 </article>
-<div class="cta"><h2>Shall we talk about your project?</h2><p>Message me on WhatsApp: I reply within 2 hours during working hours. Or ask for a free review of your website.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a><a class="p2" href="../../en.html#rev">Free website review</a></div></div>
+<div class="cta"><h2>Shall we talk about your project?</h2><p>Message me on WhatsApp: I reply within 2 hours during working hours. Or ask for a free review of your website.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a><a class="p2" href="../../en.html#rev">Free website review</a><a class="p3" href="https://wa.me/?text=A%20useful%20article%3A%20Online%20payment%20in%20Israel%3A%20what%20the%20options%20are%20https%3A//priko2000.github.io/appsandsoul-site/articles/en/online-payment.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Send this article on WhatsApp</a></div></div>
 </main>
-<section class="more"><h3>More in this topic</h3><div class="ag"><a class="ac" style="--sc:#26C281" href="shop-checklist.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></i><u>07</u></span><small>Online store</small><b>What a store website needs in order to sell</b><span>A beautiful website is not the same as one that sells.</span><em>2 min read<b>→</b></em></a><a class="ac" style="--sc:#26C281" href="whatsapp-and-site.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></i><u>08</u></span><small>Online store</small><b>WhatsApp and a website together: taking orders from both sides</b><span>In Israel customers are used to writing on WhatsApp.</span><em>2 min read<b>→</b></em></a><a class="ac" style="--sc:#26C281" href="big-catalog.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10M12 7v10M16 7v10"/></svg></i><u>09</u></span><small>Online store</small><b>A catalogue of thousands of products: how to load it fast</b><span>A store with fifty products can be filled by hand in an evening.</span><em>2 min read<b>→</b></em></a></div><a class="allb" href="index.html">All articles · 23</a></section>
+<aside class="toc" aria-label="In this article"><b>In this article</b><a href="#p1">How it works</a><a href="#p2">Which payment methods can be connected</a><a href="#p3">What to compare</a><a href="#p4">Do you need it right away?</a></aside>
+</div>
+<section class="more"><h3>More in this topic</h3><div class="ag"><a data-s="shop-checklist" data-k="what a store website needs in order to sell a beautiful website is not the same as one that sells. here are ten points you can check on your own site in ten minutes. open it on your phone and go through the list as a customer would. clear in five seconds. from the first screen it is obvious what you sell, where, and why buy from you. easy on a phone. most customers arrive on their phone: large buttons, text readable without zooming. opens fast. every extra second of waiting is a share of customers who left. prices and stock in view. a customer should not have to message you to find out a price. contact in one tap. a whatsapp or call button is visible on every page. a simple order. minimal fields and steps, no forced registration. delivery terms up front. zones, times, minimum order, returns — before the cart, not after. real photos. your own pictures of the products and the store build more trust than images from the internet. trust and the law. address, phone, reviews, an accessibility statement and a privacy policy. in israel most business websites must meet the accessibility regulations, and since august 2025 amendment 13 to the privacy protection law is in force. your customers’ language. if your customers speak hebrew, russian and english, the site should too. what to do with the result if you counted three or more “no” answers, the site is probably losing orders. start with points 2, 5 and 6: they affect sales the most and are usually the quickest to fix. rather not check it yourself? send the link, and i will send you three key tips for your site on whatsapp, free of charge. online store" class="ac" style="--sc:#26C281" href="shop-checklist.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></i><u>07</u></span><small>Online store</small><b>What a store website needs in order to sell</b><span>A beautiful website is not the same as one that sells.</span><em><span class="rdl">Read ✓</span>2 min read<b>→</b></em></a><a data-s="whatsapp-and-site" data-k="whatsapp and a website together: taking orders from both sides in israel customers are used to writing on whatsapp. it is not the website’s competitor but its best partner, if you connect them properly. why not whatsapp alone chatting works while orders are few. when there are dozens a day, the problems start: messages get lost, a customer asks the price of something that ran out long ago, and you spend the evening answering the same questions. why not the website alone many customers, especially regulars, do not want to register and fill in forms. it is easier for them to write “the usual” in a chat. how to connect them catalogue on the site, order on whatsapp. the customer fills a cart on the site, taps a button, and a neat, ready list with the total goes to whatsapp. no need to clarify what they meant. product links in the chat. when asked “what do you have”, you send a link to a section of the site instead of photos one by one. answers to frequent questions. delivery, hours, payment — on the site. the chat keeps only what needs a person. a whatsapp button on every page. a customer with a question writes right away instead of going to a competitor. what the owner gets orders arrive in one format, prices are always current, and chatting time shrinks. when orders grow, the same site can get online payment and a panel showing all orders, without starting from scratch. where to start if you already take orders on whatsapp, start with a catalogue on the site and an “order on whatsapp” button. it is the gentlest transition: customers keep writing to you as they are used to, only now with a ready list. online store" class="ac" style="--sc:#26C281" href="whatsapp-and-site.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></i><u>08</u></span><small>Online store</small><b>WhatsApp and a website together: taking orders from both sides</b><span>In Israel customers are used to writing on WhatsApp.</span><em><span class="rdl">Read ✓</span>2 min read<b>→</b></em></a><a data-s="big-catalog" data-k="a catalogue of thousands of products: how to load it fast a store with fifty products can be filled by hand in an evening. a store with three thousand cannot. here is how large catalogues are handled. source number one: your till if the store has till software, it already holds names, prices and barcodes. most of the time they can be exported to a spreadsheet and uploaded to the site in one file. the barcode as the key a barcode is a product’s unique number. with it you can: avoid duplicates of the same product; update prices and stock in bulk, with one spreadsheet; find a product’s photo and description in your own database, which grows with every store; add a new product simply by scanning it with a phone. photos for thousands of products this is the most labour-intensive part. what helps: photos from suppliers (with their permission), shooting in batches on one background, and for similar items, one photo per group of variants. catalogue structure no more than two or three category levels: a customer should find a product in three taps. filters that matter to buyers: brand, size, price, country. fast search that understands typos and different languages. how not to drown after launch a catalogue is alive: prices change, products run out, new ones arrive. you need a panel where this takes a couple of actions, or regular automatic syncing with the till. otherwise in a month the site will show outdated prices, which is worse than having no site. online store" class="ac" style="--sc:#26C281" href="big-catalog.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 7v10M12 7v10M16 7v10"/></svg></i><u>09</u></span><small>Online store</small><b>A catalogue of thousands of products: how to load it fast</b><span>A store with fifty products can be filled by hand in an evening.</span><em><span class="rdl">Read ✓</span>2 min read<b>→</b></em></a></div><a class="allb" href="index.html">All articles · 23</a></section>
+<script>
+(function(){
+try{var R=JSON.parse(localStorage.getItem('as_read')||'[]');if(R.indexOf('online-payment')<0){R.push('online-payment');localStorage.setItem('as_read',JSON.stringify(R));}document.querySelectorAll('.ac[data-s]').forEach(function(c){if(R.indexOf(c.getAttribute('data-s'))>=0)c.classList.add('rd');});}catch(e){}
+var bar=document.getElementById('rpi'),art=document.querySelector('article'),links=[].slice.call(document.querySelectorAll('.toc a')),hs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function on(){var r=art.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.max(0,(h*0.35-r.top)/(r.height-h*0.5)));bar.style.transform='scaleX('+p.toFixed(4)+')';
+var cur=-1;hs.forEach(function(x,i){if(x&&x.getBoundingClientRect().top<h*0.35)cur=i;});links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+addEventListener('scroll',on,{passive:true});addEventListener('resize',on);on();
+})();
+</script>
 <footer>© Apps & Soul · David Mushailov’s studio</footer>
 </body>
 </html>

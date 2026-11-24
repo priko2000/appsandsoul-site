@@ -138,26 +138,100 @@ main article li::marker{color:var(--sc)}
 main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transparent);padding-inline-start:16px}
 .cta{background:linear-gradient(135deg,var(--y),#FFDD55)}
 @media (max-width:700px){.shead{grid-template-columns:auto 1fr}.shead b{grid-column:2;justify-self:start}.shead>i{width:48px;height:48px;border-radius:14px}}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px}
+.stats div{display:flex;align-items:baseline;gap:8px}
+.stats b{font-family:'Unbounded',system-ui,sans-serif;font-size:clamp(28px,3vw,44px);line-height:1;color:var(--ink)}
+.stats span{color:var(--mut);font-weight:700}
+.tools2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin:18px 0 6px;align-items:start}
+.pick{background:linear-gradient(135deg,#16113A,#2A1F6E);color:#fff;border-radius:26px;padding:clamp(20px,2.4vw,30px);position:relative;overflow:hidden}
+.pick::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#FFC70055,transparent 70%);inset-inline-end:-60px;top:-80px;pointer-events:none}
+.pick h2{color:#fff;margin:0 0 6px;font-size:clamp(22px,2vw,28px)}
+.pick>p{margin:0 0 16px;color:#cfc9f0}
+.pq{margin:0 0 12px}
+.pq b{display:block;font-size:15px;margin-bottom:8px;color:#fff}
+.pq .ops{display:flex;flex-wrap:wrap;gap:8px}
+.pq button{font:inherit;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:9px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pq button:hover{border-color:#fff}
+.pq button.on{background:#FFC700;color:#16113A;border-color:#FFC700}
+.pres{display:none;margin-top:8px}
+.pres.on{display:block;animation:fadeup .45s ease both}
+.pres h3{font-size:16px;margin:0 0 10px;color:#FFC700}
+.pres .ag{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pres .ac{padding:14px!important;color:var(--ink)}
+.pres .ac b{font-size:15px!important}
+.pres .ac>span:not(.ai),.pres .ac small{display:none}
+.pres .ai i{width:36px;height:36px}
+.pagain{margin-top:10px;background:none;border:0;color:#cfc9f0;font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.side2{display:flex;flex-direction:column;gap:16px}
+.sbox{position:relative}
+.sbox input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:17px 20px;padding-inline-start:52px;border-radius:18px;border:2px solid var(--line);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.sbox input:focus{border-color:var(--vi);box-shadow:0 0 0 5px #5B3DF51f}
+.sbox svg{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.rdbar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px}
+.rdbar div{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rdbar i{display:block;height:8px;border-radius:99px;background:#eee;overflow:hidden}
+.rdbar i u{display:block;height:100%;width:0;background:linear-gradient(90deg,#5B3DF5,#26C281,#FFC700);border-radius:99px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.tipc{display:block;text-decoration:none;color:var(--ink);background:#FFF6D6;border:1px solid #FFE38A;border-radius:18px;padding:16px 18px;transition:transform .2s}
+.tipc:hover{transform:translateY(-2px)}
+.tipc small{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13px;color:#9A6B00}
+.tipc p{margin:6px 0 6px;font-weight:600;line-height:1.5}
+.tipc em{font-style:normal;font-size:14px;color:var(--vi);font-weight:800}
+.ac.rd .ai u::after{content:" ✓";color:#26C281}
+.ac.rd{opacity:.82}
+.ac .rdl{display:none;font-size:12px;font-weight:800;color:#1a9a62;background:#e6f8ef;border-radius:99px;padding:2px 8px}
+.ac.rd .rdl{display:inline-block}
+.nf{display:none;padding:26px;text-align:center;background:#fff;border:1px dashed var(--line);border-radius:20px;margin-top:20px}
+.nf a{color:var(--vi);font-weight:800;text-decoration:none}
+.endc{margin:56px 0 10px;background:linear-gradient(135deg,#16113A,#3A2A9A);color:#fff;border-radius:30px;padding:clamp(26px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.endc h2{color:#fff;margin:0 0 6px}
+.endc p{margin:0;color:#d6d0f5}
+.endc a{background:#25D366;color:#fff;text-decoration:none;font-weight:800;border-radius:16px;padding:16px 24px;display:inline-flex;gap:10px;align-items:center}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:980px){.tools2{grid-template-columns:1fr}.pres .ag{grid-template-columns:1fr}}
+.rprog{position:fixed;top:0;left:0;right:0;height:4px;z-index:9;pointer-events:none}
+.rprog i{display:block;height:100%;width:100%;background:var(--sc);transform-origin:0 50%;transform:scaleX(0)}
+[dir=rtl] .rprog i{transform-origin:100% 50%}
+.wrapa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,760px) minmax(0,1fr);gap:40px;max-width:1700px;margin:0 auto}
+.wrapa>main{grid-column:2;max-width:none;width:100%;padding-inline:0}
+.toc{grid-column:3;align-self:start;position:sticky;top:96px;margin-top:150px;max-width:300px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin-bottom:10px}
+html[lang=he] .toc b{text-transform:none;letter-spacing:0;font-size:15px}
+.toc a{display:block;text-decoration:none;color:var(--mut);font-size:15px;line-height:1.35;padding:7px 12px;border-inline-start:3px solid var(--line);transition:color .2s,border-color .2s}
+.toc a:hover,.toc a.on{color:var(--ink);border-color:var(--sc);font-weight:700}
+.tocl{grid-column:1}
+@media (max-width:1399px){.wrapa{display:block}.toc{display:none}.wrapa>main{max-width:760px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}}
+.shr{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:14px;color:#128C4A;background:#E7F8EE;border-radius:999px;padding:6px 12px}
+.shr:hover{background:#25D366;color:#fff}
+.cta .p3{background:#25D366;color:#fff}
+
+.scov{display:block;width:100%;aspect-ratio:16/5;object-fit:cover;border-radius:20px;margin:0 0 14px;box-shadow:0 14px 34px rgba(17,17,17,.12)}
+.acov{display:block;width:100%;aspect-ratio:16/6;object-fit:cover;border-radius:22px;margin:0 0 22px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "אתר משלכם או בונה אתרים כמו Wix ו-Shopify", "description": "בוני אתרים מבטיחים אתר בערב אחד, ומפתחים מבטיחים אתר „בהתאמה אישית”. שתי הדרכים לגיטימיות, והשאלה היא מה העסק שלכם צריך. הנה השוואה כנה, בלי פרסומות.", "inLanguage": "he", "articleSection": "איך מתחילים", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/he/own-site-or-builder.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_he.jpg"}</script>
 </head>
 <body>
 <header class="top"><div class="in"><a class="logo" href="../../"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/own-site-or-builder.html" lang="ru" title="Русский"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="../he/own-site-or-builder.html" lang="he" title="עברית" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="../en/own-site-or-builder.html" lang="en" title="English"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></nav><a class="wa1" href="https://wa.me/972587800228?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%21%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%9E%D7%90%D7%9E%D7%A8%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98." target="_blank" rel="noopener">לכתוב בוואטסאפ</a></div></header>
-<main style="--sc:#5B3DF5">
+<div class="rprog" style="--sc:#5B3DF5"><i id="rpi"></i></div>
+<div class="wrapa" style="--sc:#5B3DF5">
+<main>
 <div class="crumbs"><a href="../../">ראשי</a> › <a href="index.html">מאמרים</a> › <a href="index.html#start">איך מתחילים</a></div>
 <article>
-<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></i><div class="kick"><a href="index.html#start"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>איך מתחילים</a><span>2 דקות קריאה</span></div></div>
+<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></i><div class="kick"><a href="index.html#start"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>איך מתחילים</a><span>2 דקות קריאה</span><a class="shr" href="https://wa.me/?text=%D7%9E%D7%90%D7%9E%D7%A8%20%D7%A9%D7%99%D7%9E%D7%95%D7%A9%D7%99%3A%20%D7%90%D7%AA%D7%A8%20%D7%9E%D7%A9%D7%9C%D7%9B%D7%9D%20%D7%90%D7%95%20%D7%91%D7%95%D7%A0%D7%94%20%D7%90%D7%AA%D7%A8%D7%99%D7%9D%20%D7%9B%D7%9E%D7%95%20Wix%20%D7%95-Shopify%20https%3A//priko2000.github.io/appsandsoul-site/articles/he/own-site-or-builder.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>לשלוח את המאמר בוואטסאפ</a></div></div>
 <h1>אתר משלכם או בונה אתרים כמו Wix ו-Shopify</h1>
 <p class="lead">בוני אתרים מבטיחים אתר בערב אחד, ומפתחים מבטיחים אתר „בהתאמה אישית”. שתי הדרכים לגיטימיות, והשאלה היא מה העסק שלכם צריך. הנה השוואה כנה, בלי פרסומות.</p>
 <div class="by">מושאילוב דוד, מייסד Apps & Soul</div>
 
-<h2>מה טוב בבונה אתרים</h2>
+<h2 id="p1">מה טוב בבונה אתרים</h2>
 <ul>
 <li>התחלה מהירה: תבניות מוכנות, ואפשר להרים אתר בכמה ימים.</li>
 <li>האחסון, החיבור המאובטח והעדכונים באחריות הפלטפורמה.</li>
 <li>קל לשנות טקסטים ותמונות בעצמכם.</li>
 </ul>
-<h2>איפה בונה האתרים מתחיל להפריע</h2>
+<h2 id="p2">איפה בונה האתרים מתחיל להפריע</h2>
 <ul>
 <li><b>תשלום חודשי לתמיד.</b> כל עוד משלמים, האתר עובד; מפסיקים לשלם — האתר נסגר.</li>
 <li><b>אי אפשר לקחת את האתר במלואו.</b> בפלטפורמות רבות העיצוב והמבנה נשארים בתוך הפלטפורמה, ובמעבר צריך לבנות אותם מחדש.</li>
@@ -165,22 +239,33 @@ main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transpa
 <li><b>עברית וכמה שפות.</b> ימין־לשמאל ושלוש שפות באתר אחד לא עובדים בכל מקום באותה רמה.</li>
 <li><b>אחוזים מהמכירות.</b> בחלק מהמסלולים והמדינות הפלטפורמה גובה אחוז נוסף כשמשתמשים בשירות סליקה חיצוני. כדאי לבדוק את תנאי המסלול שלכם.</li>
 </ul>
-<h2>מה נותן אתר משלכם</h2>
+<h2 id="p3">מה נותן אתר משלכם</h2>
 <ul>
 <li><b>הוא שלכם.</b> הקוד, המוצרים והנתונים שייכים לכם, ואפשר להעביר את האתר לאחסון אחר או למפתח אחר.</li>
 <li><b>כל פונקציה.</b> האתר נבנה סביב התהליך שלכם, ולא אתם מתאימים את עצמכם לתבנית.</li>
 <li><b>אפשר לפתח.</b> להתחיל בפשוט, ובהמשך להוסיף אפליקציה, פאנל ניהול, עוזר.</li>
 </ul>
 <p>גם החסרונות בכנות: ההתחלה בדרך כלל יקרה יותר, ולשינויים גדולים צריך מפתח. דברים יומיומיים, כמו מוצרים, מחירים ומבצעים, אפשר לשנות בעצמכם בפאנל הניהול.</p>
-<h2>איך לבחור</h2>
+<h2 id="p4">איך לבחור</h2>
 <p><b>בונה אתרים מתאים</b> אם אתם בודקים רעיון, יש מעט מוצרים והתקציב מינימלי.</p>
 <p><b>אתר משלכם משתלם יותר</b> אם האתר הוא חלק חשוב מהעסק, יש הרבה מוצרים, התהליכים לא סטנדרטיים, או שצריך עברית, רוסית ואנגלית יחד.</p>
 <p>מתלבטים? תארו את המשימה בוואטסאפ. אם בונה אתרים יספיק לכם, אגיד את זה.</p>
 
 </article>
-<div class="cta"><h2>נדבר על הפרויקט שלכם?</h2><p>כתבו בוואטסאפ: אני עונה תוך שעתיים בשעות העבודה. או הזמינו בדיקה חינם לאתר שלכם.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%21%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%9E%D7%90%D7%9E%D7%A8%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98." target="_blank" rel="noopener">לכתוב בוואטסאפ</a><a class="p2" href="../../#rev">בדיקה חינם לאתר</a></div></div>
+<div class="cta"><h2>נדבר על הפרויקט שלכם?</h2><p>כתבו בוואטסאפ: אני עונה תוך שעתיים בשעות העבודה. או הזמינו בדיקה חינם לאתר שלכם.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%93%D7%95%D7%93%21%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%9E%D7%90%D7%9E%D7%A8%20%D7%91%D7%90%D7%AA%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%93%D7%91%D7%A8%20%D7%A2%D7%9C%20%D7%A4%D7%A8%D7%95%D7%99%D7%A7%D7%98." target="_blank" rel="noopener">לכתוב בוואטסאפ</a><a class="p2" href="../../#rev">בדיקה חינם לאתר</a><a class="p3" href="https://wa.me/?text=%D7%9E%D7%90%D7%9E%D7%A8%20%D7%A9%D7%99%D7%9E%D7%95%D7%A9%D7%99%3A%20%D7%90%D7%AA%D7%A8%20%D7%9E%D7%A9%D7%9C%D7%9B%D7%9D%20%D7%90%D7%95%20%D7%91%D7%95%D7%A0%D7%94%20%D7%90%D7%AA%D7%A8%D7%99%D7%9D%20%D7%9B%D7%9E%D7%95%20Wix%20%D7%95-Shopify%20https%3A//priko2000.github.io/appsandsoul-site/articles/he/own-site-or-builder.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>לשלוח את המאמר בוואטסאפ</a></div></div>
 </main>
-<section class="more"><h3>עוד בנושא</h3><div class="ag"><a class="ac" style="--sc:#5B3DF5" href="seven-questions.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></i><u>01</u></span><small>איך מתחילים</small><b>שבע שאלות שכדאי לשאול את עצמכם לפני שמזמינים אתר</b><span>הטעויות היקרות ביותר בפיתוח קורות לא בקוד, אלא לפניו: כשהמטרה לא ברורה.</span><em>2 דקות קריאה<b>→</b></em></a><a class="ac" style="--sc:#5B3DF5" href="prepare-materials.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></i><u>02</u></span><small>איך מתחילים</small><b>איך להכין טקסטים, תמונות ומוצרים כדי שהאתר יעלה מהר יותר</b><span>ברוב המקרים מה שמעכב השקה הוא לא הפיתוח אלא החומרים: אין תמונות, הטקסטים לא מוכנים, רשימת המוצרים בשלושה קבצים שונים.</span><em>2 דקות קריאה<b>→</b></em></a><a class="ac" style="--sc:#5B3DF5" href="domain-hosting.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></i><u>03</u></span><small>איך מתחילים</small><b>דומיין, אחסון, דואר: מה זה במילים פשוטות</b><span>שלוש מילים שנשמעות טכניות, אבל מאחוריהן דברים פשוטים.</span><em>2 דקות קריאה<b>→</b></em></a></div><a class="allb" href="index.html">כל המאמרים · 23</a></section>
+<aside class="toc" aria-label="במאמר הזה"><b>במאמר הזה</b><a href="#p1">מה טוב בבונה אתרים</a><a href="#p2">איפה בונה האתרים מתחיל להפריע</a><a href="#p3">מה נותן אתר משלכם</a><a href="#p4">איך לבחור</a></aside>
+</div>
+<section class="more"><h3>עוד בנושא</h3><div class="ag"><a data-s="seven-questions" data-k="שבע שאלות שכדאי לשאול את עצמכם לפני שמזמינים אתר הטעויות היקרות ביותר בפיתוח קורות לא בקוד, אלא לפניו: כשהמטרה לא ברורה. ענו על שבע השאלות האלה, והשיחה עם כל מפתח תהיה קצרה יותר והתוצאה מדויקת יותר. 1. בשביל מה לכם אתר? למכור אונליין, לקבל תורים, לקבל פניות, או פשוט להיראות רציניים כשמחפשים אתכם? מטרה מרכזית אחת חשובה יותר מעשר משניות. 2. מי הלקוח שלכם? גיל, שפה, מאיזה מכשיר הוא נכנס, מה חשוב לו: מחיר, מהירות, איכות. אתר לגמלאים ואתר לסטודנטים נראים אחרת. 3. מה הלקוח צריך לעשות באתר? להתקשר, לכתוב בוואטסאפ, להוסיף מוצר לעגלה, להשאיר פנייה. הפעולה הזו צריכה להיות הבולטת ביותר בכל עמוד. 4. מה כבר יש לכם? לוגו, תמונות, טקסטים, רשימת מוצרים עם מחירים, דומיין, עמודים ברשתות. ככל שיותר מוכן, ההשקה מהירה יותר. 5. מי יעדכן את האתר? אם מחירים ומוצרים משתנים לעיתים קרובות, צריך פאנל ניהול נוח שבו אתם מעדכנים בעצמכם. אם לעיתים רחוקות, מספיק לפנות למפתח. 6. באילו שפות מדברים הלקוחות שלכם? בישראל זה לרוב עברית, רוסית ואנגלית. עדיף לתכנן את השפות מההתחלה מאשר להוסיף אותן אחר כך. 7. איך אתם רואים את העסק בעוד שנה? אם מתוכנן סניף שני, משלוחים או אפליקציה, אמרו את זה מיד. כך האתר ייבנה כך שאפשר יהיה לפתח אותו, ולא לבנות מחדש. רשמו את התשובות, גם בקצרה, ושלחו אותן למפתח. זה האפיון הטוב ביותר שבעל עסק יכול להכין. איך מתחילים" class="ac" style="--sc:#5B3DF5" href="seven-questions.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></i><u>01</u></span><small>איך מתחילים</small><b>שבע שאלות שכדאי לשאול את עצמכם לפני שמזמינים אתר</b><span>הטעויות היקרות ביותר בפיתוח קורות לא בקוד, אלא לפניו: כשהמטרה לא ברורה.</span><em><span class="rdl">נקרא ✓</span>2 דקות קריאה<b>→</b></em></a><a data-s="prepare-materials" data-k="איך להכין טקסטים, תמונות ומוצרים כדי שהאתר יעלה מהר יותר ברוב המקרים מה שמעכב השקה הוא לא הפיתוח אלא החומרים: אין תמונות, הטקסטים לא מוכנים, רשימת המוצרים בשלושה קבצים שונים. הנה איך להכין הכול מראש. טקסטים על העסק: מי אתם, כמה שנים אתם פועלים, במה אתם שונים. חמישה־שישה משפטים מספיקים. שירותים או קטגוריות: תיאור קצר לכל אחד ולמי הוא מתאים. שאלות נפוצות: היזכרו מה לקוחות שואלים בטלפון כל שבוע. זה פרק שאלות ותשובות מוכן. תנאים: משלוחים, תשלום, החזרות, שעות פעילות. כתבו כמו שאתם מדברים עם לקוח. את הניסוח היפה המפתח יעזור לבחור, אבל את המהות רק אתם יודעים. תמונות צלמו באור יום, על רקע אחיד, והחזיקו את הטלפון ישר. למוצרים: זווית אחת לכולם, כך הקטלוג נראה מסודר. צלמו את החנות, את חלון הראווה, את הצוות בעבודה: תמונות אמיתיות בונות אמון. אל תיקחו תמונות של אחרים מהאינטרנט: זו הפרת זכויות יוצרים. רשימת מוצרים טבלה אחת, שורה אחת — מוצר אחד. עמודות: שם, קטגוריה, מחיר, ברקוד (אם יש), תיאור קצר, שם קובץ התמונה. אם המוצרים כבר נמצאים בתוכנת הקופה, לרוב אפשר לייצא אותם משם. גישות אם כבר יש לכם דומיין, אחסון או עמודים ברשתות, מצאו את פרטי הכניסה מראש. אל תשלחו סיסמאות בגלוי: סכמו עם המפתח דרך בטוחה. לא חייב שהכול יהיה מושלם. מספיק להתחיל: חלק מהחומרים אפשר להוסיף גם אחרי ההשקה. איך מתחילים" class="ac" style="--sc:#5B3DF5" href="prepare-materials.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></i><u>02</u></span><small>איך מתחילים</small><b>איך להכין טקסטים, תמונות ומוצרים כדי שהאתר יעלה מהר יותר</b><span>ברוב המקרים מה שמעכב השקה הוא לא הפיתוח אלא החומרים: אין תמונות, הטקסטים לא מוכנים, רשימת המוצרים בשלושה קבצים שונים.</span><em><span class="rdl">נקרא ✓</span>2 דקות קריאה<b>→</b></em></a><a data-s="domain-hosting" data-k="דומיין, אחסון, דואר: מה זה במילים פשוטות שלוש מילים שנשמעות טכניות, אבל מאחוריהן דברים פשוטים. כשמבינים אותן, קשה לבלבל אתכם, ואתם תמיד שולטים באתר שלכם. דומיין — זו הכתובת מה שאנשים מקלידים בדפדפן: למשל myshop.co.il. קונים דומיין אצל רשם ומחדשים אותו כל שנה. אם שוכחים לחדש, אחרים עלולים לתפוס את הכתובת. לעסק בישראל בוחרים לרוב ‎.co.il או ‎.com. קצר, קל להגייה, בלי מקפים ובלי בלבול בין אותיות. הכי חשוב: הדומיין צריך להיות רשום על שמכם, ולא על שם המפתח. אחסון — המקום שבו האתר גר שרת ששומר את קבצי האתר ומציג אותם לגולשים. יש אחסון משותף זול, ויש אחסון ענן שעומד בעומסים גדולים. לאתר קטן הוא בדרך כלל לא יקר, ולאתרים פשוטים יכול להיות אפילו חינם. חיבור מאובטח (ssl) סמל המנעול בשורת הכתובת. היום זה מינימום חובה: בלעדיו הדפדפן כותב „לא מאובטח”, ולקוחות עוזבים. בדרך כלל הוא חינם ומחובר יחד עם האחסון. דואר על הדומיין שלכם כתובת כמו info@myshop.co.il נראית רצינית יותר מתיבת דואר רגילה. אפשר להגדיר אותה כך שהמיילים יגיעו לתיבה שאתם רגילים אליה. מה לבדוק אצלכם כבר עכשיו על שם מי רשום הדומיין ומתי הוא מתחדש. האם יש לכם גישה לחשבון אצל הרשם ואצל ספק האחסון. האם המנעול עובד באתר שלכם. אם על אחד הסעיפים אין תשובה, כדאי לברר את זה עכשיו, ולא ביום שבו האתר יפסיק להיפתח. איך מתחילים" class="ac" style="--sc:#5B3DF5" href="domain-hosting.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></i><u>03</u></span><small>איך מתחילים</small><b>דומיין, אחסון, דואר: מה זה במילים פשוטות</b><span>שלוש מילים שנשמעות טכניות, אבל מאחוריהן דברים פשוטים.</span><em><span class="rdl">נקרא ✓</span>2 דקות קריאה<b>→</b></em></a></div><a class="allb" href="index.html">כל המאמרים · 23</a></section>
+<script>
+(function(){
+try{var R=JSON.parse(localStorage.getItem('as_read')||'[]');if(R.indexOf('own-site-or-builder')<0){R.push('own-site-or-builder');localStorage.setItem('as_read',JSON.stringify(R));}document.querySelectorAll('.ac[data-s]').forEach(function(c){if(R.indexOf(c.getAttribute('data-s'))>=0)c.classList.add('rd');});}catch(e){}
+var bar=document.getElementById('rpi'),art=document.querySelector('article'),links=[].slice.call(document.querySelectorAll('.toc a')),hs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function on(){var r=art.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.max(0,(h*0.35-r.top)/(r.height-h*0.5)));bar.style.transform='scaleX('+p.toFixed(4)+')';
+var cur=-1;hs.forEach(function(x,i){if(x&&x.getBoundingClientRect().top<h*0.35)cur=i;});links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+addEventListener('scroll',on,{passive:true});addEventListener('resize',on);on();
+})();
+</script>
 <footer>© Apps & Soul · הסטודיו של דוד מושאילוב</footer>
 </body>
 </html>

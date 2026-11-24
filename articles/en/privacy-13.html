@@ -138,22 +138,96 @@ main article li::marker{color:var(--sc)}
 main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transparent);padding-inline-start:16px}
 .cta{background:linear-gradient(135deg,var(--y),#FFDD55)}
 @media (max-width:700px){.shead{grid-template-columns:auto 1fr}.shead b{grid-column:2;justify-self:start}.shead>i{width:48px;height:48px;border-radius:14px}}
+
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:20px}
+.stats div{display:flex;align-items:baseline;gap:8px}
+.stats b{font-family:'Unbounded',system-ui,sans-serif;font-size:clamp(28px,3vw,44px);line-height:1;color:var(--ink)}
+.stats span{color:var(--mut);font-weight:700}
+.tools2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin:18px 0 6px;align-items:start}
+.pick{background:linear-gradient(135deg,#16113A,#2A1F6E);color:#fff;border-radius:26px;padding:clamp(20px,2.4vw,30px);position:relative;overflow:hidden}
+.pick::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,#FFC70055,transparent 70%);inset-inline-end:-60px;top:-80px;pointer-events:none}
+.pick h2{color:#fff;margin:0 0 6px;font-size:clamp(22px,2vw,28px)}
+.pick>p{margin:0 0 16px;color:#cfc9f0}
+.pq{margin:0 0 12px}
+.pq b{display:block;font-size:15px;margin-bottom:8px;color:#fff}
+.pq .ops{display:flex;flex-wrap:wrap;gap:8px}
+.pq button{font:inherit;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.35);background:transparent;color:#fff;border-radius:999px;padding:9px 16px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pq button:hover{border-color:#fff}
+.pq button.on{background:#FFC700;color:#16113A;border-color:#FFC700}
+.pres{display:none;margin-top:8px}
+.pres.on{display:block;animation:fadeup .45s ease both}
+.pres h3{font-size:16px;margin:0 0 10px;color:#FFC700}
+.pres .ag{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pres .ac{padding:14px!important;color:var(--ink)}
+.pres .ac b{font-size:15px!important}
+.pres .ac>span:not(.ai),.pres .ac small{display:none}
+.pres .ai i{width:36px;height:36px}
+.pagain{margin-top:10px;background:none;border:0;color:#cfc9f0;font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.side2{display:flex;flex-direction:column;gap:16px}
+.sbox{position:relative}
+.sbox input{width:100%;box-sizing:border-box;font:inherit;font-size:17px;padding:17px 20px;padding-inline-start:52px;border-radius:18px;border:2px solid var(--line);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.sbox input:focus{border-color:var(--vi);box-shadow:0 0 0 5px #5B3DF51f}
+.sbox svg{position:absolute;inset-inline-start:18px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.rdbar{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 18px}
+.rdbar div{display:flex;justify-content:space-between;font-weight:700;font-size:15px;margin-bottom:8px}
+.rdbar i{display:block;height:8px;border-radius:99px;background:#eee;overflow:hidden}
+.rdbar i u{display:block;height:100%;width:0;background:linear-gradient(90deg,#5B3DF5,#26C281,#FFC700);border-radius:99px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.tipc{display:block;text-decoration:none;color:var(--ink);background:#FFF6D6;border:1px solid #FFE38A;border-radius:18px;padding:16px 18px;transition:transform .2s}
+.tipc:hover{transform:translateY(-2px)}
+.tipc small{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:13px;color:#9A6B00}
+.tipc p{margin:6px 0 6px;font-weight:600;line-height:1.5}
+.tipc em{font-style:normal;font-size:14px;color:var(--vi);font-weight:800}
+.ac.rd .ai u::after{content:" ✓";color:#26C281}
+.ac.rd{opacity:.82}
+.ac .rdl{display:none;font-size:12px;font-weight:800;color:#1a9a62;background:#e6f8ef;border-radius:99px;padding:2px 8px}
+.ac.rd .rdl{display:inline-block}
+.nf{display:none;padding:26px;text-align:center;background:#fff;border:1px dashed var(--line);border-radius:20px;margin-top:20px}
+.nf a{color:var(--vi);font-weight:800;text-decoration:none}
+.endc{margin:56px 0 10px;background:linear-gradient(135deg,#16113A,#3A2A9A);color:#fff;border-radius:30px;padding:clamp(26px,4vw,48px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.endc h2{color:#fff;margin:0 0 6px}
+.endc p{margin:0;color:#d6d0f5}
+.endc a{background:#25D366;color:#fff;text-decoration:none;font-weight:800;border-radius:16px;padding:16px 24px;display:inline-flex;gap:10px;align-items:center}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@keyframes fadeup{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:980px){.tools2{grid-template-columns:1fr}.pres .ag{grid-template-columns:1fr}}
+.rprog{position:fixed;top:0;left:0;right:0;height:4px;z-index:9;pointer-events:none}
+.rprog i{display:block;height:100%;width:100%;background:var(--sc);transform-origin:0 50%;transform:scaleX(0)}
+[dir=rtl] .rprog i{transform-origin:100% 50%}
+.wrapa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,760px) minmax(0,1fr);gap:40px;max-width:1700px;margin:0 auto}
+.wrapa>main{grid-column:2;max-width:none;width:100%;padding-inline:0}
+.toc{grid-column:3;align-self:start;position:sticky;top:96px;margin-top:150px;max-width:300px}
+.toc b{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin-bottom:10px}
+html[lang=he] .toc b{text-transform:none;letter-spacing:0;font-size:15px}
+.toc a{display:block;text-decoration:none;color:var(--mut);font-size:15px;line-height:1.35;padding:7px 12px;border-inline-start:3px solid var(--line);transition:color .2s,border-color .2s}
+.toc a:hover,.toc a.on{color:var(--ink);border-color:var(--sc);font-weight:700}
+.tocl{grid-column:1}
+@media (max-width:1399px){.wrapa{display:block}.toc{display:none}.wrapa>main{max-width:760px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}}
+.shr{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:14px;color:#128C4A;background:#E7F8EE;border-radius:999px;padding:6px 12px}
+.shr:hover{background:#25D366;color:#fff}
+.cta .p3{background:#25D366;color:#fff}
+
+.scov{display:block;width:100%;aspect-ratio:16/5;object-fit:cover;border-radius:20px;margin:0 0 14px;box-shadow:0 14px 34px rgba(17,17,17,.12)}
+.acov{display:block;width:100%;aspect-ratio:16/6;object-fit:cover;border-radius:22px;margin:0 0 22px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Amendment 13 on privacy: what a website owner should know", "description": "Since 14 August 2025, Amendment 13 to Israel’s Privacy Protection Law has been in force. It affects almost every business that collects customer data, including through a website.", "inLanguage": "en", "articleSection": "Law and security", "author": {"@type": "Person", "name": "David Mushailov"}, "publisher": {"@type": "Organization", "name": "Apps & Soul"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "mainEntityOfPage": "https://priko2000.github.io/appsandsoul-site/articles/en/privacy-13.html", "image": "https://priko2000.github.io/appsandsoul-site/img/og_en.jpg"}</script>
 </head>
 <body>
 <header class="top"><div class="in"><a class="logo" href="../../en.html"><img src="../../img/mark.svg" width="28" height="28" alt="">Apps <em>&amp;</em> Soul</a><nav class="langs" aria-label="Language"><a href="../ru/privacy-13.html" lang="ru" title="Русский"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="20" fill="#fff"/><rect y="20" width="60" height="20" fill="#1C57A5"/><rect y="40" width="60" height="20" fill="#D52B1E"/></svg></span><span class="cd">RU</span></a><a href="../he/privacy-13.html" lang="he" title="עברית"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#fff"/><rect y="9" width="60" height="7" fill="#0038B8"/><rect y="44" width="60" height="7" fill="#0038B8"/><g fill="none" stroke="#0038B8" stroke-width="2.6" stroke-linejoin="round"><path d="M30 20.5 39 36H21z"/><path d="M30 39.5 21 24h18z"/></g></svg></span><span class="cd">עב</span></a><a href="../en/privacy-13.html" lang="en" title="English" class="on"><span class="fl"><svg viewBox="0 0 60 60"><rect width="60" height="60" fill="#012169"/><path d="M0 0 60 60M60 0 0 60" stroke="#fff" stroke-width="12"/><path d="M0 0 60 60M60 0 0 60" stroke="#C8102E" stroke-width="4"/><path d="M30 0v60M0 30h60" stroke="#fff" stroke-width="16"/><path d="M30 0v60M0 30h60" stroke="#C8102E" stroke-width="9"/></svg></span><span class="cd">EN</span></a></nav><a class="wa1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a></div></header>
-<main style="--sc:#E5484D">
+<div class="rprog" style="--sc:#E5484D"><i id="rpi"></i></div>
+<div class="wrapa" style="--sc:#E5484D">
+<main>
 <div class="crumbs"><a href="../../en.html">Home</a> › <a href="index.html">Articles</a> › <a href="index.html#law">Law and security</a></div>
 <article>
-<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></i><div class="kick"><a href="index.html#law"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>Law and security</a><span>2 min read</span></div></div>
+<div class="ahead"><i><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></i><div class="kick"><a href="index.html#law"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>Law and security</a><span>2 min read</span><a class="shr" href="https://wa.me/?text=A%20useful%20article%3A%20Amendment%2013%20on%20privacy%3A%20what%20a%20website%20owner%20should%20know%20https%3A//priko2000.github.io/appsandsoul-site/articles/en/privacy-13.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Send this article on WhatsApp</a></div></div>
 <h1>Amendment 13 on privacy: what a website owner should know</h1>
 <p class="lead">Since 14 August 2025, Amendment 13 to Israel’s Privacy Protection Law has been in force. It affects almost every business that collects customer data, including through a website.</p>
 <div class="by">David Mushailov, founder of Apps & Soul</div>
 
-<h2>Does it apply to you</h2>
+<h2 id="p1">Does it apply to you</h2>
 <p>If your site has an enquiry form, registration, a cart with a delivery address or a newsletter, you are collecting personal data. So the amendment applies to you, even if the business is small.</p>
-<h2>The key point: inform at the moment of collection</h2>
+<h2 id="p2">The key point: inform at the moment of collection</h2>
 <p>When you ask someone for data, you must tell them:</p>
 <ul>
 <li>what the data is collected for;</li>
@@ -162,16 +236,16 @@ main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transpa
 <li>whether they are obliged to provide it and what happens if they refuse.</li>
 </ul>
 <p>Usually this is a short text next to the form and a link to the privacy policy. Violations here have already been penalised: for example, the Privacy Protection Authority fined a company 12,000 ₪ for an online registration form without the required notice.</p>
-<h2>Other important principles</h2>
+<h2 id="p3">Other important principles</h2>
 <ul>
 <li><b>Only for the stated purpose.</b> Data collected for delivery cannot simply be used for something else.</li>
 <li><b>The customer’s right</b> to see their data, correct it or ask for it to be deleted.</li>
 <li><b>External services.</b> Anyone who gets access to the data (hosting, CRM, accounting) needs a written agreement on data protection.</li>
 <li><b>Security.</b> Passwords, restricted access, backups.</li>
 </ul>
-<h2>What changed for small businesses</h2>
+<h2 id="p4">What changed for small businesses</h2>
 <p>The duty to register a database has effectively been abolished for most private businesses (with exceptions such as data brokers). But responsibility has grown: people can now claim compensation without proving damage, and the Authority can impose large fines.</p>
-<h2>What to do now</h2>
+<h2 id="p5">What to do now</h2>
 <ul>
 <li>Check what data your site collects and why.</li>
 <li>Add a notice next to every form.</li>
@@ -181,9 +255,20 @@ main .lead{border-inline-start:4px solid color-mix(in srgb,var(--sc) 40%,transpa
 <p class="note">This article is general and is not legal advice. For your case, consult a privacy lawyer.</p>
 
 </article>
-<div class="cta"><h2>Shall we talk about your project?</h2><p>Message me on WhatsApp: I reply within 2 hours during working hours. Or ask for a free review of your website.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a><a class="p2" href="../../en.html#rev">Free website review</a></div></div>
+<div class="cta"><h2>Shall we talk about your project?</h2><p>Message me on WhatsApp: I reply within 2 hours during working hours. Or ask for a free review of your website.</p><div class="b"><a class="p1" href="https://wa.me/972587800228?text=Hello%20David%21%20I%20read%20an%20article%20on%20your%20site%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a><a class="p2" href="../../en.html#rev">Free website review</a><a class="p3" href="https://wa.me/?text=A%20useful%20article%3A%20Amendment%2013%20on%20privacy%3A%20what%20a%20website%20owner%20should%20know%20https%3A//priko2000.github.io/appsandsoul-site/articles/en/privacy-13.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.5-.3z"/></svg>Send this article on WhatsApp</a></div></div>
 </main>
-<section class="more"><h3>More in this topic</h3><div class="ag"><a class="ac" style="--sc:#E5484D" href="accessibility-law.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M5 8.5l7 1.5 7-1.5M12 10v5m0 0l-3.5 6M12 15l3.5 6"/></svg></i><u>17</u></span><small>Law and security</small><b>Website accessibility in Israel: what the law requires</b><span>Israeli regulations require websites that serve the public to be accessible to people with disabilities.</span><em>2 min read<b>→</b></em></a><a class="ac" style="--sc:#E5484D" href="ownership.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></i><u>19</u></span><small>Law and security</small><b>Who owns the site and the domain: backups, passwords, independence</b><span>The most unpleasant internet story for a business: the site runs for years, then it turns out the domain, hosting and code are registered to a former developer.</span><em>2 min read<b>→</b></em></a><a class="ac" style="--sc:#5B3DF5" href="seven-questions.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></i><u>01</u></span><small>Getting started</small><b>Seven questions to ask yourself before ordering a website</b><span>The most expensive mistakes in development happen not in the code but before it: when the goal is unclear.</span><em>2 min read<b>→</b></em></a></div><a class="allb" href="index.html">All articles · 23</a></section>
+<aside class="toc" aria-label="In this article"><b>In this article</b><a href="#p1">Does it apply to you</a><a href="#p2">The key point: inform at the moment of collection</a><a href="#p3">Other important principles</a><a href="#p4">What changed for small businesses</a><a href="#p5">What to do now</a></aside>
+</div>
+<section class="more"><h3>More in this topic</h3><div class="ag"><a data-s="accessibility-law" data-k="website accessibility in israel: what the law requires israeli regulations require websites that serve the public to be accessible to people with disabilities. here are the essentials in plain words. where the requirement comes from it is the equal rights for persons with disabilities law and the 2013 service accessibility regulations. the section on websites (regulation 35) says that websites and apps through which a business provides a public service, or information about it, must be accessible. what “accessible” means the site must meet israeli standard 5568, which is based on the international wcag guidelines, at level aa. in practice that means, for example: the site can be used with a keyboard, without a mouse; images have text descriptions for screen readers; text has enough contrast and can be enlarged without breaking the page; forms, buttons and links are clearly labelled; animations can be stopped. accessibility statement the site must have an “accessibility statement” page (הצהרת נגישות): what has been done, what has not yet, and how to contact the person responsible for accessibility. a widget button is not accessibility yet many sites add a ready-made button with font and contrast settings and consider the job done. but such a tool alone is not enough: the site itself must be built accessibly in its code. exemptions the law provides exemptions and reduced requirements in some cases, for example when the burden on the business is too heavy. sometimes an exemption applies automatically, and sometimes it must be requested from the competent authority. details are on the website of the commission for equal rights of persons with disabilities and on the kol zchut portal. why it is good for business beyond the law, it simply means more customers: older people, people with poor eyesight, anyone browsing on the go with one hand. an accessible site is more convenient for everyone. this article is general and is not legal advice. for your case, consult an accessibility specialist. law and security" class="ac" style="--sc:#E5484D" href="accessibility-law.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M5 8.5l7 1.5 7-1.5M12 10v5m0 0l-3.5 6M12 15l3.5 6"/></svg></i><u>17</u></span><small>Law and security</small><b>Website accessibility in Israel: what the law requires</b><span>Israeli regulations require websites that serve the public to be accessible to people with disabilities.</span><em><span class="rdl">Read ✓</span>2 min read<b>→</b></em></a><a data-s="ownership" data-k="who owns the site and the domain: backups, passwords, independence the most unpleasant internet story for a business: the site runs for years, then it turns out the domain, hosting and code are registered to a former developer. here is how to avoid it. what should be yours the domain. registered to you or your company, with access to the registrar account. hosting. the account in your name, or at least you know where and how it is paid. code and design. after payment the rights pass to you; it is worth writing this into the contract. data. products, orders, customers — exportable to a standard format at any time. email, analytics, your google listing — also on your account. backups a site can break: an update error, a hack, a hosting problem. regular automatic backups, stored separately from the site itself, turn a disaster into an hour of inconvenience. passwords different passwords for different services. a password manager instead of a scrap of paper or a note on your phone. two-step verification wherever it is available. staff get their own logins, not one shared password. when someone leaves, their access is closed the same day. a simple independence test ask yourself: if my developer disappeared tomorrow, could i hand the site to someone else in one day? if the answer is “no” or “i don’t know”, it is worth sorting out now. a good developer wants you to be independent: a client stays because they are happy, not because they are locked in. law and security" class="ac" style="--sc:#E5484D" href="ownership.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></i><u>19</u></span><small>Law and security</small><b>Who owns the site and the domain: backups, passwords, independence</b><span>The most unpleasant internet story for a business: the site runs for years, then it turns out the domain, hosting and code are registered to a former developer.</span><em><span class="rdl">Read ✓</span>2 min read<b>→</b></em></a><a data-s="seven-questions" data-k="seven questions to ask yourself before ordering a website the most expensive mistakes in development happen not in the code but before it: when the goal is unclear. answer these seven questions and any conversation with a developer becomes shorter and the result more precise. 1. why do you need a website? to sell online, take bookings, receive enquiries, or simply look established when people look you up? one main goal matters more than ten secondary ones. 2. who is your customer? age, language, which device they use, what matters to them: price, speed, quality. a site for retirees and a site for students look different. 3. what should the customer do on the site? call, message on whatsapp, add a product to the cart, leave an enquiry. that action should be the most visible thing on every page. 4. what do you already have? a logo, photos, texts, a product list with prices, a domain, social media pages. the more is ready, the faster the launch. 5. who will update the site? if prices and products change often, you need a convenient management panel where you edit things yourself. if rarely, asking the developer is enough. 6. which languages do your customers speak? in israel it is often hebrew, russian and english. it is better to plan the languages from the start than to add them later. 7. how do you see the business in a year? if you plan a second branch, delivery or an app, say so right away. then the site is built to grow, not to be rebuilt. write down the answers, even briefly, and send them to the developer. it is the best brief a business owner can prepare. getting started" class="ac" style="--sc:#5B3DF5" href="seven-questions.html"><span class="ai"><i><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></i><u>01</u></span><small>Getting started</small><b>Seven questions to ask yourself before ordering a website</b><span>The most expensive mistakes in development happen not in the code but before it: when the goal is unclear.</span><em><span class="rdl">Read ✓</span>2 min read<b>→</b></em></a></div><a class="allb" href="index.html">All articles · 23</a></section>
+<script>
+(function(){
+try{var R=JSON.parse(localStorage.getItem('as_read')||'[]');if(R.indexOf('privacy-13')<0){R.push('privacy-13');localStorage.setItem('as_read',JSON.stringify(R));}document.querySelectorAll('.ac[data-s]').forEach(function(c){if(R.indexOf(c.getAttribute('data-s'))>=0)c.classList.add('rd');});}catch(e){}
+var bar=document.getElementById('rpi'),art=document.querySelector('article'),links=[].slice.call(document.querySelectorAll('.toc a')),hs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function on(){var r=art.getBoundingClientRect(),h=innerHeight,p=Math.min(1,Math.max(0,(h*0.35-r.top)/(r.height-h*0.5)));bar.style.transform='scaleX('+p.toFixed(4)+')';
+var cur=-1;hs.forEach(function(x,i){if(x&&x.getBoundingClientRect().top<h*0.35)cur=i;});links.forEach(function(a,i){a.classList.toggle('on',i===cur);});}
+addEventListener('scroll',on,{passive:true});addEventListener('resize',on);on();
+})();
+</script>
 <footer>© Apps & Soul · David Mushailov’s studio</footer>
 </body>
 </html>
