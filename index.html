@@ -915,6 +915,32 @@ html[lang=he]{--hand:'Playpen Sans Hebrew','Playpen Sans','Heebo',system-ui,sans
 .sig span{font-family:var(--body)!important;font-weight:500!important}
 .hero h1{line-height:1.02}
 
+/* бесплатный разбор и статьи */
+.rev{margin-top:clamp(28px,4vw,48px);background:var(--y);border-radius:28px;padding:clamp(22px,3.4vw,44px);display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(18px,3vw,44px);align-items:center}
+.rev h3{font-family:var(--disp);font-size:clamp(24px,2.5vw,38px);line-height:1.1;margin:12px 0 12px}
+.rev p{margin:0 0 10px;font-size:17px;line-height:1.55}
+.rev .rsm{font-size:15px;opacity:.75;margin:0}
+.rtag{display:inline-block;background:var(--ink);color:#fff;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:800}
+.revf{display:flex;flex-direction:column;gap:10px;background:#fff;border-radius:22px;padding:clamp(16px,2vw,24px);box-shadow:0 10px 30px rgba(17,17,17,.12)}
+.revf label{font-weight:700;font-size:15px}
+.revf input{width:100%;box-sizing:border-box;padding:15px 18px;border-radius:14px;border:2px solid rgba(17,17,17,.18);font:inherit;font-size:16px;background:#fff;color:var(--ink);outline:none;transition:border-color .2s}
+.revf input:focus{border-color:var(--vi)}
+[dir=rtl] .revf input{text-align:right}
+.revf button{padding:16px 20px;border-radius:14px;background:var(--ink);color:#fff;font:inherit;font-weight:800;font-size:16px;border:0;cursor:pointer;display:flex;gap:10px;justify-content:center;align-items:center;transition:transform .2s,background .2s}
+.revf button:hover{background:var(--vi);transform:translateY(-2px)}
+[dir=rtl] .revf button span{transform:scaleX(-1)}
+.arts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.art{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(20px,2.2vw,30px);color:var(--ink);text-decoration:none;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.art::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:var(--vi)}
+.art:nth-child(2)::before{background:var(--mi)}.art:nth-child(3)::before{background:var(--y)}
+.art:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(17,17,17,.12)}
+.artn{font-family:var(--disp);font-weight:800;font-size:13px;color:var(--mut)}
+.art h3{font-family:var(--disp);font-size:clamp(19px,1.5vw,24px);line-height:1.2;margin:0}
+.art p{margin:0;color:var(--mut);line-height:1.55;flex:1}
+.art em{font-style:normal;font-weight:800;color:var(--vi)}
+[dir=rtl] .art em span{display:inline-block;transform:scaleX(-1)}
+@media (max-width:900px){.rev{grid-template-columns:1fr}.arts{grid-template-columns:1fr}}
+
 .langs{display:flex;gap:4px;background:rgba(22,17,58,.06);border-radius:999px;padding:4px;position:relative}
 .langs a{display:flex;align-items:center;gap:7px;padding:4px 11px 4px 4px;border-radius:999px;font-family:var(--disp);font-size:12px;font-weight:800;color:var(--mut);line-height:1;transition:background .3s,color .3s,box-shadow .3s}
 [dir=rtl] .langs a{padding:4px 4px 4px 11px}
@@ -968,6 +994,7 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 
 </style>
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("hin")</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Apps & Soul","alternateName":"Apps and Soul","slogan":"Technology with heart","description":"אתרים, חנויות אונליין ואפליקציות לעסקים בעברית, ברוסית ובאנגלית. מענה בוואטסאפ תוך שעתיים בשעות העבודה.","url":"https://priko2000.github.io/appsandsoul-site/","logo":"https://priko2000.github.io/appsandsoul-site/img/og_he.jpg","image":"https://priko2000.github.io/appsandsoul-site/img/og_he.jpg","telephone":"+972587800228","email":"hello@appsandsoul.com","founder":{"@type":"Person","name":"David Mushailov","alternateName":["דוד מושאילוב","מושאילוב דוד"]},"areaServed":{"@type":"Country","name":"Israel"},"availableLanguage":["he","ru","en"],"knowsAbout":["Web design","E-commerce","Progressive web apps","Mobile apps","AI assistants"],"contactPoint":{"@type":"ContactPoint","telephone":"+972587800228","contactType":"customer service","availableLanguage":["he","ru","en"]}}</script>
 </head>
 <body>
 <div class="cur" id="cur"><span id="curT"></span></div>
@@ -1155,6 +1182,11 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
       <div><b>החלטות מיד</b><span>בלי ישיבות ואישורים פנימיים: שאלה — תשובה.</span></div>
     </div>
   </div>
+
+  <div class="rev" id="rev">
+    <div><span class="rtag">חינם</span><h3>בדיקה חינם לאתר שלכם</h3><p>שלחו קישור לאתר, לחנות או לעמוד ברשתות החברתיות. אסתכל עליו בעיני לקוח ואכתוב לכם בוואטסאפ שלוש עצות מעשיות: מה מפריע למכור ומה כדאי לתקן קודם.</p><p class="rsm">בלי התחייבות. עדיין אין אתר? שלחו קישור לאינסטגרם או לפייסבוק.</p></div>
+    <form class="revf" id="revF"><label for="revUrl">קישור לאתר או לעמוד שלכם</label><input id="revUrl" type="text" inputmode="url" autocomplete="url" placeholder="למשל, mysite.co.il" dir="ltr"><button type="submit" data-msg="שלום דוד! אשמח לבדיקה חינם לאתר:">לקבל בדיקה בוואטסאפ <span aria-hidden="true">→</span></button></form>
+  </div>
 </div></section>
 
 <!-- 07 обо мне -->
@@ -1173,6 +1205,12 @@ section.sec{padding-top:clamp(70px,8vw,120px)!important;padding-bottom:clamp(70p
 <section class="sec" id="faq" data-sec="11"><div class="wrap">
   <div class="head"><div><span class="num">11 — שאלות</span><h2 class="scr">שאלות ותשובות</h2></div><p>השאלות שנשאלות הכי הרבה. לא מצאתם את שלכם — שאלו בוואטסאפ.</p></div>
   <div class="faq"><div class="tabs" id="tabs" role="tablist"></div><div id="qa"></div></div>
+</div></section>
+
+<!-- статьи -->
+<section class="sec" id="blog" data-sec="12"><div class="wrap">
+  <div class="head"><div><span class="num">12 — מידע שימושי</span><h2 class="scr">מאמרים לבעלי עסקים</h2></div><p>בקצרה ובכנות: מה כדאי לדעת לפני שמזמינים אתר או אפליקציה.</p></div>
+  <div class="arts"><a class="art" href="articles/he/site-or-app.html"><span class="artn">01</span><h3>אתר, אפליקציה על המסך או אפליקציה ב-App Store?</h3><p>במה הם שונים, כמה עולה התחזוקה של כל אחד ומאיפה נכון להתחיל.</p><em>לקריאת המאמר <span aria-hidden="true">→</span></em></a><a class="art" href="articles/he/own-site-or-builder.html"><span class="artn">02</span><h3>אתר משלכם או בונה אתרים כמו Wix ו-Shopify</h3><p>השוואה כנה: מתי בונה אתרים מספיק, ומתי אתר משלכם משתלם יותר.</p><em>לקריאת המאמר <span aria-hidden="true">→</span></em></a><a class="art" href="articles/he/shop-checklist.html"><span class="artn">03</span><h3>מה צריך אתר של חנות כדי למכור</h3><p>רשימת בדיקה של עשרה סעיפים שאפשר לבדוק באתר שלכם בעשר דקות.</p><em>לקריאת המאמר <span aria-hidden="true">→</span></em></a></div>
 </div></section>
 </main>
 
@@ -1699,7 +1737,7 @@ document.querySelectorAll('.pbtn').forEach(function(a){a.href=WA+'?text='+encode
 (function(){var c=document.querySelector('.about .card');if(!c||reduce)return;setInterval(function(){if(!document.documentElement.classList.contains('a-na'))c.classList.toggle('sw');},5000);})();
 
 /* прогресс и счётчик */
-var prog=document.getElementById('prog'),cnt=document.getElementById('cnt'),secs=document.querySelectorAll('[data-sec]'),TOT='11';
+var prog=document.getElementById('prog'),cnt=document.getElementById('cnt'),secs=document.querySelectorAll('[data-sec]'),TOT='12';
 function onS(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-innerHeight||1);prog.style.transform='scaleX('+p.toFixed(4)+')';
   var c='01';secs.forEach(function(s){if(s.getBoundingClientRect().top<innerHeight*.45)c=s.dataset.sec;});cnt.innerHTML='<b>'+c+'</b> / '+TOT;}
 addEventListener('scroll',onS,{passive:true});onS();
@@ -1813,6 +1851,9 @@ function req(){if(!raf)raf=requestAnimationFrame(tick);}
 addEventListener('scroll',req,{passive:true});addEventListener('resize',req);setTimeout(req,50);
 /* плавная прокрутка убрана: обычная прокрутка отзывчивее */
 })();
+</script>
+<script>
+(function(){var f=document.getElementById('revF');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var b=f.querySelector('button'),u=document.getElementById('revUrl').value.trim();var m=b.getAttribute('data-msg')+(u?' '+u:'');window.open('https://wa.me/972587800228?text='+encodeURIComponent(m),'_blank','noopener');});})();
 </script>
 </body>
 </html>
