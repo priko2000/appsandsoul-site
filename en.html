@@ -1112,6 +1112,20 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 .fc:nth-child(n){background:#fff}.fc:nth-child(even){background:#FBF7EE}
 .fc .k,.fc:nth-child(n) .k{background:var(--navy);color:var(--gold2)!important}
 .bld{background:#F3EEDF}.bchips button.on{background:var(--navy)}
+/* 2. вкладки «Try it yourself»: подзаголовок вкладки скромный, без второго большого заголовка */
+section#try.sec{padding-bottom:0!important}section.trypane.sec{padding-top:44px!important}
+.trypane .head{display:block;margin-bottom:22px}
+.trypane .head h2.scr{font-size:clamp(22px,2vw,30px)!important;letter-spacing:-.02em;margin:0 0 8px}
+.trypane .head p{max-width:760px;margin:0}
+/* 3. подвал */
+.v2rotd{color:var(--gold2)}
+.v2rotd>span{background:linear-gradient(var(--gold2),var(--gold2)) 0 94%/100% .08em no-repeat}
+/* 5. контраст */
+.msg em{color:#666!important}
+.s-wa{background:#0E7A40!important}
+/* «Азарт» на телефоне: картинка сразу, без длинной прокрутки */
+@media (max-width:700px){.revx{height:auto!important}.revx .rst{position:static!important;height:auto!important;padding:20px 0 10px}
+.revx .rfr{clip-path:none!important;--cp:1!important;max-height:none}}
 /* 12. телефон: кнопка доступности переезжает в верхнюю полосу (рядом с меню) */
 .a11b.v2inhd{position:static;inset:auto;width:38px;height:38px;flex:none;box-shadow:0 4px 12px rgba(31,91,255,.3);transform:none}
 .a11b.v2inhd svg{width:19px;height:19px}
@@ -1147,12 +1161,12 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
   <div class="nightchip">🌙 It’s night where you are, and the shops on my sites keep taking orders</div>
   <h1 class="big">Your business is open around the clock.</h1>
   <p class="sub">Even while you sleep, <em>orders arrive in WhatsApp.</em></p>
-  <div class="doing" aria-label="I build sites, stores, apps and catalogs, turnkey"><span aria-hidden="true">I build</span><span class="v2rot" id="flip1" aria-hidden="true"></span><span aria-hidden="true">turnkey</span></div>
+  <div class="doing"><span class="vh">I build sites, stores, apps and catalogs, turnkey</span><span aria-hidden="true">I build</span><span class="v2rot" id="flip1" aria-hidden="true"></span><span aria-hidden="true">turnkey</span></div>
   <div class="tldr"><span>Sites · Stores · Apps · Catalogs</span><span>Russian, Hebrew, English</span><span>From idea to launch, no middlemen</span></div>
   <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>Message on WhatsApp</a><a class="btn ghost mag" href="#works">See the work</a></div>
   <button type="button" class="v2vid" id="vOpen"><svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>Video · 17 seconds</button>
   <div class="reply"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></svg>I reply on WhatsApp within 2 hours during working hours</div>
-  <div class="hphone fan" id="fan"><div class="fp fl"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/he/w_rosa.jpg" alt="" loading="eager"></div></div></div><div class="fp fr"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/w_admin.jpg" alt="" loading="eager"></div></div></div><div class="night"><div class="nstars" id="nstars"></div><div class="nmoon"></div>
+  <div class="hphone fan" id="fan"><div class="fp fl"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/he/w_rosa.jpg" alt="Online store with a supermarket-style shelf" loading="eager"></div></div></div><div class="fp fr"><div class="phone"><div class="notch"></div><div class="pscr"><img src="img/w_admin.jpg" alt="" loading="eager"></div></div></div><div class="night"><div class="nstars" id="nstars"></div><div class="nmoon"></div>
     <div class="nclk" id="nclk">03:12 · night</div>
     <div class="phone"><div class="notch"></div><div class="pscr"><div class="wa"><div class="bar"><i class="av"><img src="img/mark.svg" alt=""></i><div>Store orders<small>online</small></div></div><div class="msgs" id="msgs"></div></div></div></div>
     <div class="nfoot"><div><b id="ordN">0</b><small>orders tonight · example</small></div><button id="sndB" type="button">🔊 Sound</button></div>
@@ -1229,7 +1243,7 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
   <h2 class="scr">Smart helpers for your business</h2>
   <p class="lead2">I build AI assistants into sites and programs. They take over routine: answering customers, writing descriptions, understanding voice and photos. Decisions stay yours; the assistant only helps.</p>
   <div class="swh">← swipe →</div><div class="aig" id="aiList"></div>
-  <div class="aichat"><div><h3>Try it yourself</h3><span class="demo-t">Demo</span><p>This is how the assistant answers store customers on WhatsApp. Type a question or tap a ready one.</p></div>
+  <div class="aichat"><div><h3>Ask the assistant</h3><span class="demo-t">Demo</span><p>This is how the assistant answers store customers on WhatsApp. Type a question or tap a ready one.</p></div>
     <div class="chatbox"><div class="bar"><i class="av"><img src="img/mark.svg" alt=""></i><div>Store assistant<small id="cst">online</small></div></div><div class="chatlog" id="clog"></div><div class="quick" id="cquick"></div><form class="inp" id="cfrm"><button type="button" class="mic" id="cmic" aria-label="🎤">🎤</button><input id="cq" autocomplete="off"><button aria-label="➤">➤</button></form></div></div>
   <p class="aiend">Want an assistant for your task? <a href="https://wa.me/972587800228?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20AI-%D0%B0%D1%81%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D1%82" target="_blank" rel="noopener" style="color:#fff;font-weight:700;border-bottom:2px solid var(--y)">Describe it on WhatsApp →</a></p>
 </div></div></section>
@@ -1237,18 +1251,18 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 <!-- попробуйте сами -->
 <section class="sec t0" id="try" data-sec="07"><div class="wrap">
   <div class="head"><div><span class="num">07 — Try it yourself</span><h2 class="scr">Try it yourself</h2></div><p>Build your site, estimate sales or play for 15 seconds. Pick a tab.</p></div>
-  <div class="trytabs" role="tablist"><button type="button" class="on" data-t="build">Builder</button><button type="button" data-t="loss">Calculator</button><button type="button" data-t="game">Game</button></div>
+  <div class="trytabs" role="tablist"><button type="button" role="tab" aria-selected="true" aria-controls="build" class="on" data-t="build">Builder</button><button type="button" role="tab" aria-selected="false" aria-controls="loss" data-t="loss">Calculator</button><button type="button" role="tab" aria-selected="false" aria-controls="game" data-t="game">Game</button></div>
 </div></section>
 
 <!-- конструктор -->
-<section class="sec t0 trypane" id="build" data-sec="07"><div class="wrap">
+<section class="sec t0 trypane" role="tabpanel" id="build" data-sec="07"><div class="wrap">
   <div class="head"><div><span class="num">Builder</span><h2 class="scr">Build your site</h2></div><p>Tap what your business needs. The mockup builds itself live, and the button sends me the ready list on WhatsApp.</p></div>
   <div class="bld"><div><div class="bchips" id="bchips"></div><div class="bsum"><b>Your set</b><ul id="bsum"></ul></div><a class="btn" id="bsend" target="_blank" rel="noopener">Send on WhatsApp →</a></div>
     <div class="phone"><div class="notch"></div><div class="pscr"><div class="site" id="bsite"></div></div></div></div>
 </div></section>
 
 <!-- калькулятор -->
-<section class="sec t0 trypane" id="loss" data-sec="07" hidden><div class="wrap">
+<section class="sec t0 trypane" role="tabpanel" id="loss" data-sec="07" hidden><div class="wrap">
   <div class="head"><div><span class="num">Calculator</span><h2 class="scr">How many sales an online channel could add</h2></div><p>Move the sliders to match your business. It’s a rough estimate from your own numbers, no promises.</p></div>
   <div class="loss"><div class="lcard">
       <div class="lrow"><label>Customers per day<b id="lv1">40</b></label><input type="range" id="l1" min="5" max="300" value="40"></div>
@@ -1260,7 +1274,7 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 </div></section>
 
 <!-- игра -->
-<section class="sec t0 trypane" id="game" data-sec="07" hidden><div class="wrap">
+<section class="sec t0 trypane" role="tabpanel" id="game" data-sec="07" hidden><div class="wrap">
   <div class="head"><div><span class="num">Game</span><h2 class="scr">Catch the order</h2></div><p>15 seconds. Move the basket with your mouse or finger and catch orders. That’s how a shop that takes orders online works.</p></div>
   <div class="game" id="gm"><div class="hud"><span id="gsc">0</span><span id="gt">15</span></div><div class="bask" id="gb">🛒</div>
     <div class="ov" id="gov"><h3 id="gtt">Ready?</h3><p id="gtx">Catch products and orders. Don’t catch the crosses ❌.</p><button class="btn" id="gst" type="button">Start the game</button></div></div>
@@ -1328,7 +1342,7 @@ html.hin .hero>.v2vid{animation:hin 1.15s cubic-bezier(.16,1,.3,1) .85s backward
 <section class="marq" aria-label="All work"><div class="mrow" id="mr1"></div><div class="mrow rev" id="mr2"></div></section>
 
 <footer class="end" data-sec="11"><div class="wrap">
-  <h2 class="big">Let’s build your<br><span class="flip" id="flip2"></span></h2>
+  <h2 class="big">Let’s build your<br><span class="v2rot v2rotd" id="flip2"></span></h2>
   <div class="promise"><span class="dot"></span>Write — I’ll reply within 2 hours during working hours.</div>
   <div class="acts"><a class="btn mag" href="https://wa.me/972587800228" target="_blank" rel="noopener">Tell me about your business</a>
     <div class="ct"><span>Phone <a href="tel:+972587800228"><bdo dir="ltr">+972 58-780-0228</bdo></a></span><span>Email <a href="mailto:hello@appsandsoul.com"><bdo dir="ltr">hello@appsandsoul.com</bdo></a></span></div></div>
@@ -1431,7 +1445,7 @@ function V2Rot(n0,words){if(!n0)return;var sp=words.map(function(w){var e=docume
 (function(){var ab=document.getElementById('about'),done=false;function ld(){if(done)return;done=true;var l=document.createElement('link');l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600;800&family=Playpen+Sans+Hebrew:wght@600;800&display=swap';document.head.appendChild(l);}
   if(!ab||!('IntersectionObserver' in window)){ld();return;}new IntersectionObserver(function(es,o){if(es[0].isIntersecting){ld();o.disconnect();}},{rootMargin:'1200px 0px'}).observe(ab);})();
 V2Rot(document.getElementById('flip1'),['SITES','STORES','APPS','CATALOGS']);
-new Flip(document.getElementById('flip2'),['SITE','STORE','CATALOG']);
+V2Rot(document.getElementById('flip2'),['SITE','STORE','CATALOG']);
 
 /* для кого: по задачам */
 var FOR=[['want customers to find you online, not just your phone number','I’ll build a site or catalog that shows what you offer and lets people order right away.'],
@@ -1515,7 +1529,7 @@ var count=[0,0,0,0,0,0],PHc=0;
 G.forEach(function(g){var l=el('div','grp-l');l.appendChild(document.createTextNode(g[0]));var n=W.filter(function(w){return w[7]===g[1];}).length;l.appendChild(el('i','',n));l.style.left=COLX[g[1]]+'px';l.style.top='60px';plane.appendChild(l);});
 var PWc=0;
 W.forEach(function(w,i){var g=w[7],k=count[g]++,cols=colW[g],cx=COLX[g]+(k%cols)*290,cy=130+Math.floor(k/cols)*600+((k%cols)%2?50:0);PWc=Math.max(PWc,cx+330);PHc=Math.max(PHc,cy+560);
-  var d=el('div','it');d.tabIndex=0;d.setAttribute('role','button');d.setAttribute('aria-label','Project story: '+w[1]);d.dataset.cur='Story';d.dataset.i=i;
+  var d=el('div','it');d.tabIndex=0;d.setAttribute('role','button');d.dataset.cur='Story';d.dataset.i=i;
   d.style.left=cx+'px';d.style.top=cy+'px';
   d.dataset.rot=ROT[i%6];d.innerHTML='<div class="sc" style="transform:rotate('+ROT[i%6]+'deg)"><img alt="" loading="lazy">'+(w[7]!==4?'<span class="brand"><img src="img/mark.svg" alt="">Apps &amp; Soul</span>':'')+(SG[w[0]]?'<span class="scrb">'+SCRB+'</span>':'')+'</div><b></b><span></span><em class="more">Project story</em>';
   d.querySelector('img').src=w[0];d.querySelector('b').textContent=w[1];d.querySelector('span').textContent=w[2];
@@ -1750,7 +1764,7 @@ window.updCTA=updCTA;
     a.appendChild(el('i','',m?m[1]:'•'));a.appendChild(el('span','lb',m?m[2]:t));a.style.setProperty('--c',SPAL[links.length%SPAL.length]);a.title=m?m[2]:t;side.appendChild(a);links.push([sec,a]);});
   var mq=document.querySelector('.marq');function f(){var cur=null,ci=0,L=innerHeight*.45;links.forEach(function(l,i){if(l[0].getBoundingClientRect().top<L){cur=l;ci=i;}});links.forEach(function(l){l[1].classList.toggle('on',l===cur);});var fr=0;if(cur&&links[ci+1]){var a1=cur[0].getBoundingClientRect().top,a2=links[ci+1][0].getBoundingClientRect().top;fr=Math.max(0,Math.min(1,(L-a1)/((a2-a1)||1)));}var pr=links.length>1?(cur?(ci+fr)/(links.length-1):0):0;side.style.setProperty('--p',Math.min(1,pr).toFixed(4));if(cur)side.style.setProperty('--pc',cur[1].style.getPropertyValue('--c'));side.classList.toggle('off',!!mq&&mq.getBoundingClientRect().top<innerHeight*.75);}
   addEventListener('scroll',f,{passive:true});f();})();
-(function(){var tb=document.querySelectorAll('.trytabs button');tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.classList.toggle('on',x===b);});document.querySelectorAll('.trypane').forEach(function(p){p.hidden=p.id!==b.dataset.t;});window.dispatchEvent(new Event('resize'));});});
+(function(){var tb=document.querySelectorAll('.trytabs button');tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-selected',x===b?'true':'false');});document.querySelectorAll('.trypane').forEach(function(p){p.hidden=p.id!==b.dataset.t;});window.dispatchEvent(new Event('resize'));});});
 ['build','loss','game'].forEach(function(id){document.querySelectorAll('a[href="#'+id+'"]').forEach(function(a){a.addEventListener('click',function(){var b=document.querySelector('.trytabs button[data-t="'+id+'"]');if(b)b.click();});});});})();
 (function(){var b=document.getElementById('apptry'),h=document.getElementById('apphow');if(!b)return;var ev=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();ev=e;});
 b.addEventListener('click',function(){if(ev){ev.prompt();ev=null;return;}var ua=navigator.userAgent,t;if(/iPhone|iPad|iPod/.test(ua))t=AIOS;else if(/Android/.test(ua))t=AAND;else if(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)t=AOK;else t=ADESK;h.textContent=t;h.hidden=false;});})();
